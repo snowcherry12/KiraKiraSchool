@@ -25,8 +25,8 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2535,15 +2535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f045d3c92e8b24847a4266b681e631e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  newGameSceneName: 
-  quickSaveSlotID: 0
-  MainOptionsPanel: {fileID: 0}
-  StartGameOptionsPanel: {fileID: 0}
-  GamePanel: {fileID: 0}
-  ControlsPanel: {fileID: 0}
-  GfxPanel: {fileID: 0}
-  LoadGamePanel: {fileID: 0}
 --- !u!95 &327323803
 Animator:
   serializedVersion: 5
@@ -11543,7 +11534,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 266
-    y: 83.5
+    y: 82.5
     width: 77
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -11619,7 +11610,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 2
+  itemId: 5
   blockName: Quit
   description: 
   eventHandler: {fileID: 1747351052}
