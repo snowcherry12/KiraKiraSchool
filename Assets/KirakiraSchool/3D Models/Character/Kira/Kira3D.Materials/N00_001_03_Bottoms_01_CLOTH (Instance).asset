@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: e93429714fb0ae540b2779bc2fa6bc6c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _UseAlphaClipping
   m_InvalidKeywords:
   - _ALPHATEST_ON
   m_LightmapFlags: 4
@@ -25,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: f48e9081b6d4519479b4bc7df40ca58a, type: 3}
+        m_Texture: {fileID: 2800000, guid: b64b005475e1a584386dba70c93ce2ea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -68,7 +69,7 @@ Material:
     - _ReceiveShadowMappingAmount: 0.65
     - _ReceiveShadowMappingPosOffset: 0
     - _SrcBlend: 1
-    - _UseAlphaClipping: 0
+    - _UseAlphaClipping: 1
     - _UseEmission: 0
     - _UseOcclusion: 0
     - _VColBlendMode: 0
