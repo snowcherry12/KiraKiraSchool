@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 2043688477}
+  selectedFlowchart: {fileID: 1896111809}
 --- !u!4 &593241805
 Transform:
   m_ObjectHideFlags: 1
@@ -1725,11 +1725,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: 10.010638, y: 1.5009843}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.94000006
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -2130,6 +2130,7 @@ GameObject:
   - component: {fileID: 2043688530}
   - component: {fileID: 2043688531}
   - component: {fileID: 2043688534}
+  - component: {fileID: 2043688535}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2164,7 +2165,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2043688488}
   selectedCommands:
-  - {fileID: 2043688534}
+  - {fileID: 2043688535}
   variables: []
   description: 
   stepPause: 0
@@ -2232,8 +2233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 50.71025
-    y: 170.29236
+    x: 51.71025
+    y: 170.79236
     width: 118
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2245,6 +2246,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 2043688486}
   - {fileID: 2043688531}
+  - {fileID: 2043688535}
   - {fileID: 2043688509}
   - {fileID: 2043688508}
   - {fileID: 2043688534}
@@ -3008,6 +3010,26 @@ MonoBehaviour:
   time:
     floatRef: {fileID: 0}
     floatVal: 1000
+--- !u!114 &2043688535
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb064de1b711a449845627f19b7f7b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 55
+  indentLevel: 0
+  getOrSet: 0
+  property: 7
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 1896111806}
+  inOutVar: {fileID: 0}
 --- !u!1 &2081307101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6878625449028724952, guid: 43649882f05a6bc448c2e4fdf2a4b362, type: 3}
