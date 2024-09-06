@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6049031924517852026, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7039048
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6049031924517852026, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
       propertyPath: m_LocalRotation.x
@@ -316,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6049031924517852026, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7102944
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6049031924517852026, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
       propertyPath: m_LocalRotation.z
@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6049031924517852026, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6049031924517852026, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -365,6 +365,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2075799111188226190, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1896111807}
+    - targetCorrespondingSourceObject: {fileID: 2075799111188226190, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1896111809}
+    - targetCorrespondingSourceObject: {fileID: 2075799111188226190, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1896111808}
+    - targetCorrespondingSourceObject: {fileID: 2075799111188226190, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1896111810}
   m_SourcePrefab: {fileID: 100100000, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
 --- !u!1 &411639303
 GameObject:
@@ -1670,6 +1679,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 3357182162379306014, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
   m_PrefabInstance: {fileID: 308176771}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1896111806 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6049031924517852026, guid: 431fdc1dbc3e101438437d116e35f650, type: 3}
+  m_PrefabInstance: {fileID: 308176771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1896111807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,6 +1697,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirty: 1
+--- !u!114 &1896111808
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896111798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633bea14077b44e19956e8113fbac7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: Kirarotation
+  value: {fileID: 1896111806}
+--- !u!114 &1896111809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896111798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  scrollPos: {x: 0, y: 0}
+  variablesScrollPos: {x: 0, y: 0}
+  variablesExpanded: 1
+  blockViewHeight: 400
+  zoom: 1
+  scrollViewRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  selectedBlocks: []
+  selectedCommands: []
+  variables:
+  - {fileID: 1896111808}
+  description: 
+  stepPause: 0
+  colorCommands: 1
+  hideComponents: 1
+  saveSelection: 1
+  localizationId: 
+  showLineNumbers: 0
+  hideCommands: []
+  luaEnvironment: {fileID: 0}
+  luaBindingName: flowchart
+--- !u!114 &1896111810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896111798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f1198eb774e9b48816b995d01e5053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection:
+  - {fileID: 1896111806}
+  - {fileID: 1896111806}
 --- !u!1 &1950124241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2129,7 @@ GameObject:
   - component: {fileID: 2043688529}
   - component: {fileID: 2043688530}
   - component: {fileID: 2043688531}
+  - component: {fileID: 2043688534}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2067,11 +2150,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 94.755585, y: -42.338757}
+  scrollPos: {x: 134.99545, y: -54.04236}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 296
-  zoom: 0.7900002
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2081,7 +2164,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2043688488}
   selectedCommands:
-  - {fileID: 2043688531}
+  - {fileID: 2043688534}
   variables: []
   description: 
   stepPause: 0
@@ -2151,7 +2234,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 50.71025
     y: 170.29236
-    width: 117.08859
+    width: 118
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2164,6 +2247,7 @@ MonoBehaviour:
   - {fileID: 2043688531}
   - {fileID: 2043688509}
   - {fileID: 2043688508}
+  - {fileID: 2043688534}
   - {fileID: 2043688507}
   - {fileID: 2043688506}
   - {fileID: 2043688505}
@@ -2892,6 +2976,32 @@ MonoBehaviour:
   stateName:
     stringRef: {fileID: 0}
     stringVal: Idle
+  layer:
+    integerRef: {fileID: 0}
+    integerVal: -1
+  time:
+    floatRef: {fileID: 0}
+    floatVal: 1000
+--- !u!114 &2043688534
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5316d953c7abe498799575550c973535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 54
+  indentLevel: 0
+  animator:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 1896111803}
+  stateName:
+    stringRef: {fileID: 0}
+    stringVal: Run
   layer:
     integerRef: {fileID: 0}
     integerVal: -1
