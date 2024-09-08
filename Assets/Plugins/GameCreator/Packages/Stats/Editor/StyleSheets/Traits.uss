@@ -1,0 +1,131 @@
+#GC-Stats-Traits-Title {
+    -unity-font-style: bold;
+    margin-top: var(--gc-common-space-small);
+    margin-bottom: var(--gc-common-space-smaller);
+}
+
+#GC-Stats-Traits-Element-Root {
+    margin-top: -1px;
+}
+
+/* HEAD */
+
+#GC-Stats-Traits-Element-Head {
+    height: var(--gc-list-head-size);
+    background-color: var(--gc-color-bg-light);
+    border-color: var(--gc-color-border-default);
+    border-width: var(--gc-common-border-width);
+    overflow: hidden;
+}
+
+#GC-Stats-Traits-Element-Head > Button {
+    border-radius: 0;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#GC-Stats-Traits-Element-Head-Icon {
+    height: var(--gc-list-head-image-size);
+    width: var(--gc-list-head-image-size);
+    margin: var(--gc-list-head-image-margin) var(--gc-common-space-smaller);
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+#GC-Stats-Traits-Element-Head-Text {
+    -unity-text-align: middle-left;
+    color: var(--unity-colors-button-text);
+    height: var(--gc-list-head-image-size);
+    margin: var(--gc-list-head-image-margin) 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0;
+}
+
+#GC-Stats-Traits-Element-Head-ExtraInfo {
+    -unity-text-align: middle-right;
+    -unity-font-style: bold;
+    height: var(--gc-list-head-image-size);
+    margin: var(--gc-list-head-image-margin) var(--gc-common-space-smaller);
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+/* BODY */
+
+#GC-Stats-Traits-Element-Body {
+    margin-top: -1px;
+    margin: 0 var(--gc-list-body-margins);
+    padding: var(--gc-list-body-padding);
+    border-color: var(--gc-color-border-default);
+    border-width: var(--gc-common-border-width);
+    border-top-width: 0;
+    background-color: var(--gc-color-list-body);
+}
+
+/* RUNTIME ATTRIBUTES */
+
+#GC-Stats-Traits-Attribute-Root {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: var(--gc-common-space-smallest);
+}
+
+#GC-Stats-Traits-Attribute-Label {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+#GC-Stats-Traits-Attribute-Bck {
+    height: 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: var(--gc-color-bg-darkest);
+    border-radius: 2px;
+    border-color: var(--gc-color-bg-darkest);
+    overflow: hidden;
+    margin-right: var(--gc-common-space-smaller);
+}
+
+#GC-Stats-Traits-Attribute-Bar {
+    height: 10px;
+}
+
+/* RUNTIME STATUS EFFECTS */
+
+#GC-Stats-Traits-Status-Effects-Row {
+    margin-top: var(--gc-common-space-smaller);
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#GC-Stats-Traits-Status-Effects-Row Label {
+    -unity-text-align: middle-left;
+    flex-basis: var(--gc-common-label-length);
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+#GC-Stats-Traits-Status-Effects-Content {
+    height: var(--gc-list-head-size);
+    padding: var(--gc-list-head-image-margin);
+    background-color: var(--gc-color-list-body);
+    border-radius: var(--gc-common-space-small);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+}
+
+#GC-Stats-Traits-Status-Effects-Content Image {
+    flex-basis: var(--gc-list-head-image-size);
+    height: var(--gc-list-head-image-size);
+    flex-grow: 0;
+    flex-shrink: 0;
+}

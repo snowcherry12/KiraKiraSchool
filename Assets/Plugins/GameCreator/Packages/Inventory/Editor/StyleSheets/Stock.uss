@@ -1,0 +1,53 @@
+
+IngredientsTool {
+    margin-top: var(--gc-common-space-smaller);
+}
+
+/* HEAD */
+
+#GC-Inventory-Stock-Head { }
+
+/* BODY */
+
+#GC-Inventory-Stock-Body { }
+
+/* FOOT */
+
+#GC-Inventory-Stock-Foot {
+    height: var(--list-head-size);
+    background-color: var(--gc-color-bg-light);
+    border-color: var(--gc-color-border-default);
+    border-width: var(--gc-common-border-width);
+    border-radius: var(--gc-common-border-radius);
+    margin-top: var(--gc-common-space-smallest);
+    overflow: hidden;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#GC-Inventory-Stock-Foot-Add {
+    border-radius: 0;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#GC-Inventory-Stock-Foot-Add Image {
+    height: var(--gc-list-head-image-size);
+    width: var(--gc-list-head-image-size);
+    margin: var(--gc-list-head-image-margin);
+    padding: 0;
+}
+
+#GC-Inventory-Stock-Foot-Add Label {
+    -unity-text-align: middle-left;
+    color: var(--unity-colors-button-text);
+    height: var(--gc-list-head-image-size);
+    margin: var(--gc-list-head-image-margin);
+    padding: 0;
+}

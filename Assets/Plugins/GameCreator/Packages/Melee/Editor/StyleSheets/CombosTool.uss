@@ -1,0 +1,166 @@
+* {
+    --gc-melee-content-item-height: 30px;
+    --gc-melee-content-item-indent: 20px;
+
+    --gc-melee-content-toolbar-height: 30px;
+    --gc-melee-content-toolbar-padding: 5px;
+    --gc-melee-content-toolbar-size: 20px;
+    --gc-melee-content-height: 600px;
+}
+
+CombosTool {
+    height: auto;
+    border-bottom-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+}
+
+CombosTool TwoPaneSplitView {
+    min-height: var(--gc-melee-content-height);
+}
+
+/** TOOLBAR **/
+
+CombosToolToolbar {
+    flex-grow: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: var(--gc-melee-content-toolbar-height);
+    padding: var(--gc-melee-content-toolbar-padding);
+    background-color: var(--gc-color-bg-darker);
+    border-top-width: var(--gc-common-border-width);
+    border-top-color: var(--gc-color-border-default);
+}
+
+CombosToolToolbar Label {
+    margin: auto;
+    height: var(--gc-melee-content-toolbar-size);
+    opacity: 0.75;
+    -unity-text-align: middle-center;
+}
+
+CombosToolToolbar Button {
+    border-width: 0;
+    border-radius: 0;
+    margin: auto;
+    padding: 2px;
+    width: var(--gc-melee-content-toolbar-height);
+    height: var(--gc-melee-content-toolbar-size);
+}
+
+CombosToolToolbar Button Image {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+CombosToolToolbar DropdownField {
+    border-width: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    height: var(--gc-melee-content-toolbar-size);
+}
+
+CombosToolToolbar #GC-Melee-Toolbar-Separator {
+    width: 1px;
+    margin: 0;
+    height: var(--gc-melee-content-toolbar-size);
+    background-color: var(--gc-color-border-element);
+}
+
+CombosToolToolbar #GC-Melee-Toolbar-Space {
+    width: 5px;
+    margin: 0;
+    height: var(--gc-melee-content-toolbar-size);
+}
+
+CombosToolToolbar .gc-melee-toolbar-button {
+    border-radius: var(--gc-common-border-radius);
+}
+
+/** TREE TOOL **/
+
+CombosToolTree {
+    height: var(--gc-melee-content-height);
+}
+
+.unity-tree-view__item-indent {
+    width: var(--gc-melee-content-item-indent);
+}
+
+.unity-collection-view__item--selected {
+    background-color: var(--gc-color-bg-active);
+}
+
+/** NODE TREE TOOL **/
+
+CombosToolTreeNode {
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+CombosToolTreeNode #GC-Melee-Node-Icons {
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+CombosToolTreeNode #GC-Melee-Node-Icon-History {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 6px 2px 6px 0;
+}
+
+CombosToolTreeNode #GC-Melee-Node-Icon-Current {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 5px 5px 5px 0;
+}
+
+#GC-Melee-Node-Icon-Current Image {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+CombosToolTreeNode #GC-Melee-Node-Skill {
+    flex-grow: 0;
+    flex-shrink: 1;
+    height: 20px;
+    margin: 5px 0;
+    padding: 5px;
+    -unity-text-align: middle-left;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: var(--gc-common-border-radius);
+}
+
+CombosToolTreeNode #GC-Melee-Node-Space {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/** INSPECTOR TOOL **/
+
+CombosToolInspector {
+    height: var(--gc-melee-content-height);
+}
+
+CombosToolInspector #GC-Melee-Inspector-Scroll {
+    height: var(--gc-melee-content-height);
+}
+
+CombosToolInspector #GC-Melee-Inspector-Empty {
+    width: 100%;
+    padding: 50px 0;
+    -unity-text-align: middle-center;
+    opacity: 0.5;
+    -unity-font-style: italic;
+}
+
+CombosToolInspector #GC-Melee-Inspector-Content {
+    padding: var(--gc-common-space-small);
+}

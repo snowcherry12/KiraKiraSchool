@@ -1,0 +1,31 @@
+namespace GameCreator.Runtime.Stats
+{
+    internal enum Function
+    {
+        Add,
+        Sub,
+        Mul,
+        Div,
+        Mod,
+        Neg,
+        Pow,
+        Sqrt,
+        Sin,
+        Cos,
+        Tan,
+        Floor,
+        Ceil,
+        Round,
+        Min,
+        Max,
+        Random,
+        Dice,
+        Chance,
+        Table_Level,
+        Table_Value,
+        Table_Increment,
+        Table_Current,
+        Table_Next,
+        Table_Ratio,
+    }
+}

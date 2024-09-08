@@ -1,0 +1,34 @@
+#GC-Perception-Root { }
+
+#GC-Perception-Head { }
+
+#GC-Perception-Body { }
+
+/* AWARENESS VIEWS */
+
+#GC-Perception-Body LabelTitle {
+    padding-top: var(--gc-common-space-small);
+}
+
+AwarenessView {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: var(--gc-common-space-smallest);
+    height: 20px;
+}
+
+AwarenessView #GC-Perception-Awareness-View-Progress {
+    background-color: var(--gc-color-bg-darkest);
+    margin-top: 5px;
+    margin-left: var(--gc-common-space-smallest);
+    height: 10px;
+}
+
+AwarenessView #GC-Perception-Awareness-View-Bar {
+    height: 100%;
+}
+
+AwarenessView Label {
+    margin-left: var(--gc-common-space-smaller);
+    -unity-text-align: middle-left;
+}

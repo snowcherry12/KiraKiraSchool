@@ -1,0 +1,212 @@
+* {
+    --gc-dialogue-content-item-height: 30px;
+    --gc-dialogue-content-item-indent: 20px;
+    
+    --gc-dialogue-content-toolbar-height: 30px;
+    --gc-dialogue-content-toolbar-padding: 5px;
+    --gc-dialogue-content-toolbar-size: 20px;
+}
+
+ContentTool #GC-Dialogue-Content {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    width: 100%;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: var(--gc-color-border-default);
+}
+
+ContentTool #GC-Dialogue-Content-Panel-Settings {
+    flex: 300px 0 1;
+    height: 100%;
+    border-right-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+}
+
+ContentTool #GC-Dialogue-Content-Panel-Content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 100%;
+}
+
+/** TOOLBAR **/
+
+ContentToolToolbar {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: var(--gc-dialogue-content-toolbar-height);
+    padding: var(--gc-dialogue-content-toolbar-padding);
+    background-color: var(--gc-color-bg-darker);
+}
+
+ContentToolToolbar Label {
+    margin: auto;
+    height: var(--gc-dialogue-content-toolbar-size);
+    opacity: 0.75;
+    -unity-text-align: middle-center;
+}
+
+ContentToolToolbar Button {
+    border-width: 0;
+    border-radius: 0;
+    margin: auto;
+    padding: 2px;
+    width: var(--gc-dialogue-content-toolbar-height);
+    height: var(--gc-dialogue-content-toolbar-size);
+}
+
+ContentToolToolbar Button Image {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+ContentToolToolbar DropdownField {
+    border-width: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    height: var(--gc-dialogue-content-toolbar-size);
+}
+
+ContentToolToolbar #GC-Dialogue-Toolbar-Separator {
+    width: 1px;
+    margin: 0;
+    height: var(--gc-dialogue-content-toolbar-size);
+    background-color: var(--gc-color-border-element);
+}
+
+ContentToolToolbar #GC-Dialogue-Toolbar-Space {
+    width: 5px;
+    margin: 0;
+    height: var(--gc-dialogue-content-toolbar-size);
+}
+
+ContentToolToolbar .gc-dialogue-toolbar-edge-left {
+    border-top-left-radius: var(--gc-common-border-radius);
+    border-bottom-left-radius: var(--gc-common-border-radius);
+}
+
+ContentToolToolbar .gc-dialogue-toolbar-edge-right {
+    border-top-right-radius: var(--gc-common-border-radius);
+    border-bottom-right-radius: var(--gc-common-border-radius);
+}
+
+/** SETTINGS **/
+
+ContentToolSettings {
+    height: 100%;
+}
+
+ContentToolSettings #GC-Dialogue-Settings-Scroll {
+    height: 100%;
+}
+
+ContentToolSettings #GC-Dialogue-Settings-Title {
+    padding: 0 var(--gc-common-space-small);
+    height: var(--gc-dialogue-content-item-height);
+    background-color: var(--gc-color-bg-dark);
+    -unity-font-style: bold;
+    -unity-text-align: middle-left;
+    margin-top: var(--gc-common-border-inverse-width);
+    border-top-width: var(--gc-common-border-width);
+    border-bottom-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+}
+
+ContentToolSettings #GC-Dialogue-Settings-Container {
+    padding: var(--gc-common-space-smaller);
+}
+
+/** TREE TOOL **/
+
+ContentToolTree {
+    height: 100%;
+}
+
+.unity-tree-view__item-indent {
+    width: var(--gc-dialogue-content-item-indent);
+}
+
+.unity-collection-view__item--selected {
+    background-color: var(--gc-color-bg-active);
+}
+
+/** NODE TREE TOOL **/
+
+ContentToolTreeNode {
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+ContentToolTreeNode #GC-Dialogue-Node-Icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 5px 5px 5px 0;
+}
+
+ContentToolTreeNode #GC-Dialogue-Node-Actor {
+    flex-grow: 0;
+    flex-shrink: 1;
+    height: 20px;
+    margin: 5px 2px 5px 0;
+    padding: 5px;
+    -unity-text-align: middle-left;
+    background-color: rgba(0,0,0,0.1);
+    -unity-font-style: bold;
+    border-radius: var(--gc-common-border-radius);
+}
+
+ContentToolTreeNode #GC-Dialogue-Node-Text {
+    flex-grow: 0;
+    flex-shrink: 1;
+    height: 20px;
+    margin: 5px 0;
+    padding: 5px;
+    -unity-text-align: middle-left;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: var(--gc-common-border-radius);
+}
+
+ContentToolTreeNode #GC-Dialogue-Node-Tag {
+    flex-grow: 0;
+    flex-shrink: 1;
+    height: 20px;
+    margin: 5px;
+    padding: 5px 8px;
+    -unity-text-align: middle-left;
+    background-color: var(--gc-color-bg-active);
+    -unity-font-style: normal;
+    border-radius: 10px;
+    border-width: 0;
+}
+
+ContentToolTreeNode #GC-Dialogue-Node-Space {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/** INSPECTOR TOOL **/
+
+ContentToolInspector {
+    height: 100%;
+}
+
+ContentToolInspector #GC-Dialogue-Inspector-Scroll {
+    height: 100%;
+}
+
+#GC-Dialogue-Inspector-Empty {
+    width: 100%;
+    padding: 50px 0;
+    -unity-text-align: middle-center;
+    opacity: 0.5;
+    -unity-font-style: italic;
+}
+
+#GC-Dialogue-Inspector-Content {
+    padding: var(--gc-common-space-small);
+}

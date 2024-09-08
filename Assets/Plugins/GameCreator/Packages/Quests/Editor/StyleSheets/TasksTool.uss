@@ -1,0 +1,146 @@
+* {
+    --gc-quests-content-item-height: 30px;
+    --gc-quests-content-item-indent: 20px;
+
+    --gc-quests-content-toolbar-height: 30px;
+    --gc-quests-content-toolbar-padding: 5px;
+    --gc-quests-content-toolbar-size: 20px;
+    --gc-quests-content-height: 600px;
+}
+
+TasksTool {
+    height: auto;
+    border-bottom-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+}
+
+TasksTool TwoPaneSplitView {
+    min-height: var(--gc-quests-content-height);
+}
+
+/** TOOLBAR **/
+
+TasksToolToolbar {
+    flex-grow: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: var(--gc-quests-content-toolbar-height);
+    padding: var(--gc-quests-content-toolbar-padding);
+    background-color: var(--gc-color-bg-darker);
+    border-top-width: var(--gc-common-border-width);
+    border-top-color: var(--gc-color-border-default);
+}
+
+TasksToolToolbar Label {
+    margin: auto;
+    height: var(--gc-quests-content-toolbar-size);
+    opacity: 0.75;
+    -unity-text-align: middle-center;
+}
+
+TasksToolToolbar Button {
+    border-width: 0;
+    border-radius: 0;
+    margin: auto;
+    padding: 2px;
+    width: var(--gc-quests-content-toolbar-height);
+    height: var(--gc-quests-content-toolbar-size);
+}
+
+TasksToolToolbar Button Image {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+TasksToolToolbar DropdownField {
+    border-width: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    height: var(--gc-quests-content-toolbar-size);
+}
+
+TasksToolToolbar #GC-Quests-Toolbar-Separator {
+    width: 1px;
+    margin: 0;
+    height: var(--gc-quests-content-toolbar-size);
+    background-color: var(--gc-color-border-element);
+}
+
+TasksToolToolbar #GC-Quests-Toolbar-Space {
+    width: 5px;
+    margin: 0;
+    height: var(--gc-quests-content-toolbar-size);
+}
+
+TasksToolToolbar .gc-quests-toolbar-button {
+    border-radius: var(--gc-common-border-radius);
+}
+
+/** TREE TOOL **/
+
+TasksToolTree {
+    height: var(--gc-quests-content-height);
+}
+
+.unity-tree-view__item-indent {
+    width: var(--gc-quests-content-item-indent);
+}
+
+.unity-collection-view__item--selected {
+    background-color: var(--gc-color-bg-active);
+}
+
+/** NODE TREE TOOL **/
+
+TasksToolTreeNode {
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+TasksToolTreeNode #GC-Quests-Node-Icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 5px 5px 5px 0;
+}
+
+TasksToolTreeNode #GC-Quests-Node-Task {
+    flex-grow: 0;
+    flex-shrink: 1;
+    height: 20px;
+    margin: 5px 0;
+    padding: 5px;
+    -unity-text-align: middle-left;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: var(--gc-common-border-radius);
+}
+
+TasksToolTreeNode #GC-Quests-Node-Space {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/** INSPECTOR TOOL **/
+
+TasksToolInspector {
+    height: var(--gc-quests-content-height);
+}
+
+TasksToolInspector #GC-Quests-Inspector-Scroll {
+    height: var(--gc-quests-content-height);
+}
+
+TasksToolInspector #GC-Quests-Inspector-Empty {
+    width: 100%;
+    padding: 50px 0;
+    -unity-text-align: middle-center;
+    opacity: 0.5;
+    -unity-font-style: italic;
+}
+
+TasksToolInspector #GC-Quests-Inspector-Content {
+    padding: var(--gc-common-space-small);
+}

@@ -1,0 +1,49 @@
+
+#GC-Stats-Table-Manual-Root {
+    margin-top: var(--gc-common-space-smaller);
+    background-color: var(--gc-color-list-head-default);
+    border-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+}
+
+/* HEAD */
+
+#GC-Stats-Table-Manual-Head {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: var(--gc-common-space-smaller);
+}
+
+#GC-Stats-Table-Manual-Head Label {
+    flex-grow: 1;
+    -unity-text-align: middle-left;
+}
+
+#GC-Stats-Table-Manual-Head IntegerField {
+    flex-grow: 0;
+    width: 50px;
+}
+
+/* BODY */
+
+#GC-Stats-Table-Manual-Body {
+    
+}
+
+.gc-stats-table-manual-body-element {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: var(--gc-list-body-padding) var(--gc-common-space-smaller);
+    border-top-width: var(--gc-common-border-width);
+    border-top-color: var(--gc-color-border-element);
+}
+
+.gc-stats-table-manual-body-element Label {
+    flex-basis: var(--gc-common-label-length);
+    flex-grow: 0;
+    -unity-text-align: middle-left;
+}
+
+.gc-stats-table-manual-body-element PropertyField {
+    flex-grow: 1;
+}

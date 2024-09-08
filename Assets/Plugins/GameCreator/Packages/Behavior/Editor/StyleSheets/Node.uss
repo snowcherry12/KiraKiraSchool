@@ -1,0 +1,164 @@
+#GC-Graph-Node-Root {
+    position: absolute;
+    border-width: var(--gc-graph-node-border);
+    border-radius: var(--gc-graph-node-radius);
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#GC-Graph-Node-Wrap {
+    border-color: #fff;
+    border-width: var(--gc-common-border-width);
+    border-radius: 7px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#GC-Graph-Node-Head {
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: var(--gc-color-bg-default);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    padding: 5px;
+}
+
+#GC-Graph-Node-Body {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: var(--gc-color-bg-default);
+    border-top-width: var(--gc-common-border-width);
+    border-bottom-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+}
+
+#GC-Graph-Node-Foot {
+    width: 100%;
+    min-height: var(--gc-graph-node-height-foot);
+    flex-shrink: 0;
+    flex-grow: 1;
+    background-color: var(--gc-color-bg-default);
+}
+
+/** HEAD **/
+
+#GC-Graph-Node-Head Image {
+    height: var(--gc-graph-node-height-head);
+    width: var(--gc-graph-node-height-head);
+    flex-grow: 0;
+    margin-right: var(--gc-common-space-smaller);
+    position: absolute;
+    padding: 0;
+}
+
+#GC-Graph-Node-Head Label {
+    height: var(--gc-graph-node-height-head);
+    -unity-text-align: middle-center;
+    flex-grow: 1;
+}
+
+/** BODY **/
+
+#GC-Graph-Node-Body-Content {
+    border-top-color: var(--gc-color-border-default);
+    border-top-width: var(--gc-common-border-width);
+    margin-top: var(--gc-common-border-inverse-width);
+    background-color: var(--gc-color-bg-darker);
+    padding-left: var(--gc-common-space-smaller);
+    padding-right: var(--gc-common-space-smaller);
+}
+
+#GC-Graph-Node-Body-Separator {
+    border-top-color: var(--gc-color-border-default);
+    border-bottom-color: var(--gc-color-border-default);
+    border-top-width: var(--gc-common-border-width);
+    border-bottom-width: var(--gc-common-border-width);
+    height: var(--gc-common-space-small);
+}
+
+NodeConditionTool,
+NodeInstructionTool,
+NodeBeliefTool {
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+NodeConditionTool Image,
+NodeInstructionTool Image,
+NodeBeliefTool Image {
+    height: var(--gc-list-head-image-size);
+    width: var(--gc-list-head-image-size);
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: var(--gc-list-head-image-margin-larger);
+}
+
+NodeConditionTool Label,
+NodeInstructionTool Label,
+NodeBeliefTool Label {
+    height: var(--gc-list-head-size);
+    -unity-text-align: middle-left;
+    font-size: 11px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+/** FOOT **/
+
+#GC-Graph-Node-Foot ErrorMessage {
+    margin-top: var(--gc-common-space-small);
+    margin-bottom: 0;
+    margin-left: var(--gc-common-space-small);
+    margin-right: var(--gc-common-space-small);
+}
+
+#GC-Graph-Node-Foot Button {
+    height: 25px;
+    margin: var(--gc-common-space-small);
+}
+
+/** PORTS **/
+
+#GC-Graph-Node-Ports-Top,
+#GC-Graph-Node-Ports-Right,
+#GC-Graph-Node-Ports-Bottom,
+#GC-Graph-Node-Ports-Left {
+    position: absolute;
+    flex-wrap: nowrap;
+}
+
+#GC-Graph-Node-Ports-Top,
+#GC-Graph-Node-Ports-Bottom {
+    width: 100%;
+    height: var(--gc-graph-port-size);
+    flex-direction: row;
+    margin: auto;
+}
+
+#GC-Graph-Node-Ports-Right,
+#GC-Graph-Node-Ports-Left {
+    width: var(--gc-graph-port-size);
+    height: 100%;
+    flex-direction: column;
+}
+
+#GC-Graph-Node-Ports-Top {
+    top: var(--gc-graph-port-offset-vertical);
+}
+
+#GC-Graph-Node-Ports-Right {
+    right: var(--gc-graph-port-offset-horizontal);
+}
+
+#GC-Graph-Node-Ports-Bottom {
+    bottom: var(--gc-graph-port-offset-vertical);
+}
+
+#GC-Graph-Node-Ports-Left {
+    left: var(--gc-graph-port-offset-horizontal);
+}

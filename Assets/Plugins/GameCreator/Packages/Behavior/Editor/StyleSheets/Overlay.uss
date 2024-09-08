@@ -1,0 +1,269 @@
+
+#GC-Overlay-Graph-Blackboard-Root,
+#GC-Overlay-Graph-Inspector-Root {
+    background-color: var(--gc-color-bg-default);
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+/** BLACKBOARD **/
+
+#GC-Overlay-Graph-Blackboard-Root {
+    width: 300px;
+    height: 500px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    --gc-graph-blackboard-head-size: 25px;
+    --gc-graph-blackboard-head-radius: 3px;
+    --gc-graph-blackboard-body-parameter-size: 28px;
+    --gc-graph-blackboard-body-parameter-drop: 4px;
+    --gc-graph-blackboard-body-parameter-radius: 14px;
+    --gc-graph-blackboard-body-parameter-button-size: 26px;
+    --gc-graph-blackboard-body-parameter-icon-size: 16px;
+    --gc-graph-blackboard-body-parameter-icon-margin: 4px;
+}
+
+ParametersTool {
+    height: 100%;
+}
+
+#GC-Overlays-Blackboard-Head {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: var(--gc-common-space-smaller);
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#GC-Overlays-Blackboard-Body {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding-left: var(--gc-common-space-smaller);
+    border-color: var(--gc-color-border-default);
+    border-top-width: var(--gc-common-border-width);
+}
+
+#GC-Overlays-Blackboard-Head TextField {
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    height: var(--gc-graph-blackboard-head-size);
+    border-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+    border-top-left-radius: var(--gc-graph-blackboard-head-radius);
+    border-bottom-left-radius: var(--gc-graph-blackboard-head-radius);
+    -unity-text-align: middle-right;
+    overflow: hidden;
+}
+
+#GC-Overlays-Blackboard-Head TextField:hover,
+#GC-Overlays-Blackboard-Head TextField:active {
+    border-color: var(--gc-color-border-hover);
+}
+
+#GC-Overlays-Blackboard-Head TextField:focus {
+    border-color: var(--gc-color-border-active);
+}
+
+#GC-Overlays-Blackboard-Head TextField > #unity-text-input {
+    border-width: 0;
+    border-radius: 0;
+    padding-right: var(--gc-common-space-smaller);
+    -unity-text-align: middle-right;
+}
+
+#GC-Overlays-Blackboard-Head Button {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: var(--gc-graph-blackboard-head-size);
+    height: var(--gc-graph-blackboard-head-size);
+    margin: 0;
+    padding: 0;
+    border-width: var(--gc-common-border-width);
+    border-left-width: 0;
+    border-color: var(--gc-color-border-default);
+    border-radius: 0 var(--gc-graph-blackboard-head-radius) var(--gc-graph-blackboard-head-radius) 0;
+    -unity-font-style: bold;
+}
+
+#GC-Overlays-Blackboard-Body {
+    flex-grow: 1;
+}
+
+#GC-Overlays-Blackboard-Body #unity-content-container {
+    padding-bottom: var(--gc-common-space-smaller);
+}
+
+ParameterTool {
+    position: relative;
+    overflow: visible;
+    margin-top: var(--gc-common-space-smaller);
+    margin-right: var(--gc-common-space-smaller);
+    height: var(--gc-graph-blackboard-body-parameter-size);
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#GC-Overlays-Blackboard-Body-ParameterDrop-Above,
+#GC-Overlays-Blackboard-Body-ParameterDrop-Below {
+    position: absolute;
+    width: 100%;
+    height: var(--gc-graph-blackboard-body-parameter-drop);
+    background-color: var(--gc-color-border-active);
+    display: none;
+}
+
+#GC-Overlays-Blackboard-Body-ParameterDrop-Above {
+    top: -4px;
+}
+
+#GC-Overlays-Blackboard-Body-ParameterDrop-Below {
+    bottom: -4px;
+}
+
+#GC-Overlays-Blackboard-Body-Parameter-Content {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+#GC-Overlays-Blackboard-Body-ParameterDrag,
+#GC-Overlays-Blackboard-Body-ParameterType,
+#GC-Overlays-Blackboard-Body-ParameterDelete {
+    padding: 0;
+    margin: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: var(--gc-graph-blackboard-body-parameter-radius);
+    border-width: var(--gc-common-border-width);
+    border-color: transparent;
+    background-color: transparent;
+    width: var(--gc-graph-blackboard-body-parameter-button-size);
+    height: var(--gc-graph-blackboard-body-parameter-button-size);
+}
+
+#GC-Overlays-Blackboard-Body-ParameterDrag {
+    cursor: move-arrow;
+}
+
+#GC-Overlays-Blackboard-Body-ParameterDrag:hover,
+#GC-Overlays-Blackboard-Body-ParameterType:hover,
+#GC-Overlays-Blackboard-Body-ParameterDelete:hover {
+    background-color: var(--gc-color-list-head-hover);
+}
+
+ParameterTool Button Image {
+    width: var(--gc-graph-blackboard-body-parameter-icon-size);
+    height: var(--gc-graph-blackboard-body-parameter-icon-size);
+    margin: var(--gc-graph-blackboard-body-parameter-icon-margin);
+    padding: 0;
+}
+
+#GC-Overlays-Blackboard-Body-ParameterName  {
+    height: 100%;
+    -unity-text-align: middle-left;
+    padding: 0;
+    margin: 0 var(--gc-common-space-smaller);
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: var(--gc-graph-blackboard-body-parameter-radius);
+    border-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+    background-color: var(--gc-color-list-head-default);
+}
+
+#GC-Overlays-Blackboard-Body-ParameterName:hover {
+    background-color: var(--gc-color-list-head-hover);
+}
+
+#GC-Overlays-Blackboard-Body-ParameterName > #unity-text-input {
+    background-color: transparent;
+    margin: 0;
+    padding: 0 var(--gc-common-space-small);
+    border-radius: 0;
+    border-width: 0;
+}
+
+#GC-Overlays-Blackboard-Body-ParameterName:focus {
+    background-color: var(--gc-color-bg-text);
+    border-color: var(--gc-color-border-active);
+}
+
+/** INSPECTOR **/
+
+#GC-Overlay-Graph-Inspector-Root {
+    width: 350px;
+    height: 500px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#GC-Overlay-Graph-Inspector-Head {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: var(--gc-common-space-smaller);
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#GC-Overlay-Graph-Inspector-Body {
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-color: var(--gc-color-border-default);
+    border-top-width: var(--gc-common-border-width);
+}
+
+#GC-Overlay-Graph-Inspector-Body #unity-content-container {
+    padding: var(--gc-common-space-small);
+}
+
+#GC-Overlay-Graph-Inspector-Head Image {
+    height: var(--gc-graph-node-height-head);
+    width: var(--gc-graph-node-height-head);
+    flex-grow: 0;
+    margin-right: var(--gc-common-space-smaller);
+}
+
+#GC-Overlay-Graph-Inspector-Head Label {
+    height: var(--gc-graph-node-height-head);
+    -unity-text-align: middle-left;
+    flex-grow: 1;
+}
+
+#GC-Overlay-Graph-Inspector-Body-Text {
+    width: 100%;
+    margin-top: 220px;
+    -unity-text-align: middle-center;
+    -unity-font-style: italic;
+    opacity: 0.5;
+}
+
+#GC-Overlay-Graph-Inspector-Body-Transitions {
+    border-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+}
+
+#GC-Overlay-Graph-Inspector-Body-Transitions #unity-content-container {
+    padding: 0;
+}
+
+ConnectionTool {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: var(--gc-list-head-size);
+}
+
+ConnectionTool Image {
+    width: var(--gc-list-head-image-size);
+    height: var(--gc-list-head-image-size);
+    margin-top: var(--gc-list-head-image-margin);
+    margin-right: var(--gc-common-space-smaller);
+    margin-left: var(--gc-common-space-smaller);
+}
+
+ConnectionTool Label {
+    -unity-text-align: middle-left;
+}

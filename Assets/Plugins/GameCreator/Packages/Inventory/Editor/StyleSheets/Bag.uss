@@ -1,0 +1,76 @@
+
+/* RUNTIME CONTENT */
+
+#GC-Inventory-Bag-Content-Item-Root { 
+    margin-top: -1px;
+}
+
+#GC-Inventory-Bag-Content-Item-Head {
+    -unity-text-align: middle-left;
+    height: var(--gc-list-head-size);
+    border-width: var(--gc-common-border-width);
+    background-color: var(--gc-color-list-head-default);
+    border-radius: 0;
+    border-color: var(--gc-color-border-default);
+    padding: 0 var(--gc-common-space-smaller);
+    margin: 0;
+}
+
+#GC-Inventory-Bag-Content-Item-Head:hover {
+    background-color: var(--gc-color-list-head-hover);
+}
+
+#GC-Inventory-Bag-Content-Item-Head:active {
+    background-color: var(--gc-color-list-head-press);
+}
+
+#GC-Inventory-Bag-Content-Item-Body {
+    margin-left: var(--gc-list-body-margins);
+    margin-right: var(--gc-list-body-margins);
+    margin-top: var(--gc-common-border-inverse-width);
+    border-width: var(--gc-common-border-width);
+    border-top-width: 0;
+    border-color: var(--gc-color-border-default);
+    border-bottom-left-radius: var(--gc-common-border-radius);
+    border-bottom-right-radius: var(--gc-common-border-radius);
+}
+
+#GC-Inventory-Bag-Content-Item-Body Label {
+    border-top-width: var(--gc-common-border-width);
+    border-top-color: var(--gc-color-border-element);
+    padding: var(--gc-common-space-smallest) var(--gc-common-space-smaller);
+}
+
+/* RUNTIME EQUIPMENT */
+
+#GC-Inventory-Bag-Runtime-Equipment-Slot {
+    margin-top: var(--gc-common-space-smaller);
+}
+
+#GC-Inventory-Bag-Runtime-Equipment-Slot TextField {
+    border-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+    border-radius: 0;
+    background-color: var(--gc-color-list-head-default);
+    padding: var(--gc-common-space-smallest);
+    padding-left: var(--gc-common-space-smaller);
+    margin: 0;
+    margin-top: var(--gc-common-border-inverse-width);
+}
+
+/* RUNTIME WEALTH */
+
+#GC-Inventory-Bag-Runtime-Wealth {
+    margin-top: var(--gc-common-space-smaller);
+}
+
+#GC-Inventory-Bag-Runtime-Wealth TextField {
+    border-width: var(--gc-common-border-width);
+    border-color: var(--gc-color-border-default);
+    border-radius: 0;
+    background-color: var(--gc-color-list-head-default);
+    padding: var(--gc-common-space-smallest);
+    padding-left: var(--gc-common-space-smaller);
+    margin: 0;
+    margin-top: var(--gc-common-border-inverse-width);
+}
