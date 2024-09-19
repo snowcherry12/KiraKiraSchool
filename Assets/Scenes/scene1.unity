@@ -1789,15 +1789,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.58
+      value: -9.394
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.9710345
+      value: 3.265
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.54
+      value: 11.37
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2232,11 +2232,6 @@ Camera:
 --- !u!4 &1864888798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8921188399385956496, guid: f684cbdb84a5f264ba71fce454f1b858, type: 3}
-  m_PrefabInstance: {fileID: 1980099927}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1864888803 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2747613339988942019, guid: f684cbdb84a5f264ba71fce454f1b858, type: 3}
   m_PrefabInstance: {fileID: 1980099927}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1876850523
@@ -2979,7 +2974,7 @@ MonoBehaviour:
   scrollPos: {x: 137.69131, y: -115.032745}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 492
+  blockViewHeight: 584
   zoom: 0.9100001
   scrollViewRect:
     serializedVersion: 2
@@ -2990,7 +2985,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2043688488}
   selectedCommands:
-  - {fileID: 2043688562}
+  - {fileID: 2043688536}
   variables:
   - {fileID: 2043688558}
   - {fileID: 2043688557}
@@ -3079,9 +3074,9 @@ MonoBehaviour:
   - {fileID: 2043688509}
   - {fileID: 2043688534}
   - {fileID: 2043688536}
+  - {fileID: 2043688537}
   - {fileID: 2043688538}
   - {fileID: 2043688539}
-  - {fileID: 2043688537}
   - {fileID: 2043688508}
   - {fileID: 2043688507}
   - {fileID: 2043688506}
@@ -3819,7 +3814,7 @@ MonoBehaviour:
   indentLevel: 0
   animator:
     animatorRef: {fileID: 0}
-    animatorVal: {fileID: 1864888803}
+    animatorVal: {fileID: 2110642294}
   stateName:
     stringRef: {fileID: 0}
     stringVal: Idle
@@ -3845,7 +3840,7 @@ MonoBehaviour:
   indentLevel: 0
   animator:
     animatorRef: {fileID: 0}
-    animatorVal: {fileID: 1864888803}
+    animatorVal: {fileID: 2110642294}
   stateName:
     stringRef: {fileID: 0}
     stringVal: Run
@@ -3945,7 +3940,7 @@ MonoBehaviour:
   indentLevel: 0
   animator:
     animatorRef: {fileID: 0}
-    animatorVal: {fileID: 1864888803}
+    animatorVal: {fileID: 2110642294}
   stateName:
     stringRef: {fileID: 0}
     stringVal: Idle
@@ -4481,7 +4476,7 @@ MonoBehaviour:
   suppressAllAutoSelections: 0
 --- !u!114 &2043688562
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4502,7 +4497,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688563
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4523,7 +4518,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688564
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4544,7 +4539,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688565
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4565,7 +4560,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688566
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4586,7 +4581,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688567
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4607,7 +4602,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688568
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4628,7 +4623,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688569
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4649,7 +4644,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688570
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4670,7 +4665,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688571
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4691,7 +4686,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688572
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4712,7 +4707,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688573
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4814,7 +4809,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 60
+  itemId: 103
   blockName: Kira View
   description: 
   eventHandler: {fileID: 0}
@@ -4906,7 +4901,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 59
+  itemId: 102
   blockName: Osana View
   description: 
   eventHandler: {fileID: 0}
