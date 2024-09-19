@@ -1935,7 +1935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 726371087}
+  selectedFlowchart: {fileID: 2043688477}
 --- !u!4 &593241805
 Transform:
   m_ObjectHideFlags: 1
@@ -2369,17 +2369,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1247888977727998, guid: b376fcef73a1f7c4dabdb17903073600, type: 3}
   m_PrefabInstance: {fileID: 106880942}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &726371087 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114126805715615206, guid: b376fcef73a1f7c4dabdb17903073600, type: 3}
-  m_PrefabInstance: {fileID: 106880942}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726371086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &726371102
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3697,6 +3686,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 575682333270350977, guid: 34c29c0aca8e4ec42aca5f6565179c55, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: a431836c8560cfb4d9e738816635b99c, type: 2}
     - target: {fileID: 3649930731089131157, guid: 34c29c0aca8e4ec42aca5f6565179c55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3403.168
@@ -4651,6 +4644,22 @@ PrefabInstance:
     - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: orthographic size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409498, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_Name
@@ -5813,7 +5822,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 2043688476}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 2043688480}
   variables: []
   description: 
   stepPause: 0
@@ -5854,7 +5864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  musicClip: {fileID: 8300000, guid: bb3e7938f317e3146bedf0e6d53cb6ec, type: 3}
+  musicClip: {fileID: 8300000, guid: f49b7b65854645b4ca554e961eaaca49, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
