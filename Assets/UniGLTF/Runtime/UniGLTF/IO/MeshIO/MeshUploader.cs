@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.Rendering;
-using VRMShaders;
 
 namespace UniGLTF
 {
@@ -76,7 +75,6 @@ namespace UniGLTF
             }
             else
             {
-                // Debug.LogFormat("empty blendshape: {0}.{1}", mesh.name, blendShape.Name);
                 // add empty blend shape for keep blend shape index
                 mesh.AddBlendShapeFrame(blendShape.Name, FrameWeight,
                     emptyVertices,
@@ -91,7 +89,7 @@ namespace UniGLTF
         public static async Task<MeshWithMaterials> BuildMeshAndUploadAsync(
             IAwaitCaller awaitCaller,
             MeshData data,
-            Func<int?, Material> materialFromIndex)
+            Func<int?, Task<Material>> materialFromIndex)
         {
 
             //Debug.Log(prims.ToJson());
@@ -119,11 +117,17 @@ namespace UniGLTF
             mesh.RecalculateTangents();
             await awaitCaller.NextFrame();
 
+            var materials = new Material[data.MaterialIndices.Count];
+            for (var idx = 0; idx < data.MaterialIndices.Count; ++idx)
+            {
+                materials[idx] = await materialFromIndex(data.MaterialIndices[idx]);
+            }
+
             var result = new MeshWithMaterials
             {
                 Mesh = mesh,
-                Materials = data.MaterialIndices.Select(materialFromIndex).ToArray(),
-                ShouldSetRendererNodeAsBone  = data.ShouldSetRendererNodeAsBone,
+                Materials = materials,
+                ShouldSetRendererNodeAsBone = data.ShouldSetRendererNodeAsBone,
             };
             await awaitCaller.NextFrame();
 

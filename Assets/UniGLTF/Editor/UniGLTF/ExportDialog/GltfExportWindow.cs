@@ -1,9 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using VRMShaders;
 
 namespace UniGLTF
 {
@@ -111,11 +109,12 @@ namespace UniGLTF
             {
                 var data = new ExportingGltfData();
                 using (var exporter = new gltfExporter(data, Settings,
-                    progress: new EditorProgress(),
-                    animationExporter: new EditorAnimationExporter()))
+                   progress: new EditorProgress(),
+                   animationExporter: new EditorAnimationExporter(),
+                   textureSerializer: new EditorTextureSerializer()))
                 {
                     exporter.Prepare(State.ExportRoot);
-                    exporter.Export(new EditorTextureSerializer());
+                    exporter.Export();
                 }
 
                 if (isGlb)

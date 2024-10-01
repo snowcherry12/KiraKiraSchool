@@ -20,9 +20,21 @@ namespace UniGLTF.MeshUtility
             if (Bones != null)
             {
                 // recalc bindposes
-                Mesh.bindposes = Bones.Select(x => x.worldToLocalMatrix * dst.transform.localToWorldMatrix).ToArray();
+                Mesh.bindposes = Bones.Select(x =>
+                {
+                    if (x != null)
+                    {
+                        return x.worldToLocalMatrix * dst.transform.localToWorldMatrix;
+                    }
+                    else
+                    {
+                        // ボーンが削除された
+                        return dst.transform.localToWorldMatrix;
+                    }
+                }
+                    ).ToArray();
 
-                if (dst.GetComponent<SkinnedMeshRenderer>() is SkinnedMeshRenderer dstRenderer)
+                if (dst.TryGetComponent<SkinnedMeshRenderer>(out var dstRenderer))
                 {
                     dstRenderer.sharedMesh = Mesh;
                     dstRenderer.sharedMaterials = Materials;
@@ -36,10 +48,10 @@ namespace UniGLTF.MeshUtility
             }
             else
             {
-                if (dst.GetComponent<MeshFilter>() is MeshFilter dstFilter)
+                if (dst.TryGetComponent<MeshFilter>(out var dstFilter))
                 {
                     dstFilter.sharedMesh = Mesh;
-                    if (dst.gameObject.GetComponent<MeshRenderer>() is MeshRenderer dstRenderer)
+                    if (dst.gameObject.TryGetComponent<MeshRenderer>(out var dstRenderer))
                     {
                         dstRenderer.sharedMaterials = Materials;
                     }

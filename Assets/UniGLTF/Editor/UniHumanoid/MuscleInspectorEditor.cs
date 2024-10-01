@@ -312,14 +312,13 @@ namespace UniHumanoid
         void OnEnable()
         {
             var mi = this.target as MuscleInspector;
-            var animator = mi.GetComponent<Animator>();
-            if (animator != null
+            if (mi.TryGetComponent<Animator>(out var animator)
             && animator.avatar != null
             && animator.avatar.isValid
             && animator.avatar.isHuman
             )
             {
-                Debug.LogFormat("MuscleInspectorEditor.OnEnable");
+                UniGLTF.UniGLTFLogger.Log("MuscleInspectorEditor.OnEnable");
                 m_handler = new HumanPoseHandler(animator.avatar, animator.transform);
 
                 m_TreeView = new BoneTreeView(new TreeViewState(), GetHeaderState(), m_handler);

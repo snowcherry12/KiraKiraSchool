@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using VRMShaders;
 
 namespace UniGLTF
 {
@@ -10,11 +9,11 @@ namespace UniGLTF
     /// </summary>
     public static class BuiltInGltfDefaultMaterialImporter
     {
-        public static MaterialDescriptor CreateParam()
+        public static MaterialDescriptor CreateParam(string materialName = null)
         {
             // FIXME
             return new MaterialDescriptor(
-                "__default__",
+                string.IsNullOrEmpty(materialName) ? "__default__" : materialName,
                 BuiltInGltfPbrMaterialImporter.Shader,
                 default,
                 new Dictionary<string, TextureDescriptor>(),

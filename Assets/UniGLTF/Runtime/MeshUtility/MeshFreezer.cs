@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
-using VRMShaders;
 
 namespace UniGLTF.MeshUtility
 {
@@ -122,13 +120,6 @@ namespace UniGLTF.MeshUtility
             return newBoneWeights;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="src"></param>
-        /// <param name="boneMap">正規化前のボーンから正規化後のボーンを得る</param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
         public static Mesh NormalizeSkinnedMesh(SkinnedMeshRenderer src)
         {
             if (src == null
@@ -140,68 +131,63 @@ namespace UniGLTF.MeshUtility
                 return default;
             }
 
-            var srcMesh = src.sharedMesh;
-            var originalSrcMesh = srcMesh;
-
-            var hasBoneWeight = src.bones != null && src.bones.Length > 0;
-            if (!hasBoneWeight)
+            if (!HasBoneWeight(src))
             {
                 // Before bake, bind no weight bones
-
-                srcMesh = srcMesh.Copy(true);
-                srcMesh.ApplyRotationAndScale(src.transform.localToWorldMatrix, false);
-
-                var bw = new BoneWeight
-                {
-                    boneIndex0 = 0,
-                    boneIndex1 = 0,
-                    boneIndex2 = 0,
-                    boneIndex3 = 0,
-                    weight0 = 1.0f,
-                    weight1 = 0.0f,
-                    weight2 = 0.0f,
-                    weight3 = 0.0f,
-                };
-                srcMesh.boneWeights = Enumerable.Range(0, srcMesh.vertexCount).Select(x => bw).ToArray();
-                src.bones = new[] { src.rootBone ?? src.transform };
-                srcMesh.bindposes = src.bones.Select(x => x.worldToLocalMatrix).ToArray();
-
-                src.sharedMesh = srcMesh;
+                //
+                // blendshape があって bone が無い SkinnedMeshRenderer と思われる。
+                // SkinnedMeshRenderer.transform に対する boneweight を付与する。
+                AssignSingleBoneWeight(src);
             }
 
             // BakeMesh
-            var mesh = srcMesh.Copy(false);
-            mesh.name = srcMesh.name + ".baked";
+            var mesh = new Mesh
+            {
+                name = src.sharedMesh.name + ".baked"
+            };
+            // memo: BakeMesh(mesh, useScale) という第２引数がある
             src.BakeMesh(mesh);
+            BakeBlendShapes(src, mesh);
+            mesh.boneWeights = src.sharedMesh.boneWeights;
 
-            mesh.boneWeights = srcMesh.boneWeights;
-
-            {
-                // apply SkinnedMesh.transform rotation
-                var m = Matrix4x4.TRS(Vector3.zero, src.transform.rotation, Vector3.one);
-                mesh.ApplyMatrix(m);
-            }
-
-            //
-            // BlendShapes
-            //
-            {
-                var m = src.localToWorldMatrix; // include scaling
-                m.SetColumn(3, new Vector4(0, 0, 0, 1)); // no translation
-                CopyBlendShapes(src, srcMesh, mesh, m);
-            }
+            // apply SkinnedMesh.transform rotation
+            var m = Matrix4x4.TRS(Vector3.zero, src.transform.rotation, Vector3.one);
+            mesh.ApplyMatrixAlsoBlendShapes(m);
 
             return mesh;
         }
 
-        private static void CopyBlendShapes(SkinnedMeshRenderer src, Mesh srcMesh, Mesh mesh, Matrix4x4 m)
+        public static bool HasBoneWeight(SkinnedMeshRenderer src)
         {
-            var blendShapeValues = new Dictionary<int, float>();
-            for (int i = 0; i < srcMesh.blendShapeCount; i++)
+            return src.bones != null && src.bones.Length > 0;
+        }
+
+        public static void AssignSingleBoneWeight(SkinnedMeshRenderer src)
+        {
+            var srcMesh = src.sharedMesh.Copy(true);
+            srcMesh.ApplyRotationAndScale(src.transform.localToWorldMatrix, false);
+
+            var bw = new BoneWeight
             {
-                var val = src.GetBlendShapeWeight(i);
-                if (val > 0) blendShapeValues.Add(i, val);
-            }
+                boneIndex0 = 0,
+                boneIndex1 = 0,
+                boneIndex2 = 0,
+                boneIndex3 = 0,
+                weight0 = 1.0f,
+                weight1 = 0.0f,
+                weight2 = 0.0f,
+                weight3 = 0.0f,
+            };
+            srcMesh.boneWeights = Enumerable.Range(0, srcMesh.vertexCount).Select(x => bw).ToArray();
+            src.bones = new[] { src.rootBone ?? src.transform };
+            srcMesh.bindposes = src.bones.Select(x => x.worldToLocalMatrix).ToArray();
+
+            src.sharedMesh = srcMesh;
+        }
+
+        private static void BakeBlendShapes(SkinnedMeshRenderer src, Mesh mesh)
+        {
+            var srcMesh = src.sharedMesh;
 
             // clear blendShape always
             var backcup = new List<float>();
@@ -251,35 +237,19 @@ namespace UniGLTF.MeshUtility
                     throw new Exception("different vertex count");
                 }
 
-                var value = blendShapeValues.ContainsKey(i) ? blendShapeValues[i] : 0;
-                src.SetBlendShapeWeight(i, value);
+                src.SetBlendShapeWeight(i, backcup[i]);
 
                 Vector3[] vertices = blendShapeMesh.vertices;
 
                 for (int j = 0; j < vertices.Length; ++j)
                 {
-                    if (originalBlendShapePositions[j] == Vector3.zero)
-                    {
-                        vertices[j] = Vector3.zero;
-                    }
-                    else
-                    {
-                        vertices[j] = m.MultiplyPoint(vertices[j] - meshVertices[j]);
-                    }
+                    vertices[j] = vertices[j] - meshVertices[j];
                 }
 
                 Vector3[] normals = blendShapeMesh.normals;
                 for (int j = 0; j < normals.Length; ++j)
                 {
-                    if (originalBlendShapeNormals[j] == Vector3.zero)
-                    {
-                        normals[j] = Vector3.zero;
-
-                    }
-                    else
-                    {
-                        normals[j] = m.MultiplyVector(normals[j].normalized) - meshNormals[j];
-                    }
+                    normals[j] = normals[j].normalized - meshNormals[j].normalized;
                 }
 
                 Vector3[] tangents = blendShapeMesh.tangents.Select(x => (Vector3)x).ToArray();
@@ -287,14 +257,7 @@ namespace UniGLTF.MeshUtility
                 {
                     for (int j = 0; j < tangents.Length; ++j)
                     {
-                        if (originalBlendShapeTangents[j] == Vector3.zero)
-                        {
-                            tangents[j] = Vector3.zero;
-                        }
-                        else
-                        {
-                            tangents[j] = m.MultiplyVector(tangents[j]) - meshTangents[j];
-                        }
+                        tangents[j] = tangents[j].normalized - meshTangents[j].normalized;
                     }
                 }
 
@@ -338,10 +301,14 @@ namespace UniGLTF.MeshUtility
                 return default;
             }
 
-            var srcFilter = srcRenderer.GetComponent<MeshFilter>();
-            if (srcFilter == null
-                || srcFilter.sharedMesh == null
-                || srcFilter.sharedMesh.vertexCount == 0)
+            if (srcRenderer.TryGetComponent<MeshFilter>(out var srcFilter))
+            {
+                if (srcFilter.sharedMesh == null || srcFilter.sharedMesh.vertexCount == 0)
+                {
+                    return default;
+                }
+            }
+            else
             {
                 return default;
             }

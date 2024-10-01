@@ -17,8 +17,7 @@ namespace UniHumanoid
         {
             m_target = (BoneMapping)target;
 
-            var animator = m_target.GetComponent<Animator>();
-            if (animator != null)
+            if (m_target.TryGetComponent<Animator>(out var animator))
             {
                 m_bones = EachBoneDefs.Select(x => new Bone(
 animator.GetBoneTransform(x.Head), animator.GetBoneTransform(x.Tail)))
@@ -117,7 +116,7 @@ animator.GetBoneTransform(x.Head), animator.GetBoneTransform(x.Tail)))
                             AssetDatabase.CreateAsset(description, assetPath); // overwrite
                             AssetDatabase.AddObjectToAsset(avatar, assetPath);
 
-                            Debug.LogFormat("Create avatar {0}", path);
+                            UniGLTF.UniGLTFLogger.Log($"Create avatar {path}");
                             AssetDatabase.ImportAsset(assetPath);
                             Selection.activeObject = avatar;
                         }

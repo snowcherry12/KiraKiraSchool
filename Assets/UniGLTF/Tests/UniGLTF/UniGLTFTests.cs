@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UniJSON;
 using UnityEngine;
-using VRMShaders;
 
 namespace UniGLTF
 {
@@ -101,18 +100,17 @@ namespace UniGLTF
 
             // export
             var data = new ExportingGltfData();
+            using var exporter = new gltfExporter(
+                data,
+                new GltfExportSettings(),
+                materialExporter: new BuiltInGltfMaterialExporter());
+            exporter.Prepare(go);
+            exporter.Export();
 
-            string json = null;
-            using (var exporter = new gltfExporter(data, new GltfExportSettings()))
-            {
-                exporter.Prepare(go);
-                exporter.Export(new EditorTextureSerializer());
+            // remove empty buffer
+            data.Gltf.buffers.Clear();
 
-                // remove empty buffer
-                data.Gltf.buffers.Clear();
-
-                json = data.Gltf.ToJson();
-            }
+            var json = data.Gltf.ToJson();
 
             // parse
             using (var parsed = GltfData.CreateFromExportForTest(data))
@@ -354,12 +352,7 @@ namespace UniGLTF
         [Test]
         public void GlTFToJsonTest()
         {
-            var data = new ExportingGltfData();
-            using (var exporter = new gltfExporter(data, new GltfExportSettings()))
-            {
-                exporter.Prepare(CreateSimpleScene());
-                exporter.Export(new EditorTextureSerializer());
-            }
+            var data = TestGltf.ExportAsBuiltInRP(CreateSimpleScene());
 
             var expected = data.Gltf.ToJson().ParseAsJson();
             expected.AddKey(Utf8String.From("meshes"));
@@ -566,7 +559,7 @@ namespace UniGLTF
             {
                 var shader = Shader.Find("Unlit/Color");
 
-                var cubeA = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                var cubeA = TestGltf.CreatePrimitiveAsBuiltInRP(PrimitiveType.Cube);
                 {
                     cubeA.transform.SetParent(go.transform);
                     var material = new Material(shader);
@@ -587,16 +580,8 @@ namespace UniGLTF
                 }
 
                 // export
-                var data = new ExportingGltfData();
+                var data = TestGltf.ExportAsBuiltInRP(go);
                 var gltf = data.Gltf;
-                var json = default(string);
-                using (var exporter = new gltfExporter(data, new GltfExportSettings()))
-                {
-                    exporter.Prepare(go);
-                    exporter.Export(new EditorTextureSerializer());
-
-                    json = gltf.ToJson();
-                }
 
                 Assert.AreEqual(2, gltf.meshes.Count);
 
@@ -659,22 +644,14 @@ namespace UniGLTF
             try
             {
                 {
-                    var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    var cube = TestGltf.CreatePrimitiveAsBuiltInRP(PrimitiveType.Cube);
                     cube.transform.SetParent(go.transform);
                     UnityEngine.Object.DestroyImmediate(cube.GetComponent<MeshRenderer>());
                 }
 
                 // export
-                var data = new ExportingGltfData();
+                var data = TestGltf.ExportAsBuiltInRP(go);
                 var gltf = data.Gltf;
-                string json;
-                using (var exporter = new gltfExporter(data, new GltfExportSettings()))
-                {
-                    exporter.Prepare(go);
-                    exporter.Export(new EditorTextureSerializer());
-
-                    json = gltf.ToJson();
-                }
 
                 Assert.AreEqual(0, gltf.meshes.Count);
                 Assert.AreEqual(1, gltf.nodes.Count);
@@ -683,7 +660,7 @@ namespace UniGLTF
                 // import
                 using (var parsed = GltfData.CreateFromExportForTest(data))
                 {
-                    using (var context = new ImporterContext(parsed))
+                    using (var context = new ImporterContext(parsed, materialGenerator: new BuiltInGltfMaterialDescriptorGenerator()))
                     using (var loaded = context.Load())
                     {
                         Assert.AreEqual(1, loaded.transform.GetChildren().Count());
@@ -709,14 +686,14 @@ namespace UniGLTF
             try
             {
                 {
-                    var child = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    var child = TestGltf.CreatePrimitiveAsBuiltInRP(PrimitiveType.Cube);
                     child.transform.SetParent(root.transform);
                     // remove MeshFilter
                     Component.DestroyImmediate(child.GetComponent<MeshFilter>());
                 }
 
                 {
-                    var child = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    var child = TestGltf.CreatePrimitiveAsBuiltInRP(PrimitiveType.Cube);
                     child.transform.SetParent(root.transform);
                     // set null
                     child.GetComponent<MeshFilter>().sharedMesh = null;
@@ -728,16 +705,9 @@ namespace UniGLTF
                 Assert.True(vs.All(x => x.CanExport));
 
                 // export
-                var data = new ExportingGltfData();
+                var data = TestGltf.ExportAsBuiltInRP(root);
                 var gltf = data.Gltf;
-                string json;
-                using (var exporter = new gltfExporter(data, new GltfExportSettings()))
-                {
-                    exporter.Prepare(root);
-                    exporter.Export(new EditorTextureSerializer());
-
-                    json = gltf.ToJson();
-                }
+                var json = gltf.ToJson();
 
                 Assert.AreEqual(0, gltf.meshes.Count);
                 Assert.AreEqual(2, gltf.nodes.Count);
@@ -763,6 +733,42 @@ namespace UniGLTF
                         }
                     }
                 }
+            }
+            finally
+            {
+                GameObject.DestroyImmediate(root);
+                ScriptableObject.DestroyImmediate(validator);
+            }
+        }
+
+        //
+        // https://github.com/vrm-c/UniVRM/pull/2413
+        //
+        [Test]
+        public void ExportingMeshByteLengthTest()
+        {
+            var validator = ScriptableObject.CreateInstance<MeshExportValidator>();
+            var root = new GameObject("root");
+            try
+            {
+                {
+                    var child = TestGltf.CreatePrimitiveAsBuiltInRP(PrimitiveType.Cube);
+                    child.transform.SetParent(root.transform);
+                }
+                // export
+                var data = TestGltf.ExportAsBuiltInRP(root);
+                var gltf = data.Gltf;
+                // cube
+                var expected =  
+                // pos
+                (4*3)*24
+                // normal
+                +(4*3)*24
+                // uv
+                +(4*2)*24
+                // indices
+                 + 4 * 36;
+                Assert.AreEqual(expected, gltf.buffers[0].byteLength);
             }
             finally
             {

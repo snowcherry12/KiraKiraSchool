@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEditor;
-using UniGLTF;
 using System.Linq;
-using VRMShaders;
 
 namespace UniGLTF
 {
@@ -59,7 +57,8 @@ namespace UniGLTF
             }
             else
             {
-                throw new Exception($"{key} is not converted.");
+                // throw new Exception($"{key} is not converted.");
+                Debug.LogWarning($"{key} is not converted.");
             }
         }
 

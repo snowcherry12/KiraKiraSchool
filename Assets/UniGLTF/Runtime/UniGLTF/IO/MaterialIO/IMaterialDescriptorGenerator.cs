@@ -1,6 +1,4 @@
-﻿using VRMShaders;
-
-namespace UniGLTF
+﻿namespace UniGLTF
 {
     /// <summary>
     /// 指定の index の glTFMaterial から Import できる Material の生成情報を生成する。
@@ -16,6 +14,6 @@ namespace UniGLTF
         /// <summary>
         /// Generate the MaterialDescriptor for the non-specified glTF material.
         /// </summary>
-        MaterialDescriptor GetGltfDefault();
+        MaterialDescriptor GetGltfDefault(string materialName = null);
     }
 }

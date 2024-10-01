@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using UniGLTF.MeshUtility;
 using UnityEngine;
-using VRMShaders;
-
 
 namespace UniGLTF
 {
@@ -47,11 +45,6 @@ namespace UniGLTF
             private set;
         }
 
-        protected virtual IMaterialExporter CreateMaterialExporter()
-        {
-            return new BuiltInGltfMaterialExporter();
-        }
-
         protected ITextureExporter TextureExporter => _textureExporter;
         private TextureExporter _textureExporter;
 
@@ -68,10 +61,18 @@ namespace UniGLTF
             m_progress.Report(new ExportProgress("gltfExporter", msg, progress));
         }
 
-        IAnimationExporter m_animationExporter;
+        private readonly IAnimationExporter m_animationExporter;
+        private readonly IMaterialExporter m_materialExporter;
+        private readonly ITextureSerializer m_textureSerializer;
 
-        public gltfExporter(ExportingGltfData data, GltfExportSettings settings, IProgress<ExportProgress> progress = null,
-        IAnimationExporter animationExporter = null)
+        public gltfExporter(
+            ExportingGltfData data,
+            GltfExportSettings settings,
+            IProgress<ExportProgress> progress = null,
+            IAnimationExporter animationExporter = null,
+            IMaterialExporter materialExporter = null,
+            ITextureSerializer textureSerializer = null
+        )
         {
             _data = data;
 
@@ -89,6 +90,8 @@ namespace UniGLTF
             }
 
             m_animationExporter = animationExporter;
+            m_materialExporter = materialExporter ?? MaterialExporterUtility.GetValidGltfMaterialExporter();
+            m_textureSerializer = textureSerializer ?? new RuntimeTextureSerializer();
         }
 
         GameObject m_tmpParent = null;
@@ -111,7 +114,7 @@ namespace UniGLTF
                 Copy = m_tmpParent;
             }
 
-            if (Copy.transform.GetComponent<Renderer>() != null)
+            if (Copy.transform.TryGetComponent<Renderer>(out var r))
             {
                 // should throw ?
                 Debug.LogError("root mesh is not exported");
@@ -163,12 +166,9 @@ namespace UniGLTF
 
             if (x.gameObject.activeInHierarchy)
             {
-                var meshRenderer = x.GetComponent<MeshRenderer>();
-
-                if (meshRenderer != null && meshRenderer.enabled)
+                if (x.TryGetComponent<MeshRenderer>(out var meshRenderer) && meshRenderer.enabled)
                 {
-                    var meshFilter = x.GetComponent<MeshFilter>();
-                    if (meshFilter != null)
+                    if (x.TryGetComponent<MeshFilter>(out var meshFilter))
                     {
                         var mesh = meshFilter.sharedMesh;
                         var materials = meshRenderer.sharedMaterials;
@@ -194,8 +194,7 @@ namespace UniGLTF
                     }
                 }
 
-                var skinnedMeshRenderer = x.GetComponent<SkinnedMeshRenderer>();
-                if (skinnedMeshRenderer != null && skinnedMeshRenderer.enabled)
+                if (x.TryGetComponent<SkinnedMeshRenderer>(out var skinnedMeshRenderer) && skinnedMeshRenderer.enabled)
                 {
                     var mesh = skinnedMeshRenderer.sharedMesh;
                     var materials = skinnedMeshRenderer.sharedMaterials;
@@ -230,7 +229,7 @@ namespace UniGLTF
             // do nothing
         }
 
-        public virtual void Export(ITextureSerializer textureSerializer)
+        public virtual void Export()
         {
             if (m_settings.FreezeMesh)
             {
@@ -255,10 +254,9 @@ namespace UniGLTF
             ReportProgress("Materials and Textures", 0.2f);
             Materials = uniqueUnityMeshes.GetUniqueMaterials().ToList();
 
-            _textureExporter = new TextureExporter(textureSerializer);
+            _textureExporter = new TextureExporter(m_textureSerializer);
 
-            var materialExporter = CreateMaterialExporter();
-            _gltf.materials = Materials.Select(x => materialExporter.ExportMaterial(x, TextureExporter, m_settings)).ToList();
+            _gltf.materials = Materials.Select(x => m_materialExporter.ExportMaterial(x, TextureExporter, m_settings)).ToList();
             #endregion
 
             #region Meshes
@@ -317,7 +315,19 @@ namespace UniGLTF
                         var skin = new glTFSkin
                         {
                             inverseBindMatrices = accessor,
-                            joints = uniqueBones.Select(y => Nodes.IndexOf(y)).ToArray(),
+                            joints = uniqueBones.Select(y =>
+                            {
+                                var index = Nodes.IndexOf(y);
+                                if (index < 0)
+                                {
+                                    // bones の先頭を使う
+                                    return 0;
+                                }
+                                else
+                                {
+                                    return index;
+                                }
+                            }).ToArray(),
                             skeleton = Nodes.IndexOf(smr.rootBone),
                         };
                         var skinIndex = _gltf.skins.Count;
@@ -340,14 +350,14 @@ namespace UniGLTF
                 m_animationExporter.Export(_data, Copy, Nodes);
             }
 
-            ExportExtensions(textureSerializer);
+            ExportExtensions(m_textureSerializer);
 
             // Extension で Texture が増える場合があるので最後に呼ぶ
             var exported = _textureExporter.Export();
             for (var exportedTextureIdx = 0; exportedTextureIdx < exported.Count; ++exportedTextureIdx)
             {
                 var (unityTexture, colorSpace) = exported[exportedTextureIdx];
-                GltfTextureExporter.PushGltfTexture(_data, unityTexture, colorSpace, textureSerializer);
+                GltfTextureExporter.PushGltfTexture(_data, unityTexture, colorSpace, m_textureSerializer);
             }
 
             FixName(_gltf);
