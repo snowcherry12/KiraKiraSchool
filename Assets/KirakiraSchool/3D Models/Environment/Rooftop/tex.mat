@@ -34,7 +34,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _DirectLightMultiplier
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -131,8 +131,8 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
-    - _CelShadeMidPoint: -0.5
-    - _CelShadeSoftness: 0.05
+    - _CelShadeMidPoint: 0.4
+    - _CelShadeSoftness: 0.841
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -158,21 +158,21 @@ Material:
     - _M_EditMode: 1
     - _M_SrcBlend: 1
     - _M_ZWrite: 1
-    - _MainLightIgnoreCelShade: 0
+    - _MainLightIgnoreCelShade: 0.461
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionRemapEnd: 1
     - _OcclusionRemapStart: 0
     - _OcclusionStrength: 1
     - _OutlineLightingMix: 1
-    - _OutlineWidth: 0
+    - _OutlineWidth: 4
     - _OutlineWidthMode: 0
-    - _OutlineZOffset: 0.0001
+    - _OutlineZOffset: 0
     - _OutlineZOffsetMaskRemapEnd: 1
     - _OutlineZOffsetMaskRemapStart: 0
     - _Parallax: 0.02
     - _QueueOffset: 0
-    - _ReceiveShadowMappingAmount: 0.65
+    - _ReceiveShadowMappingAmount: 0.614
     - _ReceiveShadowMappingPosOffset: 0
     - _ReceiveShadows: 1
     - _RenderQueueOffset: 0
@@ -209,6 +209,6 @@ Material:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShadeColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowMapColor: {r: 1, g: 0.825, b: 0.78, a: 1}
+    - _ShadowMapColor: {r: 0.6745283, g: 0.8789276, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
