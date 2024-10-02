@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da02e16b3904643aea8dccd04eeec0c, type: 3}
+  m_Name: Board_Bestiary
+  m_EditorClassIdentifier: 
+  m_SaveUniqueID:
+    m_Save:
+      m_Save: 0
+    m_UniqueID:
+      m_SerializedID:
+        m_String: e563c7f5-8cd8-431d-a500-d7b66176c1d0
+  m_IndexList:
+    rid: 4340017066418373496
+  references:
+    version: 2
+    RefIds:
+    - rid: 4340017066418373496
+      type: {class: IndexList, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Source:
+        - rid: 4340017066418373497
+        - rid: 4340017066418373505
+        m_TypeID:
+          m_String: quest
+    - rid: 4340017066418373497
+      type: {class: IndexVariable, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Value:
+          rid: 4340017066418373504
+    - rid: 4340017066418373504
+      type: {class: ValueQuest, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Value: {fileID: 11400000, guid: 094edbbe203c145848804e7da0473814, type: 2}
+    - rid: 4340017066418373505
+      type: {class: IndexVariable, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Value:
+          rid: 4340017066418373506
+    - rid: 4340017066418373506
+      type: {class: ValueQuest, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Value: {fileID: 11400000, guid: 21ebabdc11c2d4def920c41dddc2a5a3, type: 2}
