@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 0781c64b7f2a1604ea6aa7e252080372, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _MTOON_OUTLINE_WORLD
   m_InvalidKeywords:
   - SPECULAR_ON
   - _TOON
@@ -155,18 +156,18 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineLightingMix: 1
     - _OutlineWidth: 0
-    - _OutlineWidthMode: 0
+    - _OutlineWidthMode: 1
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RenderQueueOffset: 0
     - _Revision: 2
-    - _RimFresnelPower: 5
-    - _RimLift: 0
+    - _RimFresnelPower: 22
+    - _RimLift: 0.124
     - _RimLightingMix: 1
-    - _ShadingShiftFactor: 1
+    - _ShadingShiftFactor: 0.01
     - _ShadingShiftTexScale: 1
-    - _ShadingToonyFactor: 0.95
+    - _ShadingToonyFactor: 0.5
     - _ShadowLum: 1.5
     - _Shininess: 20
     - _Smoothness: 0.4472136
@@ -188,14 +189,14 @@ Material:
     m_Colors:
     - _Ambient: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.033018887, g: 0, b: 0, a: 1}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}
     - _MatcapColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadeColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 0.6132076, g: 0.41941082, b: 0.48073894, a: 1}
+    - _ShadeColor: {r: 0.3773585, g: 0.06051977, b: 0.06051977, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular: {r: 0.6, g: 0.6, b: 0.6, a: 0}
     - _ToonTone: {r: 1, g: 0.5, b: 0.5, a: 0}
