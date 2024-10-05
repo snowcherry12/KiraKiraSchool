@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09adff397b704c4985383dd1017864ba, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  m_Actant:
+    m_Name:
+      m_Property:
+        rid: 4340017021666459818
+    m_Description:
+      m_Property:
+        rid: 4340017021666459819
+  m_Expressions:
+    m_Expressions:
+    - rid: 4340017021666459820
+  m_Typewriter:
+    m_UseTypewriter: 0
+    m_Frequency: 20
+    m_Gibberish:
+      m_Property:
+        rid: 4340017021666459832
+    m_Pitch: {x: 0.9, y: 1.1}
+  m_OverrideSpeechSkin: {fileID: 0}
+  m_Portrait: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 4340017021666459818
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Player
+    - rid: 4340017021666459819
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 
+    - rid: 4340017021666459820
+      type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Id:
+          m_String: default
+        m_Sprite:
+          m_Property:
+            rid: 4340017021666459822
+        m_InstructionsOnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_InstructionsOnEnd:
+          m_Instructions:
+            m_Instructions: []
+        m_OverrideSpeechSkin: {fileID: 0}
+    - rid: 4340017021666459822
+      type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Sprite: {fileID: 21300000, guid: 815444dca9b0c4775b7796f11cba8afe, type: 3}
+    - rid: 4340017021666459832
+      type: {class: GetAudioGibberishDefault, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}

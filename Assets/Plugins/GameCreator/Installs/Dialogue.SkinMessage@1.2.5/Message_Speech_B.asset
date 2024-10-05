@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c0bcbb73dd49b2bf6908a16ba9962c, type: 3}
+  m_Name: Message_Speech_B
+  m_EditorClassIdentifier: 
+  m_Value: {fileID: 7763762668613323443, guid: 48ea8b5c14cd24d3ca6b44b3b6b1f6bc, type: 3}
+  m_Controller: {fileID: 7120084215085314215}
+  m_When: 1
+  m_Idle: {fileID: 7400000, guid: bacfd48e546e448a5aea188b0128ccbd, type: 2}
+  m_Open: {fileID: 7400000, guid: 646f1125b9ef34504b5999433e03c010, type: 2}
+  m_Start: {fileID: 0}
+  m_Finish: {fileID: 0}
+  m_Log: {fileID: 7763762668613323443, guid: d8c482e20f72b42e79eb489c909b521f, type: 3}
+--- !u!221 &7120084215085314215
+AnimatorOverrideController:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Speech
+  m_Controller: {fileID: 9100000, guid: 72b8dc4d21b0d440b8c859f9c4c08da3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: cfe5b27e496374d03bd74d2451d8d6a8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bacfd48e546e448a5aea188b0128ccbd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a95c04bae65734e25b169482a8f54d68, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 646f1125b9ef34504b5999433e03c010, type: 2}

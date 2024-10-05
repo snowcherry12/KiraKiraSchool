@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9c8bb75ba540b7b4099c9402ae94b3, type: 3}
+  m_Name: Default_Dialogue
+  m_EditorClassIdentifier: 
+  m_Value: {fileID: 6803370199602019877, guid: f6b46732fb3254712939a4d0403240ac, type: 3}
+  m_Controller: {fileID: 8305944992580982055}
+  m_Idle: {fileID: 7400000, guid: d8a60360427274969b89771db240caae, type: 2}
+  m_Open: {fileID: 7400000, guid: 0e5941541182444d79bbab2c1a3b327e, type: 2}
+  m_Close: {fileID: 7400000, guid: 64f83a9cad5d64767888e0f39780f315, type: 2}
+  m_Start: {fileID: 0}
+  m_Finish: {fileID: 0}
+  m_Select: {fileID: 0}
+  m_Submit: {fileID: 0}
+  m_ValuesChoices:
+    m_HideUnavailable: 0
+    m_HideVisited: 0
+    m_SkipChoice: 0
+    m_ShuffleChoices: 0
+    m_TimedChoice:
+      m_TimedChoice: 0
+      m_Duration:
+        m_Property:
+          rid: 6655074097725702237
+      m_Timeout: 0
+    m_SingleChoice: 0
+  m_ValuesRandom:
+    m_AllowRepeat: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 6655074097725702237
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 10
+--- !u!221 &8305944992580982055
+AnimatorOverrideController:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dialogue
+  m_Controller: {fileID: 9100000, guid: 186639f32ff8f4ed4a5c988c51b2e27f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 04db89110410446148e4b10423def212, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d8a60360427274969b89771db240caae, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ed9d550d847544db7b5c6e4ed6d72b1b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0e5941541182444d79bbab2c1a3b327e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 33604b3cba8d84068990a7c602baf801, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 64f83a9cad5d64767888e0f39780f315, type: 2}
