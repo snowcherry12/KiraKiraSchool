@@ -816,12 +816,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787667187}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99853253, z: -0, w: -0.05415682}
-  m_LocalPosition: {x: 0.11, y: 1.13, z: 1.71}
-  m_LocalScale: {x: 1.4966325, y: 1.4966326, z: 1.4966323}
+  m_LocalRotation: {x: -0, y: 0.92758673, z: -0, w: -0.37360784}
+  m_LocalPosition: {x: 0.97418725, y: 3.1077769, z: 7.864832}
+  m_LocalScale: {x: 3.599999, y: 3.6, z: 3.599999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2110642295}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 186.209, z: 0}
 --- !u!114 &787667189
 MonoBehaviour:
@@ -846,7 +846,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2148,7 +2148,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2472,6 +2472,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.066301264
       objectReference: {fileID: 0}
+    - target: {fileID: 1335704816382835712, guid: f684cbdb84a5f264ba71fce454f1b858, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: d635a497ee4627740a1c9913181582ee, type: 2}
     - target: {fileID: 2747613339988942019, guid: f684cbdb84a5f264ba71fce454f1b858, type: 3}
       propertyPath: m_Controller
       value: 
@@ -2916,7 +2920,6 @@ GameObject:
   - component: {fileID: 2043688574}
   - component: {fileID: 2043688562}
   - component: {fileID: 2043688583}
-  - component: {fileID: 2043688582}
   - component: {fileID: 2043688586}
   - component: {fileID: 2043688585}
   - component: {fileID: 2043688584}
@@ -2946,10 +2949,18 @@ GameObject:
   - component: {fileID: 2043688603}
   - component: {fileID: 2043688602}
   - component: {fileID: 2043688601}
-  - component: {fileID: 2043688600}
   - component: {fileID: 2043688599}
   - component: {fileID: 2043688598}
   - component: {fileID: 2043688597}
+  - component: {fileID: 2043688626}
+  - component: {fileID: 2043688625}
+  - component: {fileID: 2043688623}
+  - component: {fileID: 2043688622}
+  - component: {fileID: 2043688621}
+  - component: {fileID: 2043688620}
+  - component: {fileID: 2043688619}
+  - component: {fileID: 2043688618}
+  - component: {fileID: 2043688617}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2984,7 +2995,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2043688488}
   selectedCommands:
-  - {fileID: 2043688597}
+  - {fileID: 2043688617}
   variables:
   - {fileID: 2043688558}
   - {fileID: 2043688557}
@@ -3069,7 +3080,6 @@ MonoBehaviour:
   - {fileID: 2043688540}
   - {fileID: 2043688583}
   - {fileID: 2043688486}
-  - {fileID: 2043688582}
   - {fileID: 2043688531}
   - {fileID: 2043688509}
   - {fileID: 2043688534}
@@ -3108,10 +3118,18 @@ MonoBehaviour:
   - {fileID: 2043688603}
   - {fileID: 2043688602}
   - {fileID: 2043688601}
-  - {fileID: 2043688600}
+  - {fileID: 2043688623}
+  - {fileID: 2043688622}
+  - {fileID: 2043688621}
+  - {fileID: 2043688620}
+  - {fileID: 2043688619}
   - {fileID: 2043688599}
   - {fileID: 2043688598}
   - {fileID: 2043688597}
+  - {fileID: 2043688626}
+  - {fileID: 2043688625}
+  - {fileID: 2043688618}
+  - {fileID: 2043688617}
   suppressAllAutoSelections: 0
 --- !u!114 &2043688502
 MonoBehaviour:
@@ -3158,7 +3176,7 @@ MonoBehaviour:
   description: 
   character: {fileID: 411639304}
   portrait: {fileID: 21300000, guid: 5d09d50153bccd14daa2da49b6b7ef92, type: 3}
-  voiceOverClip: {fileID: 8300000, guid: 012c22d68161c7d4ab01712eaf83a28b, type: 3}
+  voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
   extendPrevious: 0
@@ -3323,7 +3341,7 @@ MonoBehaviour:
     transformVal: {fileID: 0}
   _toPosition:
     vector3Ref: {fileID: 0}
-    vector3Val: {x: 0, y: 0, z: 5}
+    vector3Val: {x: -1.64, y: 0, z: 5}
   isLocal: 0
   toTransformOLD: {fileID: 0}
   toPositionOLD: {x: 0, y: 0, z: 0}
@@ -4026,23 +4044,6 @@ MonoBehaviour:
   - {fileID: 2043688579}
   - {fileID: 2043688578}
   suppressAllAutoSelections: 0
---- !u!114 &2043688582
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043688474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4015e84616cc45cfb498561373899d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 105
-  indentLevel: 0
-  volume: 0.45
-  fadeDuration: 1
-  waitUntilFinished: 1
 --- !u!114 &2043688583
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4144,7 +4145,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688587
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4165,7 +4166,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688588
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4192,7 +4193,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688589
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4219,7 +4220,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688590
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4246,7 +4247,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688591
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4267,7 +4268,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688592
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4294,7 +4295,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688593
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4321,7 +4322,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688594
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4348,7 +4349,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688595
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4375,7 +4376,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688596
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4402,7 +4403,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688597
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4414,7 +4415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 138
   indentLevel: 0
-  storyText: '"Well, speaking of home...."'
+  storyText: '"We have arrived...."'
   description: 
   character: {fileID: 2114307781}
   portrait: {fileID: 21300000, guid: 033f493265f73834da223c1af74f69e7, type: 3}
@@ -4429,7 +4430,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688598
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4456,7 +4457,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688599
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4481,36 +4482,9 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &2043688600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043688474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 135
-  indentLevel: 0
-  storyText: '"I want to go home..."'
-  description: 
-  character: {fileID: 2114307781}
-  portrait: {fileID: 21300000, guid: 033f493265f73834da223c1af74f69e7, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &2043688601
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4537,7 +4511,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688602
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4564,7 +4538,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688603
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4591,7 +4565,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688604
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4618,7 +4592,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688605
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4645,7 +4619,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688606
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4672,7 +4646,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688607
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4693,7 +4667,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688608
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4714,7 +4688,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688609
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4741,7 +4715,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688610
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4768,7 +4742,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688611
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4789,7 +4763,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688612
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4816,7 +4790,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688613
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4837,7 +4811,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688614
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4864,7 +4838,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2043688615
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4885,7 +4859,7 @@ MonoBehaviour:
   callMode: 2
 --- !u!114 &2043688616
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4904,6 +4878,241 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 2
+--- !u!114 &2043688617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 148
+  indentLevel: 0
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: scene8
+  loadingImage: {fileID: 2800000, guid: 30a33dc033ef4164cae92ef8783bcebd, type: 3}
+  sceneNameOLD: 
+--- !u!114 &2043688618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 147
+  indentLevel: 0
+  storyText: '"Okay, see you tomorrow! Osana-kun!"'
+  description: 
+  character: {fileID: 411639304}
+  portrait: {fileID: 21300000, guid: a0b241a6959b54c439d3a97fe8e36a32, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2043688619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 146
+  indentLevel: 0
+  storyText: (Is Osana-kun smiling..?)
+  description: 
+  character: {fileID: 411639304}
+  portrait: {fileID: 21300000, guid: a0b241a6959b54c439d3a97fe8e36a32, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2043688620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 145
+  indentLevel: 0
+  storyText: '"I am glad...."'
+  description: 
+  character: {fileID: 2114307781}
+  portrait: {fileID: 21300000, guid: 033f493265f73834da223c1af74f69e7, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2043688621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 144
+  indentLevel: 0
+  storyText: '"Of course I am happy! I met new friends and it''s so fun!"'
+  description: 
+  character: {fileID: 411639304}
+  portrait: {fileID: 21300000, guid: 62658a67f89868243b7f93568c6e5d36, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2043688622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 143
+  indentLevel: 0
+  storyText: '"Anyway, Kira-chan. Are you happy?"'
+  description: 
+  character: {fileID: 2114307781}
+  portrait: {fileID: 21300000, guid: 033f493265f73834da223c1af74f69e7, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2043688623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 142
+  indentLevel: 0
+  storyText: '"Eh...?"'
+  description: 
+  character: {fileID: 411639304}
+  portrait: {fileID: 21300000, guid: a0b241a6959b54c439d3a97fe8e36a32, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2043688625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 140
+  indentLevel: 0
+  storyText: '"You should go home, it''s already getting dark..."'
+  description: 
+  character: {fileID: 2114307781}
+  portrait: {fileID: 21300000, guid: 033f493265f73834da223c1af74f69e7, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2043688626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043688474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 139
+  indentLevel: 0
+  storyText: '"So fast!"'
+  description: 
+  character: {fileID: 411639304}
+  portrait: {fileID: 21300000, guid: a0b241a6959b54c439d3a97fe8e36a32, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &2081307101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6878625449028724952, guid: 43649882f05a6bc448c2e4fdf2a4b362, type: 3}
@@ -5217,11 +5426,10 @@ Transform:
   m_GameObject: {fileID: 2110642288}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.66, y: -0.05, z: -3.35}
+  m_LocalPosition: {x: -2.05, y: -0.05, z: -3.35}
   m_LocalScale: {x: 2.4054, y: 2.4054, z: 2.4054}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 787667188}
   - {fileID: 568243354}
   - {fileID: 51014295}
   m_Father: {fileID: 0}
@@ -5336,6 +5544,7 @@ SceneRoots:
   - {fileID: 1876850523}
   - {fileID: 1020861905}
   - {fileID: 1807585582}
+  - {fileID: 787667188}
   - {fileID: 782519047}
   - {fileID: 2110642295}
   - {fileID: 1221041499}
