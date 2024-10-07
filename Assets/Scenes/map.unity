@@ -19898,6 +19898,7 @@ MonoBehaviour:
     - rid: 6020322152669249841
     - rid: 6020322152669249844
     - rid: 6020322203994947810
+    - rid: 6020322207393906732
   m_TriggerEvent:
     rid: 6020322152669249720
   references:
@@ -20049,6 +20050,13 @@ MonoBehaviour:
     - rid: 6020322203994947819
       type: {class: GetBoolTrue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
+    - rid: 6020322207393906732
+      type: {class: InstructionLogicCheckConditions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Conditions:
+          m_Conditions: []
 --- !u!114 &1213147418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20656,11 +20664,11 @@ MonoBehaviour:
           m_Input:
             rid: 6020322203994947782
         m_MinDistance:
-          m_MinDistance: 0
+          m_MinDistance: 1
           m_To:
             m_Property:
               rid: 6020322203994947781
-          m_Radius: 2
+          m_Radius: 3
           m_Offset: {x: 0, y: 0, z: 0}
     - rid: 6020322203994947781
       type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
