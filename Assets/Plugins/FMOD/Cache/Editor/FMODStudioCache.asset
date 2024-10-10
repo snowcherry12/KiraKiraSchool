@@ -1,0 +1,624 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7788839461788670691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Foley/Footsteps/FTP_Shoes_Concrete
+  m_EditorClassIdentifier: 
+  Path: event:/Foley/Footsteps/FTP_Shoes_Concrete
+  Guid:
+    Data1: 1604767189
+    Data2: 1326460890
+    Data3: -1239947605
+    Data4: -225192726
+  Banks:
+  - {fileID: -4461807360776729706}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6988289947973483128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MSC_Exploration
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MSC_Exploration
+  Guid:
+    Data1: 1410858256
+    Data2: 1205703434
+    Data3: 1246951850
+    Data4: 1629329813
+  Banks:
+  - {fileID: 7706034390959360482}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 176372
+--- !u!114 &-5216613432452613894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FTP_JumpLand_Master/Footwear
+  m_EditorClassIdentifier: 
+  Name: Footwear
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3719699397
+    data2: 3729514991
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Shoes
+  - Barefoot
+  Exists: 1
+--- !u!114 &-4758786123060386372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiences/AMB_RoadExt
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiences/AMB_RoadExt
+  Guid:
+    Data1: 1347082971
+    Data2: 1141944413
+    Data3: 1966370440
+    Data4: 882947454
+  Banks:
+  - {fileID: -2181409269614585756}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 320725
+--- !u!114 &-4716777245379269869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FTP_JumpLand_Master/WalkToRun
+  m_EditorClassIdentifier: 
+  Name: WalkToRun
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2755957799
+    data2: 1191735572
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-4461807360776729706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Foley.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/KiraKiraSchool/Build/Desktop/Foley.bank
+  Name: Foley
+  StudioPath: bank:/Foley
+  lastModified: 638641934451538766
+  FileSizes:
+  - Name: Desktop
+    Value: 34176
+  Exists: 1
+--- !u!114 &-4420860144448716488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FTP_Shoes/WalkToRun
+  m_EditorClassIdentifier: 
+  Name: WalkToRun
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2755957799
+    data2: 1191735572
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2181409269614585756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambiences.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/KiraKiraSchool/Build/Desktop/Ambiences.bank
+  Name: Ambiences
+  StudioPath: bank:/Ambiences
+  lastModified: 638641934450185066
+  FileSizes:
+  - Name: Desktop
+    Value: 6199136
+  Exists: 1
+--- !u!114 &-1800402333448369821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/SchoolHallway
+  m_EditorClassIdentifier: 
+  Path: snapshot:/SchoolHallway
+  Guid:
+    Data1: -900625124
+    Data2: 1218155145
+    Data3: -305287279
+    Data4: -1376458451
+  Banks:
+  - {fileID: 1531196131272480662}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1649283698426285607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FTP_JumpLand_Master/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 3425311867
+    data2: 4145431543
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Concrete
+  - Grass
+  - Aspalt
+  - Wood
+  Exists: 1
+--- !u!114 &-1496538167527958966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Foley/Footsteps/FTP_Shoes
+  m_EditorClassIdentifier: 
+  Path: event:/Foley/Footsteps/FTP_Shoes
+  Guid:
+    Data1: 1294392796
+    Data2: 1128160991
+    Data3: -161972832
+    Data4: 506037249
+  Banks:
+  - {fileID: -4461807360776729706}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4420860144448716488}
+  - {fileID: 4417652116554030208}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1229926621352655409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FTP_WalkRun_Master/WalkToRun
+  m_EditorClassIdentifier: 
+  Name: WalkToRun
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2755957799
+    data2: 1191735572
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-605675483034229803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/KiraKiraSchool/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638641934451626512
+  FileSizes:
+  - Name: Desktop
+    Value: 1670
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -605675483034229803}
+  - {fileID: -2181409269614585756}
+  - {fileID: -4461807360776729706}
+  - {fileID: 1531196131272480662}
+  - {fileID: 7706034390959360482}
+  EditorEvents:
+  - {fileID: 6467222056288086920}
+  - {fileID: 1317087069282072289}
+  - {fileID: 3652972095317546370}
+  - {fileID: -4758786123060386372}
+  - {fileID: 7872534369118766246}
+  - {fileID: 7735373578287625528}
+  - {fileID: -7788839461788670691}
+  - {fileID: -1496538167527958966}
+  - {fileID: -1800402333448369821}
+  - {fileID: -6988289947973483128}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 1531196131272480662}
+  StringsBanks:
+  - {fileID: -605675483034229803}
+  cacheTime: 638641934500897163
+  cacheVersion: 131842
+--- !u!114 &1317087069282072289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiences/AMB_SchoolHallway
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiences/AMB_SchoolHallway
+  Guid:
+    Data1: -170510941
+    Data2: 1144623273
+    Data3: -1312170576
+    Data4: -393321441
+  Banks:
+  - {fileID: -2181409269614585756}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50317
+--- !u!114 &1531196131272480662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/KiraKiraSchool/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638641934451596474
+  FileSizes:
+  - Name: Desktop
+    Value: 2694
+  Exists: 1
+--- !u!114 &2123446467165579809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FTP_WalkRun_Master/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 3425311867
+    data2: 4145431543
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Concrete
+  - Grass
+  - Aspalt
+  - Wood
+  Exists: 1
+--- !u!114 &3652972095317546370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiences/AMB_Bedroom
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiences/AMB_Bedroom
+  Guid:
+    Data1: -929641538
+    Data2: 1168805775
+    Data3: -228767614
+    Data4: -1659951980
+  Banks:
+  - {fileID: -2181409269614585756}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 40995
+--- !u!114 &4417652116554030208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FTP_Shoes/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 3425311867
+    data2: 4145431543
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Concrete
+  - Grass
+  - Aspalt
+  - Wood
+  Exists: 1
+--- !u!114 &6467222056288086920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiences/AMB_Rooftop
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiences/AMB_Rooftop
+  Guid:
+    Data1: -62211270
+    Data2: 1232937134
+    Data3: -2099370601
+    Data4: 1990778882
+  Banks:
+  - {fileID: -2181409269614585756}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 66871
+--- !u!114 &7298705010298554236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FTP_WalkRun_Master/Footwear
+  m_EditorClassIdentifier: 
+  Name: Footwear
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3719699397
+    data2: 3729514991
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Shoes
+  - Barefoot
+  Exists: 1
+--- !u!114 &7706034390959360482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Musics.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/KiraKiraSchool/Build/Desktop/Musics.bank
+  Name: Musics
+  StudioPath: bank:/Musics
+  lastModified: 638641934500897163
+  FileSizes:
+  - Name: Desktop
+    Value: 2198848
+  Exists: 1
+--- !u!114 &7735373578287625528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Foley/Footsteps/FTP_WalkRun_Master
+  m_EditorClassIdentifier: 
+  Path: event:/Foley/Footsteps/FTP_WalkRun_Master
+  Guid:
+    Data1: 123760180
+    Data2: 1217156955
+    Data3: 615758251
+    Data4: -2105592090
+  Banks:
+  - {fileID: -4461807360776729706}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7298705010298554236}
+  - {fileID: 2123446467165579809}
+  - {fileID: -1229926621352655409}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7872534369118766246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Foley/Footsteps/FTP_JumpLand_Master
+  m_EditorClassIdentifier: 
+  Path: event:/Foley/Footsteps/FTP_JumpLand_Master
+  Guid:
+    Data1: 1516462607
+    Data2: 1201186075
+    Data3: -2042573911
+    Data4: -820721739
+  Banks:
+  - {fileID: -4461807360776729706}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5216613432452613894}
+  - {fileID: -4716777245379269869}
+  - {fileID: -1649283698426285607}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2105
