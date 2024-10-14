@@ -29,11 +29,11 @@ namespace StarterAssets
         [Tooltip("Acceleration and deceleration")]
         public float SpeedChangeRate = 10.0f;
 
-        public AudioClip LandingAudioClip;
-        public AudioClip[] FootstepAudioClips;
         //FMOD
-        public EventReference Footsteps;
-        [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
+        private FMOD.Studio.EventInstance FootstepsInstance;
+        public FMODUnity.EventReference Footsteps;
+        private FMOD.Studio.EventInstance JumpInstance;
+        public FMODUnity.EventReference JumpLand;
 
         [Space(10)]
         [Tooltip("The height the player can jump")]
@@ -153,6 +153,12 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            //FMODInstance
+            FootstepsInstance = FMODUnity.RuntimeManager.CreateInstance(Footsteps);
+            JumpInstance = FMODUnity.RuntimeManager.CreateInstance(JumpLand);
+
+
         }
 
         private void Update()
@@ -376,21 +382,21 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                if (FootstepAudioClips.Length > 0)
-                {
-                    var index = Random.Range(0, FootstepAudioClips.Length);
-                    //AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
-                    FMODUnity.RuntimeManager.PlayOneShot(Footsteps, transform.position);
-
-                }
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(FootstepsInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+                FootstepsInstance.setParameterByName("WalkToRun", _speed);
+                FootstepsInstance.start();
             }
         }
 
         private void OnLand(AnimationEvent animationEvent)
         {
-            if (animationEvent.animatorClipInfo.weight > 0.5f)
+            if (animationEvent.animatorClipInfo.weight > 0.1f)
             {
-                AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                //AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                //FMODUnity.RuntimeManager.PlayOneShot(JumpLand, transform.position);
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(JumpInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+                JumpInstance.setParameterByName("WalkToRun", SprintSpeed);
+                JumpInstance.start();
             }
         }
     }
