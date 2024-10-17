@@ -18,11 +18,13 @@ namespace GameCreator.Runtime.Common
 
         [SerializeField] private GeneralSave m_Save = new GeneralSave();
         [SerializeField] private GeneralAudio m_Audio = new GeneralAudio();
+        [SerializeField] private FMODAudio m_FMODAudio = new FMODAudio();
 
         // PROPERTIES: ----------------------------------------------------------------------------
 
-        public GeneralAudio Audio => this.m_Audio;
         public GeneralSave Save => this.m_Save;
+        public GeneralAudio Audio => this.m_Audio;
+        public FMODAudio FMODAudio => this.m_FMODAudio;
 
         // EDITOR ENTER PLAYMODE: -----------------------------------------------------------------
 

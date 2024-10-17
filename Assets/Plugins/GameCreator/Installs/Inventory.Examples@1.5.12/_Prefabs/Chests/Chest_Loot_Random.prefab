@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3722333963173781012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2239908926315374558}
+  - component: {fileID: 8791543044229930107}
+  m_Layer: 0
+  m_Name: Trigger_Loot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2239908926315374558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722333963173781012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5027080226112348577}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8791543044229930107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722333963173781012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 4340016614985957626
+    - rid: 4340016614985957689
+    - rid: 4340016614985957672
+  m_TriggerEvent:
+    rid: 4340016614985957612
+  references:
+    version: 2
+    RefIds:
+    - rid: 4340016614985957612
+      type: {class: EventOnStart, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+    - rid: 4340016614985957626
+      type: {class: InstructionInventoryLoot, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_LootTable:
+          m_Property:
+            rid: 4340016614985957627
+        m_Bag:
+          m_Property:
+            rid: 4340016614985957643
+    - rid: 4340016614985957627
+      type: {class: GetLootTableInstance, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_LootTable: {fileID: 11400000, guid: 31d9548ba1478453fb1e852d130d4148, type: 2}
+    - rid: 4340016614985957643
+      type: {class: GetGameObjectInventoryBag, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_Bag: {fileID: 6612782948350248563}
+    - rid: 4340016614985957672
+      type: {class: InstructionInventoryLoot, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_LootTable:
+          m_Property:
+            rid: 4340016614985957673
+        m_Bag:
+          m_Property:
+            rid: 4340016614985957674
+    - rid: 4340016614985957673
+      type: {class: GetLootTableInstance, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_LootTable: {fileID: 11400000, guid: 31d9548ba1478453fb1e852d130d4148, type: 2}
+    - rid: 4340016614985957674
+      type: {class: GetGameObjectInventoryBag, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_Bag: {fileID: 6612782948350248563}
+    - rid: 4340016614985957689
+      type: {class: InstructionInventoryLoot, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_LootTable:
+          m_Property:
+            rid: 4340016614985957690
+        m_Bag:
+          m_Property:
+            rid: 4340016614985957691
+    - rid: 4340016614985957690
+      type: {class: GetLootTableInstance, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_LootTable: {fileID: 11400000, guid: 31d9548ba1478453fb1e852d130d4148, type: 2}
+    - rid: 4340016614985957691
+      type: {class: GetGameObjectInventoryBag, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_Bag: {fileID: 6612782948350248563}
+--- !u!1001 &7465864723299539613
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242297510755652336, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      propertyPath: m_Name
+      value: Chest_Loot_Random
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2239908926315374558}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+--- !u!4 &5027080226112348577 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2476930026242751292, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+  m_PrefabInstance: {fileID: 7465864723299539613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6612782948350248563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4348585421841554670, guid: d0b9285e7ffaf451e9ec0170bffd20e4, type: 3}
+  m_PrefabInstance: {fileID: 7465864723299539613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2bff3f8461c487282857e4071921cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

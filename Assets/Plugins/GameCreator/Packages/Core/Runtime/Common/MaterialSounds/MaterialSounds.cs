@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using GameCreator.Runtime.Common.Audio;
 using UnityEngine;
+using FMODUnity;
 
 namespace GameCreator.Runtime.Common
 {
@@ -264,7 +265,9 @@ namespace GameCreator.Runtime.Common
             if (this.m_LookupTable.TryGetValue(texture, out MaterialSoundTexture material))
             {
                 AudioClip audioClip = material.Audio;
+                // EventReference audioClip = material.Audio;
                 if (audioClip == null) return;
+                // if (String.IsNullOrEmpty(audioClip.Path)) return;
 
                 materialSound = material;
 
@@ -299,7 +302,9 @@ namespace GameCreator.Runtime.Common
             if (this.m_LookupTable.TryGetValue(texture, out MaterialSoundTexture material))
             {
                 AudioClip audioClip = material.Audio;
+                // EventReference audioClip = material.Audio;
                 if (audioClip == null) return;
+                // if (String.IsNullOrEmpty(audioClip.Path)) return;
                 
                 materialSound = material;
             }
@@ -348,6 +353,7 @@ namespace GameCreator.Runtime.Common
             {
                 if (material.Texture != texture) continue;
                 if (material.Audio == null) continue;
+                // if (String.IsNullOrEmpty(material.Audio.Path)) continue;
                 
                 AudioConfigSoundEffect config = AudioConfigSoundEffect.Create(
                     material.Volume,
@@ -384,7 +390,9 @@ namespace GameCreator.Runtime.Common
             foreach (MaterialSoundTexture material in materialSounds.MaterialSounds.MaterialSounds)
             {
                 AudioClip audioClip = material.Audio;
+                // EventReference audioClip = material.Audio;
                 if (audioClip == null) return;
+                // if (String.IsNullOrEmpty(audioClip.Path)) return;
                 
                 material.Impact.Create(
                     point,

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using GameCreator.Runtime.Characters;
 using UnityEngine;
 using UnityEngine.Audio;
+using FMODUnity;
 
 namespace GameCreator.Runtime.Common.Audio
 {
@@ -19,6 +20,7 @@ namespace GameCreator.Runtime.Common.Audio
         // PROPERTIES: ----------------------------------------------------------------------------
 
         internal AudioClip AudioClip => this.AudioSource.clip;
+        // internal EventReference AudioClip => this.AudioSource.clip;
         
         internal GameObject Target { get; private set; }
         

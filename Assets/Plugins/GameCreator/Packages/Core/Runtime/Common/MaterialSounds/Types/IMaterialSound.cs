@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 namespace GameCreator.Runtime.Common
@@ -6,6 +7,7 @@ namespace GameCreator.Runtime.Common
     {
         public float Volume { get; }
         public AudioClip Audio { get; }
+        // public EventReference Audio { get; }
         
         public PoolField Impact { get; }
     }

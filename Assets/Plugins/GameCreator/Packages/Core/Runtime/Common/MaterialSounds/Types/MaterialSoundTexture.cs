@@ -1,6 +1,6 @@
 using System;
-using GameCreator.Runtime.Common;
 using UnityEngine;
+using FMODUnity;
 
 namespace GameCreator.Runtime.Common
 {
@@ -17,6 +17,7 @@ namespace GameCreator.Runtime.Common
         [SerializeField] private PoolField m_Impact = new PoolField();
         [SerializeField] private float m_Volume = 0.25f;
         [SerializeField] private AudioClip[] m_Variations = new AudioClip[1];
+        // [SerializeField] private EventReference[] m_Variations = new EventReference[1];
 
         // MEMBERS: -------------------------------------------------------------------------------
 
@@ -29,10 +30,12 @@ namespace GameCreator.Runtime.Common
         public float Volume => this.m_Volume;
 
         public AudioClip Audio
+        // public EventReference Audio
         {
             get
             {
                 if (this.m_Variations.Length == 0) return null;
+                // if (this.m_Variations.Length == 0) return new EventReference();
                 
                 int index = UnityEngine.Random.Range(0, this.m_Variations.Length - 1);
                 index += this.m_Variations.Length > 1 && index == this.variationIndex ? 1 : 0;
@@ -53,6 +56,7 @@ namespace GameCreator.Runtime.Common
             return new MaterialSoundTexture
             {
                 m_Variations = new AudioClip[1],
+                // m_Variations = new EventReference[1],
                 m_Volume = DEFAULT_VOLUME
             };
         }

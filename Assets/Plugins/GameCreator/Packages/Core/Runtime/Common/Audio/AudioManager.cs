@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using GameCreator.Runtime.Common.Audio;
 using UnityEngine;
+using FMODUnity;
 
 namespace GameCreator.Runtime.Common
 {

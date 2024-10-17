@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Audio;
+using FMODUnity;
 
 namespace GameCreator.Runtime.Common.Audio
 {
