@@ -1,4 +1,4 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 using FMODUnity;
@@ -31,9 +31,9 @@ namespace StarterAssets
 
         //FMOD
         private FMOD.Studio.EventInstance FootstepsInstance;
-        public FMODUnity.EventReference Footsteps;
+        public EventReference Footsteps;
         private FMOD.Studio.EventInstance JumpInstance;
-        public FMODUnity.EventReference JumpLand;
+        public EventReference JumpLand;
 
         [Space(10)]
         [Tooltip("The height the player can jump")]
@@ -155,8 +155,8 @@ namespace StarterAssets
             _fallTimeoutDelta = FallTimeout;
 
             //FMODInstance
-            FootstepsInstance = FMODUnity.RuntimeManager.CreateInstance(Footsteps);
-            JumpInstance = FMODUnity.RuntimeManager.CreateInstance(JumpLand);
+            FootstepsInstance = RuntimeManager.CreateInstance(Footsteps);
+            JumpInstance = RuntimeManager.CreateInstance(JumpLand);
 
 
         }
@@ -382,7 +382,7 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                FMODUnity.RuntimeManager.AttachInstanceToGameObject(FootstepsInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+                RuntimeManager.AttachInstanceToGameObject(FootstepsInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
                 FootstepsInstance.setParameterByName("WalkToRun", _speed);
                 FootstepsInstance.start();
             }
@@ -393,8 +393,8 @@ namespace StarterAssets
             if (animationEvent.animatorClipInfo.weight > 0.1f)
             {
                 //AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
-                //FMODUnity.RuntimeManager.PlayOneShot(JumpLand, transform.position);
-                FMODUnity.RuntimeManager.AttachInstanceToGameObject(JumpInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+                //RuntimeManager.PlayOneShot(JumpLand, transform.position);
+                RuntimeManager.AttachInstanceToGameObject(JumpInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
                 JumpInstance.setParameterByName("WalkToRun", SprintSpeed);
                 JumpInstance.start();
             }
