@@ -17,12 +17,16 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 6020322454997827620
+      type: {class: EncryptionCaesar, ns: GameCreator.Runtime.Common.SaveSystem, asm: GameCreator.Runtime.Core}
+      data:
+        m_Positions: 5
     - rid: 9148187602559959041
       type: {class: GeneralRepository, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Save:
           m_Encryption:
-            rid: 9148187602559959050
+            rid: 6020322454997827620
           m_Storage:
             rid: 9148187625590882304
           m_Load: 0
@@ -38,10 +42,6 @@ MonoBehaviour:
     - rid: 9148187602559959044
       type: {class: GetSceneActive, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
-    - rid: 9148187602559959050
-      type: {class: EncryptionXOR, ns: GameCreator.Runtime.Common.SaveSystem, asm: GameCreator.Runtime.Core}
-      data:
-        m_Secret: SnowCherry X ManjaDev
     - rid: 9148187625590882304
       type: {class: StoragePlayerPrefs, ns: GameCreator.Runtime.Common.SaveSystem, asm: GameCreator.Runtime.Core}
       data: 

@@ -16,6 +16,7 @@ namespace GameCreator.Editor.Dialogue
         private const string PROPERTY_ACTING = "m_Acting";
         private const string PROPERTY_TEXT = "m_Text";
         private const string PROPERTY_AUDIO = "m_Audio";
+        private const string PROPERTY_FMOD_AUDIO = "m_FMODAudio";
         
         private const string PROPERTY_ANIMATION = "m_Animation";
         private const string PROPERTY_ANIM_DATA = "m_AnimationData";
@@ -77,11 +78,13 @@ namespace GameCreator.Editor.Dialogue
             
             SerializedProperty text = this.Property.FindPropertyRelative(PROPERTY_TEXT);
             SerializedProperty audio = this.Property.FindPropertyRelative(PROPERTY_AUDIO);
+            SerializedProperty FMODAudio = this.Property.FindPropertyRelative(PROPERTY_FMOD_AUDIO);
             
             this.Add(new SpaceSmall());
             this.Add(new PropertyField(text));
             this.Add(new SpaceSmall());
             this.Add(new PropertyField(audio));
+            this.Add(new PropertyField(FMODAudio));
             
             SerializedProperty animation = this.Property.FindPropertyRelative(PROPERTY_ANIMATION);
             SerializedProperty animationData = this.Property.FindPropertyRelative(PROPERTY_ANIM_DATA);

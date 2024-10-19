@@ -17,7 +17,7 @@ namespace GameCreator.Runtime.Common
         [SerializeField] private PoolField m_Impact = new PoolField();
         [SerializeField] private float m_Volume = 0.25f;
         [SerializeField] private AudioClip[] m_Variations = new AudioClip[1];
-        // [SerializeField] private EventReference[] m_Variations = new EventReference[1];
+        [SerializeField] private FMODAudio[] m_FMODVariations = new FMODAudio[1];
 
         // MEMBERS: -------------------------------------------------------------------------------
 
@@ -30,12 +30,10 @@ namespace GameCreator.Runtime.Common
         public float Volume => this.m_Volume;
 
         public AudioClip Audio
-        // public EventReference Audio
         {
             get
             {
                 if (this.m_Variations.Length == 0) return null;
-                // if (this.m_Variations.Length == 0) return new EventReference();
                 
                 int index = UnityEngine.Random.Range(0, this.m_Variations.Length - 1);
                 index += this.m_Variations.Length > 1 && index == this.variationIndex ? 1 : 0;
@@ -44,9 +42,20 @@ namespace GameCreator.Runtime.Common
                 return this.m_Variations[index];
             }
         }
+        public FMODAudio FMODAudio
+        {
+            get
+            {
+                if (this.m_FMODVariations.Length == 0) return null;
+                
+                int index = UnityEngine.Random.Range(0, this.m_FMODVariations.Length - 1);
+                index += this.m_FMODVariations.Length > 1 && index == this.variationIndex ? 1 : 0;
 
+                this.variationIndex = index;
+                return this.m_FMODVariations[index];
+            }
+        }
         public Texture Texture => this.m_Texture;
-
         public PoolField Impact => this.m_Impact;
         
         // STATIC CONSTRUCTOR: --------------------------------------------------------------------
@@ -56,7 +65,7 @@ namespace GameCreator.Runtime.Common
             return new MaterialSoundTexture
             {
                 m_Variations = new AudioClip[1],
-                // m_Variations = new EventReference[1],
+                m_FMODVariations = new FMODAudio[1],
                 m_Volume = DEFAULT_VOLUME
             };
         }

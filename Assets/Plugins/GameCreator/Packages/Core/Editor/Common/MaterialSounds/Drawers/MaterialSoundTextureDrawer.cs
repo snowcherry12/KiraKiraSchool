@@ -18,6 +18,7 @@ namespace GameCreator.Editor.Characters
             SerializedProperty volume = property.FindPropertyRelative("m_Volume");
             SerializedProperty impact = property.FindPropertyRelative("m_Impact");
             SerializedProperty variations = property.FindPropertyRelative("m_Variations");
+            SerializedProperty FMODVariations = property.FindPropertyRelative("m_FMODVariations");
             
             root.Add(new PropertyField(name));
             root.Add(new PropertyField(texture));
@@ -28,6 +29,7 @@ namespace GameCreator.Editor.Characters
             root.Add(new LabelTitle("Sounds"));
             root.Add(new PropertyField(volume));
             root.Add(new PropertyField(variations));
+            root.Add(new PropertyField(FMODVariations));
             
             return root;
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GameCreator.Runtime.Common.Audio;
 using UnityEngine;
 using FMODUnity;
+using FMOD;
 
 namespace GameCreator.Runtime.Common
 {
@@ -265,9 +266,9 @@ namespace GameCreator.Runtime.Common
             if (this.m_LookupTable.TryGetValue(texture, out MaterialSoundTexture material))
             {
                 AudioClip audioClip = material.Audio;
-                // EventReference audioClip = material.Audio;
-                if (audioClip == null) return;
-                // if (String.IsNullOrEmpty(audioClip.Path)) return;
+                FMODAudio fmodAudio = material.FMODAudio;
+
+                if (audioClip == null && String.IsNullOrEmpty(fmodAudio.Audio.Path)) return;
 
                 materialSound = material;
 
@@ -291,7 +292,15 @@ namespace GameCreator.Runtime.Common
             }
 
             if (config.Volume < float.Epsilon) return;
-            _ = AudioManager.Instance.SoundEffect.Play(materialSound.Audio, config, args);
+            
+            if (!String.IsNullOrEmpty(materialSound.FMODAudio.Audio.Path))
+            {
+                _ = AudioManager.Instance.SoundEffect.Play(materialSound.FMODAudio, config, args);
+            }
+            else if (materialSound.Audio != null)
+            {
+                _ = AudioManager.Instance.SoundEffect.Play(materialSound.Audio, config, args);
+            }
         }
         
         private void PlayImpact(Texture texture, Transform transform, RaycastHit hit, float yaw)

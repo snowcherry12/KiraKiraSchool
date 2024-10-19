@@ -16,6 +16,7 @@ namespace GameCreator.Editor.Common
             SerializedProperty impact = property.FindPropertyRelative("m_Impact");
             SerializedProperty volume = property.FindPropertyRelative("m_Volume");
             SerializedProperty variations = property.FindPropertyRelative("m_Variations");
+            SerializedProperty FMODVariations = property.FindPropertyRelative("m_FMODVariations");
         
             container.Add(new LabelTitle("Impact"));
             container.Add(new PropertyField(impact));
@@ -23,6 +24,7 @@ namespace GameCreator.Editor.Common
             container.Add(new LabelTitle("Sounds"));
             container.Add(new PropertyField(volume));
             container.Add(new PropertyField(variations));
+            container.Add(new PropertyField(FMODVariations));
         }
     }
 }

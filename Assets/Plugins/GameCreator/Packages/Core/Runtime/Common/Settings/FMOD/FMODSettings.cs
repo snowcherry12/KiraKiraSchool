@@ -7,6 +7,6 @@ namespace GameCreator.Runtime.Common
 
         // public override int Priority => 0;
 
-        // public override bool IsFullScreen => true;
+        public override bool IsFullScreen => true;
     }
 }

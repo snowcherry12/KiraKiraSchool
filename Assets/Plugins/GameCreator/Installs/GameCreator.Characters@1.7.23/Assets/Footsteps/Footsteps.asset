@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0b935016f124151bbd7d3de9dcfa14, type: 3}
   m_Name: Footsteps
   m_EditorClassIdentifier: 
+  m_TextureName: _MainTex
   m_MaterialSounds:
     m_LayerMask:
       serializedVersion: 2
@@ -19,8 +20,18 @@ MonoBehaviour:
     m_MaterialSounds: []
     m_DefaultSounds:
       m_Volume: 0.25
-      m_Variations:
-      - {fileID: 8300000, guid: 1308243b72a5441f2abf527819e250e9, type: 3}
+      m_Variations: []
+      m_FMODVariations:
+      - m_Breakpoint: 0
+        m_IsEnabled: 0
+        m_Audio:
+          Guid:
+            Data1: 1294392796
+            Data2: 1128160991
+            Data3: -161972832
+            Data4: 506037249
+          Path: event:/Foley/Footsteps/FTP_Shoes
+        m_Params: []
       m_Impact:
         m_Prefab: {fileID: 8894929110622384770, guid: 053042bf44fe74e698466133392d634c, type: 3}
         m_UsePooling:

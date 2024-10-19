@@ -5,22 +5,17 @@ namespace GameCreator.Runtime.Common
 {
     [Serializable]
     public class FMODRepository : TRepository<FMODRepository>
-    {
-        public const string REPOSITORY_ID = "core.fmod";
-        
+    {        
         // REPOSITORY PROPERTIES: -----------------------------------------------------------------
         
-        public override string RepositoryID => REPOSITORY_ID;
+        public override string RepositoryID => "core.fmod";
 
         // MEMBERS: -------------------------------------------------------------------------------
 
+        [SerializeField] private FMOD.Mixer m_FMODMixer = new ();
 
         // PROPERTIES: ----------------------------------------------------------------------------
 
-        // public WelcomeData WelcomeData
-        // {
-        //     get => this.m_WelcomeData;
-        //     set => this.m_WelcomeData = value;
-        // }
+        public FMOD.Mixer Mixer => this.m_FMODMixer;
     }
 }

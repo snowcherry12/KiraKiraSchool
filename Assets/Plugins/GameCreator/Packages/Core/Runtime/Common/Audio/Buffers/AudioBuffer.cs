@@ -3,7 +3,8 @@ using System.Threading.Tasks;
 using GameCreator.Runtime.Characters;
 using UnityEngine;
 using UnityEngine.Audio;
-using FMODUnity;
+using FMOD.Studio;
+using GameCreator.Runtime.Common.FMOD;
 
 namespace GameCreator.Runtime.Common.Audio
 {
@@ -12,16 +13,15 @@ namespace GameCreator.Runtime.Common.Audio
         // MEMBERS: -------------------------------------------------------------------------------
 
         [NonSerialized] private IAudioConfig m_AudioConfig;
-
         [NonSerialized] private Args m_Args;
-
+        [NonSerialized] private Parameter[] m_Params;
         [NonSerialized] private readonly AnimFloat m_Volume = new AnimFloat(1f);
         
         // PROPERTIES: ----------------------------------------------------------------------------
 
         internal AudioClip AudioClip => this.AudioSource.clip;
-        // internal EventReference AudioClip => this.AudioSource.clip;
-        
+        internal FMODUnity.EventReference FMODRef { get; private set; }
+        internal EventInstance FMODAudio { get; private set; }
         internal GameObject Target { get; private set; }
         
         internal AudioSource AudioSource { get; }
@@ -51,7 +51,8 @@ namespace GameCreator.Runtime.Common.Audio
             this.m_Volume.Update();
 
             volume *= this.m_Volume.Current;
-            this.AudioSource.volume = Rescale(volume);
+            if (this.AudioClip != null) this.AudioSource.volume = Rescale(volume);
+            if (!String.IsNullOrEmpty(FMODRef.Path)) this.FMODAudio.setVolume(Rescale(volume));
 
             GameObject target = this.m_AudioConfig?.GetTrackTarget(this.m_Args);
             
@@ -61,15 +62,27 @@ namespace GameCreator.Runtime.Common.Audio
                 target = character.Animim.Animator.GetBoneTransform(HumanBodyBones.Head).gameObject;
             }
             
-            if (target != null) this.Transform.position = target.transform.position;
+            if (target != null)
+            {
+                this.Transform.position = target.transform.position;
+                if (!String.IsNullOrEmpty(FMODRef.Path))
+                    this.FMODAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.Transform.position));
+            }
             
             float timeScale = this.m_AudioConfig?.UpdateMode == TimeMode.UpdateMode.GameTime
                 ? Time.timeScale
                 : 1f;
             
-            this.AudioSource.pitch = this.Pitch * timeScale; 
+            if (this.AudioClip != null) this.AudioSource.pitch = this.Pitch * timeScale; 
+            if (!String.IsNullOrEmpty(FMODRef.Path)) this.FMODAudio.setPitch(this.Pitch * timeScale);
 
-            return this.AudioSource.isPlaying;
+            if (!String.IsNullOrEmpty(FMODRef.Path))
+            {
+                PLAYBACK_STATE playbackState;
+                this.FMODAudio.getPlaybackState(out playbackState);
+                return playbackState == PLAYBACK_STATE.PLAYING;
+            }
+            else return this.AudioSource.isPlaying;
         }
         
         // PUBLIC METHODS: ------------------------------------------------------------------------
@@ -91,16 +104,53 @@ namespace GameCreator.Runtime.Common.Audio
                 await Task.Yield();
             }
         }
+        internal async Task Play(FMODAudio fmodAudio, IAudioConfig audioConfig, Args args)
+        {
+            this.FMODRef = fmodAudio.Audio;
+            this.m_Params = fmodAudio.Params;
+            this.m_AudioConfig = audioConfig;
+            this.m_Args = args;
+
+            this.Setup();
+
+            this.FMODAudio.stop(STOP_MODE.IMMEDIATE);
+            this.FMODAudio.start();
+
+            PLAYBACK_STATE playbackState = PLAYBACK_STATE.PLAYING;
+
+            while (!ApplicationManager.IsExiting && playbackState == PLAYBACK_STATE.PLAYING)
+            {
+                this.FMODAudio.getPlaybackState(out playbackState);
+                await Task.Yield();
+            }
+        }
 
         internal async Task Stop(float transition)
         {
             this.m_Volume.Target = 0f;
             this.m_Volume.Smooth = transition;
             
-            this.AudioSource.SetScheduledEndTime(AudioSettings.dspTime + transition);
-            while (!ApplicationManager.IsExiting && this.AudioSource.isPlaying)
+            if (this.AudioSource.clip != null)
             {
-                await Task.Yield();
+                this.AudioSource.SetScheduledEndTime(AudioSettings.dspTime + transition);
+
+                while (!ApplicationManager.IsExiting && this.AudioSource.isPlaying)
+                {
+                    await Task.Yield();
+                }
+            }
+
+            if (!String.IsNullOrEmpty(this.FMODRef.Path))
+            {
+                this.FMODAudio.stop(AudioSettings.dspTime + transition > 0f ? STOP_MODE.ALLOWFADEOUT : STOP_MODE.IMMEDIATE);
+
+                PLAYBACK_STATE playbackState = PLAYBACK_STATE.PLAYING;
+                
+                while (!ApplicationManager.IsExiting && playbackState == PLAYBACK_STATE.PLAYING)
+                {
+                    this.FMODAudio.getPlaybackState(out playbackState);
+                    await Task.Yield();
+                }
             }
         }
         
@@ -117,10 +167,26 @@ namespace GameCreator.Runtime.Common.Audio
             this.m_Volume.Target = this.m_AudioConfig.Volume;
             this.m_Volume.Smooth = this.m_AudioConfig.TransitionIn;
             
-            this.AudioSource.volume = Rescale(startVolume);
-            this.AudioSource.pitch = this.Pitch;
-            this.AudioSource.spatialBlend = this.m_AudioConfig.SpatialBlend;
+            if (this.AudioClip != null)
+            {
+                this.AudioSource.volume = Rescale(startVolume);
+                this.AudioSource.pitch = this.Pitch;
+                this.AudioSource.spatialBlend = this.m_AudioConfig.SpatialBlend;
+            }
 
+            if (!String.IsNullOrEmpty(this.FMODRef.Path))
+            {
+                EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(this.FMODRef);
+                if (!eventInstance.isValid()) return;
+                
+                this.FMODAudio.release();
+                this.FMODAudio = eventInstance;
+                this.FMODAudio.setVolume(Rescale(startVolume));
+                this.FMODAudio.setPitch(this.Pitch);
+
+                foreach (Parameter param in this.m_Params)
+                    this.FMODAudio.setParameterByName(param.Name, param.Value);
+            }
             this.Target = this.m_AudioConfig.GetTrackTarget(this.m_Args);
         }
         

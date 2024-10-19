@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Audio;
 using FMODUnity;
+using System;
+using FMOD.Studio;
 
 namespace GameCreator.Runtime.Common.Audio
 {
@@ -117,6 +119,22 @@ namespace GameCreator.Runtime.Common.Audio
             await audioBuffer.Play(audioClip, audioConfig, args);
         }
 
+        public async Task Play(FMODAudio fmodAudio, IAudioConfig audioConfig, Args args)
+        {
+            if (String.IsNullOrEmpty(fmodAudio.Audio.Path)) return;
+            if (this.m_AudioFrame.TryGetValue(fmodAudio.GetHashCode(), out int frame))
+            {
+                if (frame == Time.frameCount) return;
+            }
+
+            if (this.m_AvailableBuffers.Count == 0) this.AllocateAudioBuffers();
+            
+            AudioBuffer audioBuffer = this.m_AvailableBuffers.Dequeue();
+            this.m_ActiveBuffers.Add(audioBuffer);
+            this.m_AudioFrame[audioBuffer.GetHashCode()] = Time.frameCount;
+            await audioBuffer.Play(fmodAudio, audioConfig, args);
+        }
+
         public async Task Stop(AudioClip audioClip, float transitionOut)
         {
             if (audioClip == null) return;
@@ -126,6 +144,19 @@ namespace GameCreator.Runtime.Common.Audio
             {
                 if (activeBuffer.AudioClip != audioClip) continue;
                 tasks.Add(activeBuffer.Stop(transitionOut));
+            }
+
+            await Task.WhenAll(tasks);
+        }
+        public async Task Stop(FMODAudio fmodAudio, float transitionOut)
+        {
+            if (String.IsNullOrEmpty(fmodAudio.Audio.Path)) return;
+            List<Task> tasks = new List<Task>();
+
+            foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
+            {
+                if (activeBuffer.FMODRef.Path != fmodAudio.Audio.Path) continue;
+                    tasks.Add(activeBuffer.Stop(transitionOut));
             }
 
             await Task.WhenAll(tasks);
@@ -155,6 +186,22 @@ namespace GameCreator.Runtime.Common.Audio
             {
                 if (activeBuffer.Target != target) continue;
                 if (activeBuffer.AudioClip != audioClip) continue;
+                tasks.Add(activeBuffer.Stop(transitionOut));
+            }
+
+            await Task.WhenAll(tasks);
+        }
+
+        public async Task Stop(FMODAudio fmodAudio, GameObject target, float transitionOut)
+        {
+            if (String.IsNullOrEmpty(fmodAudio.Audio.Path)) return;
+            if (target == null) return;
+            
+            List<Task> tasks = new List<Task>();
+            foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
+            {
+                if (activeBuffer.Target != target) continue;
+                if (activeBuffer.FMODRef.Path != fmodAudio.Audio.Path) continue;
                 tasks.Add(activeBuffer.Stop(transitionOut));
             }
 

@@ -21,6 +21,7 @@ namespace GameCreator.Runtime.Dialogue
 
         [SerializeField] private NodeText m_Text = new NodeText();
         [SerializeField] private PropertyGetAudio m_Audio = GetAudioNone.Create;
+        [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
 
         [SerializeField] private Acting m_Acting = new Acting();
         
@@ -48,6 +49,7 @@ namespace GameCreator.Runtime.Dialogue
         
         [NonSerialized] private float m_TypewriterLength;
         [NonSerialized] private float m_AudioLength;
+        [NonSerialized] private float m_FMODAudioLength;
         [NonSerialized] private float m_AnimationLength;
         
         // PROPERTIES: ----------------------------------------------------------------------------
@@ -107,6 +109,7 @@ namespace GameCreator.Runtime.Dialogue
         public string GetText(Args args) => this.m_Text.Get(args);
 
         public AudioClip GetAudio(Args args) => this.m_Audio.Get(args);
+        public FMODAudio GetFMODAudio(Args args) => this.m_FMODAudio.Get(args);
         
         // PUBLIC METHODS: ------------------------------------------------------------------------
 
@@ -117,6 +120,7 @@ namespace GameCreator.Runtime.Dialogue
             
             this.m_TypewriterLength = 0f;
             this.m_AudioLength = 0f;
+            this.m_FMODAudioLength = 0f;
             this.m_AnimationLength = 0f;
 
             this.m_Text.Init(args);
@@ -129,6 +133,7 @@ namespace GameCreator.Runtime.Dialogue
         
             GameObject speaker = story.Content.GetTargetFromActor(this.Actor, args);
             AudioClip audio = this.GetAudio(args);
+            FMODAudio fmodAudio = this.GetFMODAudio(args);
 
             if (audio != null)
             {
@@ -138,6 +143,16 @@ namespace GameCreator.Runtime.Dialogue
 
                 _ = AudioManager.Instance.Speech.Play(audio, config, args);
                 if (this.m_Duration == NodeDuration.Audio) this.m_AudioLength = audio.length;
+            }
+
+            if (!String.IsNullOrEmpty(fmodAudio.Audio.Path))
+            {
+                AudioConfigSpeech config = speaker != null
+                    ? AudioConfigSpeech.Create(1f, SpatialBlending.Spatial, speaker)
+                    : AudioConfigSpeech.Create(1f, SpatialBlending.None, null);
+
+                _ = AudioManager.Instance.Speech.Play(fmodAudio, config, args);
+                // if (this.m_Duration == NodeDuration.Audio) this.m_FMODAudioLength = fmodAudio.length;
             }
 
             if (this.m_Animation != null)
