@@ -145,7 +145,7 @@ namespace GameCreator.Runtime.Dialogue
                 if (this.m_Duration == NodeDuration.Audio) this.m_AudioLength = audio.length;
             }
 
-            if (!String.IsNullOrEmpty(fmodAudio.Audio.Path))
+            if (fmodAudio != null)
             {
                 AudioConfigSpeech config = speaker != null
                     ? AudioConfigSpeech.Create(1f, SpatialBlending.Spatial, speaker)

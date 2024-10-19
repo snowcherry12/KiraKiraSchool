@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09adff397b704c4985383dd1017864ba, type: 3}
+  m_Name: Osana
+  m_EditorClassIdentifier: 
+  m_Actant:
+    m_Name:
+      m_Property:
+        rid: 6020322487487431435
+    m_Description:
+      m_Property:
+        rid: 6020322487487431436
+  m_Expressions:
+    m_Expressions:
+    - rid: 6020322487487431437
+    - rid: 6020322487487431445
+    - rid: 6020322487487431447
+  m_Typewriter:
+    m_UseTypewriter: 1
+    m_Frequency: 20
+    m_Gibberish:
+      m_Property:
+        rid: 6020322487487431438
+    m_Pitch: {x: 1, y: 1}
+  m_OverrideSpeechSkin: {fileID: 0}
+  m_Portrait: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 6020322487487431435
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Osana
+    - rid: 6020322487487431436
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 
+    - rid: 6020322487487431437
+      type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Id:
+          m_String: Osana
+        m_Sprite:
+          m_Property:
+            rid: 6020322487487431439
+        m_InstructionsOnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_InstructionsOnEnd:
+          m_Instructions:
+            m_Instructions: []
+        m_OverrideSpeechSkin: {fileID: 0}
+    - rid: 6020322487487431438
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322487487431439
+      type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Sprite: {fileID: 21300000, guid: 033f493265f73834da223c1af74f69e7, type: 3}
+    - rid: 6020322487487431445
+      type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Id:
+          m_String: Osana-Talk
+        m_Sprite:
+          m_Property:
+            rid: 6020322487487431446
+        m_InstructionsOnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_InstructionsOnEnd:
+          m_Instructions:
+            m_Instructions: []
+        m_OverrideSpeechSkin: {fileID: 0}
+    - rid: 6020322487487431446
+      type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Sprite: {fileID: 21300000, guid: b64ee5f422fdb62448875fdb92bee843, type: 3}
+    - rid: 6020322487487431447
+      type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Id:
+          m_String: Osana-Sick
+        m_Sprite:
+          m_Property:
+            rid: 6020322487487431448
+        m_InstructionsOnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_InstructionsOnEnd:
+          m_Instructions:
+            m_Instructions: []
+        m_OverrideSpeechSkin: {fileID: 0}
+    - rid: 6020322487487431448
+      type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Sprite: {fileID: 21300000, guid: 3f2022f4bd9caf04c96beca566b58b47, type: 3}
