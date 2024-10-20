@@ -225,10 +225,10 @@ namespace GameCreator.Runtime.Common
 
                 foreach (Material material in renderer.sharedMaterials)
                 {
-                    if (material.HasTexture(materialSounds.TextureID) == false) continue;
+                    // if (material.HasTexture(materialSounds.TextureID) == false) continue;
                     
                     Texture texture = material.GetTexture(materialSounds.TextureID);
-                    if (texture == null) continue;
+                    // if (texture == null) continue;
                     
                     this.PlaySound(texture, 1f, speed, transform, args);
                     this.PlayImpact(texture, transform, hit, yaw);
@@ -254,14 +254,14 @@ namespace GameCreator.Runtime.Common
         
         private void PlaySound(Texture texture, float weight, float speed, Transform target, Args args)
         {
-            if (texture == null) return;
+            // if (texture == null) return;
 
             IMaterialSound materialSound;
             AudioConfigSoundEffect config;
 
             float pitch = Mathf.Lerp(PITCH_LERP_WEIGHT.x, PITCH_LERP_WEIGHT.y, weight);
 
-            if (this.m_LookupTable.TryGetValue(texture, out MaterialSoundTexture material))
+            if (texture != null && this.m_LookupTable.TryGetValue(texture, out MaterialSoundTexture material))
             {
                 AudioClip audioClip = material.Audio;
                 FMODAudio fmodAudio = material.FMODAudio;

@@ -25,7 +25,7 @@ namespace GameCreator.Runtime.Common
         
         // PROPERTIES: ----------------------------------------------------------------------------
 
-        public override string Title => $"{this.m_Name} ({this.m_Variations.Length})";
+        public override string Title => $"{this.m_Name} ({this.m_Variations.Length + this.m_FMODVariations.Length})";
         
         public float Volume => this.m_Volume;
 

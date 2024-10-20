@@ -5,11 +5,11 @@ using GameCreator.Runtime.Common.Audio;
 
 namespace GameCreator.Runtime.VisualScripting
 {
-    [Title("Play Sound")]
+    [Title("Play Audio")]
     [Keywords("Audio", "Sounds")]
     [Image(typeof(IconMusicNote), ColorTheme.Type.Yellow)]
     
-    [Category("Audio/Play Sound")]
+    [Category("Audio/Play Audio")]
     [Description(
         "Plays a User Interface sound effect when the Hotspot is activated or deactivated"
     )]
