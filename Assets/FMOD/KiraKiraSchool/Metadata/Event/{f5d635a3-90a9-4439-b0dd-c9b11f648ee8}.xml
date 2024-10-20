@@ -221,6 +221,7 @@
 	<object class="MixerBusEffectChain" id="{6b2a852f-4f1a-43b9-916b-871b22d2f56d}">
 		<relationship name="effects">
 			<destination>{18be44ed-a8db-4a07-9d71-ac5c29a11ba8}</destination>
+			<destination>{22f37a7e-e59c-4dd3-a011-a0404c3ed37a}</destination>
 			<destination>{50949ade-76b8-4a69-a1dd-b1f676a65c84}</destination>
 		</relationship>
 	</object>
@@ -281,6 +282,11 @@
 		<property name="qualityA">
 			<value>0.288379312</value>
 		</property>
+	</object>
+	<object class="GainEffect" id="{22f37a7e-e59c-4dd3-a011-a0404c3ed37a}">
+		<relationship name="modulators">
+			<destination>{297bca8c-f86b-43d9-ae17-5eb4907b27f3}</destination>
+		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{50949ade-76b8-4a69-a1dd-b1f676a65c84}" />
 	<object class="AutomationPoint" id="{13563a2d-e040-4c57-9937-c7e4d1019b70}">
@@ -346,4 +352,24 @@
 	</object>
 	<object class="MixerBusFader" id="{715f4c75-af20-4041-bd29-d6782d35a60a}" />
 	<object class="MixerBusFader" id="{cf97f177-3e3d-4b4e-b55a-0281ba5ff4ad}" />
+	<object class="ADSRModulator" id="{297bca8c-f86b-43d9-ae17-5eb4907b27f3}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>gain</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>840</value>
+		</property>
+		<property name="holdTime">
+			<value>0</value>
+		</property>
+		<property name="releaseTime">
+			<value>3000</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 </objects>
