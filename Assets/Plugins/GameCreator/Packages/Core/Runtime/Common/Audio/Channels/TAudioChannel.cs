@@ -2,9 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Audio;
-using FMODUnity;
 using System;
-using FMOD.Studio;
 
 namespace GameCreator.Runtime.Common.Audio
 {
@@ -62,6 +60,16 @@ namespace GameCreator.Runtime.Common.Audio
 
             return false;
         }
+        public bool IsPlaying(FMODAudio fmodAudio)
+        {
+            if (fmodAudio == null) return false;
+            foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
+            {
+                if (activeBuffer.FMODRef.Path == fmodAudio.Audio.Path) return true;
+            }
+
+            return false;
+        }
         
         public bool IsPlaying(GameObject target)
         {
@@ -89,7 +97,21 @@ namespace GameCreator.Runtime.Common.Audio
 
             return false;
         }
+        public bool IsPlaying(FMODAudio fmodAudio, GameObject target)
+        {
+            if (target == null) return false;
+            if (fmodAudio == null) return false;
+            
+            foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
+            {
+                if (activeBuffer.Target == target && activeBuffer.FMODRef.Path == fmodAudio.Audio.Path)
+                {
+                    return true;
+                }
+            }
 
+            return false;
+        }
         public void ChangePitch(AudioClip audioClip, GameObject target, float pitch)
         {
             if (target == null) return;
@@ -101,7 +123,18 @@ namespace GameCreator.Runtime.Common.Audio
                 activeBuffer.Pitch = pitch;
             }
         }
-        
+        public void ChangePitch(FMODAudio fmodAudio, GameObject target, float pitch)
+        {
+            if (target == null) return;
+            if (fmodAudio == null) return;
+            
+            foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
+            {
+                if (activeBuffer.Target != target || activeBuffer.FMODRef.Path != fmodAudio.Audio.Path) continue;
+                activeBuffer.Pitch = pitch;
+            }
+        }
+
         public async Task Play(AudioClip audioClip, IAudioConfig audioConfig, Args args)
         {
             if (audioClip == null) return;

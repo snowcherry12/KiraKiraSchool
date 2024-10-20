@@ -5,7 +5,7 @@ using FMODUnity;
 namespace GameCreator.Runtime.Common
 {
     [Serializable]
-    public class FMODAudio : TPolymorphicItem<FMODAudio>
+    public class FMODAudio
     {
         // MEMBERS: -------------------------------------------------------------------------------
         [SerializeField] private EventReference m_Audio;
@@ -15,6 +15,5 @@ namespace GameCreator.Runtime.Common
         public EventReference Audio => this.m_Audio;
         
         public FMOD.Parameter[] Params => this.m_Params;
-
     }
 }

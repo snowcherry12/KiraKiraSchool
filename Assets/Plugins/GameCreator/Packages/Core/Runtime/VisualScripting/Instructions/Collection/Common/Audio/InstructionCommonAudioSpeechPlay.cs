@@ -24,33 +24,29 @@ namespace GameCreator.Runtime.VisualScripting
     [Serializable]
     public class InstructionCommonAudioSpeechPlay : Instruction
     {
-        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioClip.Create;
+        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioNone.Create;
+        [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
         [SerializeField] private bool m_WaitToComplete;
         
         [SerializeField] private AudioConfigSpeech m_Config = new AudioConfigSpeech();
 
-        public override string Title => $"Play Speech: {this.m_AudioClip}";
+        public override string Title => $"Play Speech: {this.m_AudioClip} (or) {this.m_FMODAudio}";
 
         protected override async Task Run(Args args)
         {
             AudioClip audioClip = this.m_AudioClip.Get(args);
-            if (audioClip == null) return;
+            FMODAudio fmodAudio = this.m_FMODAudio.Get(args);
+            if (audioClip == null && fmodAudio == null) return;
             
             if (this.m_WaitToComplete)
             {
-                await AudioManager.Instance.Speech.Play(
-                    audioClip, 
-                    this.m_Config,
-                    args
-                );
+                if (audioClip != null) await AudioManager.Instance.Speech.Play(audioClip, this.m_Config, args);
+                if (fmodAudio != null) await AudioManager.Instance.Speech.Play(fmodAudio, this.m_Config, args);
             }
             else
             {
-                _ = AudioManager.Instance.Speech.Play(
-                    audioClip, 
-                    this.m_Config,
-                    args
-                );
+                if (audioClip != null) _ = AudioManager.Instance.Speech.Play(audioClip, this.m_Config, args);
+                if (fmodAudio != null) _ = AudioManager.Instance.Speech.Play(fmodAudio, this.m_Config, args);
             }
         }
     }

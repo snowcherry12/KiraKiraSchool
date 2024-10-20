@@ -26,15 +26,17 @@ namespace GameCreator.Runtime.VisualScripting
     [Serializable]
     public class InstructionCommonAudioMusicPlay : Instruction
     {
-        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioClip.Create;
+        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioNone.Create;
+        [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
         [SerializeField] private AudioConfigMusic m_Config = new AudioConfigMusic();
 
-        public override string Title => $"Play Music: {this.m_AudioClip}";
+        public override string Title => $"Play Music: {this.m_AudioClip} (or) {this.m_FMODAudio}";
 
         protected override Task Run(Args args)
         {
             AudioClip audioClip = this.m_AudioClip.Get(args);
-            if (audioClip == null) return DefaultResult;
+            FMODAudio fmodAudio = this.m_FMODAudio.Get(args);
+            if (audioClip == null && fmodAudio == null) return DefaultResult;
             
             if (!AudioManager.Instance.Music.IsPlaying(audioClip))
             {
@@ -44,7 +46,14 @@ namespace GameCreator.Runtime.VisualScripting
                     args
                 );   
             }
-
+            if (!AudioManager.Instance.Music.IsPlaying(fmodAudio))
+            {
+                _ = AudioManager.Instance.Music.Play(
+                    fmodAudio, 
+                    this.m_Config,
+                    args
+                );   
+            }
             return DefaultResult;
         }
     }

@@ -51,7 +51,7 @@ namespace GameCreator.Runtime.Common.Audio
             this.m_Volume.Update();
 
             volume *= this.m_Volume.Current;
-            if (this.AudioClip != null) this.AudioSource.volume = Rescale(volume);
+            this.AudioSource.volume = Rescale(volume);
             if (!String.IsNullOrEmpty(FMODRef.Path)) this.FMODAudio.setVolume(Rescale(volume));
 
             GameObject target = this.m_AudioConfig?.GetTrackTarget(this.m_Args);
@@ -73,11 +73,11 @@ namespace GameCreator.Runtime.Common.Audio
                 ? Time.timeScale
                 : 1f;
             
-            if (this.AudioClip != null) this.AudioSource.pitch = this.Pitch * timeScale; 
-            if (!String.IsNullOrEmpty(FMODRef.Path)) this.FMODAudio.setPitch(this.Pitch * timeScale);
+            this.AudioSource.pitch = this.Pitch * timeScale;
 
             if (!String.IsNullOrEmpty(FMODRef.Path))
             {
+                this.FMODAudio.setPitch(this.Pitch * timeScale);
                 PLAYBACK_STATE playbackState;
                 this.FMODAudio.getPlaybackState(out playbackState);
                 return playbackState == PLAYBACK_STATE.PLAYING;

@@ -12,7 +12,7 @@ namespace GameCreator.Runtime.VisualScripting
     [Category("Math/Boolean/Set Bool")]
 
     [Parameter("Set", "Where the value is set")]
-    [Parameter("From", "The value that is set")]
+    [Parameter("To", "The value that is set")]
 
     [Keywords("Change", "Boolean", "Variable")]
     [Image(typeof(IconToggleOn), ColorTheme.Type.Red)]

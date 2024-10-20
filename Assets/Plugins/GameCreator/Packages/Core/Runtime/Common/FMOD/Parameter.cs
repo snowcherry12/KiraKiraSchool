@@ -4,7 +4,7 @@ using UnityEngine;
 namespace GameCreator.Runtime.Common.FMOD
 {
     [Serializable]
-    public class Parameter : TPolymorphicItem<Parameter>
+    public class Parameter
     {
         // MEMBERS: -------------------------------------------------------------------------------
         [SerializeField] private string m_Name;

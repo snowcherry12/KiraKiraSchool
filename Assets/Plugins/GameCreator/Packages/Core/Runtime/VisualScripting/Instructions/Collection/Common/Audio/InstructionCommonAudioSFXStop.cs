@@ -18,14 +18,15 @@ namespace GameCreator.Runtime.VisualScripting
     [Serializable]
     public class InstructionCommonAudioSFXStop : Instruction
     {
-        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioClip.Create;
+        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioNone.Create;
+        [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
         
         [SerializeField] private bool m_WaitToComplete;
         [SerializeField] private float transitionOut = 0.1f;
 
         public override string Title => string.Format(
             "Stop SFX: {0} {1}",
-            this.m_AudioClip,
+            this.m_AudioClip, " (or) ", this.m_FMODAudio,
             this.transitionOut < float.Epsilon 
                 ? string.Empty 
                 : string.Format(
@@ -38,21 +39,18 @@ namespace GameCreator.Runtime.VisualScripting
         protected override async Task Run(Args args)
         {
             AudioClip audioClip = this.m_AudioClip.Get(args);
-            if (audioClip == null) return;
+            FMODAudio fmodAudio = this.m_FMODAudio.Get(args);
+            if (audioClip == null && fmodAudio == null) return;
             
             if (this.m_WaitToComplete)
             {
-                await AudioManager.Instance.SoundEffect.Stop(
-                    audioClip,
-                    this.transitionOut
-                );
+                if (audioClip != null) await AudioManager.Instance.SoundEffect.Stop(audioClip, this.transitionOut);
+                if (fmodAudio != null) await AudioManager.Instance.SoundEffect.Stop(fmodAudio, this.transitionOut);
             }
             else
             {
-                _ = AudioManager.Instance.SoundEffect.Stop(
-                    audioClip,
-                    this.transitionOut
-                );
+                if (audioClip != null) _ = AudioManager.Instance.SoundEffect.Stop(audioClip, this.transitionOut);
+                if (fmodAudio != null) _ = AudioManager.Instance.SoundEffect.Stop(fmodAudio, this.transitionOut);
             }
         }
     }
