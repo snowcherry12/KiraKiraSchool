@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0b935016f124151bbd7d3de9dcfa14, type: 3}
+  m_Name: Kira_Footstep
+  m_EditorClassIdentifier: 
+  m_TextureName: _MainTex
+  m_MaterialSounds:
+    m_LayerMask:
+      serializedVersion: 2
+      m_Bits: 499
+    m_MaterialSounds:
+    - rid: 6020322505148858925
+    m_DefaultSounds:
+      m_Volume: 1
+      m_Variations:
+      - {fileID: 0}
+      m_FMODVariations:
+      - m_Audio:
+          Guid:
+            Data1: 1294392796
+            Data2: 1128160991
+            Data3: -161972832
+            Data4: 506037249
+          Path: event:/Foley/Footsteps/FTP_Shoes
+        m_Params:
+        - m_Name: 
+          m_Value: 0
+      m_Impact:
+        m_Prefab: {fileID: 8894929110622384770, guid: 053042bf44fe74e698466133392d634c, type: 3}
+        m_UsePooling:
+          m_IsEnabled: 1
+          m_Value: 5
+        m_Duration:
+          m_IsEnabled: 1
+          m_Value: 10
+  references:
+    version: 2
+    RefIds:
+    - rid: 6020322505148858925
+      type: {class: MaterialSoundTexture, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Name: My Ground Type
+        m_Texture: {fileID: 2800000, guid: 89b9b1ac9b0de486fa2d56bea6f1e5ee, type: 3}
+        m_Impact:
+          m_Prefab: {fileID: 8894929110622384770, guid: 053042bf44fe74e698466133392d634c, type: 3}
+          m_UsePooling:
+            m_IsEnabled: 1
+            m_Value: 5
+          m_Duration:
+            m_IsEnabled: 1
+            m_Value: 10
+        m_Volume: 0.25
+        m_Variations:
+        - {fileID: 0}
+        m_FMODVariations:
+        - m_Audio:
+            Guid:
+              Data1: 1294392796
+              Data2: 1128160991
+              Data3: -161972832
+              Data4: 506037249
+            Path: event:/Foley/Footsteps/FTP_Shoes
+          m_Params: []
