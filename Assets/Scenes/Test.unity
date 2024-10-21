@@ -3978,6 +3978,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322524551447364
     - rid: 6020322524551447378
+    - rid: 6020322524551447417
   m_TriggerEvent:
     rid: 6020322524551447280
   references:
@@ -4067,6 +4068,39 @@ MonoBehaviour:
       type: {class: GetGameObjectShot, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
       data:
         m_Shot: {fileID: 948602958}
+    - rid: 6020322524551447417
+      type: {class: InstructionBooleanSetBool, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Set:
+          m_Property:
+            rid: 6020322524551447420
+        m_From:
+          m_Property:
+            rid: 6020322524551447432
+    - rid: 6020322524551447420
+      type: {class: SetBoolLocalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: boolean
+          m_Variable:
+            rid: 6020322524551447421
+          m_Name:
+            m_String: ToggleCamera
+            m_ID: 1594206880
+    - rid: 6020322524551447421
+      type: {class: PropertyGetGameObject, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Property:
+          rid: 6020322524551447423
+    - rid: 6020322524551447423
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322524551447432
+      type: {class: GetBoolTrue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &441473050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4131,6 +4165,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322524551447364
     - rid: 6020322524551447378
+    - rid: 6020322524551447424
   m_TriggerEvent:
     rid: 6020322524551447280
   references:
@@ -4219,6 +4254,39 @@ MonoBehaviour:
         m_Shot: {fileID: 1617906777}
     - rid: 6020322524551447383
       type: {class: GetBoolTrue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322524551447424
+      type: {class: InstructionBooleanSetBool, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Set:
+          m_Property:
+            rid: 6020322524551447427
+        m_From:
+          m_Property:
+            rid: 6020322524551447431
+    - rid: 6020322524551447427
+      type: {class: SetBoolLocalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: boolean
+          m_Variable:
+            rid: 6020322524551447428
+          m_Name:
+            m_String: ToggleCamera
+            m_ID: 1594206880
+    - rid: 6020322524551447428
+      type: {class: PropertyGetGameObject, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Property:
+          rid: 6020322524551447430
+    - rid: 6020322524551447430
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322524551447431
+      type: {class: GetBoolFalse, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
 --- !u!1 &441523534
 GameObject:
