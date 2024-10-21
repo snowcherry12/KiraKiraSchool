@@ -3977,8 +3977,8 @@ MonoBehaviour:
   m_Instructions:
     m_Instructions:
     - rid: 6020322524551447364
+    - rid: 6020322524551447495
     - rid: 6020322524551447378
-    - rid: 6020322524551447417
   m_TriggerEvent:
     rid: 6020322524551447280
   references:
@@ -4011,42 +4011,7 @@ MonoBehaviour:
         m_IsEnabled: 1
         m_Conditions:
           m_Conditions:
-          - rid: 6020322524551447370
-    - rid: 6020322524551447370
-      type: {class: ConditionMathCompareBooleans, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Sign: 1
-        m_Value:
-          m_Property:
-            rid: 6020322524551447373
-        m_Comparison: 0
-        m_CompareTo:
-          m_Property:
-            rid: 6020322524551447377
-    - rid: 6020322524551447373
-      type: {class: GetBoolLocalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
-      data:
-        m_Variable:
-          m_TypeID:
-            m_String: boolean
-          m_Variable:
-            rid: 6020322524551447374
-          m_Name:
-            m_String: ToggleCamera
-            m_ID: 1594206880
-    - rid: 6020322524551447374
-      type: {class: PropertyGetGameObject, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Property:
-          rid: 6020322524551447376
-    - rid: 6020322524551447376
-      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 6020322524551447377
-      type: {class: GetBoolFalse, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
+          - rid: 6020322524551447501
     - rid: 6020322524551447378
       type: {class: InstructionCameraShotChange, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -4068,39 +4033,33 @@ MonoBehaviour:
       type: {class: GetGameObjectShot, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
       data:
         m_Shot: {fileID: 948602958}
-    - rid: 6020322524551447417
-      type: {class: InstructionBooleanSetBool, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+    - rid: 6020322524551447495
+      type: {class: InstructionCommonTimeWait, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
-        m_Set:
+        m_Seconds:
           m_Property:
-            rid: 6020322524551447420
-        m_From:
+            rid: 6020322524551447496
+        m_Mode:
+          m_UpdateTime: 0
+    - rid: 6020322524551447496
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.1
+    - rid: 6020322524551447501
+      type: {class: ConditionCameraShotActive, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Sign: 1
+        m_Shot:
           m_Property:
-            rid: 6020322524551447432
-    - rid: 6020322524551447420
-      type: {class: SetBoolLocalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+            rid: 6020322524551447502
+    - rid: 6020322524551447502
+      type: {class: GetGameObjectShot, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
       data:
-        m_Variable:
-          m_TypeID:
-            m_String: boolean
-          m_Variable:
-            rid: 6020322524551447421
-          m_Name:
-            m_String: ToggleCamera
-            m_ID: 1594206880
-    - rid: 6020322524551447421
-      type: {class: PropertyGetGameObject, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Property:
-          rid: 6020322524551447423
-    - rid: 6020322524551447423
-      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 6020322524551447432
-      type: {class: GetBoolTrue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
+        m_Shot: {fileID: 1617906777}
 --- !u!114 &441473050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4164,8 +4123,8 @@ MonoBehaviour:
   m_Instructions:
     m_Instructions:
     - rid: 6020322524551447364
+    - rid: 6020322524551447497
     - rid: 6020322524551447378
-    - rid: 6020322524551447424
   m_TriggerEvent:
     rid: 6020322524551447280
   references:
@@ -4176,7 +4135,7 @@ MonoBehaviour:
       data:
         m_Button:
           m_Input:
-            rid: 6020322524551447283
+            rid: 6020322524551447454
         m_MinDistance:
           m_MinDistance: 0
           m_To:
@@ -4187,10 +4146,6 @@ MonoBehaviour:
     - rid: 6020322524551447282
       type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data: 
-    - rid: 6020322524551447283
-      type: {class: InputButtonKeyboardPress, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Key: 3
     - rid: 6020322524551447364
       type: {class: InstructionLogicCheckConditions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -4198,39 +4153,7 @@ MonoBehaviour:
         m_IsEnabled: 1
         m_Conditions:
           m_Conditions:
-          - rid: 6020322524551447370
-    - rid: 6020322524551447370
-      type: {class: ConditionMathCompareBooleans, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Sign: 1
-        m_Value:
-          m_Property:
-            rid: 6020322524551447373
-        m_Comparison: 0
-        m_CompareTo:
-          m_Property:
-            rid: 6020322524551447383
-    - rid: 6020322524551447373
-      type: {class: GetBoolLocalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
-      data:
-        m_Variable:
-          m_TypeID:
-            m_String: boolean
-          m_Variable:
-            rid: 6020322524551447374
-          m_Name:
-            m_String: ToggleCamera
-            m_ID: 1594206880
-    - rid: 6020322524551447374
-      type: {class: PropertyGetGameObject, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Property:
-          rid: 6020322524551447376
-    - rid: 6020322524551447376
-      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
+          - rid: 6020322524551447499
     - rid: 6020322524551447378
       type: {class: InstructionCameraShotChange, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -4252,42 +4175,37 @@ MonoBehaviour:
       type: {class: GetGameObjectShot, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
       data:
         m_Shot: {fileID: 1617906777}
-    - rid: 6020322524551447383
-      type: {class: GetBoolTrue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 6020322524551447424
-      type: {class: InstructionBooleanSetBool, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+    - rid: 6020322524551447454
+      type: {class: InputButtonKeyboardPress, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Key: 3
+    - rid: 6020322524551447497
+      type: {class: InstructionCommonTimeWait, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
-        m_Set:
+        m_Seconds:
           m_Property:
-            rid: 6020322524551447427
-        m_From:
+            rid: 6020322524551447498
+        m_Mode:
+          m_UpdateTime: 0
+    - rid: 6020322524551447498
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.1
+    - rid: 6020322524551447499
+      type: {class: ConditionCameraShotActive, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Sign: 1
+        m_Shot:
           m_Property:
-            rid: 6020322524551447431
-    - rid: 6020322524551447427
-      type: {class: SetBoolLocalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+            rid: 6020322524551447500
+    - rid: 6020322524551447500
+      type: {class: GetGameObjectShot, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
       data:
-        m_Variable:
-          m_TypeID:
-            m_String: boolean
-          m_Variable:
-            rid: 6020322524551447428
-          m_Name:
-            m_String: ToggleCamera
-            m_ID: 1594206880
-    - rid: 6020322524551447428
-      type: {class: PropertyGetGameObject, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Property:
-          rid: 6020322524551447430
-    - rid: 6020322524551447430
-      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 6020322524551447431
-      type: {class: GetBoolFalse, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
+        m_Shot: {fileID: 948602958}
 --- !u!1 &441523534
 GameObject:
   m_ObjectHideFlags: 0
