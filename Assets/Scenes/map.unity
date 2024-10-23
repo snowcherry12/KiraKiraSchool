@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09419428, g: 0.50043005, b: 0.79271436, a: 1}
+  m_IndirectSpecularColor: {r: 0.09417825, g: 0.5004113, b: 0.7926439, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4644,6 +4644,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322203994947766
     - rid: 6020322203994947731
+    - rid: 6090316385233928265
     - rid: 6020322203994947750
   m_TriggerEvent:
     rid: 6020322203994947727
@@ -4731,6 +4732,45 @@ MonoBehaviour:
       type: {class: GetQuestInstance, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
       data:
         m_Quest: {fileID: 11400000, guid: 4340c52944a1b0e46a56202ce1164a3c, type: 2}
+    - rid: 6090316385233928265
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 6090316385233928266
+        m_FMODAudio:
+          m_Property:
+            rid: 6090316385233928267
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 6090316385233928268
+    - rid: 6090316385233928266
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6090316385233928267
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 926096284
+              Data2: 1097220392
+              Data3: -1270670961
+              Data4: 550645776
+            Path: event:/Foley/Interactions/PickupItems
+          m_Params: []
+    - rid: 6090316385233928268
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &373168155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12240,6 +12280,69 @@ Transform:
   - {fileID: 1293193675}
   m_Father: {fileID: 1794112800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &641313818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641313819}
+  - component: {fileID: 641313820}
+  m_Layer: 0
+  m_Name: Ambience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &641313819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641313818}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1579655289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &641313820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641313818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1893665876
+      Data2: 1270561742
+      Data3: 1700892073
+      Data4: 633504682
+    Path: event:/Ambiences/AMB_FantasyMap
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &642947279
 GameObject:
   m_ObjectHideFlags: 0
@@ -12439,6 +12542,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322203994947762
     - rid: 6020322203994947743
+    - rid: 6090316385233928235
     - rid: 6020322203994947747
   m_TriggerEvent:
     rid: 6020322203994947739
@@ -12518,6 +12622,45 @@ MonoBehaviour:
       type: {class: GetQuestInstance, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
       data:
         m_Quest: {fileID: 11400000, guid: 4340c52944a1b0e46a56202ce1164a3c, type: 2}
+    - rid: 6090316385233928235
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 6090316385233928236
+        m_FMODAudio:
+          m_Property:
+            rid: 6090316385233928239
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 6090316385233928238
+    - rid: 6090316385233928236
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6090316385233928238
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6090316385233928239
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 926096284
+              Data2: 1097220392
+              Data3: -1270670961
+              Data4: 550645776
+            Path: event:/Foley/Interactions/PickupItems
+          m_Params: []
 --- !u!1 &659041832
 GameObject:
   m_ObjectHideFlags: 0
@@ -15774,6 +15917,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322203994947766
     - rid: 6020322203994947731
+    - rid: 6090316385233928281
     - rid: 6020322203994947750
   m_TriggerEvent:
     rid: 6020322203994947727
@@ -15861,6 +16005,45 @@ MonoBehaviour:
       type: {class: GetQuestInstance, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
       data:
         m_Quest: {fileID: 11400000, guid: 4340c52944a1b0e46a56202ce1164a3c, type: 2}
+    - rid: 6090316385233928281
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 6090316385233928282
+        m_FMODAudio:
+          m_Property:
+            rid: 6090316385233928283
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 6090316385233928284
+    - rid: 6090316385233928282
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6090316385233928283
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 926096284
+              Data2: 1097220392
+              Data3: -1270670961
+              Data4: 550645776
+            Path: event:/Foley/Interactions/PickupItems
+          m_Params: []
+    - rid: 6090316385233928284
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &892919113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16449,6 +16632,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322203994947766
     - rid: 6020322203994947731
+    - rid: 6090316385233928277
     - rid: 6020322203994947750
   m_TriggerEvent:
     rid: 6020322203994947727
@@ -16536,6 +16720,45 @@ MonoBehaviour:
       type: {class: GetQuestInstance, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
       data:
         m_Quest: {fileID: 11400000, guid: 4340c52944a1b0e46a56202ce1164a3c, type: 2}
+    - rid: 6090316385233928277
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 6090316385233928278
+        m_FMODAudio:
+          m_Property:
+            rid: 6090316385233928279
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 6090316385233928280
+    - rid: 6090316385233928278
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6090316385233928279
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 926096284
+              Data2: 1097220392
+              Data3: -1270670961
+              Data4: 550645776
+            Path: event:/Foley/Interactions/PickupItems
+          m_Params: []
+    - rid: 6090316385233928280
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &930296502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18787,6 +19010,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322203994947766
     - rid: 6020322203994947731
+    - rid: 6090316385233928261
     - rid: 6020322203994947750
   m_TriggerEvent:
     rid: 6020322203994947727
@@ -18874,6 +19098,45 @@ MonoBehaviour:
       type: {class: GetQuestInstance, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
       data:
         m_Quest: {fileID: 11400000, guid: 4340c52944a1b0e46a56202ce1164a3c, type: 2}
+    - rid: 6090316385233928261
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 6090316385233928262
+        m_FMODAudio:
+          m_Property:
+            rid: 6090316385233928263
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 6090316385233928264
+    - rid: 6090316385233928262
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6090316385233928263
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 926096284
+              Data2: 1097220392
+              Data3: -1270670961
+              Data4: 550645776
+            Path: event:/Foley/Interactions/PickupItems
+          m_Params: []
+    - rid: 6090316385233928264
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1165490674
 GameObject:
   m_ObjectHideFlags: 0
@@ -21503,6 +21766,106 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioSFXPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928309]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928310]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928311]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetGameObjectNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928312]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[3]
+      value: 6090316385233928308
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_WaitToComplete
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_Config.m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_Config.m_Pitch.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_Config.m_Pitch.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928312].m_Value.m_Audio.Path
+      value: event:/Stingers/STG_QuestComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_Config.m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_AudioClip.m_Property
+      value: 6090316385233928309
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_FMODAudio.m_Property
+      value: 6090316385233928312
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_Config.m_SpatialBlend
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_Config.m_TransitionIn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928312].m_Value.m_Audio.Guid.Data1
+      value: 2120679440
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928312].m_Value.m_Audio.Guid.Data2
+      value: 1101920488
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928312].m_Value.m_Audio.Guid.Data3
+      value: 1320450213
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928312].m_Value.m_Audio.Guid.Data4
+      value: -704874786
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928312].m_Value.m_Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672474119419227021, guid: 049fbf6e337304eda8d1036ca1b63be7, type: 3}
+      propertyPath: managedReferences[6090316385233928308].m_Config.m_Target.m_Property
+      value: 6090316385233928311
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22495,6 +22858,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357806617}
   m_Mesh: {fileID: 4300000, guid: 4ef2603769f3b4a498a8b4eaa89028ea, type: 2}
+--- !u!1 &1362416153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1362416154}
+  - component: {fileID: 1362416155}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1362416154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362416153}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1579655289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1362416155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362416153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1703052941
+      Data2: 1207741144
+      Data3: -536095579
+      Data4: -354084081
+    Path: event:/Music/MSC_FantasyMap
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1376621894
 GameObject:
   m_ObjectHideFlags: 0
@@ -24116,6 +24542,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322203994947766
     - rid: 6020322203994947731
+    - rid: 6090316385233928273
     - rid: 6020322203994947750
   m_TriggerEvent:
     rid: 6020322203994947727
@@ -24203,6 +24630,45 @@ MonoBehaviour:
       type: {class: GetQuestInstance, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
       data:
         m_Quest: {fileID: 11400000, guid: 4340c52944a1b0e46a56202ce1164a3c, type: 2}
+    - rid: 6090316385233928273
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 6090316385233928274
+        m_FMODAudio:
+          m_Property:
+            rid: 6090316385233928275
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 6090316385233928276
+    - rid: 6090316385233928274
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6090316385233928275
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 926096284
+              Data2: 1097220392
+              Data3: -1270670961
+              Data4: 550645776
+            Path: event:/Foley/Interactions/PickupItems
+          m_Params: []
+    - rid: 6090316385233928276
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &1483383823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24946,6 +25412,39 @@ MonoBehaviour:
   m_dragForce: 0.5
   m_jointRadius: 0
   m_drawCollider: 0
+--- !u!1 &1579655288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579655289}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1579655289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579655288}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.135999, y: -37.517574, z: 30.68519}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1362416154}
+  - {fileID: 641313819}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1579683495
 GameObject:
   m_ObjectHideFlags: 0
@@ -25944,6 +26443,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322203994947766
     - rid: 6020322203994947731
+    - rid: 6090316385233928269
     - rid: 6020322203994947750
   m_TriggerEvent:
     rid: 6020322203994947727
@@ -26031,6 +26531,45 @@ MonoBehaviour:
       type: {class: GetQuestInstance, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
       data:
         m_Quest: {fileID: 11400000, guid: 4340c52944a1b0e46a56202ce1164a3c, type: 2}
+    - rid: 6090316385233928269
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 6090316385233928270
+        m_FMODAudio:
+          m_Property:
+            rid: 6090316385233928271
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 6090316385233928272
+    - rid: 6090316385233928270
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6090316385233928271
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 926096284
+              Data2: 1097220392
+              Data3: -1270670961
+              Data4: 550645776
+            Path: event:/Foley/Interactions/PickupItems
+          m_Params: []
+    - rid: 6090316385233928272
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &1696543496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31447,3 +31986,4 @@ SceneRoots:
   - {fileID: 1332730586}
   - {fileID: 1039520027}
   - {fileID: 754409712}
+  - {fileID: 1579655289}
