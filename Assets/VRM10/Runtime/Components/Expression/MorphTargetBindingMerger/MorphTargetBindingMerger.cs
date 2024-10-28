@@ -48,7 +48,7 @@ namespace UniVRM10
                     var morphTarget = MorphTargetIdentifier.Create(rawBinding, modelRoot);
                     if (!morphTarget.HasValue)
                     {
-                        Debug.LogWarning($"Invalid {nameof(MorphTargetBinding)} found: {rawBinding}");
+                        // Debug.LogWarning($"Invalid {nameof(MorphTargetBinding)} found: {rawBinding}");
                         continue;
                     }
                     if (bindingsPerKey.FindIndex(x => morphTarget.Value.Equals(x.TargetIdentifier)) >= 0)
