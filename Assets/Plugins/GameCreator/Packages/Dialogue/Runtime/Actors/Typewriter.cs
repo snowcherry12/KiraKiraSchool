@@ -1,6 +1,5 @@
 using System;
 using GameCreator.Runtime.Common;
-using GameCreator.Runtime.Common.Audio;
 using UnityEngine;
 
 namespace GameCreator.Runtime.Dialogue
@@ -10,7 +9,7 @@ namespace GameCreator.Runtime.Dialogue
     {
         [SerializeField] private bool m_UseTypewriter = true;
         [SerializeField] private int m_Frequency = 10;
-        [SerializeField] private PropertyGetAudio m_Gibberish = GetAudioNone.Create;
+        [SerializeField] private PropertyGetAudio m_Gibberish = GetAudioGibberishDefault.Create();
         [SerializeField] private Vector2 m_Pitch = new Vector2(0.9f, 1.1f);
 
         // PROPERTIES: ----------------------------------------------------------------------------

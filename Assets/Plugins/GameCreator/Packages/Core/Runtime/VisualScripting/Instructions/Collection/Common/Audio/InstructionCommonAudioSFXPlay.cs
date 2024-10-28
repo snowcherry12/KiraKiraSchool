@@ -32,7 +32,21 @@ namespace GameCreator.Runtime.VisualScripting
         
         [SerializeField] private AudioConfigSoundEffect m_Config = new AudioConfigSoundEffect();
 
-        public override string Title => $"Play SFX: {this.m_AudioClip} (or) {this.m_FMODAudio}";
+        public override string Title => string.Format(
+            "Play SFX: {0}{1}{2}{3}",
+            this.m_AudioClip.ToString() != "None"
+                ? this.m_AudioClip
+                : string.Empty,
+            this.m_AudioClip.ToString() != "None" && this.m_FMODAudio.ToString() != "None"
+                ? " (&) "
+                : string.Empty,
+            this.m_AudioClip.ToString() == "None" && this.m_FMODAudio.ToString() == "None"
+                ? "None"
+                : string.Empty,
+            this.m_FMODAudio.ToString() != "None"
+                ? this.m_FMODAudio
+                : string.Empty
+        );
 
         protected override async Task Run(Args args)
         {

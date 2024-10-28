@@ -14,17 +14,17 @@ namespace GameCreator.Runtime.Common.Audio
 
         [NonSerialized] private IAudioConfig m_AudioConfig;
         [NonSerialized] private Args m_Args;
-        [NonSerialized] private Parameter[] m_Params;
         [NonSerialized] private readonly AnimFloat m_Volume = new AnimFloat(1f);
+        [NonSerialized] private FMODUnity.EventReference FMODRef;
+        [NonSerialized] private Parameter[] m_Params;
         
         // PROPERTIES: ----------------------------------------------------------------------------
 
         internal AudioClip AudioClip => this.AudioSource.clip;
-        internal FMODUnity.EventReference FMODRef { get; private set; }
-        internal EventInstance FMODAudio { get; private set; }
+        internal String FMODPath => this.FMODRef.Path;
         internal GameObject Target { get; private set; }
-        
         internal AudioSource AudioSource { get; }
+        internal EventInstance FMODAudio { get; private set;}
         internal Transform Transform { get; }
         
         public float Pitch { get; set; }
@@ -52,7 +52,7 @@ namespace GameCreator.Runtime.Common.Audio
 
             volume *= this.m_Volume.Current;
             this.AudioSource.volume = Rescale(volume);
-            if (!String.IsNullOrEmpty(FMODRef.Path)) this.FMODAudio.setVolume(Rescale(volume));
+            if (!String.IsNullOrEmpty(FMODPath)) this.FMODAudio.setVolume(Rescale(volume));
 
             GameObject target = this.m_AudioConfig?.GetTrackTarget(this.m_Args);
             
@@ -65,7 +65,7 @@ namespace GameCreator.Runtime.Common.Audio
             if (target != null)
             {
                 this.Transform.position = target.transform.position;
-                if (!String.IsNullOrEmpty(FMODRef.Path))
+                if (!String.IsNullOrEmpty(FMODPath))
                     this.FMODAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.Transform.position));
             }
             
@@ -75,12 +75,12 @@ namespace GameCreator.Runtime.Common.Audio
             
             this.AudioSource.pitch = this.Pitch * timeScale;
 
-            if (!String.IsNullOrEmpty(FMODRef.Path))
+            if (!String.IsNullOrEmpty(FMODPath))
             {
                 this.FMODAudio.setPitch(this.Pitch * timeScale);
                 PLAYBACK_STATE playbackState;
                 this.FMODAudio.getPlaybackState(out playbackState);
-                return playbackState == PLAYBACK_STATE.PLAYING;
+                return playbackState != PLAYBACK_STATE.STOPPED;
             }
             else return this.AudioSource.isPlaying;
         }
@@ -118,7 +118,7 @@ namespace GameCreator.Runtime.Common.Audio
 
             PLAYBACK_STATE playbackState = PLAYBACK_STATE.PLAYING;
 
-            while (!ApplicationManager.IsExiting && playbackState == PLAYBACK_STATE.PLAYING)
+            while (!ApplicationManager.IsExiting && playbackState != PLAYBACK_STATE.STOPPED)
             {
                 this.FMODAudio.getPlaybackState(out playbackState);
                 await Task.Yield();
@@ -140,13 +140,13 @@ namespace GameCreator.Runtime.Common.Audio
                 }
             }
 
-            if (!String.IsNullOrEmpty(this.FMODRef.Path))
+            if (!String.IsNullOrEmpty(this.FMODPath))
             {
                 this.FMODAudio.stop(AudioSettings.dspTime + transition > 0f ? STOP_MODE.ALLOWFADEOUT : STOP_MODE.IMMEDIATE);
 
                 PLAYBACK_STATE playbackState = PLAYBACK_STATE.PLAYING;
                 
-                while (!ApplicationManager.IsExiting && playbackState == PLAYBACK_STATE.PLAYING)
+                while (!ApplicationManager.IsExiting && playbackState != PLAYBACK_STATE.STOPPED)
                 {
                     this.FMODAudio.getPlaybackState(out playbackState);
                     await Task.Yield();
@@ -174,7 +174,7 @@ namespace GameCreator.Runtime.Common.Audio
                 this.AudioSource.spatialBlend = this.m_AudioConfig.SpatialBlend;
             }
 
-            if (!String.IsNullOrEmpty(this.FMODRef.Path))
+            if (!String.IsNullOrEmpty(this.FMODPath))
             {
                 EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(this.FMODRef);
                 if (!eventInstance.isValid()) return;

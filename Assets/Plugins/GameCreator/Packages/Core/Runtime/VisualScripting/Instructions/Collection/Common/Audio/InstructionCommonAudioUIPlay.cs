@@ -31,7 +31,7 @@ namespace GameCreator.Runtime.VisualScripting
         
         [SerializeField] private AudioConfigSoundUI m_Config = new AudioConfigSoundUI();
 
-        public override string Title => $"Play UI sound: {this.m_AudioClip} (or) {this.m_FMODAudio}";
+        public override string Title => $"Play UI: {this.m_AudioClip} (or) {this.m_FMODAudio}";
 
         protected override async Task Run(Args args)
         {

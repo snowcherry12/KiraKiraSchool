@@ -29,8 +29,19 @@ namespace GameCreator.Runtime.VisualScripting
         [SerializeField] private float transitionOut = 2f;
 
         public override string Title => string.Format(
-            "Stop Music: {0} {1}",
-            this.m_AudioClip, " (or) ", this.m_FMODAudio,
+            "Stop Music: {0}{1}{2}{3} {4}",
+            this.m_AudioClip.ToString() != "None"
+                ? this.m_AudioClip
+                : string.Empty,
+            this.m_AudioClip.ToString() != "None" && this.m_FMODAudio.ToString() != "None"
+                ? " (&) "
+                : string.Empty,
+            this.m_AudioClip.ToString() == "None" && this.m_FMODAudio.ToString() == "None"
+                ? "None"
+                : string.Empty,
+            this.m_FMODAudio.ToString() != "None"
+                ? this.m_FMODAudio
+                : string.Empty,
             this.transitionOut < float.Epsilon 
                 ? string.Empty 
                 : string.Format(

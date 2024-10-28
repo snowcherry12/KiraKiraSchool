@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 namespace GameCreator.Runtime.Common
 {
@@ -15,5 +16,24 @@ namespace GameCreator.Runtime.Common
         public EventReference Audio => this.m_Audio;
         
         public FMOD.Parameter[] Params => this.m_Params;
+        public int Length
+        {
+            get
+            {
+                EventDescription eventDescription = RuntimeManager.GetEventDescription(m_Audio.Path);
+                if (eventDescription.isValid())
+                {
+                    int length;
+                    eventDescription.getLength(out length);
+                    eventDescription.releaseAllInstances();
+                    return length;
+                }
+                else
+                {
+                    eventDescription.releaseAllInstances();
+                    return 0;
+                }
+            }
+        }
     }
 }

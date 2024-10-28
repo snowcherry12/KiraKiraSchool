@@ -152,7 +152,7 @@ namespace GameCreator.Runtime.Dialogue
                     : AudioConfigSpeech.Create(1f, SpatialBlending.None, null);
 
                 _ = AudioManager.Instance.Speech.Play(fmodAudio, config, args);
-                // if (this.m_Duration == NodeDuration.Audio) this.m_FMODAudioLength = fmodAudio.length;
+                if (this.m_Duration == NodeDuration.Audio) this.m_FMODAudioLength = fmodAudio.Length;
             }
 
             if (this.m_Animation != null)
@@ -203,11 +203,6 @@ namespace GameCreator.Runtime.Dialogue
             float startTime = time.Time;
 
             AudioClip gibberishClip = null;
-            AudioConfigSoundUI gibberishConfig = AudioConfigSoundUI.Create(
-                1f, 
-                typewriter?.Pitch ?? new Vector2(1f, 1f)
-            );
-
             this.EventStartText?.Invoke(id);
             while (!this.CanContinue(startTime, time, args) && !story.IsCanceled)
             {
@@ -217,6 +212,11 @@ namespace GameCreator.Runtime.Dialogue
                     {
                         gibberishClip = typewriter?.GetGibberish(args);
                     }
+
+                    AudioConfigSoundUI gibberishConfig = AudioConfigSoundUI.Create(
+                        UnityEngine.Random.Range(.3f, .8f), 
+                        typewriter?.Pitch ?? new Vector2(1f, 1f)
+                    );
 
                     if (!AudioManager.Instance.UserInterface.IsPlaying(gibberishClip))
                     {

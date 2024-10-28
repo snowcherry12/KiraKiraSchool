@@ -10,50 +10,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09adff397b704c4985383dd1017864ba, type: 3}
-  m_Name: Osana
+  m_Name: KiraFantasy
   m_EditorClassIdentifier: 
   m_Actant:
     m_Name:
       m_Property:
-        rid: 6020322487487431435
+        rid: 6020322203994947589
     m_Description:
       m_Property:
-        rid: 6020322487487431436
+        rid: 6020322203994947590
   m_Expressions:
     m_Expressions:
-    - rid: 6020322487487431437
-    - rid: 6020322487487431445
-    - rid: 6020322487487431447
+    - rid: 6020322203994947591
+    - rid: 6020322487487431400
+    - rid: 6020322487487431402
+    - rid: 6020322487487431404
   m_Typewriter:
     m_UseTypewriter: 1
     m_Frequency: 20
     m_Gibberish:
       m_Property:
-        rid: 6020322633269903562
+        rid: 6020322633269903563
     m_Pitch: {x: 1, y: 1}
   m_OverrideSpeechSkin: {fileID: 11400000, guid: 3c0f5d9df92c0ad4597b1f8243e63a03, type: 2}
   m_Portrait: 1
   references:
     version: 2
     RefIds:
-    - rid: 6020322487487431435
+    - rid: 6020322203994947589
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: Osana
-    - rid: 6020322487487431436
+        m_Value: Kira
+    - rid: 6020322203994947590
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: 
-    - rid: 6020322487487431437
+    - rid: 6020322203994947591
       type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Id:
-          m_String: Osana
+          m_String: Kira
         m_Sprite:
           m_Property:
-            rid: 6020322487487431439
+            rid: 6020322203994947593
         m_InstructionsOnStart:
           m_Instructions:
             m_Instructions: []
@@ -61,20 +62,20 @@ MonoBehaviour:
           m_Instructions:
             m_Instructions: []
         m_OverrideSpeechSkin: {fileID: 0}
-    - rid: 6020322487487431439
+    - rid: 6020322203994947593
       type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Sprite: {fileID: 21300000, guid: 033f493265f73834da223c1af74f69e7, type: 3}
-    - rid: 6020322487487431445
+        m_Sprite: {fileID: 21300000, guid: 62658a67f89868243b7f93568c6e5d36, type: 3}
+    - rid: 6020322487487431400
       type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Id:
-          m_String: Osana-Talk
+          m_String: Kira-Eh
         m_Sprite:
           m_Property:
-            rid: 6020322487487431446
+            rid: 6020322487487431401
         m_InstructionsOnStart:
           m_Instructions:
             m_Instructions: []
@@ -82,20 +83,20 @@ MonoBehaviour:
           m_Instructions:
             m_Instructions: []
         m_OverrideSpeechSkin: {fileID: 0}
-    - rid: 6020322487487431446
+    - rid: 6020322487487431401
       type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Sprite: {fileID: 21300000, guid: b64ee5f422fdb62448875fdb92bee843, type: 3}
-    - rid: 6020322487487431447
+        m_Sprite: {fileID: 21300000, guid: a0b241a6959b54c439d3a97fe8e36a32, type: 3}
+    - rid: 6020322487487431402
       type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Id:
-          m_String: Osana-Sick
+          m_String: Kira-Sad
         m_Sprite:
           m_Property:
-            rid: 6020322487487431448
+            rid: 6020322487487431403
         m_InstructionsOnStart:
           m_Instructions:
             m_Instructions: []
@@ -103,10 +104,31 @@ MonoBehaviour:
           m_Instructions:
             m_Instructions: []
         m_OverrideSpeechSkin: {fileID: 0}
-    - rid: 6020322487487431448
+    - rid: 6020322487487431403
       type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Sprite: {fileID: 21300000, guid: 3f2022f4bd9caf04c96beca566b58b47, type: 3}
-    - rid: 6020322633269903562
+        m_Sprite: {fileID: 21300000, guid: ce37cea8ac1be404b9a9f2d181951254, type: 3}
+    - rid: 6020322487487431404
+      type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Id:
+          m_String: Kira-Wink
+        m_Sprite:
+          m_Property:
+            rid: 6020322487487431405
+        m_InstructionsOnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_InstructionsOnEnd:
+          m_Instructions:
+            m_Instructions: []
+        m_OverrideSpeechSkin: {fileID: 0}
+    - rid: 6020322487487431405
+      type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Sprite: {fileID: 21300000, guid: 5d09d50153bccd14daa2da49b6b7ef92, type: 3}
+    - rid: 6020322633269903563
       type: {class: GetAudioGibberish2, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data: 

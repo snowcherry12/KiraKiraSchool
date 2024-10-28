@@ -30,8 +30,21 @@ namespace GameCreator.Runtime.VisualScripting
         
         [SerializeField] private AudioConfigSpeech m_Config = new AudioConfigSpeech();
 
-        public override string Title => $"Play Speech: {this.m_AudioClip} (or) {this.m_FMODAudio}";
-
+        public override string Title => string.Format(
+            "Play Speech: {0}{1}{2}{3}",
+            this.m_AudioClip.ToString() != "None"
+                ? this.m_AudioClip
+                : string.Empty,
+            this.m_AudioClip.ToString() != "None" && this.m_FMODAudio.ToString() != "None"
+                ? " (&) "
+                : string.Empty,
+            this.m_AudioClip.ToString() == "None" && this.m_FMODAudio.ToString() == "None"
+                ? "None"
+                : string.Empty,
+            this.m_FMODAudio.ToString() != "None"
+                ? this.m_FMODAudio
+                : string.Empty
+        );
         protected override async Task Run(Args args)
         {
             AudioClip audioClip = this.m_AudioClip.Get(args);

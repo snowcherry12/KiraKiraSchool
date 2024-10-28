@@ -30,8 +30,21 @@ namespace GameCreator.Runtime.VisualScripting
         [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
         [SerializeField] private AudioConfigAmbient m_Config = new AudioConfigAmbient();
 
-        public override string Title => $"Play Ambient: {this.m_AudioClip} (or) {this.m_FMODAudio}";
-
+        public override string Title => string.Format(
+            "Play Ambient: {0}{1}{2}{3}",
+            this.m_AudioClip.ToString() != "None"
+                ? this.m_AudioClip
+                : string.Empty,
+            this.m_AudioClip.ToString() != "None" && this.m_FMODAudio.ToString() != "None"
+                ? " (&) "
+                : string.Empty,
+            this.m_AudioClip.ToString() == "None" && this.m_FMODAudio.ToString() == "None"
+                ? "None"
+                : string.Empty,
+            this.m_FMODAudio.ToString() != "None"
+                ? this.m_FMODAudio
+                : string.Empty
+        );
         protected override Task Run(Args args)
         {
             AudioClip audioClip = this.m_AudioClip.Get(args);

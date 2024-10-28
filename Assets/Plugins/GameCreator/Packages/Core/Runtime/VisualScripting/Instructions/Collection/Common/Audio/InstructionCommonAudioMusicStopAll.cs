@@ -25,7 +25,7 @@ namespace GameCreator.Runtime.VisualScripting
         [SerializeField] private float transitionOut = 2f;
 
         public override string Title => string.Format(
-            "Stop all Music {0}",
+            "Stop All Music {0}",
             this.transitionOut < float.Epsilon 
                 ? string.Empty 
                 : string.Format(

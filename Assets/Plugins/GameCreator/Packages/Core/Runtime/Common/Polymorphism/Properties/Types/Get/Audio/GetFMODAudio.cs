@@ -30,7 +30,7 @@ namespace GameCreator.Runtime.Common
         );
 
         public override string String => !String.IsNullOrEmpty(this.m_Value.Audio.Path)
-            ? this.m_Value.Audio.Path
+            ? this.m_Value.Audio.Path.Split("/")[this.m_Value.Audio.Path.Split("/").Length - 1]
             : "(none)";
 
         public override FMODAudio EditorValue => this.m_Value;

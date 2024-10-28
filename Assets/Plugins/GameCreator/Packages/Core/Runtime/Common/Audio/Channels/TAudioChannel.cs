@@ -65,7 +65,7 @@ namespace GameCreator.Runtime.Common.Audio
             if (fmodAudio == null) return false;
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
-                if (activeBuffer.FMODRef.Path == fmodAudio.Audio.Path) return true;
+                if (activeBuffer.FMODPath == fmodAudio.Audio.Path) return true;
             }
 
             return false;
@@ -104,7 +104,7 @@ namespace GameCreator.Runtime.Common.Audio
             
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
-                if (activeBuffer.Target == target && activeBuffer.FMODRef.Path == fmodAudio.Audio.Path)
+                if (activeBuffer.Target == target && activeBuffer.FMODPath == fmodAudio.Audio.Path)
                 {
                     return true;
                 }
@@ -130,7 +130,7 @@ namespace GameCreator.Runtime.Common.Audio
             
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
-                if (activeBuffer.Target != target || activeBuffer.FMODRef.Path != fmodAudio.Audio.Path) continue;
+                if (activeBuffer.Target != target || activeBuffer.FMODPath != fmodAudio.Audio.Path) continue;
                 activeBuffer.Pitch = pitch;
             }
         }
@@ -165,6 +165,7 @@ namespace GameCreator.Runtime.Common.Audio
             AudioBuffer audioBuffer = this.m_AvailableBuffers.Dequeue();
             this.m_ActiveBuffers.Add(audioBuffer);
             this.m_AudioFrame[audioBuffer.GetHashCode()] = Time.frameCount;
+
             await audioBuffer.Play(fmodAudio, audioConfig, args);
         }
 
@@ -181,6 +182,7 @@ namespace GameCreator.Runtime.Common.Audio
 
             await Task.WhenAll(tasks);
         }
+
         public async Task Stop(FMODAudio fmodAudio, float transitionOut)
         {
             if (String.IsNullOrEmpty(fmodAudio.Audio.Path)) return;
@@ -188,8 +190,8 @@ namespace GameCreator.Runtime.Common.Audio
 
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
-                if (activeBuffer.FMODRef.Path != fmodAudio.Audio.Path) continue;
-                    tasks.Add(activeBuffer.Stop(transitionOut));
+                if (activeBuffer.FMODPath != fmodAudio.Audio.Path) continue;
+                tasks.Add(activeBuffer.Stop(transitionOut));
             }
 
             await Task.WhenAll(tasks);
@@ -234,7 +236,7 @@ namespace GameCreator.Runtime.Common.Audio
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
                 if (activeBuffer.Target != target) continue;
-                if (activeBuffer.FMODRef.Path != fmodAudio.Audio.Path) continue;
+                if (activeBuffer.FMODPath != fmodAudio.Audio.Path) continue;
                 tasks.Add(activeBuffer.Stop(transitionOut));
             }
 
