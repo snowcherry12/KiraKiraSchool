@@ -40,44 +40,49 @@ namespace UniVRM10
 
         internal Vrm10RuntimeLookAt(Vrm10Instance instance, UniHumanoid.Humanoid humanoid, Vrm10RuntimeControlRig controlRig)
         {
+            try
+            {
             _lookAt = instance.Vrm.LookAt;
+                LookAtOriginTransform = InitializeLookAtOriginTransform(
+                    humanoid,
+                    controlRig,
+                    _lookAt.OffsetFromHead,
+                    instance.transform.rotation);
 
-            LookAtOriginTransform = InitializeLookAtOriginTransform(
-                humanoid,
-                controlRig,
-                _lookAt.OffsetFromHead,
-                 instance.transform.rotation);
+                _lookAtOriginTransformLocalPosition = LookAtOriginTransform.localPosition;
+                _lookAtOriginTransformLocalRotation = LookAtOriginTransform.localRotation;
 
-            _lookAtOriginTransformLocalPosition = LookAtOriginTransform.localPosition;
-            _lookAtOriginTransformLocalRotation = LookAtOriginTransform.localRotation;
-
-            var leftEyeBone = humanoid.GetBoneTransform(HumanBodyBones.LeftEye);
-            var rightEyeBone = humanoid.GetBoneTransform(HumanBodyBones.RightEye);
-            if (_lookAt.LookAtType == LookAtType.bone && leftEyeBone != null && rightEyeBone != null)
-            {
-                EyeDirectionApplicable = new LookAtEyeDirectionApplicableToBone(leftEyeBone, rightEyeBone, _lookAt.HorizontalOuter, _lookAt.HorizontalInner, _lookAt.VerticalDown, _lookAt.VerticalUp);
-            }
-            else
-            {
-                EyeDirectionApplicable = new LookAtEyeDirectionApplicableToExpression(_lookAt.HorizontalOuter, _lookAt.HorizontalInner, _lookAt.VerticalDown, _lookAt.VerticalUp);
-            }
+                var leftEyeBone = humanoid.GetBoneTransform(HumanBodyBones.LeftEye);
+                var rightEyeBone = humanoid.GetBoneTransform(HumanBodyBones.RightEye);
+                if (_lookAt.LookAtType == LookAtType.bone && leftEyeBone != null && rightEyeBone != null)
+                {
+                    EyeDirectionApplicable = new LookAtEyeDirectionApplicableToBone(leftEyeBone, rightEyeBone, _lookAt.HorizontalOuter, _lookAt.HorizontalInner, _lookAt.VerticalDown, _lookAt.VerticalUp);
+                }
+                else
+                {
+                    EyeDirectionApplicable = new LookAtEyeDirectionApplicableToExpression(_lookAt.HorizontalOuter, _lookAt.HorizontalInner, _lookAt.VerticalDown, _lookAt.VerticalUp);
+                }
+            } catch {}
         }
 
         internal LookAtEyeDirection Process()
         {
-            LookAtOriginTransform.localPosition = _lookAtOriginTransformLocalPosition;
-            LookAtOriginTransform.localRotation = _lookAtOriginTransformLocalRotation;
+            try
+            {
+                LookAtOriginTransform.localPosition = _lookAtOriginTransformLocalPosition;
+                LookAtOriginTransform.localRotation = _lookAtOriginTransformLocalRotation;
 
-            if (LookAtInput.YawPitch is LookAtEyeDirection dir)
-            {
-                EyeDirection = dir;
-            }
-            else if (LookAtInput.WorldPosition is Vector3 worldPosition)
-            {
-                // NOTE: 指定された Transform の位置を向くように Yaw/Pitch を計算して適用する
-                var (yaw, pitch) = CalculateYawPitchFromLookAtPosition(worldPosition);
-                EyeDirection = new LookAtEyeDirection(yaw, pitch);
-            }
+                if (LookAtInput.YawPitch is LookAtEyeDirection dir)
+                {
+                    EyeDirection = dir;
+                }
+                else if (LookAtInput.WorldPosition is Vector3 worldPosition)
+                {
+                    // NOTE: 指定された Transform の位置を向くように Yaw/Pitch を計算して適用する
+                    var (yaw, pitch) = CalculateYawPitchFromLookAtPosition(worldPosition);
+                    EyeDirection = new LookAtEyeDirection(yaw, pitch);
+                }
+            } catch {}
             return EyeDirection;
         }
 

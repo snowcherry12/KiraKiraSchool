@@ -10,48 +10,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09adff397b704c4985383dd1017864ba, type: 3}
-  m_Name: Kira
+  m_Name: ---
   m_EditorClassIdentifier: 
   m_Actant:
     m_Name:
       m_Property:
-        rid: 6020322203994947589
+        rid: 6020322684800073733
     m_Description:
       m_Property:
-        rid: 6020322203994947590
+        rid: 6020322684800073734
   m_Expressions:
     m_Expressions:
-    - rid: 6020322676672037214
+    - rid: 6020322684800073735
   m_Typewriter:
     m_UseTypewriter: 1
     m_Frequency: 10
     m_Gibberish:
       m_Property:
-        rid: 6020322676672037233
-    m_Pitch: {x: 1, y: 1}
+        rid: 6020322684800073748
+    m_Pitch: {x: 0.9, y: 1.1}
   m_OverrideSpeechSkin: {fileID: 11400000, guid: 3c0f5d9df92c0ad4597b1f8243e63a03, type: 2}
-  m_Portrait: 1
+  m_Portrait: 0
   references:
     version: 2
     RefIds:
-    - rid: 6020322203994947589
+    - rid: 6020322684800073733
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: Kira
-    - rid: 6020322203994947590
+        m_Value: ???
+    - rid: 6020322684800073734
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 
-    - rid: 6020322676672037214
+        m_Value: Unknown
+    - rid: 6020322684800073735
       type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Id:
-          m_String: Kira
+          m_String: ---
         m_Sprite:
           m_Property:
-            rid: 6020322676672037215
+            rid: 6020322684800073737
         m_InstructionsOnStart:
           m_Instructions:
             m_Instructions: []
@@ -59,10 +59,10 @@ MonoBehaviour:
           m_Instructions:
             m_Instructions: []
         m_OverrideSpeechSkin: {fileID: 0}
-    - rid: 6020322676672037215
+    - rid: 6020322684800073737
       type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Sprite: {fileID: -1537417431, guid: b1254f1290c63514b8ec96f81a0ddb65, type: 3}
-    - rid: 6020322676672037233
+        m_Sprite: {fileID: 0}
+    - rid: 6020322684800073748
       type: {class: GetAudioGibberish2, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data: 

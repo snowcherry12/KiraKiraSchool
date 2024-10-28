@@ -48,7 +48,7 @@ namespace UniVRM10
 
             if (!instance.TryGetBoneTransform(HumanBodyBones.Head, out m_head))
             {
-                throw new Exception();
+                // throw new Exception();
             }
 
             if (useControlRig)
