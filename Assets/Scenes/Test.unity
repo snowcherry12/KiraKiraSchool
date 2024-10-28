@@ -1227,13 +1227,10 @@ MonoBehaviour:
     m_Instructions:
     - rid: 6020322629316509966
   m_TriggerEvent:
-    rid: 6020322629316509965
+    rid: 6020322678454353942
   references:
     version: 2
     RefIds:
-    - rid: 6020322629316509965
-      type: {class: EventOnStart, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data: 
     - rid: 6020322629316509966
       type: {class: InstructionDialoguePlay, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
@@ -1247,6 +1244,26 @@ MonoBehaviour:
       type: {class: GetGameObjectDialogue, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_Dialogue: {fileID: 92974863}
+    - rid: 6020322678454353942
+      type: {class: EventOnInputButton, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Button:
+          m_Input:
+            rid: 6020322678454353945
+        m_MinDistance:
+          m_MinDistance: 0
+          m_To:
+            m_Property:
+              rid: 6020322678454353944
+          m_Radius: 2
+          m_Offset: {x: 0, y: 0, z: 0}
+    - rid: 6020322678454353944
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322678454353945
+      type: {class: InputButtonKeyboardPress, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Key: 15
 --- !u!1 &99413527
 GameObject:
   m_ObjectHideFlags: 0
