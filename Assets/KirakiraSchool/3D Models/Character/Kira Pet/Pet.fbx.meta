@@ -58,9 +58,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -69,8 +69,62 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Pet 2_arm
+        weight: 1
+      - path: Pet 2_arm/root
+        weight: 1
+      - path: Pet 2_arm/root/waist
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/head
+        weight: 0
+      - path: Pet 2_arm/root/waist/chest/head/ear_left
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/head/ear_left/ear_left_end
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/head/ear_right
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/head/ear_right/ear_right_end
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/leg.front_left
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/leg.front_left/leg.front.2_left
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/leg.front_left/leg.front.2_left/leg.front.2_left_end
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/leg.front_right
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/leg.front_right/leg.front.2_right
+        weight: 1
+      - path: Pet 2_arm/root/waist/chest/leg.front_right/leg.front.2_right/leg.front.2_right_end
+        weight: 1
+      - path: Pet 2_arm/root/waist/leg.back_left
+        weight: 1
+      - path: Pet 2_arm/root/waist/leg.back_left/leg.back.2_left
+        weight: 1
+      - path: Pet 2_arm/root/waist/leg.back_left/leg.back.2_left/leg.back.2_left_end
+        weight: 1
+      - path: Pet 2_arm/root/waist/leg.back_right
+        weight: 1
+      - path: Pet 2_arm/root/waist/leg.back_right/leg.back.2_right
+        weight: 1
+      - path: Pet 2_arm/root/waist/leg.back_right/leg.back.2_right/leg.back.2_right_end
+        weight: 1
+      - path: Pet 2_arm/root/waist/tail.1
+        weight: 1
+      - path: Pet 2_arm/root/waist/tail.1/tail.2
+        weight: 1
+      - path: Pet 2_arm/root/waist/tail.1/tail.2/tail.end
+        weight: 1
+      - path: Pet 2_arm/root/waist/tail.1/tail.2/tail.end/tail.end_end
+        weight: 1
+      - path: Pet 2_mesh
+        weight: 0
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -87,9 +141,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -192,7 +246,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.8
+    globalScale: 0.3
     meshCompression: 3
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -247,7 +301,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.8
+    globalScale: 0.003
     rootMotionBoneName: root
     hasTranslationDoF: 0
     hasExtraRoot: 0
