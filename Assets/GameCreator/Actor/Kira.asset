@@ -21,6 +21,7 @@ MonoBehaviour:
         rid: 6020322203994947590
   m_Expressions:
     m_Expressions:
+    - rid: 6020322735295037779
     - rid: 6020322203994947591
     - rid: 6020322487487431400
     - rid: 6020322487487431402
@@ -132,3 +133,24 @@ MonoBehaviour:
     - rid: 6020322633269903563
       type: {class: GetAudioGibberish2, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data: 
+    - rid: 6020322735295037779
+      type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Id:
+          m_String: Kira-Full
+        m_Sprite:
+          m_Property:
+            rid: 6020322735295037780
+        m_InstructionsOnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_InstructionsOnEnd:
+          m_Instructions:
+            m_Instructions: []
+        m_OverrideSpeechSkin: {fileID: 0}
+    - rid: 6020322735295037780
+      type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Sprite: {fileID: -1897941507, guid: b1254f1290c63514b8ec96f81a0ddb65, type: 3}
