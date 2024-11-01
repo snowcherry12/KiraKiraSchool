@@ -394,11 +394,11 @@ Transform:
   m_GameObject: {fileID: 75974144}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -185.27, y: 0.6965835, z: -237.6}
+  m_LocalPosition: {x: -214, y: 0, z: -166.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1332730586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &160113673
 GameObject:
@@ -7378,10 +7378,11 @@ Transform:
   m_GameObject: {fileID: 1332730585}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 75974147}
   - {fileID: 528142141}
   - {fileID: 1205743679}
   - {fileID: 976490818}
@@ -8018,7 +8019,7 @@ Transform:
   m_GameObject: {fileID: 1969323353}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.925396, y: 1.27, z: -66.75775}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11435,17 +11436,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: KiraFantasy
       objectReference: {fileID: 0}
-    - target: {fileID: 507344309232526244, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5154327224002756621, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5154327224002756621, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 5154327224002756621, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11498,7 +11495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4840713076848722937, guid: b20f19fca231ea94d93dfb476cfc1a54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 4840713076848722937, guid: b20f19fca231ea94d93dfb476cfc1a54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11603,7 +11600,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 6077354527105047592}
-  - {fileID: 75974147}
   - {fileID: 1332730586}
   - {fileID: 754409712}
   - {fileID: 1618499737}
