@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Dropdown))]
-public class ResolutionDropdown : MonoBehaviour
+public class SettingResolution : MonoBehaviour
 {
     private List<Resolution> resolutions;
     void Start()
