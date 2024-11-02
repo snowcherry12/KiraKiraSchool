@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using GameCreator.Runtime.Common;
 using GameCreator.Runtime.VisualScripting;
@@ -50,10 +51,11 @@ namespace GameCreator.Runtime.Console
             string text = this.m_Command.Get(args);
             if (string.IsNullOrEmpty(text)) return DefaultResult;
             
-            Console.Open();
+            // Console.Open();
 
             Input input = new Input(text);
-            Console.Submit(input);
+            // Console.Submit(input);
+            Commands.Run(input);
             
             return DefaultResult;
         }

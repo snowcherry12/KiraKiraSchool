@@ -5,7 +5,7 @@ using UnityEngine.UI;
 namespace GameCreator.Runtime.Common.UnityUI
 {
     [AddComponentMenu("Game Creator/UI/Button")]
-    [RequireComponent(typeof(Image))]
+    // [RequireComponent(typeof(Image))]
     [Icon(RuntimePaths.GIZMOS + "GizmoUIButton.png")]
     public class ButtonInstructions : Button
     {
