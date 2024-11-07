@@ -65,7 +65,7 @@ namespace GameCreator.Runtime.Common.Audio
             if (fmodAudio == null) return false;
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
-                if (activeBuffer.FMODPath == fmodAudio.Audio.Path) return true;
+                if (activeBuffer.FMODRef.ToString() == fmodAudio.Audio.ToString()) return true;
             }
 
             return false;
@@ -104,7 +104,7 @@ namespace GameCreator.Runtime.Common.Audio
             
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
-                if (activeBuffer.Target == target && activeBuffer.FMODPath == fmodAudio.Audio.Path)
+                if (activeBuffer.Target == target && activeBuffer.FMODRef.ToString() == fmodAudio.Audio.ToString())
                 {
                     return true;
                 }
@@ -130,7 +130,7 @@ namespace GameCreator.Runtime.Common.Audio
             
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
-                if (activeBuffer.Target != target || activeBuffer.FMODPath != fmodAudio.Audio.Path) continue;
+                if (activeBuffer.Target != target || activeBuffer.FMODRef.ToString() != fmodAudio.Audio.ToString()) continue;
                 activeBuffer.Pitch = pitch;
             }
         }
@@ -154,7 +154,7 @@ namespace GameCreator.Runtime.Common.Audio
 
         public async Task Play(FMODAudio fmodAudio, IAudioConfig audioConfig, Args args)
         {
-            if (String.IsNullOrEmpty(fmodAudio.Audio.Path)) return;
+            if (fmodAudio.Audio.IsNull) return;
             if (this.m_AudioFrame.TryGetValue(fmodAudio.GetHashCode(), out int frame))
             {
                 if (frame == Time.frameCount) return;
@@ -185,12 +185,12 @@ namespace GameCreator.Runtime.Common.Audio
 
         public async Task Stop(FMODAudio fmodAudio, float transitionOut)
         {
-            if (String.IsNullOrEmpty(fmodAudio.Audio.Path)) return;
+            if (fmodAudio.Audio.IsNull) return;
             List<Task> tasks = new List<Task>();
 
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
-                if (activeBuffer.FMODPath != fmodAudio.Audio.Path) continue;
+                if (activeBuffer.FMODRef.ToString() != fmodAudio.Audio.ToString()) continue;
                 tasks.Add(activeBuffer.Stop(transitionOut));
             }
 
@@ -229,14 +229,14 @@ namespace GameCreator.Runtime.Common.Audio
 
         public async Task Stop(FMODAudio fmodAudio, GameObject target, float transitionOut)
         {
-            if (String.IsNullOrEmpty(fmodAudio.Audio.Path)) return;
+            if (fmodAudio.Audio.IsNull) return;
             if (target == null) return;
             
             List<Task> tasks = new List<Task>();
             foreach (AudioBuffer activeBuffer in this.m_ActiveBuffers)
             {
                 if (activeBuffer.Target != target) continue;
-                if (activeBuffer.FMODPath != fmodAudio.Audio.Path) continue;
+                if (activeBuffer.FMODRef.ToString() != fmodAudio.Audio.ToString()) continue;
                 tasks.Add(activeBuffer.Stop(transitionOut));
             }
 

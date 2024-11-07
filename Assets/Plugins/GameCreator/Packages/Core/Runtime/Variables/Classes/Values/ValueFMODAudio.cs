@@ -53,7 +53,7 @@ namespace GameCreator.Runtime.Variables
         
         public override string ToString()
         {
-            return this.m_Value != null ? this.m_Value.Audio.Path : "(none)";
+            return this.m_Value != null ? this.m_Value.Audio.ToString() : "(none)";
         }
         
         // REGISTRATION METHODS: ------------------------------------------------------------------

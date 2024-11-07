@@ -20,7 +20,7 @@ namespace GameCreator.Runtime.Common
         {
             get
             {
-                EventDescription eventDescription = RuntimeManager.GetEventDescription(m_Audio.Path);
+                EventDescription eventDescription = RuntimeManager.GetEventDescription(m_Audio.Guid);
                 if (eventDescription.isValid())
                 {
                     int length;

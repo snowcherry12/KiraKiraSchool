@@ -358,8 +358,7 @@ namespace GameCreator.Runtime.Common
             foreach (MaterialSoundTexture material in materialSounds.MaterialSounds.MaterialSounds)
             {
                 if (material.Texture != texture) continue;
-                if (material.Audio == null) continue;
-                // if (String.IsNullOrEmpty(material.Audio.Path)) continue;
+                if (material.Audio == null && material.FMODAudio == null) continue;
                 
                 AudioConfigSoundEffect config = AudioConfigSoundEffect.Create(
                     material.Volume,
@@ -369,8 +368,14 @@ namespace GameCreator.Runtime.Common
                 );
                 
                 if (config.Volume < float.Epsilon) return;
-                _ = AudioManager.Instance.SoundEffect.Play(material.Audio, config, args);
-                
+                if (material.FMODAudio != null)
+                {
+                    _ = AudioManager.Instance.SoundEffect.Play(material.FMODAudio, config, args);
+                }
+                else if (material.Audio != null)
+                {
+                    _ = AudioManager.Instance.SoundEffect.Play(material.Audio, config, args);
+                }
                 return;
             }
 
@@ -382,11 +387,22 @@ namespace GameCreator.Runtime.Common
             );
             
             if (configDefault.Volume < float.Epsilon) return;
-            _ = AudioManager.Instance.SoundEffect.Play(
-                materialSounds.MaterialSounds.DefaultSounds.Audio, 
-                configDefault, 
-                args
-            );
+            if (materialSounds.MaterialSounds.DefaultSounds.FMODAudio != null)
+            {
+                _ = AudioManager.Instance.SoundEffect.Play(
+                    materialSounds.MaterialSounds.DefaultSounds.FMODAudio, 
+                    configDefault, 
+                    args
+                );
+            }
+            else if (materialSounds.MaterialSounds.DefaultSounds.Audio != null)
+            {
+                _ = AudioManager.Instance.SoundEffect.Play(
+                    materialSounds.MaterialSounds.DefaultSounds.Audio, 
+                    configDefault, 
+                    args
+                );
+            }
         }
         
         private static void PlayImpact(Vector3 point, Vector3 normal, Texture texture, MaterialSoundsAsset materialSounds, float yaw)
@@ -396,9 +412,8 @@ namespace GameCreator.Runtime.Common
             foreach (MaterialSoundTexture material in materialSounds.MaterialSounds.MaterialSounds)
             {
                 AudioClip audioClip = material.Audio;
-                // EventReference audioClip = material.Audio;
-                if (audioClip == null) return;
-                // if (String.IsNullOrEmpty(audioClip.Path)) return;
+                FMODAudio fmodAudio = material.FMODAudio;
+                if (audioClip == null && fmodAudio == null) return;
                 
                 material.Impact.Create(
                     point,

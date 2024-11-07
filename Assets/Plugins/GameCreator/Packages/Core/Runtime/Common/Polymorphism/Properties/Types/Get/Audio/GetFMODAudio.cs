@@ -29,8 +29,8 @@ namespace GameCreator.Runtime.Common
             new GetFMODAudio()
         );
 
-        public override string String => !String.IsNullOrEmpty(this.m_Value.Audio.Path)
-            ? this.m_Value.Audio.Path.Split("/")[this.m_Value.Audio.Path.Split("/").Length - 1]
+        public override string String => !this.m_Value.Audio.IsNull
+            ? this.m_Value.Audio.ToString().Split("/")[this.m_Value.Audio.ToString().Split("/").Length - 1]
             : "(none)";
 
         public override FMODAudio EditorValue => this.m_Value;

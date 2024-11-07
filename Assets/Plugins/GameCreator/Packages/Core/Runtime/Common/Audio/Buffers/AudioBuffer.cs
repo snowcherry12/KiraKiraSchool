@@ -15,13 +15,12 @@ namespace GameCreator.Runtime.Common.Audio
         [NonSerialized] private IAudioConfig m_AudioConfig;
         [NonSerialized] private Args m_Args;
         [NonSerialized] private readonly AnimFloat m_Volume = new AnimFloat(1f);
-        [NonSerialized] private FMODUnity.EventReference FMODRef;
         [NonSerialized] private Parameter[] m_Params;
         
         // PROPERTIES: ----------------------------------------------------------------------------
 
         internal AudioClip AudioClip => this.AudioSource.clip;
-        internal String FMODPath => this.FMODRef.Path;
+        internal FMODUnity.EventReference FMODRef { get; private set; }
         internal GameObject Target { get; private set; }
         internal AudioSource AudioSource { get; }
         internal EventInstance FMODAudio { get; private set;}
@@ -52,7 +51,7 @@ namespace GameCreator.Runtime.Common.Audio
 
             volume *= this.m_Volume.Current;
             this.AudioSource.volume = Rescale(volume);
-            if (!String.IsNullOrEmpty(FMODPath)) this.FMODAudio.setVolume(Rescale(volume));
+            if (!FMODRef.IsNull) this.FMODAudio.setVolume(Rescale(volume));
 
             GameObject target = this.m_AudioConfig?.GetTrackTarget(this.m_Args);
             
@@ -65,7 +64,7 @@ namespace GameCreator.Runtime.Common.Audio
             if (target != null)
             {
                 this.Transform.position = target.transform.position;
-                if (!String.IsNullOrEmpty(FMODPath))
+                if (!FMODRef.IsNull)
                     this.FMODAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.Transform.position));
             }
             
@@ -75,7 +74,7 @@ namespace GameCreator.Runtime.Common.Audio
             
             this.AudioSource.pitch = this.Pitch * timeScale;
 
-            if (!String.IsNullOrEmpty(FMODPath))
+            if (!FMODRef.IsNull)
             {
                 this.FMODAudio.setPitch(this.Pitch * timeScale);
                 PLAYBACK_STATE playbackState;
@@ -140,7 +139,7 @@ namespace GameCreator.Runtime.Common.Audio
                 }
             }
 
-            if (!String.IsNullOrEmpty(this.FMODPath))
+            if (!FMODRef.IsNull)
             {
                 this.FMODAudio.stop(AudioSettings.dspTime + transition > 0f ? STOP_MODE.ALLOWFADEOUT : STOP_MODE.IMMEDIATE);
 
@@ -174,7 +173,7 @@ namespace GameCreator.Runtime.Common.Audio
                 this.AudioSource.spatialBlend = this.m_AudioConfig.SpatialBlend;
             }
 
-            if (!String.IsNullOrEmpty(this.FMODPath))
+            if (!FMODRef.IsNull)
             {
                 EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(this.FMODRef);
                 if (!eventInstance.isValid()) return;
