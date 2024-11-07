@@ -1,6 +1,7 @@
 using System;
-using GameCreator.Runtime.Common;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 namespace GameCreator.Runtime.Console
 {
@@ -16,7 +17,7 @@ namespace GameCreator.Runtime.Console
         {
             new ActionOutput(
                 "fullscreen",
-                "Changes the fullscreen mode",
+                "Changes the Fullscreen Mode",
                 value =>
                 {
                     switch (value)
@@ -35,7 +36,7 @@ namespace GameCreator.Runtime.Console
             ),
             new ActionOutput(
                 "resolution",
-                "Changes the resolution",
+                "Changes the Resolution",
                 value =>
                 {
                     string[] resolution = value.Split("x");
@@ -47,7 +48,7 @@ namespace GameCreator.Runtime.Console
             ),
             new ActionOutput(
                 "quality",
-                "Changes the game quality",
+                "Changes the Quality Level",
                 value =>
                 {
                     switch (value)
@@ -68,7 +69,7 @@ namespace GameCreator.Runtime.Console
             ),
             new ActionOutput(
                 "render-scale",
-                "Changes the render scale",
+                "Changes the Render Scale",
                 value =>
                 {
                     float scale = Convert.ToSingle(value);
@@ -78,58 +79,138 @@ namespace GameCreator.Runtime.Console
             ),
             new ActionOutput(
                 "fsr",
-                "Changes the FSR scale",
+                "Changes the FSR Scale",
                 value =>
                 {
-                    return Output.Success($"Graphic FSR = {value}");
+                    UniversalRenderPipelineAsset data = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
+                    data.fsrSharpness = Convert.ToSingle(value);
+                    return Output.Success($"Graphic FSR = {data.fsrSharpness}");
                 }
             ),
             new ActionOutput(
                 "shadow",
-                "Changes the FSR scale",
+                "Changes the Shadow Quality",
                 value =>
                 {
-                    return Output.Success($"Graphic display scale = {value}");
+                    UniversalRenderPipelineAsset data = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
+                    switch (value)
+                    {
+                        case "0":
+                            QualitySettings.shadows = UnityEngine.ShadowQuality.Disable;
+                            break;
+                        case "1":
+                            QualitySettings.shadows = UnityEngine.ShadowQuality.HardOnly;
+                            QualitySettings.shadowResolution = UnityEngine.ShadowResolution.Low;
+                            break;
+                        case "2":
+                            QualitySettings.shadows = UnityEngine.ShadowQuality.All;
+                            QualitySettings.shadowResolution = UnityEngine.ShadowResolution.Medium;
+                            break;
+                        case "3":
+                            QualitySettings.shadows = UnityEngine.ShadowQuality.All;
+                            QualitySettings.shadowResolution = UnityEngine.ShadowResolution.High;
+                            break;
+                        default:
+                            return Output.Error($"Invalid value: {value}");
+                    }
+                    return Output.Success($"Graphic shadow = {value}");
                 }
             ),
             new ActionOutput(
                 "texture-quality",
-                "Changes the FSR scale",
+                "Changes the Texture Quality",
                 value =>
                 {
-                    return Output.Success($"Graphic display scale = {value}");
+                    QualitySettings.globalTextureMipmapLimit = Convert.ToInt32(value);
+                    return Output.Success($"Graphic texture quality = {value}");
                 }
             ),
             new ActionOutput(
                 "anisotropic-filtering",
-                "Changes the FSR scale",
+                "Changes the AnisotropicFiltering",
                 value =>
                 {
-                    return Output.Success($"Graphic display scale = {value}");
+                    // UniversalRenderPipelineAsset data = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
+                    switch (value)
+                    {
+                        case "0":
+                            break;
+                        default:
+                            return Output.Error($"Invalid value: {value}");
+                    }
+                    return Output.Success($"Graphic anisotropic filtering = {value}");
                 }
             ),
             new ActionOutput(
                 "anti-aliasing",
-                "Changes the FSR scale",
+                "Changes the AntiAliasing",
                 value =>
                 {
-                    return Output.Success($"Graphic display scale = {value}");
+                    switch (value)
+                    {
+                        case "0":
+                            QualitySettings.antiAliasing = 0;
+                            break;
+                        case "1":
+                            QualitySettings.antiAliasing = 2;
+                            break;
+                        case "2":
+                            QualitySettings.antiAliasing = 4;
+                            break;
+                        case "3":
+                            QualitySettings.antiAliasing = 8;
+                            break;
+                        default:
+                            return Output.Error($"Invalid value: {value}");
+                    }
+                    return Output.Success($"Graphic antialiasing = {value}");
                 }
             ),
             new ActionOutput(
                 "vsync",
-                "Changes the FSR scale",
+                "Changes the vSync",
                 value =>
                 {
-                    return Output.Success($"Graphic display scale = {value}");
+                    switch (value)
+                    {
+                        case "True":
+                            QualitySettings.vSyncCount = 1;
+                            break;
+                        case "False":
+                            QualitySettings.vSyncCount = 0;
+                            break;
+                        default:
+                            return Output.Error($"Invalid value: {value}");
+                    }
+                    return Output.Success($"Graphic vsync = {value}");
                 }
             ),
             new ActionOutput(
                 "fps",
-                "Changes the FSR scale",
+                "Changes the FPS",
                 value =>
                 {
-                    return Output.Success($"Graphic display scale = {value}");
+                    switch (value)
+                    {
+                        case "0":
+                            Application.targetFrameRate = -1;
+                            break;
+                        case "1":
+                            Application.targetFrameRate = 240;
+                            break;
+                        case "2":
+                            Application.targetFrameRate = 120;
+                            break;
+                        case "3":
+                            Application.targetFrameRate = 60;
+                            break;
+                        case "4":
+                            Application.targetFrameRate = 30;
+                            break;
+                        default:
+                            return Output.Error($"Invalid value: {value}");
+                    }
+                    return Output.Success($"Graphic fps = {Application.targetFrameRate}");
                 }
             ),
         }) { }
