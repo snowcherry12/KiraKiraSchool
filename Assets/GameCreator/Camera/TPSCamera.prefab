@@ -86,6 +86,26 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1295431588036476934
+      type: {class: GetDecimalGlobalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: number
+          m_Variable: {fileID: 11400000, guid: 7902917525796f74390d09d13dc03c22, type: 2}
+          m_Name:
+            m_String: Controls_MouseX
+            m_ID: 289060262
+    - rid: 1295431588036476947
+      type: {class: GetDecimalGlobalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: number
+          m_Variable: {fileID: 11400000, guid: 7902917525796f74390d09d13dc03c22, type: 2}
+          m_Name:
+            m_String: Controls_MouseY
+            m_ID: 1715307824
     - rid: 6020322142918279265
       type: {class: ShotTypeThirdPerson, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
       data:
@@ -133,10 +153,10 @@ MonoBehaviour:
               rid: 6020322142918279272
           m_SensitivityX:
             m_Property:
-              rid: 6020322142918279273
+              rid: 1295431588036476934
           m_SensitivityY:
             m_Property:
-              rid: 6020322142918279274
+              rid: 1295431588036476947
           m_MaxPitch: 90
           m_MaxYaw:
             m_IsEnabled: 0
@@ -174,14 +194,6 @@ MonoBehaviour:
     - rid: 6020322142918279272
       type: {class: InputValueVector2MotionSecondary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
-    - rid: 6020322142918279273
-      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 0.7
-    - rid: 6020322142918279274
-      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 0.3
     - rid: 6020322142918279275
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:

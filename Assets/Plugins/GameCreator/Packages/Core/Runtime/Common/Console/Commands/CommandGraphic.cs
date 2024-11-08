@@ -16,6 +16,25 @@ namespace GameCreator.Runtime.Console
         public CommandGraphic() : base(new[]
         {
             new ActionOutput(
+                "brightness",
+                "Changes the Screen Brightness",
+                value =>
+                {
+                    
+                    Screen.brightness = Convert.ToSingle(value);
+                    return Output.Success($"Graphic Brightness = {Screen.brightness}");
+                }
+            ),
+            new ActionOutput(
+                "contrast",
+                "Changes the Screen Contrast",
+                value =>
+                {
+                    
+                    return Output.Success($"Graphic Contrast = {value}");
+                }
+            ),
+            new ActionOutput(
                 "fullscreen",
                 "Changes the Fullscreen Mode",
                 value =>
