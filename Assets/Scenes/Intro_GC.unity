@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1208,7 +1208,7 @@ MonoBehaviour:
             rid: 1295431430619530178
         m_FMODAudio:
           m_Property:
-            rid: 1295431430619530179
+            rid: 5830855640614174720
         m_Acting:
           m_Portrait: 3
           m_Actor: {fileID: 0}
@@ -1250,9 +1250,6 @@ MonoBehaviour:
     - rid: 1295431430619530178
       type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
-    - rid: 1295431430619530179
-      type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
     - rid: 1295431430619530180
       type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -1279,7 +1276,7 @@ MonoBehaviour:
             rid: 1295431430619530194
         m_FMODAudio:
           m_Property:
-            rid: 1295431430619530195
+            rid: 5830855640614174721
         m_Acting:
           m_Portrait: 3
           m_Actor: {fileID: 0}
@@ -1319,9 +1316,6 @@ MonoBehaviour:
           m_Text: No
     - rid: 1295431430619530194
       type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 1295431430619530195
-      type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
     - rid: 1295431430619530196
       type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
@@ -1386,6 +1380,30 @@ MonoBehaviour:
           m_Scene: {fileID: 102900000, guid: da1376a73ce88054bad1210def420958, type: 3}
           m_SceneName: scene1_GC
           m_SceneIndex: 2
+    - rid: 5830855640614174720
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -1682515829
+              Data2: 1079175147
+              Data3: -1373436767
+              Data4: -35239181
+            Path: event:/VO/Kira/VO_Kira_7_Okay!
+          m_Params: []
+    - rid: 5830855640614174721
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -1141680730
+              Data2: 1189490417
+              Data3: 416373428
+              Data4: 126191735
+            Path: event:/VO/Kira/VO_Kira_5_Hmmm(Wondering)
+          m_Params: []
     - rid: 6020322735295038311
       type: {class: Content, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:

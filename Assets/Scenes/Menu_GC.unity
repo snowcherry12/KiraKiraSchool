@@ -550,6 +550,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258683
     - rid: 1295431452576448705
   references:
     version: 2
@@ -566,6 +567,44 @@ MonoBehaviour:
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: Click!
+    - rid: 5830855627583258683
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258684
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258685
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258686
+    - rid: 5830855627583258684
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258685
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258686
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &20679112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,6 +1302,90 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381757487}
     m_Modifications:
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258756]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258757]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258758]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[0]
+      value: 1295431448874713529
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[1]
+      value: 1295431433174909441
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[2]
+      value: 1295431433174909449
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[3]
+      value: 1295431448874713569
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[4]
+      value: 1295431448874713569
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258756].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258756].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258756].transitionOut
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258756].m_WaitToComplete
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258758].m_Value.m_Audio.Path
+      value: event:/Music/MSC_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258756].m_AudioClip.m_Property
+      value: 5830855627583258757
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258756].m_FMODAudio.m_Property
+      value: 5830855627583258758
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258758].m_Value.m_Audio.Guid.Data1
+      value: -89753287
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258758].m_Value.m_Audio.Guid.Data2
+      value: 1270747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258758].m_Value.m_Audio.Guid.Data3
+      value: 283411624
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258758].m_Value.m_Audio.Guid.Data4
+      value: 637605460
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258758].m_Value.m_Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2593366891650514546, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
       propertyPath: m_Name
       value: Transition
@@ -1309,6 +1432,102 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3374720579010490609, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258759]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258760]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258761]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258762]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[0]
+      value: 1295431448874713958
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[1]
+      value: 1295431448874714108
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[2]
+      value: 1295431433174909458
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[3]
+      value: 1295431433174909464
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[4]
+      value: 1295431448874713502
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[5]
+      value: 1295431448874713502
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258759].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258759].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258759].m_Config.m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258762].m_Value.m_Audio.Path
+      value: event:/Music/MSC_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258759].m_Config.m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258759].m_AudioClip.m_Property
+      value: 5830855627583258760
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258759].m_FMODAudio.m_Property
+      value: 5830855627583258762
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258759].m_Config.m_TransitionIn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258762].m_Value.m_Audio.Guid.Data1
+      value: -89753287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258762].m_Value.m_Audio.Guid.Data2
+      value: 1270747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258762].m_Value.m_Audio.Guid.Data3
+      value: 283411624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258762].m_Value.m_Audio.Guid.Data4
+      value: 637605460
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258762].m_Value.m_Params.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1865,6 +2084,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258643
     - rid: 1295431452576448813
   references:
     version: 2
@@ -1882,6 +2102,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 696026065}
+    - rid: 5830855627583258643
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258644
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258645
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258646
+    - rid: 5830855627583258644
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258645
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 1362938316
+              Data2: 1194627620
+              Data3: -2137629278
+              Data4: -432770516
+            Path: event:/UI/UI_Close
+          m_Params: []
+    - rid: 5830855627583258646
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &137156098
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4476,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258634
     - rid: 1295431433174909738
     - rid: 1295431438621475152
     - rid: 1295431433174909004
@@ -4255,6 +4514,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 141382587}
+    - rid: 5830855627583258634
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258635
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258638
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258637
+    - rid: 5830855627583258635
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258637
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258638
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 1362938316
+              Data2: 1194627620
+              Data3: -2137629278
+              Data4: -432770516
+            Path: event:/UI/UI_Close
+          m_Params: []
 --- !u!1 &288986323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4808,6 +5105,7 @@ RectTransform:
   - {fileID: 176895911}
   - {fileID: 1753318351}
   - {fileID: 354422200}
+  - {fileID: 1830845734}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5635,6 +5933,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258639
     - rid: 1295431438621475360
     - rid: 1295431438621475362
     - rid: 1295431438621475364
@@ -5680,6 +5979,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 1586634062}
+    - rid: 5830855627583258639
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258640
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258641
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258642
+    - rid: 5830855627583258640
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258641
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 1362938316
+              Data2: 1194627620
+              Data3: -2137629278
+              Data4: -432770516
+            Path: event:/UI/UI_Close
+          m_Params: []
+    - rid: 5830855627583258642
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &409374555 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
@@ -6276,6 +6613,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258663
     - rid: 1295431438621475351
     - rid: 1295431438621475353
   references:
@@ -6313,6 +6651,44 @@ MonoBehaviour:
           m_Scene: {fileID: 102900000, guid: 3ef2d84336f005f43b25251b23cef73b, type: 3}
           m_SceneName: Intro_GC
           m_SceneIndex: 1
+    - rid: 5830855627583258663
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258664
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258665
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258666
+    - rid: 5830855627583258664
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258665
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258666
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &526324354
 GameObject:
   m_ObjectHideFlags: 0
@@ -9072,6 +9448,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258667
     - rid: 1295431448874714054
     - rid: 1295431438621475355
   references:
@@ -9103,6 +9480,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 868902291098288351}
+    - rid: 5830855627583258667
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258668
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258669
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258670
+    - rid: 5830855627583258668
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258669
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258670
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &769784454
 GameObject:
   m_ObjectHideFlags: 0
@@ -10024,6 +10439,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258691
     - rid: 1295431452576448705
   references:
     version: 2
@@ -10040,6 +10456,44 @@ MonoBehaviour:
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: Click!
+    - rid: 5830855627583258691
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258692
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258693
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258694
+    - rid: 5830855627583258692
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258693
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258694
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &822685210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10656,7 +11110,6 @@ GameObject:
   m_Component:
   - component: {fileID: 912760036}
   - component: {fileID: 912760035}
-  - component: {fileID: 912760038}
   - component: {fileID: 912760037}
   - component: {fileID: 912760034}
   m_Layer: 0
@@ -10789,14 +11242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
---- !u!81 &912760038
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912760033}
-  m_Enabled: 1
 --- !u!1 &918059499
 GameObject:
   m_ObjectHideFlags: 0
@@ -11525,6 +11970,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 1295431448874714058
     - rid: 1295431448874714068
+    - rid: 5830855627583258701
     - rid: 1295431452576448569
     - rid: 1295431448874714056
     - rid: 1295431448874714061
@@ -11614,6 +12060,44 @@ MonoBehaviour:
       type: {class: GetGameObjectConditions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Conditions: {fileID: 1372368972}
+    - rid: 5830855627583258701
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258702
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258703
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258704
+    - rid: 5830855627583258702
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258703
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258704
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &988433946
 GameObject:
   m_ObjectHideFlags: 0
@@ -14494,6 +14978,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258629
     - rid: 1295431433174909732
     - rid: 1295431433174909734
     - rid: 1295431433174909736
@@ -14539,6 +15024,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 486323068}
+    - rid: 5830855627583258629
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258630
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258633
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258632
+    - rid: 5830855627583258630
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258632
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258633
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
 --- !u!1 &1168058658
 GameObject:
   m_ObjectHideFlags: 0
@@ -16495,6 +17018,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 1295431448874714072
     - rid: 1295431448874714077
+    - rid: 5830855627583258705
     - rid: 1295431452576448567
     - rid: 1295431448874714075
     - rid: 1295431448874714081
@@ -16584,6 +17108,44 @@ MonoBehaviour:
       type: {class: GetGameObjectConditions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Conditions: {fileID: 1372368972}
+    - rid: 5830855627583258705
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258706
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258707
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258708
+    - rid: 5830855627583258706
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258707
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258708
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1288279377
 GameObject:
   m_ObjectHideFlags: 0
@@ -17918,6 +18480,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258671
     - rid: 1295431452576448705
   references:
     version: 2
@@ -17934,6 +18497,44 @@ MonoBehaviour:
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: Click!
+    - rid: 5830855627583258671
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258672
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258673
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258674
+    - rid: 5830855627583258672
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258673
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258674
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1377667916
 GameObject:
   m_ObjectHideFlags: 0
@@ -18179,6 +18780,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 1295431448874714085
     - rid: 1295431448874714088
+    - rid: 5830855627583258709
     - rid: 1295431452576448565
     - rid: 1295431448874714092
     - rid: 1295431448874714094
@@ -18268,6 +18870,44 @@ MonoBehaviour:
       type: {class: GetGameObjectConditions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Conditions: {fileID: 1372368972}
+    - rid: 5830855627583258709
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258710
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258711
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258712
+    - rid: 5830855627583258710
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258711
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258712
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1383215955
 GameObject:
   m_ObjectHideFlags: 0
@@ -19848,6 +20488,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258687
     - rid: 1295431452576448705
   references:
     version: 2
@@ -19864,6 +20505,44 @@ MonoBehaviour:
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: Click!
+    - rid: 5830855627583258687
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258688
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258689
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258690
+    - rid: 5830855627583258688
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258689
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258690
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &1538575174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20341,6 +21020,7 @@ MonoBehaviour:
     m_Instructions:
     - rid: 1295431448874714058
     - rid: 1295431448874714068
+    - rid: 5830855627583258713
     - rid: 1295431452576448569
     - rid: 1295431448874714056
     - rid: 1295431448874714061
@@ -20430,6 +21110,44 @@ MonoBehaviour:
       type: {class: GetGameObjectConditions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Conditions: {fileID: 1372368972}
+    - rid: 5830855627583258713
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258714
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258715
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258716
+    - rid: 5830855627583258714
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258715
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258716
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &1587811173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21218,6 +21936,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258651
     - rid: 1295431452576448813
   references:
     version: 2
@@ -21235,6 +21954,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 1264715760}
+    - rid: 5830855627583258651
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258652
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258653
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258654
+    - rid: 5830855627583258652
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258653
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 1362938316
+              Data2: 1194627620
+              Data3: -2137629278
+              Data4: -432770516
+            Path: event:/UI/UI_Close
+          m_Params: []
+    - rid: 5830855627583258654
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1613397702
 GameObject:
   m_ObjectHideFlags: 0
@@ -22355,6 +23112,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258679
     - rid: 1295431452576448705
   references:
     version: 2
@@ -22371,6 +23129,44 @@ MonoBehaviour:
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: Click!
+    - rid: 5830855627583258679
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258680
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258681
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258682
+    - rid: 5830855627583258680
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258681
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258682
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &1680892856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24273,6 +25069,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258624
     - rid: 1295431448874713384
     - rid: 1295431433174909579
     - rid: 1295431448874713559
@@ -24318,6 +25115,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 5486946427298252994}
+    - rid: 5830855627583258624
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258625
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258628
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258627
+    - rid: 5830855627583258625
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258627
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258628
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
 --- !u!1 &1823155195
 GameObject:
   m_ObjectHideFlags: 0
@@ -24465,6 +25300,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827354566}
   m_CullTransparentMesh: 1
+--- !u!1 &1830845733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830845734}
+  - component: {fileID: 1830845735}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1830845734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830845733}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -53.72673, y: -122.24786, z: 797.3864}
+  m_LocalScale: {x: 0.3125, y: 0.3125, z: 0.3125}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 327323801}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1830845735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830845733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855627583258814
+  m_TriggerEvent:
+    rid: 5830855627583258813
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855627583258813
+      type: {class: EventOnStart, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258814
+      type: {class: InstructionCommonAudioMusicPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258815
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258817
+        m_Config:
+          m_Volume: 1
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+    - rid: 5830855627583258815
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258817
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -89753287
+              Data2: 1270747679
+              Data3: 283411624
+              Data4: 637605460
+            Path: event:/Music/MSC_MainMenu
+          m_Params: []
 --- !u!1 &1837020948
 GameObject:
   m_ObjectHideFlags: 0
@@ -24734,6 +25654,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258647
     - rid: 1295431452576448813
   references:
     version: 2
@@ -24751,6 +25672,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 892910538}
+    - rid: 5830855627583258647
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258648
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258649
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258650
+    - rid: 5830855627583258648
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258649
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 1362938316
+              Data2: 1194627620
+              Data3: -2137629278
+              Data4: -432770516
+            Path: event:/UI/UI_Close
+          m_Params: []
+    - rid: 5830855627583258650
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1838978123
 GameObject:
   m_ObjectHideFlags: 0
@@ -26189,6 +27148,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258675
     - rid: 1295431452576448705
   references:
     version: 2
@@ -26205,6 +27165,44 @@ MonoBehaviour:
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: Click!
+    - rid: 5830855627583258675
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258676
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258677
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258678
+    - rid: 5830855627583258676
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258677
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -2061786044
+              Data2: 1248544250
+              Data3: 1887960197
+              Data4: -102587068
+            Path: event:/UI/UI_Click
+          m_Params: []
+    - rid: 5830855627583258678
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &1971079808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26608,6 +27606,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258655
     - rid: 1295431452576448813
   references:
     version: 2
@@ -26625,6 +27624,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 542483892}
+    - rid: 5830855627583258655
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258656
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258657
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258658
+    - rid: 5830855627583258656
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258657
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 1362938316
+              Data2: 1194627620
+              Data3: -2137629278
+              Data4: -432770516
+            Path: event:/UI/UI_Close
+          m_Params: []
+    - rid: 5830855627583258658
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &1998902178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27196,6 +28233,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258717
     - rid: 1295431440538796231
     - rid: 1295431448874714098
     - rid: 1295431448874714100
@@ -27255,6 +28293,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 1586634062}
+    - rid: 5830855627583258717
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258718
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258719
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258720
+    - rid: 5830855627583258718
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258719
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 1362938316
+              Data2: 1194627620
+              Data3: -2137629278
+              Data4: -432770516
+            Path: event:/UI/UI_Close
+          m_Params: []
+    - rid: 5830855627583258720
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &2039085171
 GameObject:
   m_ObjectHideFlags: 0
@@ -28192,6 +29268,7 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
+    - rid: 5830855627583258659
     - rid: 1295431452576448529
     - rid: 1295431452576448531
   references:
@@ -28223,6 +29300,44 @@ MonoBehaviour:
       type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Actions: {fileID: 5486946427298252994}
+    - rid: 5830855627583258659
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855627583258660
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855627583258661
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855627583258662
+    - rid: 5830855627583258660
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855627583258661
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 1362938316
+              Data2: 1194627620
+              Data3: -2137629278
+              Data4: -432770516
+            Path: event:/UI/UI_Close
+          m_Params: []
+    - rid: 5830855627583258662
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &2086941257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29324,6 +30439,218 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1753318351}
     m_Modifications:
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258766]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258767]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258768]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258788]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258789]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258790]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258791]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258792]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258793]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[0]
+      value: 1295431448874713529
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[1]
+      value: 1295431433174909441
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[2]
+      value: 1295431433174909449
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[3]
+      value: 1295431448874713569
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[4]
+      value: 1295431448874713569
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[5]
+      value: 5830855627583258788
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258766].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258788].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258791].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258766].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258788].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258791].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258766].transitionOut
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258791].transitionOut
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258766].m_WaitToComplete
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258791].m_WaitToComplete
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258788].m_Config.m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258768].m_Value.m_Audio.Path
+      value: event:/Music/MSC_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258790].m_Value.m_Audio.Path
+      value: event:/Music/MSC_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258793].m_Value.m_Audio.Path
+      value: event:/Music/MSC_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258788].m_Config.m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258766].m_AudioClip.m_Property
+      value: 5830855627583258767
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258766].m_FMODAudio.m_Property
+      value: 5830855627583258768
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258788].m_AudioClip.m_Property
+      value: 5830855627583258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258788].m_FMODAudio.m_Property
+      value: 5830855627583258790
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258791].m_AudioClip.m_Property
+      value: 5830855627583258792
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258791].m_FMODAudio.m_Property
+      value: 5830855627583258793
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258788].m_Config.m_TransitionIn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258768].m_Value.m_Audio.Guid.Data1
+      value: -89753287
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258768].m_Value.m_Audio.Guid.Data2
+      value: 1270747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258768].m_Value.m_Audio.Guid.Data3
+      value: 283411624
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258768].m_Value.m_Audio.Guid.Data4
+      value: 637605460
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258790].m_Value.m_Audio.Guid.Data1
+      value: -89753287
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258790].m_Value.m_Audio.Guid.Data2
+      value: 1270747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258790].m_Value.m_Audio.Guid.Data3
+      value: 283411624
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258790].m_Value.m_Audio.Guid.Data4
+      value: 637605460
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258793].m_Value.m_Audio.Guid.Data1
+      value: -89753287
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258793].m_Value.m_Audio.Guid.Data2
+      value: 1270747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258793].m_Value.m_Audio.Guid.Data3
+      value: 283411624
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258793].m_Value.m_Audio.Guid.Data4
+      value: 637605460
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258768].m_Value.m_Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258790].m_Value.m_Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258793].m_Value.m_Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2593366891650514546, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
       propertyPath: m_Name
       value: Transition
@@ -29370,6 +30697,298 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3374720579010490609, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258763]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258764]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258765]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258785]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258786]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258787]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258794]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258795]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258796]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258818]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258819]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258820]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudioNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258821]
+      value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[0]
+      value: 1295431448874713958
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[1]
+      value: 1295431448874714108
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[2]
+      value: 1295431433174909458
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[3]
+      value: 1295431433174909464
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[4]
+      value: 1295431448874713502
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[5]
+      value: 5830855627583258818
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: m_Instructions.m_Instructions.Array.data[6]
+      value: 5830855627583258785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258763].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258785].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258794].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258818].m_IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258763].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258785].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258794].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258818].m_Breakpoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258785].transitionOut
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258818].transitionOut
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258785].m_WaitToComplete
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258818].m_WaitToComplete
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258763].m_Config.m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258794].m_Config.m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258765].m_Value.m_Audio.Path
+      value: event:/Music/MSC_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258787].m_Value.m_Audio.Path
+      value: event:/Music/MSC_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258796].m_Value.m_Audio.Path
+      value: event:/Music/MSC_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258821].m_Value.m_Audio.Path
+      value: event:/Music/MSC_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258763].m_Config.m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258794].m_Config.m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258763].m_AudioClip.m_Property
+      value: 5830855627583258764
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258763].m_FMODAudio.m_Property
+      value: 5830855627583258765
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258785].m_AudioClip.m_Property
+      value: 5830855627583258786
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258785].m_FMODAudio.m_Property
+      value: 5830855627583258787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258794].m_AudioClip.m_Property
+      value: 5830855627583258795
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258794].m_FMODAudio.m_Property
+      value: 5830855627583258796
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258818].m_AudioClip.m_Property
+      value: 5830855627583258819
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258818].m_FMODAudio.m_Property
+      value: 5830855627583258821
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258763].m_Config.m_TransitionIn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258794].m_Config.m_TransitionIn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258765].m_Value.m_Audio.Guid.Data1
+      value: -89753287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258765].m_Value.m_Audio.Guid.Data2
+      value: 1270747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258765].m_Value.m_Audio.Guid.Data3
+      value: 283411624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258765].m_Value.m_Audio.Guid.Data4
+      value: 637605460
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258787].m_Value.m_Audio.Guid.Data1
+      value: -89753287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258787].m_Value.m_Audio.Guid.Data2
+      value: 1270747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258787].m_Value.m_Audio.Guid.Data3
+      value: 283411624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258787].m_Value.m_Audio.Guid.Data4
+      value: 637605460
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258796].m_Value.m_Audio.Guid.Data1
+      value: -89753287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258796].m_Value.m_Audio.Guid.Data2
+      value: 1270747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258796].m_Value.m_Audio.Guid.Data3
+      value: 283411624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258796].m_Value.m_Audio.Guid.Data4
+      value: 637605460
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258821].m_Value.m_Audio.Guid.Data1
+      value: -89753287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258821].m_Value.m_Audio.Guid.Data2
+      value: 1270747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258821].m_Value.m_Audio.Guid.Data3
+      value: 283411624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258821].m_Value.m_Audio.Guid.Data4
+      value: 637605460
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258765].m_Value.m_Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258787].m_Value.m_Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258796].m_Value.m_Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258821].m_Value.m_Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258796].m_Value.m_Params.Array.data[0].m_Name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
+      propertyPath: managedReferences[5830855627583258796].m_Value.m_Params.Array.data[0].m_Value
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
