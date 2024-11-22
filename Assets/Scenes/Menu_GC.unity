@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 20679113}
   - component: {fileID: 20679112}
   - component: {fileID: 20679111}
+  - component: {fileID: 20679114}
   m_Layer: 5
   m_Name: LoadSlot (4)
   m_TagString: Untagged
@@ -643,6 +644,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20679109}
   m_CullTransparentMesh: 1
+--- !u!114 &20679114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20679109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501250
+  m_TriggerEvent:
+    rid: 5830855805281501249
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501249
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501250
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501251
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501252
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501253
+    - rid: 5830855805281501251
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501252
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501253
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &27778799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,7 +1075,7 @@ GameObject:
   - component: {fileID: 70238321}
   - component: {fileID: 70238320}
   - component: {fileID: 70238319}
-  - component: {fileID: 70238318}
+  - component: {fileID: 70238322}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -1041,35 +1103,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000061035156, y: 62}
   m_SizeDelta: {x: 53, y: 53}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &70238318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70238316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: playHoverClip
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &70238319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1164,6 +1197,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70238316}
   m_CullTransparentMesh: 1
+--- !u!114 &70238322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70238316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501266
+  m_TriggerEvent:
+    rid: 5830855805281501265
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501265
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501266
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501267
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501268
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501269
+    - rid: 5830855805281501267
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501268
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501269
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &78843947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,6 +2064,7 @@ GameObject:
   - component: {fileID: 135948918}
   - component: {fileID: 135948917}
   - component: {fileID: 135948919}
+  - component: {fileID: 135948920}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -2138,6 +2233,67 @@ MonoBehaviour:
             Path: event:/UI/UI_Close
           m_Params: []
     - rid: 5830855627583258646
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+--- !u!114 &135948920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135948913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501272
+  m_TriggerEvent:
+    rid: 5830855805281501271
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501271
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501272
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501273
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501274
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501275
+    - rid: 5830855805281501273
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501274
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501275
       type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
 --- !u!1 &137156098
@@ -4562,26 +4718,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 267553866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501206
+  m_TriggerEvent:
+    rid: 5830855805281501205
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501205
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501206
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501207
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501208
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501209
+    - rid: 5830855805281501207
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501208
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501209
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &288986323
 GameObject:
   m_ObjectHideFlags: 0
@@ -5135,7 +5323,7 @@ RectTransform:
   - {fileID: 176895911}
   - {fileID: 1753318351}
   - {fileID: 354422200}
-  - {fileID: 601766691}
+  - {fileID: 1830845734}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6057,26 +6245,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 408558382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501223
+  m_TriggerEvent:
+    rid: 5830855805281501227
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501223
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501224
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501225
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501226
+    - rid: 5830855805281501224
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501225
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501226
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501227
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!114 &409374555 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
@@ -6759,26 +6979,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 521363749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501214
+  m_TriggerEvent:
+    rid: 5830855805281501213
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501213
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501214
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501215
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501216
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501217
+    - rid: 5830855805281501215
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501216
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501217
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &526324354
 GameObject:
   m_ObjectHideFlags: 0
@@ -7898,69 +8150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280989d249f9b482d890a5f97137f44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &580265403
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 580265404}
-  - component: {fileID: 580265405}
-  m_Layer: 0
-  m_Name: HoverSound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &580265404
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580265403}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 601766691}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &580265405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580265403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -741070861
-      Data2: 1124387941
-      Data3: -728244588
-      Data4: 662813174
-    Path: event:/UI/UI_Hover
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &590684324
 GameObject:
   m_ObjectHideFlags: 0
@@ -8076,39 +8265,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &601766690
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 601766691}
-  m_Layer: 0
-  m_Name: Audio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &601766691
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601766690}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.248505, y: -20.491543, z: -451.34476}
-  m_LocalScale: {x: 0.3125, y: 0.3125, z: 0.3125}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 580265404}
-  - {fileID: 1830845734}
-  m_Father: {fileID: 327323801}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615427946
 GameObject:
   m_ObjectHideFlags: 0
@@ -9714,26 +9870,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 763173351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501218
+  m_TriggerEvent:
+    rid: 5830855805281501222
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501218
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501219
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501220
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501221
+    - rid: 5830855805281501219
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501220
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501221
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501222
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &769784454
 GameObject:
   m_ObjectHideFlags: 0
@@ -10580,6 +10768,7 @@ GameObject:
   - component: {fileID: 822685211}
   - component: {fileID: 822685210}
   - component: {fileID: 822685209}
+  - component: {fileID: 822685212}
   m_Layer: 5
   m_Name: LoadSlot (6)
   m_TagString: Untagged
@@ -10748,6 +10937,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822685207}
   m_CullTransparentMesh: 1
+--- !u!114 &822685212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822685207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501260
+  m_TriggerEvent:
+    rid: 5830855805281501259
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501259
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501260
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501261
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501262
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501263
+    - rid: 5830855805281501261
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501262
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501263
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &833375988
 GameObject:
   m_ObjectHideFlags: 0
@@ -12324,26 +12574,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 983954940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501300
+  m_TriggerEvent:
+    rid: 5830855805281501299
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501299
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501300
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501301
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501302
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501303
+    - rid: 5830855805281501301
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501302
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501303
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &988433946
 GameObject:
   m_ObjectHideFlags: 0
@@ -15318,26 +15600,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1155241580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501201
+  m_TriggerEvent:
+    rid: 5830855805281501200
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501200
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501201
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501202
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501203
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501204
+    - rid: 5830855805281501202
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501203
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501204
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1168058658
 GameObject:
   m_ObjectHideFlags: 0
@@ -17432,26 +17746,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1274466307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501305
+  m_TriggerEvent:
+    rid: 5830855805281501304
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501304
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501305
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501306
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501307
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501308
+    - rid: 5830855805281501306
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501307
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501308
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1288279377
 GameObject:
   m_ObjectHideFlags: 0
@@ -18673,6 +19019,7 @@ GameObject:
   - component: {fileID: 1373709074}
   - component: {fileID: 1373709073}
   - component: {fileID: 1373709075}
+  - component: {fileID: 1373709076}
   m_Layer: 5
   m_Name: LoadSlot (1)
   m_TagString: Untagged
@@ -18839,6 +19186,67 @@ MonoBehaviour:
             Path: event:/UI/UI_Click
           m_Params: []
     - rid: 5830855627583258674
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+--- !u!114 &1373709076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373709071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501235
+  m_TriggerEvent:
+    rid: 5830855805281501234
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501234
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501235
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501236
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501237
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501238
+    - rid: 5830855805281501236
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501237
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501238
       type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
 --- !u!1 &1377667916
@@ -19224,26 +19632,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1382814934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501310
+  m_TriggerEvent:
+    rid: 5830855805281501309
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501309
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501310
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501311
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501312
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501313
+    - rid: 5830855805281501311
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501312
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501313
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1383215955
 GameObject:
   m_ObjectHideFlags: 0
@@ -20749,6 +21189,7 @@ GameObject:
   - component: {fileID: 1538575175}
   - component: {fileID: 1538575174}
   - component: {fileID: 1538575173}
+  - component: {fileID: 1538575176}
   m_Layer: 5
   m_Name: LoadSlot (5)
   m_TagString: Untagged
@@ -20917,6 +21358,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538575171}
   m_CullTransparentMesh: 1
+--- !u!114 &1538575176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538575171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501255
+  m_TriggerEvent:
+    rid: 5830855805281501254
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501254
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501255
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501256
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501257
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501258
+    - rid: 5830855805281501256
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501257
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501258
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1547475741
 GameObject:
   m_ObjectHideFlags: 0
@@ -21532,26 +22034,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1587811170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501315
+  m_TriggerEvent:
+    rid: 5830855805281501314
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501314
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501315
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501316
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501317
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501318
+    - rid: 5830855805281501316
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501317
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501318
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1591048452
 GameObject:
   m_ObjectHideFlags: 0
@@ -22188,6 +22722,7 @@ GameObject:
   - component: {fileID: 1611302542}
   - component: {fileID: 1611302541}
   - component: {fileID: 1611302543}
+  - component: {fileID: 1611302544}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -22356,6 +22891,67 @@ MonoBehaviour:
             Path: event:/UI/UI_Close
           m_Params: []
     - rid: 5830855627583258654
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+--- !u!114 &1611302544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611302537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501284
+  m_TriggerEvent:
+    rid: 5830855805281501283
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501283
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501284
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501285
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501286
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501287
+    - rid: 5830855805281501285
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501286
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501287
       type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
 --- !u!1 &1613397702
@@ -23403,6 +23999,7 @@ GameObject:
   - component: {fileID: 1680892857}
   - component: {fileID: 1680892856}
   - component: {fileID: 1680892855}
+  - component: {fileID: 1680892858}
   m_Layer: 5
   m_Name: LoadSlot (3)
   m_TagString: Untagged
@@ -23571,6 +24168,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680892853}
   m_CullTransparentMesh: 1
+--- !u!114 &1680892858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680892853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501245
+  m_TriggerEvent:
+    rid: 5830855805281501244
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501244
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501245
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501246
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501247
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501248
+    - rid: 5830855805281501246
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501247
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501248
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1001 &1702833788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25324,7 +25982,7 @@ GameObject:
   - component: {fileID: 1822267586}
   - component: {fileID: 1822267585}
   - component: {fileID: 1822267587}
-  - component: {fileID: 1822267589}
+  - component: {fileID: 1822267588}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -25520,7 +26178,7 @@ MonoBehaviour:
               Data4: -102587068
             Path: event:/UI/UI_Click
           m_Params: []
---- !u!114 &1822267589
+--- !u!114 &1822267588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25529,26 +26187,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1822267580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501192
+  m_TriggerEvent:
+    rid: 5830855805281501191
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501191
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501192
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501193
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501196
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501195
+    - rid: 5830855805281501193
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501195
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501196
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
 --- !u!1 &1823155195
 GameObject:
   m_ObjectHideFlags: 0
@@ -25722,11 +26412,11 @@ Transform:
   m_GameObject: {fileID: 1830845733}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -142.33032, y: -325.6202, z: 3995.94}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -53.72673, y: -122.24786, z: 797.3865}
+  m_LocalScale: {x: 0.3125, y: 0.3125, z: 0.3125}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 601766691}
+  m_Father: {fileID: 327323801}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1830845735
 MonoBehaviour:
@@ -25936,6 +26626,7 @@ GameObject:
   - component: {fileID: 1838918047}
   - component: {fileID: 1838918046}
   - component: {fileID: 1838918048}
+  - component: {fileID: 1838918049}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -26104,6 +26795,67 @@ MonoBehaviour:
             Path: event:/UI/UI_Close
           m_Params: []
     - rid: 5830855627583258650
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+--- !u!114 &1838918049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838918042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501278
+  m_TriggerEvent:
+    rid: 5830855805281501277
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501277
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501278
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501279
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501280
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501281
+    - rid: 5830855805281501279
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501280
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501281
       type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
 --- !u!1 &1838978123
@@ -27469,6 +28221,7 @@ GameObject:
   - component: {fileID: 1971079809}
   - component: {fileID: 1971079808}
   - component: {fileID: 1971079807}
+  - component: {fileID: 1971079810}
   m_Layer: 5
   m_Name: LoadSlot (2)
   m_TagString: Untagged
@@ -27637,6 +28390,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971079805}
   m_CullTransparentMesh: 1
+--- !u!114 &1971079810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971079805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501240
+  m_TriggerEvent:
+    rid: 5830855805281501239
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501239
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501240
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501241
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501242
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501243
+    - rid: 5830855805281501241
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501242
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501243
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1980929446
 GameObject:
   m_ObjectHideFlags: 0
@@ -27930,6 +28744,7 @@ GameObject:
   - component: {fileID: 1998902179}
   - component: {fileID: 1998902178}
   - component: {fileID: 1998902177}
+  - component: {fileID: 1998902180}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -28100,6 +28915,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998902175}
   m_CullTransparentMesh: 1
+--- !u!114 &1998902180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998902175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501290
+  m_TriggerEvent:
+    rid: 5830855805281501289
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501289
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501290
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501291
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501292
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501293
+    - rid: 5830855805281501291
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501292
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501293
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &2009667285
 GameObject:
   m_ObjectHideFlags: 0
@@ -28737,26 +29613,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 2035469488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 580265405}
-          m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Instructions:
+    m_Instructions:
+    - rid: 5830855805281501320
+  m_TriggerEvent:
+    rid: 5830855805281501319
+  references:
+    version: 2
+    RefIds:
+    - rid: 5830855805281501319
+      type: {class: EventUIOnHoverEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501320
+      type: {class: InstructionCommonAudioUIPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 5830855805281501321
+        m_FMODAudio:
+          m_Property:
+            rid: 5830855805281501322
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 0.95, y: 1.05}
+          m_UpdateMode: 1
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 5830855805281501323
+    - rid: 5830855805281501321
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5830855805281501322
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: -741070861
+              Data2: 1124387941
+              Data3: -728244588
+              Data4: 662813174
+            Path: event:/UI/UI_Hover
+          m_Params: []
+    - rid: 5830855805281501323
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &2039085171
 GameObject:
   m_ObjectHideFlags: 0
