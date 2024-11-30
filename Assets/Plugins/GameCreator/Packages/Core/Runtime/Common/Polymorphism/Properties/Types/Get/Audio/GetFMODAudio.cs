@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 namespace GameCreator.Runtime.Common
@@ -30,7 +31,7 @@ namespace GameCreator.Runtime.Common
         );
 
         public override string String => !this.m_Value.Audio.IsNull
-            ? this.m_Value.Audio.ToString().Split("/")[this.m_Value.Audio.ToString().Split("/").Length - 1]
+            ? Regex.Replace(this.m_Value.Audio.ToString(), @"^.*[/](.*).$", "$1")
             : "(none)";
 
         public override FMODAudio EditorValue => this.m_Value;

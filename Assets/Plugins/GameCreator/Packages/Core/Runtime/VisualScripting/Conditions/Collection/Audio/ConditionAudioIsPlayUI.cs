@@ -24,7 +24,21 @@ namespace GameCreator.Runtime.VisualScripting
 
         // PROPERTIES: ----------------------------------------------------------------------------
         
-        protected override string Summary => $"is UI {this.m_AudioClip} (or) {this.m_FMODAudio} playing";
+        protected override string Summary => string.Format(
+            "is UI {0}{1}{2}{3} playing",
+            this.m_AudioClip.ToString() != "None"
+                ? this.m_AudioClip
+                : string.Empty,
+            this.m_AudioClip.ToString() != "None" && this.m_FMODAudio.ToString() != "None"
+                ? " (&) "
+                : string.Empty,
+            this.m_AudioClip.ToString() == "None" && this.m_FMODAudio.ToString() == "None"
+                ? "None"
+                : string.Empty,
+            this.m_FMODAudio.ToString() != "None"
+                ? this.m_FMODAudio
+                : string.Empty
+        );
         
         // RUN METHOD: ----------------------------------------------------------------------------
 
