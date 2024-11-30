@@ -19,8 +19,8 @@ namespace GameCreator.Runtime.VisualScripting
     {
         // MEMBERS: -------------------------------------------------------------------------------
 
-        [SerializeField] private PropertyGetAudio m_AudioClip = new PropertyGetAudio();
-        [SerializeField] private PropertyGetFMODAudio m_FMODAudio = new PropertyGetFMODAudio();
+        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioNone.Create;
+        [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
 
         // PROPERTIES: ----------------------------------------------------------------------------
         
