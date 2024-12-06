@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2166449654064683347}
   - component: {fileID: 6102730394919157667}
-  - component: {fileID: 9050439071048306947}
+  - component: {fileID: 8200444802463837947}
   - component: {fileID: 2147873403093236935}
+  - component: {fileID: 2184152132836663021}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -27,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3324656473956319111}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0.000000030908623, z: -0.000000030908623, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10000, y: 10000, z: 10000}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4290648060585923818}
@@ -41,9 +42,9 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3324656473956319111}
-  m_Mesh: {fileID: 2534964839176971238, guid: 84d971322523d31499b06887e7244bca, type: 3}
---- !u!23 &9050439071048306947
-MeshRenderer:
+  m_Mesh: {fileID: -2124705421725058983, guid: b71364cdf6e15914aa3693c56c616d9c, type: 3}
+--- !u!137 &8200444802463837947
+SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -57,7 +58,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
+  m_RayTracingMode: 3
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -83,7 +84,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -2124705421725058983, guid: b71364cdf6e15914aa3693c56c616d9c, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0.006970465, y: 1.8983383, z: 0.030398667}
+    m_Extent: {x: 1.8503594, y: 1.9224136, z: 1.8164916}
+  m_DirtyAABB: 0
 --- !u!64 &2147873403093236935
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -105,7 +119,28 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2534964839176971238, guid: 84d971322523d31499b06887e7244bca, type: 3}
+  m_Mesh: {fileID: -2124705421725058983, guid: b71364cdf6e15914aa3693c56c616d9c, type: 3}
+--- !u!95 &2184152132836663021
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3324656473956319111}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42de97c364ecd944aaf346494f78d128, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4422176953361735467
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +168,7 @@ Transform:
   m_GameObject: {fileID: 4422176953361735467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.886, z: 0}
+  m_LocalPosition: {x: 0, y: 1.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -156,6 +191,7 @@ MonoBehaviour:
     - rid: 4300000962213314983
     - rid: 4300000962213314978
     - rid: 4300000962213314986
+    - rid: 4300001009881841774
   m_TriggerEvent:
     rid: 4300000962213314892
   references:
@@ -207,7 +243,7 @@ MonoBehaviour:
     - rid: 4300000962213314985
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 12
+        m_Value: 10
     - rid: 4300000962213314986
       type: {class: InstructionCharacterPropertyJumpForce, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -232,7 +268,26 @@ MonoBehaviour:
     - rid: 4300000962213314988
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 7
+        m_Value: 5
+    - rid: 4300001009881841774
+      type: {class: InstructionAnimatorPlayAnimation, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Animator:
+          m_Property:
+            rid: 4300001009881841775
+        m_AnimationClip:
+          m_Property:
+            rid: 4300001009881841776
+    - rid: 4300001009881841775
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 3324656473956319111}
+    - rid: 4300001009881841776
+      type: {class: GetAnimationInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: -7553321820348186399, guid: b71364cdf6e15914aa3693c56c616d9c, type: 3}
 --- !u!136 &3567592606571104757
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -252,8 +307,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.53
-  m_Height: 1.38
+  m_Radius: 1.59
+  m_Height: 3.83
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5255930412005058351
@@ -282,8 +337,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -29.255848, y: 0.52200556, z: -19.867655}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2166449654064683347}
   - {fileID: 1276352460987802617}
