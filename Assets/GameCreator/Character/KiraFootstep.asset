@@ -16,10 +16,14 @@ MonoBehaviour:
   m_MaterialSounds:
     m_LayerMask:
       serializedVersion: 2
-      m_Bits: 499
+      m_Bits: 4294967295
     m_MaterialSounds:
     - rid: 6020322699881480872
     - rid: 6020322505148858925
+    - rid: 7574883100842262528
+    - rid: 7574883100842262535
+    - rid: 7574883100842262552
+    - rid: 7574883100842262553
     m_DefaultSounds:
       m_Volume: 1
       m_Variations: []
@@ -90,9 +94,116 @@ MonoBehaviour:
         m_FMODVariations:
         - m_Audio:
             Guid:
-              Data1: 819413557
-              Data2: 1329789333
-              Data3: 243314348
-              Data4: 482219016
-            Path: event:/Foley/Footsteps/FTP_Shoes_Aspalt
+              Data1: 1075300690
+              Data2: 1315050851
+              Data3: 506086040
+              Data4: -1334887356
+            Path: event:/Foley/Footsteps/FTP_Shoes_Soil
+          m_Params: []
+    - rid: 7574883100842262528
+      type: {class: MaterialSoundTexture, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Name: Grass
+        m_Texture: {fileID: 2800000, guid: 0a1bb5e26502c2a4f85fd51f8c1c1a05, type: 3}
+        m_Impact:
+          m_Prefab: {fileID: 0}
+          m_UsePooling:
+            m_IsEnabled: 0
+            m_Value: 5
+          m_Duration:
+            m_IsEnabled: 0
+            m_Value: 10
+        m_Volume: 1
+        m_Variations:
+        - {fileID: 0}
+        m_FMODVariations:
+        - m_Audio:
+            Guid:
+              Data1: -1958756685
+              Data2: 1197090082
+              Data3: -343718470
+              Data4: 1992645305
+            Path: event:/Foley/Footsteps/FTP_Shoes_Grass
+          m_Params: []
+    - rid: 7574883100842262535
+      type: {class: MaterialSoundTexture, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Name: Grass
+        m_Texture: {fileID: 2800000, guid: 5fb75680c35da1447b1101ceac935042, type: 3}
+        m_Impact:
+          m_Prefab: {fileID: 0}
+          m_UsePooling:
+            m_IsEnabled: 0
+            m_Value: 5
+          m_Duration:
+            m_IsEnabled: 0
+            m_Value: 10
+        m_Volume: 1
+        m_Variations: []
+        m_FMODVariations:
+        - m_Audio:
+            Guid:
+              Data1: -1958756685
+              Data2: 1197090082
+              Data3: -343718470
+              Data4: 1992645305
+            Path: event:/Foley/Footsteps/FTP_Shoes_Grass
+          m_Params: []
+    - rid: 7574883100842262552
+      type: {class: MaterialSoundTexture, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Name: Tiles
+        m_Texture: {fileID: 2800000, guid: b87d364db4358d94cb27a82a0541677a, type: 3}
+        m_Impact:
+          m_Prefab: {fileID: 0}
+          m_UsePooling:
+            m_IsEnabled: 0
+            m_Value: 5
+          m_Duration:
+            m_IsEnabled: 0
+            m_Value: 10
+        m_Volume: 1
+        m_Variations:
+        - {fileID: 0}
+        m_FMODVariations:
+        - m_Audio:
+            Guid:
+              Data1: 475161139
+              Data2: 1101660566
+              Data3: 1770434697
+              Data4: 1213350715
+            Path: event:/Foley/Footsteps/FTP_Shoes_RockTiles
+          m_Params: []
+    - rid: 7574883100842262553
+      type: {class: MaterialSoundTexture, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Name: Rock
+        m_Texture: {fileID: 2800000, guid: 9ffeea72c0337624482e3bd88e93ba40, type: 3}
+        m_Impact:
+          m_Prefab: {fileID: 0}
+          m_UsePooling:
+            m_IsEnabled: 0
+            m_Value: 5
+          m_Duration:
+            m_IsEnabled: 0
+            m_Value: 10
+        m_Volume: 1
+        m_Variations:
+        - {fileID: 0}
+        m_FMODVariations:
+        - m_Audio:
+            Guid:
+              Data1: 396457842
+              Data2: 1280132428
+              Data3: -684879225
+              Data4: -854523434
+            Path: event:/Foley/Footsteps/FTP_Shoes_SoilRocky
           m_Params: []
