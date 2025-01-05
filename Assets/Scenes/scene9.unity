@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 528142140}
-  m_IndirectSpecularColor: {r: 0.09417825, g: 0.5004113, b: 0.7926439, a: 1}
+  m_IndirectSpecularColor: {r: 0.094189055, g: 0.50047797, b: 0.79272974, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27453,6 +27453,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1969323354}
     m_Modifications:
+    - target: {fileID: 141255929094203102, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 57
+      objectReference: {fileID: 0}
     - target: {fileID: 507344309232526244, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
       propertyPath: m_Name
       value: KiraFantasy
@@ -27513,8 +27517,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7166145305485110901, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d8fbac451f699fd4d9c72e9204ed21c0, type: 2}
+    - target: {fileID: 7166145305485110901, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9117003495745013207, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
-      propertyPath: managedReferences[4906518460771074091].m_Dash.m_DashInAir
+      propertyPath: managedReferences[4906518460771074091].m_Jump.m_AirJumps
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117003495745013207, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
+      propertyPath: managedReferences[4906518460771074091].m_Jump.m_JumpForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117003495745013207, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
+      propertyPath: managedReferences[4906518460771074091].m_Jump.m_JumpCooldown
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
