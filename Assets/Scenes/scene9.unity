@@ -6131,7 +6131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 390361126}
   m_Layer: 0
-  m_Name: UI (1)
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15818,37 +15818,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1911740250259677590, guid: 7cb03607def783441a79b90a503d372d, type: 3}
   m_PrefabInstance: {fileID: 747265672}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &754409711
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 754409712}
-  m_Layer: 0
-  m_Name: UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &754409712
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754409711}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6188211, y: 1.6155027, z: 12.1817}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763717531
 GameObject:
   m_ObjectHideFlags: 0
@@ -16634,12 +16603,89 @@ MonoBehaviour:
       type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_GameObject: {fileID: 0}
+    - rid: 1313095187236651253
+      type: {class: Node, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_NodeType:
+          rid: 1313095187236651254
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Text:
+          m_Text:
+            m_Property:
+              rid: 1313095187236651255
+          m_Values: []
+        m_Audio:
+          m_Property:
+            rid: 1313095187236651256
+        m_FMODAudio:
+          m_Property:
+            rid: 1313095187236651257
+        m_Acting:
+          m_Portrait: 3
+          m_Actor: {fileID: 11400000, guid: dbf4f73874180474cbbe8ecf94b66019, type: 2}
+          m_Expression: 0
+        m_Animation: {fileID: 0}
+        m_AnimationData:
+          m_AvatarMask: {fileID: 0}
+          m_BlendMode: 0
+          m_Delay: 0
+          m_Speed: 1
+          m_UseRootMotion: 0
+          m_TransitionIn: 0.1
+          m_TransitionOut: 0.1
+        m_Sequence:
+          m_Tracks:
+          - rid: 1313095187236651258
+        m_OnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_OnFinish:
+          m_Instructions:
+            m_Instructions: []
+        m_Duration: 0
+        m_Timeout:
+          m_Property:
+            rid: 1313095187236651259
+        m_Tag:
+          m_String: 
+        m_Jump:
+          m_Jump: 0
+          m_JumpTo:
+            m_String: 
+    - rid: 1313095187236651254
+      type: {class: NodeTypeText, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Options: 0
+    - rid: 1313095187236651255
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: "but I'm missing a few crucial ingredients. I need five magic thistles
+            and a bottle of high-proof alcohol. Do you think you could help me out?\r"
+    - rid: 1313095187236651256
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095187236651257
+      type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095187236651258
+      type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Clips: []
+    - rid: 1313095187236651259
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 3
     - rid: 6020322152669249840
       type: {class: Content, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
-        m_Dirty: 52149
+        m_Dirty: 92166
         m_Data:
-          m_Keys: 44d05c802ec04025d3d4b57759f9e4afac03210c5e1d2c66
+          m_Keys: 44d05c802ec04025d3d4b57759f9e4afac03210c5e1d2c660d66d9c3
           m_Values:
           - m_Id: -2141401020
             m_Value:
@@ -16659,15 +16705,18 @@ MonoBehaviour:
           - m_Id: 1714167134
             m_Value:
               rid: 6020322203994947671
+          - m_Id: -1009162739
+            m_Value:
+              rid: 1313095187236651253
         m_Nodes:
-          m_Keys: 44d05c802ec04025d3d4b57759f9e4afac03210c5e1d2c66
+          m_Keys: 44d05c802ec04025d3d4b57759f9e4afac03210c5e1d2c660d66d9c3
           m_Values:
           - m_Id: -2141401020
             m_Parent: -1
             m_Children: 
           - m_Id: 625000494
             m_Parent: -1
-            m_Children: 
+            m_Children: 0d66d9c3
           - m_Id: 2008405203
             m_Parent: -1
             m_Children: 
@@ -16679,6 +16728,9 @@ MonoBehaviour:
             m_Children: 
           - m_Id: 1714167134
             m_Parent: -1
+            m_Children: 
+          - m_Id: -1009162739
+            m_Parent: 625000494
             m_Children: 
         m_Roots: 44d05c802ec04025d3d4b57759f9e4afac03210c5e1d2c66
         m_Roles:
@@ -16827,9 +16879,7 @@ MonoBehaviour:
       data:
         m_Text:
           m_Text: "Oh, Kira, I'm so glad I ran into you. I'm trying to complete a
-            potion \n\nbut I'm missing a few crucial ingredients. I need five magic
-            thistles and a bottle of high-proof alcohol. Do you think you could help
-            me out?\r"
+            potion \n\n"
     - rid: 6020322203994947640
       type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -39038,7 +39088,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 6077354527105047592}
   - {fileID: 1332730586}
-  - {fileID: 754409712}
   - {fileID: 1618499737}
   - {fileID: 23720401}
   - {fileID: 1969323354}
