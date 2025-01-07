@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50dbca47426e4169b2c7ee6a34a43d3a, type: 3}
+  m_Name: Kira
+  m_EditorClassIdentifier: 
+  m_Nodes:
+  - rid: 8591488362923950283
+  - rid: 8591488362923950284
+  - rid: 8591488362923950290
+  m_Data:
+    m_List:
+    - rid: 8591488362923950292
+  m_Thoughts:
+    m_List:
+    - rid: 8591488362923950288
+  references:
+    version: 2
+    RefIds:
+    - rid: 8591488362923950283
+      type: {class: NodeActionPlanRoot, ns: GameCreator.Runtime.Behavior, asm: GameCreator.Runtime.Behavior}
+      data:
+        m_Id:
+          m_String: 87a8ad83-1f8a-40ad-b0c3-c78fc0f0b79a
+        m_Position: {x: 0, y: 50}
+        m_Ports:
+          m_Inputs: []
+          m_Outputs: []
+    - rid: 8591488362923950284
+      type: {class: NodeActionPlanTaskInstructions, ns: GameCreator.Runtime.Behavior, asm: GameCreator.Runtime.Behavior}
+      data:
+        m_Id:
+          m_String: a332fc12-20ab-4b04-a4b4-2fb43dbd6a60
+        m_Position: {x: -13, y: -59}
+        m_Ports:
+          m_Inputs: []
+          m_Outputs:
+          - rid: 8591488362923950285
+          - rid: 8591488362923950286
+        m_Cost:
+          m_Property:
+            rid: 8591488362923950287
+        m_Conditions:
+          m_Conditions:
+            m_Conditions:
+            - rid: 8591488362923950295
+        m_Name: Activate Help Yuka
+        m_Instructions:
+          m_Instructions:
+            m_Instructions:
+            - rid: 8591488362923950298
+            - rid: 8591488362923950301
+    - rid: 8591488362923950285
+      type: {class: OutputPortActionPlanPreConditions, ns: GameCreator.Runtime.Behavior, asm: GameCreator.Runtime.Behavior}
+      data:
+        m_Id:
+          m_Value: 013b07d7-08b8-4777-9406-d9194aa51ca1
+        m_Connections:
+        - m_Value: 61df3f45-1820-4e37-85cb-b4223c03fb24
+    - rid: 8591488362923950286
+      type: {class: OutputPortActionPlanPostConditions, ns: GameCreator.Runtime.Behavior, asm: GameCreator.Runtime.Behavior}
+      data:
+        m_Id:
+          m_Value: f1b6905e-363f-44a8-9e8e-354d3ee0c39c
+        m_Connections: []
+    - rid: 8591488362923950287
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
+    - rid: 8591488362923950288
+      type: {class: Thought, ns: GameCreator.Runtime.Behavior, asm: GameCreator.Runtime.Behavior}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Name:
+          m_String: my-belief
+        m_Value:
+          m_Property:
+            rid: 8591488362923950289
+    - rid: 8591488362923950289
+      type: {class: GetBoolTrue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8591488362923950290
+      type: {class: NodeActionPlanPreConditions, ns: GameCreator.Runtime.Behavior, asm: GameCreator.Runtime.Behavior}
+      data:
+        m_Id:
+          m_String: aaa2d178-e9e2-4618-8fde-45df0752c09e
+        m_Position: {x: -343, y: -56}
+        m_Ports:
+          m_Inputs:
+          - rid: 8591488362923950291
+          m_Outputs: []
+        m_Beliefs:
+          m_List:
+          - rid: 8591488362923950294
+    - rid: 8591488362923950291
+      type: {class: InputPortActionPlanPreConditions, ns: GameCreator.Runtime.Behavior, asm: GameCreator.Runtime.Behavior}
+      data:
+        m_Id:
+          m_Value: 61df3f45-1820-4e37-85cb-b4223c03fb24
+    - rid: 8591488362923950292
+      type: {class: Parameter, ns: GameCreator.Runtime.Behavior, asm: GameCreator.Runtime.Behavior}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Value:
+          rid: 8591488362923950293
+        m_Name: help-yuka
+    - rid: 8591488362923950293
+      type: {class: ValueNull, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+    - rid: 8591488362923950294
+      type: {class: Belief, ns: GameCreator.Runtime.Behavior, asm: GameCreator.Runtime.Behavior}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Name:
+          m_String: help-yuka
+        m_Value: 0
+    - rid: 8591488362923950295
+      type: {class: ConditionQuestsIsQuestActive, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Sign: 0
+        m_Journal:
+          m_Property:
+            rid: 8591488362923950296
+        m_Quest:
+          m_Property:
+            rid: 8591488362923950297
+    - rid: 8591488362923950296
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8591488362923950297
+      type: {class: GetQuestInstance, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
+      data:
+        m_Quest: {fileID: 11400000, guid: 4340c52944a1b0e46a56202ce1164a3c, type: 2}
+    - rid: 8591488362923950298
+      type: {class: InstructionCharacterPropertyIsControllable, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Character:
+          m_Property:
+            rid: 8591488362923950299
+        m_IsControllable:
+          m_Property:
+            rid: 8591488362923950300
+    - rid: 8591488362923950299
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8591488362923950300
+      type: {class: GetBoolValue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0
+    - rid: 8591488362923950301
+      type: {class: InstructionDialoguePlay, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Dialogue:
+          m_Property:
+            rid: 8591488362923950302
+        m_WaitToFinish: 1
+    - rid: 8591488362923950302
+      type: {class: GetGameObjectDialogue, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Dialogue: {fileID: 0}
