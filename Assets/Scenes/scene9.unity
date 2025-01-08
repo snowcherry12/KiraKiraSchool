@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 528142140}
-  m_IndirectSpecularColor: {r: 0.06589734, g: 0.3500922, b: 0.5545864, a: 1}
+  m_IndirectSpecularColor: {r: 0.065790705, g: 0.3501467, b: 0.55457187, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -775,7 +775,7 @@ MonoBehaviour:
       type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Text:
-          m_Text: Hello Traveler
+          m_Text: gulp....gulp....
     - rid: 1313095187236651051
       type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
@@ -794,25 +794,253 @@ MonoBehaviour:
       type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_GameObject: {fileID: 0}
-    - rid: 1313095187236651092
+    - rid: 1313095252676182046
       type: {class: Node, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_NodeType:
-          rid: 1313095187236651093
+          rid: 1313095252676182047
         m_Conditions:
           m_Conditions:
             m_Conditions: []
         m_Text:
           m_Text:
             m_Property:
-              rid: 1313095187236651094
+              rid: 1313095252676182048
           m_Values: []
         m_Audio:
           m_Property:
-            rid: 1313095187236651095
+            rid: 1313095252676182049
         m_FMODAudio:
           m_Property:
-            rid: 1313095187236651096
+            rid: 1313095252676182050
+        m_Acting:
+          m_Portrait: 3
+          m_Actor: {fileID: 11400000, guid: 7c487a4f7de3d5449b3cccc89642d2e5, type: 2}
+          m_Expression: 0
+        m_Animation: {fileID: 0}
+        m_AnimationData:
+          m_AvatarMask: {fileID: 0}
+          m_BlendMode: 0
+          m_Delay: 0
+          m_Speed: 1
+          m_UseRootMotion: 0
+          m_TransitionIn: 0.1
+          m_TransitionOut: 0.1
+        m_Sequence:
+          m_Tracks:
+          - rid: 1313095252676182051
+        m_OnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_OnFinish:
+          m_Instructions:
+            m_Instructions: []
+        m_Duration: 0
+        m_Timeout:
+          m_Property:
+            rid: 1313095252676182052
+        m_Tag:
+          m_String: 
+        m_Jump:
+          m_Jump: 0
+          m_JumpTo:
+            m_String: 
+    - rid: 1313095252676182047
+      type: {class: NodeTypeText, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Options: 0
+    - rid: 1313095252676182048
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: What is he doing?
+    - rid: 1313095252676182049
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095252676182050
+      type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095252676182051
+      type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Clips: []
+    - rid: 1313095252676182052
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 3
+    - rid: 1313095252676182053
+      type: {class: Node, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_NodeType:
+          rid: 1313095252676182054
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Text:
+          m_Text:
+            m_Property:
+              rid: 1313095252676182055
+          m_Values: []
+        m_Audio:
+          m_Property:
+            rid: 1313095252676182056
+        m_FMODAudio:
+          m_Property:
+            rid: 1313095252676182057
+        m_Acting:
+          m_Portrait: 3
+          m_Actor: {fileID: 11400000, guid: 7c487a4f7de3d5449b3cccc89642d2e5, type: 2}
+          m_Expression: 0
+        m_Animation: {fileID: 0}
+        m_AnimationData:
+          m_AvatarMask: {fileID: 0}
+          m_BlendMode: 0
+          m_Delay: 0
+          m_Speed: 1
+          m_UseRootMotion: 0
+          m_TransitionIn: 0.1
+          m_TransitionOut: 0.1
+        m_Sequence:
+          m_Tracks:
+          - rid: 1313095252676182058
+        m_OnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_OnFinish:
+          m_Instructions:
+            m_Instructions: []
+        m_Duration: 0
+        m_Timeout:
+          m_Property:
+            rid: 1313095252676182059
+        m_Tag:
+          m_String: 
+        m_Jump:
+          m_Jump: 0
+          m_JumpTo:
+            m_String: 
+    - rid: 1313095252676182054
+      type: {class: NodeTypeText, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Options: 0
+    - rid: 1313095252676182055
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: Is he mentioning me?
+    - rid: 1313095252676182056
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095252676182057
+      type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095252676182058
+      type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Clips: []
+    - rid: 1313095252676182059
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 3
+    - rid: 1313095252676182060
+      type: {class: Node, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_NodeType:
+          rid: 1313095252676182061
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Text:
+          m_Text:
+            m_Property:
+              rid: 1313095252676182062
+          m_Values: []
+        m_Audio:
+          m_Property:
+            rid: 1313095252676182063
+        m_FMODAudio:
+          m_Property:
+            rid: 1313095252676182064
+        m_Acting:
+          m_Portrait: 3
+          m_Actor: {fileID: 11400000, guid: 7c487a4f7de3d5449b3cccc89642d2e5, type: 2}
+          m_Expression: 0
+        m_Animation: {fileID: 0}
+        m_AnimationData:
+          m_AvatarMask: {fileID: 0}
+          m_BlendMode: 0
+          m_Delay: 0
+          m_Speed: 1
+          m_UseRootMotion: 0
+          m_TransitionIn: 0.1
+          m_TransitionOut: 0.1
+        m_Sequence:
+          m_Tracks:
+          - rid: 1313095252676182065
+        m_OnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_OnFinish:
+          m_Instructions:
+            m_Instructions: []
+        m_Duration: 0
+        m_Timeout:
+          m_Property:
+            rid: 1313095252676182066
+        m_Tag:
+          m_String: 
+        m_Jump:
+          m_Jump: 0
+          m_JumpTo:
+            m_String: 
+    - rid: 1313095252676182061
+      type: {class: NodeTypeText, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Options: 0
+    - rid: 1313095252676182062
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: '"The Hero?"'
+    - rid: 1313095252676182063
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095252676182064
+      type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095252676182065
+      type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Clips: []
+    - rid: 1313095252676182066
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 3
+    - rid: 1313095252676182067
+      type: {class: Node, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_NodeType:
+          rid: 1313095252676182068
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Text:
+          m_Text:
+            m_Property:
+              rid: 1313095252676182069
+          m_Values: []
+        m_Audio:
+          m_Property:
+            rid: 1313095252676182070
+        m_FMODAudio:
+          m_Property:
+            rid: 1313095252676182071
         m_Acting:
           m_Portrait: 3
           m_Actor: {fileID: 0}
@@ -828,7 +1056,7 @@ MonoBehaviour:
           m_TransitionOut: 0.1
         m_Sequence:
           m_Tracks:
-          - rid: 1313095187236651097
+          - rid: 1313095252676182072
         m_OnStart:
           m_Instructions:
             m_Instructions: []
@@ -838,44 +1066,120 @@ MonoBehaviour:
         m_Duration: 0
         m_Timeout:
           m_Property:
-            rid: 1313095187236651098
+            rid: 1313095252676182073
         m_Tag:
           m_String: 
         m_Jump:
           m_Jump: 0
           m_JumpTo:
             m_String: 
-    - rid: 1313095187236651093
+    - rid: 1313095252676182068
       type: {class: NodeTypeText, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Options: 0
-    - rid: 1313095187236651094
+    - rid: 1313095252676182069
       type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Text:
-          m_Text: Welcome
-    - rid: 1313095187236651095
+          m_Text: '"The Hero" is here!'
+    - rid: 1313095252676182070
       type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
-    - rid: 1313095187236651096
+    - rid: 1313095252676182071
       type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
-    - rid: 1313095187236651097
+    - rid: 1313095252676182072
       type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Clips: []
-    - rid: 1313095187236651098
+    - rid: 1313095252676182073
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 3
+    - rid: 1313095252676182083
+      type: {class: Node, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_NodeType:
+          rid: 1313095252676182084
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Text:
+          m_Text:
+            m_Property:
+              rid: 1313095252676182085
+          m_Values: []
+        m_Audio:
+          m_Property:
+            rid: 1313095252676182086
+        m_FMODAudio:
+          m_Property:
+            rid: 1313095252676182087
+        m_Acting:
+          m_Portrait: 3
+          m_Actor: {fileID: 0}
+          m_Expression: 0
+        m_Animation: {fileID: 0}
+        m_AnimationData:
+          m_AvatarMask: {fileID: 0}
+          m_BlendMode: 0
+          m_Delay: 0
+          m_Speed: 1
+          m_UseRootMotion: 0
+          m_TransitionIn: 0.1
+          m_TransitionOut: 0.1
+        m_Sequence:
+          m_Tracks:
+          - rid: 1313095252676182088
+        m_OnStart:
+          m_Instructions:
+            m_Instructions: []
+        m_OnFinish:
+          m_Instructions:
+            m_Instructions: []
+        m_Duration: 0
+        m_Timeout:
+          m_Property:
+            rid: 1313095252676182089
+        m_Tag:
+          m_String: 
+        m_Jump:
+          m_Jump: 0
+          m_JumpTo:
+            m_String: 
+    - rid: 1313095252676182084
+      type: {class: NodeTypeText, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Options: 0
+    - rid: 1313095252676182085
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: gulp......gulp.....
+    - rid: 1313095252676182086
+      type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095252676182087
+      type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095252676182088
+      type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Clips: []
+    - rid: 1313095252676182089
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: 3
     - rid: 6020322499642785909
       type: {class: Content, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
-        m_Dirty: 5525
+        m_Dirty: 67355
         m_Data:
-          m_Keys: 601e2fbb9edcf8a7b5bdae36
+          m_Keys: 601e2fbb9edcf8a77f5014859357cc474a4081c4aee9396a16f13587
           m_Values:
           - m_Id: -1154539936
             m_Value:
@@ -883,22 +1187,46 @@ MonoBehaviour:
           - m_Id: -1476862818
             m_Value:
               rid: 1313095187236651048
-          - m_Id: 917421493
+          - m_Id: -2062266241
             m_Value:
-              rid: 1313095187236651092
+              rid: 1313095252676182046
+          - m_Id: 1204574099
+            m_Value:
+              rid: 1313095252676182053
+          - m_Id: -998162358
+            m_Value:
+              rid: 1313095252676182060
+          - m_Id: 1782180270
+            m_Value:
+              rid: 1313095252676182067
+          - m_Id: -2026508010
+            m_Value:
+              rid: 1313095252676182083
         m_Nodes:
-          m_Keys: 601e2fbb9edcf8a7b5bdae36
+          m_Keys: 601e2fbb9edcf8a77f5014859357cc474a4081c4aee9396a16f13587
           m_Values:
           - m_Id: -1154539936
             m_Parent: -1
             m_Children: 
           - m_Id: -1476862818
             m_Parent: -1
-            m_Children: b5bdae36
-          - m_Id: 917421493
-            m_Parent: -1476862818
             m_Children: 
-        m_Roots: 601e2fbb9edcf8a7
+          - m_Id: -2062266241
+            m_Parent: -1
+            m_Children: 
+          - m_Id: 1204574099
+            m_Parent: -1
+            m_Children: 
+          - m_Id: -998162358
+            m_Parent: -1
+            m_Children: 
+          - m_Id: 1782180270
+            m_Parent: -1
+            m_Children: 
+          - m_Id: -2026508010
+            m_Parent: -1
+            m_Children: 
+        m_Roots: 601e2fbb9edcf8a77f50148516f13587aee9396a4a4081c49357cc47
         m_Roles:
         - m_Actor: {fileID: 11400000, guid: 7c487a4f7de3d5449b3cccc89642d2e5, type: 2}
           m_Target:
@@ -18580,6 +18908,85 @@ MonoBehaviour:
   m_dragForce: 0.4
   m_jointRadius: 0.009749353
   m_drawCollider: 0
+--- !u!1001 &818348530
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2419
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2419
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2419
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -208.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.038039837
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9992762
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -184.36
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_Name
+      value: ume hamur
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442510506162454399, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d98d65976211f44eae1ad0fa5636c0a, type: 2}
+    - target: {fileID: 8443713291819645580, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d98d65976211f44eae1ad0fa5636c0a, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: -8700617353114198275, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+    - {fileID: 65702495048144492, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
 --- !u!1 &819915817
 GameObject:
   m_ObjectHideFlags: 0
@@ -23926,7 +24333,7 @@ MonoBehaviour:
   scrollPos: {x: 0, y: 0}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 501
+  blockViewHeight: 306
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -23934,8 +24341,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1172389411}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -29407,6 +29813,85 @@ MonoBehaviour:
   m_dragForce: 0.4
   m_jointRadius: 0.014623986
   m_drawCollider: 0
+--- !u!1001 &1419563077
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.0208445
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.0208445
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.0208445
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -241.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 143.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.2983639
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9544522
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -214.719
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_Name
+      value: ume hamur (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442510506162454399, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d98d65976211f44eae1ad0fa5636c0a, type: 2}
+    - target: {fileID: 8443713291819645580, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d98d65976211f44eae1ad0fa5636c0a, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: -8700617353114198275, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+    - {fileID: 65702495048144492, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
 --- !u!1 &1423511943
 GameObject:
   m_ObjectHideFlags: 0
@@ -37006,6 +37491,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1955942085}
   m_Mesh: {fileID: 1993727328741251043, guid: e87b15b5b968c484087cfb6811d0ef4c, type: 3}
+--- !u!1001 &1961629692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2419
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2419
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2419
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -245.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.39303795
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9195223
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -226.287
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_Name
+      value: ume hamur (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442510506162454399, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d98d65976211f44eae1ad0fa5636c0a, type: 2}
+    - target: {fileID: 8443713291819645580, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d98d65976211f44eae1ad0fa5636c0a, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: -8700617353114198275, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+    - {fileID: 65702495048144492, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b818ab097c1f0104081e831a1d66c924, type: 3}
 --- !u!1 &1964308522
 GameObject:
   m_ObjectHideFlags: 0
@@ -40154,3 +40718,6 @@ SceneRoots:
   - {fileID: 193766940}
   - {fileID: 44829444}
   - {fileID: 75374477}
+  - {fileID: 818348530}
+  - {fileID: 1961629692}
+  - {fileID: 1419563077}
