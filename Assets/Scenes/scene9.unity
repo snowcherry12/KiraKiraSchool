@@ -2827,6 +2827,11 @@ MonoBehaviour:
   m_dragForce: 0.4
   m_jointRadius: 0.009749314
   m_drawCollider: 0
+--- !u!1 &145838165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507344309232526244, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
+  m_PrefabInstance: {fileID: 390129601630016516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &154150269
 GameObject:
   m_ObjectHideFlags: 0
@@ -14506,6 +14511,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5154327224002756621, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
   m_PrefabInstance: {fileID: 390129601630016516}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &661572317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145838165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e913cd1061e436087d7629ff35a332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackMode: 1
+  m_Quests:
+    m_Quests:
+      m_Keys: []
+      m_Values: []
+  m_Tasks:
+    m_Tasks:
+      m_Keys: []
+      m_Values: []
 --- !u!1 &662806384
 GameObject:
   m_ObjectHideFlags: 0
@@ -39337,15 +39363,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154327224002756621, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -59.80368
+      value: -174.628
       objectReference: {fileID: 0}
     - target: {fileID: 5154327224002756621, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.165
+      value: 12.790688
       objectReference: {fileID: 0}
     - target: {fileID: 5154327224002756621, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 248.66852
+      value: -78.853
       objectReference: {fileID: 0}
     - target: {fileID: 5154327224002756621, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39406,7 +39432,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 507344309232526244, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 661572317}
   m_SourcePrefab: {fileID: 100100000, guid: d6640e8bf35a3ee4cb32573118054416, type: 3}
 --- !u!4 &543450651915617297
 Transform:
