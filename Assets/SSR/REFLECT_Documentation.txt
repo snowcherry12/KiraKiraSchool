@@ -1,0 +1,48 @@
+
+==-------------------------= Setup =-------------------------==
+
+- On your URP Renderer Asset set the Rendering Path to Deferred.
+- On your URP Renderer Asset disable "Accurate G-buffer Normals".
+- On your URP Renderer Asset add the "Reflect Render Pass" renderer feature.
+
+- On any Volume in your scene, select "Add Override" and choose "GapperGames/Screen Space Reflections".
+
+- Setup Complete :)
+
+How to locate URP Settings/Renderer Asset:
+1. Go to Edit/Project Settings/Graphics and select the 'Scriptable Render Pipeline 
+Settings'. This is your URP Settings Asset
+2. From your URP Settings Asset, select the first item in the 'Renderer List'. This is 
+your URP Renderer Asset
+
+==-----------------------------= Reflection Settings =----------------------------==
+
+
+	Downsample - The resolution that the reflections render at relative to the size of the screen.
+
+	Steps - The amount of steps used to calculate reflections.
+	
+	Step Size - The size of steps used to calculate reflections.
+	
+	Thickness - The threshold that the algorithm uses to determine an intersection.
+
+	Samples - The samples used at an intersection point to find the reflection.
+
+	Min Smoothness - The minimum smoothness that the reflections will be rendered above.
+
+	=---= To access the reflections in a shader, the reflections tex is a global texture called: "_ScreenSpaceRelfectionsTex".
+
+==-----------------------------= Transparent Reflections =----------------------------==
+
+
+	To achieve transparent reflections, first create a new material with the shader: "GapperGames/SSR_Transparent".
+	The material behaves the same as a standard transparent material, except it will receive SSR.
+
+
+==-------------------------=---------------------=-------------------------==
+
+Please consider leaving a review for my asset as it really helps :)
+For any questions, or to show off what you have made with my asset, 
+please email me at wgappster@gmail.com
+
+==-------------------------=---------------------=-------------------------==
