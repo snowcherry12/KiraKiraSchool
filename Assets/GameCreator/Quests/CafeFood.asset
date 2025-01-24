@@ -1,0 +1,328 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c372b025c8c4d92bf11f951ee3d5042, type: 3}
+  m_Name: CafeFood
+  m_EditorClassIdentifier: 
+  m_Title:
+    m_Property:
+      rid: 6020322121651322885
+  m_Description:
+    m_Property:
+      rid: 6020322121651322886
+  m_Color:
+    m_Property:
+      rid: 6020322121651322887
+  m_Sprite:
+    m_Property:
+      rid: 6020322121651322888
+  m_Type: 0
+  m_SortOrder: 0
+  m_UniqueId:
+    m_SerializedID:
+      m_String: 5cae4baf-5a2b-4fcd-9036-a94055739f5e
+  m_Tasks:
+    rid: 6020322121651322889
+  m_OnActivate:
+    m_Instructions:
+      m_Instructions: []
+  m_OnDeactivate:
+    m_Instructions:
+      m_Instructions: []
+  m_OnComplete:
+    m_Instructions:
+      m_Instructions:
+      - rid: 6020322203994947736
+  m_OnAbandon:
+    m_Instructions:
+      m_Instructions: []
+  m_OnFail:
+    m_Instructions:
+      m_Instructions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1313095611398750271
+      type: {class: Task, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
+      data:
+        m_Completion: 0
+        m_IsHidden: 0
+        m_Name:
+          m_Property:
+            rid: 1313095611398750272
+        m_Description:
+          m_Property:
+            rid: 1313095611398750273
+        m_Color:
+          m_Property:
+            rid: 1313095611398750274
+        m_Sprite:
+          m_Property:
+            rid: 1313095611398750275
+        m_UseCounter: 1
+        m_CountTo:
+          m_Property:
+            rid: 1313095611398750279
+        m_ValueFrom:
+          m_Property:
+            rid: 1313095611398750277
+        m_CheckWhen:
+          m_Event:
+            rid: 1313095611398750278
+        m_OnActivate:
+          m_Instructions:
+            m_Instructions: []
+        m_OnDeactivate:
+          m_Instructions:
+            m_Instructions: []
+        m_OnComplete:
+          m_Instructions:
+            m_Instructions: []
+        m_OnAbandon:
+          m_Instructions:
+            m_Instructions: []
+        m_OnFail:
+          m_Instructions:
+            m_Instructions: []
+    - rid: 1313095611398750272
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Drink
+    - rid: 1313095611398750273
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: 
+    - rid: 1313095611398750274
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095611398750275
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095611398750277
+      type: {class: GetDecimalGlobalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: number
+          m_Variable: {fileID: 0}
+          m_Name:
+            m_String: 
+            m_ID: 0
+    - rid: 1313095611398750278
+      type: {class: EventOnLateUpdate, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1313095611398750279
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
+    - rid: 6020322121651322885
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Food to eat
+    - rid: 6020322121651322886
+      type: {class: GetStringEmpty, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322121651322887
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322121651322888
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322121651322889
+      type: {class: TasksTree, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
+      data:
+        m_Dirty: 41040
+        m_Data:
+          m_Keys: d261cb88b8d9a3d74d521226
+          m_Values:
+          - m_Id: -1999937070
+            m_Value:
+              rid: 6020322152669249588
+          - m_Id: -677127752
+            m_Value:
+              rid: 6020322152669249596
+          - m_Id: 638734925
+            m_Value:
+              rid: 1313095611398750271
+        m_Nodes:
+          m_Keys: d261cb88b8d9a3d74d521226
+          m_Values:
+          - m_Id: -1999937070
+            m_Parent: -1
+            m_Children: b8d9a3d74d521226
+          - m_Id: -677127752
+            m_Parent: -1999937070
+            m_Children: 
+          - m_Id: 638734925
+            m_Parent: -1999937070
+            m_Children: 
+        m_Roots: d261cb88
+    - rid: 6020322152669249588
+      type: {class: Task, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
+      data:
+        m_Completion: 1
+        m_IsHidden: 0
+        m_Name:
+          m_Property:
+            rid: 6020322152669249589
+        m_Description:
+          m_Property:
+            rid: 6020322152669249590
+        m_Color:
+          m_Property:
+            rid: 6020322152669249591
+        m_Sprite:
+          m_Property:
+            rid: 6020322152669249592
+        m_UseCounter: 0
+        m_CountTo:
+          m_Property:
+            rid: 6020322152669249593
+        m_ValueFrom:
+          m_Property:
+            rid: 6020322152669249594
+        m_CheckWhen:
+          m_Event:
+            rid: 6020322152669249595
+        m_OnActivate:
+          m_Instructions:
+            m_Instructions: []
+        m_OnDeactivate:
+          m_Instructions:
+            m_Instructions: []
+        m_OnComplete:
+          m_Instructions:
+            m_Instructions: []
+        m_OnAbandon:
+          m_Instructions:
+            m_Instructions: []
+        m_OnFail:
+          m_Instructions:
+            m_Instructions: []
+    - rid: 6020322152669249589
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Obtain cafetaria food
+    - rid: 6020322152669249590
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: 
+    - rid: 6020322152669249591
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322152669249592
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322152669249593
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 3
+    - rid: 6020322152669249594
+      type: {class: GetDecimalGlobalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: number
+          m_Variable: {fileID: 0}
+          m_Name:
+            m_String: 
+            m_ID: 0
+    - rid: 6020322152669249595
+      type: {class: EventOnLateUpdate, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322152669249596
+      type: {class: Task, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
+      data:
+        m_Completion: 0
+        m_IsHidden: 0
+        m_Name:
+          m_Property:
+            rid: 6020322152669249597
+        m_Description:
+          m_Property:
+            rid: 6020322152669249598
+        m_Color:
+          m_Property:
+            rid: 6020322152669249599
+        m_Sprite:
+          m_Property:
+            rid: 6020322152669249600
+        m_UseCounter: 1
+        m_CountTo:
+          m_Property:
+            rid: 6020322203994947753
+        m_ValueFrom:
+          m_Property:
+            rid: 6020322152669249602
+        m_CheckWhen:
+          m_Event:
+            rid: 6020322152669249603
+        m_OnActivate:
+          m_Instructions:
+            m_Instructions: []
+        m_OnDeactivate:
+          m_Instructions:
+            m_Instructions: []
+        m_OnComplete:
+          m_Instructions:
+            m_Instructions: []
+        m_OnAbandon:
+          m_Instructions:
+            m_Instructions: []
+        m_OnFail:
+          m_Instructions:
+            m_Instructions: []
+    - rid: 6020322152669249597
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Food
+    - rid: 6020322152669249598
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: 
+    - rid: 6020322152669249599
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322152669249600
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322152669249602
+      type: {class: GetDecimalGlobalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: number
+          m_Variable: {fileID: 0}
+          m_Name:
+            m_String: 
+            m_ID: 0
+    - rid: 6020322152669249603
+      type: {class: EventOnLateUpdate, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322203994947736
+      type: {class: InstructionCommonDebugText, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Message:
+          m_Property:
+            rid: 6020322203994947737
+    - rid: 6020322203994947737
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Quest is Complete
+    - rid: 6020322203994947753
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
