@@ -6,4 +6,4 @@
 
 [Game Story Outline (Wattpad)](https://www.wattpad.com/1476344647-kira-kira-game-draft-kirakira-school-outline)
 
-[Game Story Outline (Notion)](https://www.notion.so/marufawlion/KiraKira-School-Outline-130a0b100cc88025ba64fe55e69fdaab))
+[Game Story Outline (Notion)](https://www.notion.so/marufawlion/KiraKira-School-Outline-130a0b100cc88025ba64fe55e69fdaab)
