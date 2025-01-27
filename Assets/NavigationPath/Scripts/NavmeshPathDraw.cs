@@ -5,10 +5,12 @@ using UnityEngine.AI;
 
 public class NavmeshPathDraw : MonoBehaviour
 {
+    public Transform origin;
     public Transform destination;
     public bool recalculatePath = true;
     public float recalculationTime = 0.1f;
     public LayerMask groundLayers;
+    public float positionY = 0.1f;
 
     NavMeshPath path;
     LineRenderer lr;
@@ -42,16 +44,16 @@ public class NavmeshPathDraw : MonoBehaviour
         /*GET THE NAVMESH POSITION BELOW DESTINATION AND ORIGIN IN ORDER TO PRINT THE PATH*/
         //validate destination position
         if (Physics.Raycast(destination.position, -Vector3.up, out downHit, Mathf.Infinity, groundLayers)) {
-            validatedDesPos = new Vector3(destination.position.x, downHit.transform.position.y, destination.position.z);
+            validatedDesPos = new Vector3(destination.position.x, downHit.transform.position.y + positionY, destination.position.z);
         }else{
             validatedDesPos = destination.position;
         }
 
         //validate origin position
-        if (Physics.Raycast(transform.position, -Vector3.up, out downHit, Mathf.Infinity, groundLayers)) {
-            validatedOriginPos = new Vector3(transform.position.x, downHit.transform.position.y, transform.position.z);
+        if (Physics.Raycast(origin.transform.position, -Vector3.up, out downHit, Mathf.Infinity, groundLayers)) {
+            validatedOriginPos = new Vector3(origin.transform.position.x, downHit.transform.position.y + positionY, origin.transform.position.z);
         }else{
-            validatedOriginPos = transform.position;
+            validatedOriginPos = origin.transform.position;
         }
 
         NavMesh.CalculatePath(validatedOriginPos, validatedDesPos, NavMesh.AllAreas, path);

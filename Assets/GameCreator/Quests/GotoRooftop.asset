@@ -65,11 +65,91 @@ MonoBehaviour:
     - rid: 1313095616572686514
       type: {class: TasksTree, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
       data:
-        m_Dirty: 0
+        m_Dirty: 43815
         m_Data:
-          m_Keys: 
-          m_Values: []
+          m_Keys: bf6db612
+          m_Values:
+          - m_Id: 313945535
+            m_Value:
+              rid: 8591488822993223723
         m_Nodes:
-          m_Keys: 
-          m_Values: []
-        m_Roots: 
+          m_Keys: bf6db612
+          m_Values:
+          - m_Id: 313945535
+            m_Parent: -1
+            m_Children: 
+        m_Roots: bf6db612
+    - rid: 8591488822993223723
+      type: {class: Task, ns: GameCreator.Runtime.Quests, asm: GameCreator.Runtime.Quests}
+      data:
+        m_Completion: 0
+        m_IsHidden: 0
+        m_Name:
+          m_Property:
+            rid: 8591488822993223724
+        m_Description:
+          m_Property:
+            rid: 8591488822993223725
+        m_Color:
+          m_Property:
+            rid: 8591488822993223726
+        m_Sprite:
+          m_Property:
+            rid: 8591488822993223727
+        m_UseCounter: 0
+        m_CountTo:
+          m_Property:
+            rid: 8591488822993223728
+        m_ValueFrom:
+          m_Property:
+            rid: 8591488822993223729
+        m_CheckWhen:
+          m_Event:
+            rid: 8591488822993223730
+        m_OnActivate:
+          m_Instructions:
+            m_Instructions: []
+        m_OnDeactivate:
+          m_Instructions:
+            m_Instructions: []
+        m_OnComplete:
+          m_Instructions:
+            m_Instructions: []
+        m_OnAbandon:
+          m_Instructions:
+            m_Instructions: []
+        m_OnFail:
+          m_Instructions:
+            m_Instructions: []
+    - rid: 8591488822993223724
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Goto Rooftop
+    - rid: 8591488822993223725
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: 
+    - rid: 8591488822993223726
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8591488822993223727
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8591488822993223728
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 3
+    - rid: 8591488822993223729
+      type: {class: GetDecimalGlobalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: number
+          m_Variable: {fileID: 0}
+          m_Name:
+            m_String: 
+            m_ID: 0
+    - rid: 8591488822993223730
+      type: {class: EventOnLateUpdate, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
