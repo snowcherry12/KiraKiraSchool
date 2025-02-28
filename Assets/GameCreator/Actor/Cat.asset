@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09adff397b704c4985383dd1017864ba, type: 3}
-  m_Name: KiraFantasy
+  m_Name: Cat
   m_EditorClassIdentifier: 
   m_Actant:
     m_Name:
@@ -23,7 +23,6 @@ MonoBehaviour:
     m_Expressions:
     - rid: 6020322751692668950
     - rid: 6020322751692668952
-    - rid: 6020322751692668954
     - rid: 6020322751692668956
   m_Typewriter:
     m_UseTypewriter: 1
@@ -40,7 +39,7 @@ MonoBehaviour:
     - rid: 6020322203994947589
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: Kira
+        m_Value: Cat
     - rid: 6020322203994947590
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
@@ -54,7 +53,7 @@ MonoBehaviour:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Id:
-          m_String: Kira
+          m_String: Cat
         m_Sprite:
           m_Property:
             rid: 6020322751692668951
@@ -68,14 +67,14 @@ MonoBehaviour:
     - rid: 6020322751692668951
       type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Sprite: {fileID: 21300000, guid: 7a3bab4d5efc36846953dfbaabbfd355, type: 3}
+        m_Sprite: {fileID: 21300000, guid: a81f4a4e6352371499bfcb684b36c57b, type: 3}
     - rid: 6020322751692668952
       type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Id:
-          m_String: Kira-Eh
+          m_String: Cat-Eh
         m_Sprite:
           m_Property:
             rid: 6020322751692668953
@@ -89,35 +88,14 @@ MonoBehaviour:
     - rid: 6020322751692668953
       type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Sprite: {fileID: 21300000, guid: bf1c8342222cced499a3cf229f677c6a, type: 3}
-    - rid: 6020322751692668954
-      type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Id:
-          m_String: Kira-Sad
-        m_Sprite:
-          m_Property:
-            rid: 6020322751692668955
-        m_InstructionsOnStart:
-          m_Instructions:
-            m_Instructions: []
-        m_InstructionsOnEnd:
-          m_Instructions:
-            m_Instructions: []
-        m_OverrideSpeechSkin: {fileID: 0}
-    - rid: 6020322751692668955
-      type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Sprite: {fileID: 21300000, guid: f6124c2d07f7661448f6cd78b6bf8184, type: 3}
+        m_Sprite: {fileID: 21300000, guid: ec4ea94ea0992fc43bd041d769000ceb, type: 3}
     - rid: 6020322751692668956
       type: {class: Expression, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Id:
-          m_String: Kira-Wink
+          m_String: Cat-Wink
         m_Sprite:
           m_Property:
             rid: 6020322751692668957
@@ -131,4 +109,4 @@ MonoBehaviour:
     - rid: 6020322751692668957
       type: {class: GetSpriteInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Sprite: {fileID: 21300000, guid: abc321fec4ce99a45a6c315a0b603752, type: 3}
+        m_Sprite: {fileID: 21300000, guid: ec4ea94ea0992fc43bd041d769000ceb, type: 3}
