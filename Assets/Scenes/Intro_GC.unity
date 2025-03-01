@@ -1231,6 +1231,7 @@ MonoBehaviour:
         m_OnFinish:
           m_Instructions:
             m_Instructions:
+            - rid: 2709187889734091270
             - rid: 1295431433048031367
         m_Duration: 1
         m_Timeout:
@@ -1380,6 +1381,35 @@ MonoBehaviour:
           m_Scene: {fileID: 102900000, guid: da1376a73ce88054bad1210def420958, type: 3}
           m_SceneName: scene1_GC
           m_SceneIndex: 2
+    - rid: 2709187889734091270
+      type: {class: InstructionCommonAudioMusicStop, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 2709187889734091273
+        m_FMODAudio:
+          m_Property:
+            rid: 2709187889734091274
+        m_WaitToComplete: 0
+        transitionOut: 2
+    - rid: 2709187889734091273
+      type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 2709187889734091274
+      type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value:
+          m_Audio:
+            Guid:
+              Data1: 1410858256
+              Data2: 1205703434
+              Data3: 1246951850
+              Data4: 1629329813
+            Path: event:/Music/MSC_Exploration
+          m_Params: []
     - rid: 5830855640614174720
       type: {class: GetFMODAudio, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
