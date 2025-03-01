@@ -3454,7 +3454,7 @@ MonoBehaviour:
             rid: 1313095594510647418
         m_FMODAudio:
           m_Property:
-            rid: 1313095594510647419
+            rid: 2709187889734090843
         m_Acting:
           m_Portrait: 3
           m_Actor: {fileID: 11400000, guid: 1f1a5195e79635c4e90495023ce6c030, type: 2}
@@ -3503,9 +3503,6 @@ MonoBehaviour:
             slowly.\""
     - rid: 1313095594510647418
       type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 1313095594510647419
-      type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
     - rid: 1313095594510647420
       type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
@@ -3924,6 +3921,9 @@ MonoBehaviour:
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: 0.10000000149011612
+    - rid: 2709187889734090843
+      type: {class: GetFMODAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1001 &1876850523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4263,6 +4263,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8865503044247146419, guid: 7b0fff76abb4a5b438a5c7a9d7f79f73, type: 3}
+      propertyPath: managedReferences[6020322687624675790].m_State.m_State
+      value: 
+      objectReference: {fileID: 11400000, guid: fca39ddbd541e6c40b5c42d52c6f64cc, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
