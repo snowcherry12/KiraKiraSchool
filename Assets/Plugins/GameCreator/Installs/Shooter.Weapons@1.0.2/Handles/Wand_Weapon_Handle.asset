@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb652872188b4bf99a563aa85d225e6e, type: 3}
+  m_Name: Wand_Weapon_Handle
+  m_EditorClassIdentifier: 
+  m_Handles:
+    m_Handles:
+    - rid: 1820692375224975385
+  references:
+    version: 2
+    RefIds:
+    - rid: 1820692375224975385
+      type: {class: HandleItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Bone:
+          m_Type: 1
+          m_Human: 18
+          m_Path: 
+        m_LocalPosition:
+          m_Property:
+            rid: 1820692375224975386
+        m_LocalRotation:
+          m_Property:
+            rid: 1820692375224975387
+    - rid: 1820692375224975386
+      type: {class: GetPositionVector3, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Position: {x: -0.035, y: 0.09, z: 0.04}
+    - rid: 1820692375224975387
+      type: {class: GetRotationConstantEulerVector, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Angles: {x: -45, y: -90, z: 90}

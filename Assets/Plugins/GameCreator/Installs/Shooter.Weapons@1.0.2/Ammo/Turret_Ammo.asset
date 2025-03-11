@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884ca14373194cf390e4803ac386abca, type: 3}
+  m_Name: Turret_Ammo
+  m_EditorClassIdentifier: 
+  m_Id:
+    m_SerializedID:
+      m_String: 9ed82c90-65fe-4e1b-b005-1cf618f22683
+  m_Title:
+    m_Property:
+      rid: 1903939122992775974
+  m_Description:
+    m_Property:
+      rid: 1903939122992776108
+  m_Icon:
+    m_Property:
+      rid: 1903939122992775976
+  m_Color:
+    m_Property:
+      rid: 1903939122992775977
+  m_Infinite: 1
+  m_Value:
+    m_Property:
+      rid: 1903939122992775978
+  references:
+    version: 2
+    RefIds:
+    - rid: 1903939122992775974
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Turret Ammo
+    - rid: 1903939122992775976
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903939122992775977
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903939122992775978
+      type: {class: SetNumberMunition, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Character:
+          m_Property:
+            rid: 1903939122992775979
+        m_Weapon:
+          m_Property:
+            rid: 1903939122992775980
+    - rid: 1903939122992775979
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903939122992775980
+      type: {class: GetWeaponShooterCharacter, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Character:
+          m_Property:
+            rid: 1903939122992775981
+    - rid: 1903939122992775981
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903939122992776108
+      type: {class: GetStringEmpty, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 

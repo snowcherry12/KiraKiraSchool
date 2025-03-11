@@ -1,0 +1,343 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab374420130b54cb29e93a4f6698a38e, type: 3}
+  m_Name: Shotgun_Reload
+  m_EditorClassIdentifier: 
+  m_Title:
+    m_Property:
+      rid: 1820692375224975451
+  m_Description:
+    m_Property:
+      rid: 1820692375224975452
+  m_Icon:
+    m_Property:
+      rid: 1820692375224975453
+  m_Color:
+    m_Property:
+      rid: 1820692375224975454
+  m_Animation: {fileID: 7400000, guid: ad1bcb6bbae9645b0a9dcbac5f178911, type: 2}
+  m_Mask: {fileID: 31900000, guid: a9a4646b99dc14b6ea4d6a98c1f91e08, type: 2}
+  m_TransitionIn: 0.1
+  m_TransitionOut: 0.35
+  m_UseRootMotion: 0
+  m_ReloadSequence:
+    m_Sequence:
+      m_Tracks:
+      - rid: 1820692375224975455
+      - rid: 1820692375224975456
+      - rid: 1820692375224975457
+  m_Speed:
+    m_Property:
+      rid: 1820692375224975458
+  m_DiscardMagazineAmmo:
+    m_Property:
+      rid: 1820692375224975459
+  m_Reload: 0
+  m_ReloadAmount:
+    m_Property:
+      rid: 3428531385672139314
+  m_OnStart:
+    m_Instructions:
+      m_Instructions: []
+  m_OnFinish:
+    m_Instructions:
+      m_Instructions: []
+  <EditorModelPath>k__BackingField: 
+  <EditorWeaponPath>k__BackingField: Assets/Plugins/GameCreator/Installs/Shooter.Weapons@1.0.1/Prefabs/Shotgun_Weapon.prefab
+  <EditorWeaponBone>k__BackingField: Mannequin
+  <EditorWeaponLocalPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  <EditorWeaponLocalRotation>k__BackingField: {x: 0, y: 0, z: 0, w: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1820692375224975451
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 
+    - rid: 1820692375224975452
+      type: {class: GetStringEmpty, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1820692375224975453
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1820692375224975454
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1820692375224975455
+      type: {class: TrackReloadMagazine, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Clips: []
+    - rid: 1820692375224975456
+      type: {class: TrackReloadQuick, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Clips: []
+    - rid: 1820692375224975457
+      type: {class: TrackDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Clips:
+        - rid: 1820692985221218548
+        - rid: 1903938848226279654
+        - rid: 1903938848226279655
+    - rid: 1820692375224975458
+      type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1820692375224975459
+      type: {class: GetBoolFalse, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1820692985221218548
+      type: {class: ClipDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Time: 0.26666668
+        m_Duration: 0
+        m_Instructions:
+          m_Instructions:
+            m_Instructions:
+            - rid: 1903938584782045704
+            - rid: 1903938584782045768
+            - rid: 1903938584782045765
+    - rid: 1903938584782045704
+      type: {class: InstructionShooterEjectShell, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Character:
+          m_Property:
+            rid: 1903938584782045705
+        m_Weapon:
+          m_Property:
+            rid: 1903938584782045706
+    - rid: 1903938584782045705
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938584782045706
+      type: {class: GetWeaponShooterInstance, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Weapon: {fileID: 11400000, guid: fa5eeb4095aed45ba8ce002a030755bd, type: 2}
+    - rid: 1903938584782045765
+      type: {class: InstructionShooterEjectShell, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Character:
+          m_Property:
+            rid: 1903938584782045766
+        m_Weapon:
+          m_Property:
+            rid: 1903938584782045767
+    - rid: 1903938584782045766
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938584782045767
+      type: {class: GetWeaponShooterInstance, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Weapon: {fileID: 11400000, guid: fa5eeb4095aed45ba8ce002a030755bd, type: 2}
+    - rid: 1903938584782045768
+      type: {class: InstructionCommonTimeWait, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Seconds:
+          m_Property:
+            rid: 1903938584782045769
+        m_Mode:
+          m_UpdateTime: 0
+    - rid: 1903938584782045769
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.1
+    - rid: 1903938848226279654
+      type: {class: ClipDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Time: 0.84444445
+        m_Duration: 0
+        m_Instructions:
+          m_Instructions:
+            m_Instructions:
+            - rid: 1903938894052459268
+            - rid: 1903938848226279670
+    - rid: 1903938848226279655
+      type: {class: ClipDefault, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Time: 0.2
+        m_Duration: 0
+        m_Instructions:
+          m_Instructions:
+            m_Instructions:
+            - rid: 1903938894052459264
+            - rid: 1903938848226279656
+    - rid: 1903938848226279656
+      type: {class: InstructionTransformChangeRotation, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Transform:
+          m_Property:
+            rid: 1903938848226279663
+        m_Space: 1
+        m_Rotation:
+          m_Operation: 0
+          m_Value:
+            m_Property:
+              rid: 1903938848226279658
+        m_Transition:
+          m_Duration: 0.25
+          m_Easing: 2
+          m_Time: 0
+          m_WaitToComplete: 0
+    - rid: 1903938848226279658
+      type: {class: GetRotationEuler, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_X:
+          m_Property:
+            rid: 1903938848226279667
+        m_Y:
+          m_Property:
+            rid: 1903938848226279668
+        m_Z:
+          m_Property:
+            rid: 1903938848226279669
+    - rid: 1903938848226279663
+      type: {class: GetGameObjectChildByPath, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Transform:
+          m_Property:
+            rid: 1903938848226279666
+        m_Path:
+          m_Property:
+            rid: 1903938848226279665
+    - rid: 1903938848226279665
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Shotgun_Weapon/Shotgun_Barrel
+    - rid: 1903938848226279666
+      type: {class: GetGameObjectTarget, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938848226279667
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938848226279668
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938848226279669
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938848226279670
+      type: {class: InstructionTransformChangeRotation, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Transform:
+          m_Property:
+            rid: 1903938848226279671
+        m_Space: 1
+        m_Rotation:
+          m_Operation: 0
+          m_Value:
+            m_Property:
+              rid: 1903938848226279672
+        m_Transition:
+          m_Duration: 0.25
+          m_Easing: 2
+          m_Time: 0
+          m_WaitToComplete: 0
+    - rid: 1903938848226279671
+      type: {class: GetGameObjectChildByPath, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Transform:
+          m_Property:
+            rid: 1903938848226279673
+        m_Path:
+          m_Property:
+            rid: 1903938848226279674
+    - rid: 1903938848226279672
+      type: {class: GetRotationEuler, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_X:
+          m_Property:
+            rid: 1903938848226279675
+        m_Y:
+          m_Property:
+            rid: 1903938848226279676
+        m_Z:
+          m_Property:
+            rid: 1903938848226279678
+    - rid: 1903938848226279673
+      type: {class: GetGameObjectTarget, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938848226279674
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Shotgun_Weapon/Shotgun_Barrel
+    - rid: 1903938848226279675
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938848226279676
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938848226279678
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: -90
+    - rid: 1903938894052459264
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 1903938894052459265
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 1
+          m_Target:
+            m_Property:
+              rid: 1903938894052459267
+    - rid: 1903938894052459265
+      type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 8300000, guid: a6ffc6fab39fb4ae0b02999ab085f3ac, type: 3}
+    - rid: 1903938894052459267
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1903938894052459268
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 1903938894052459269
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 1
+          m_Target:
+            m_Property:
+              rid: 1903938894052459270
+    - rid: 1903938894052459269
+      type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 8300000, guid: b93250025ac034b578ef38d45e4bbf94, type: 3}
+    - rid: 1903938894052459270
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 3428531385672139314
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 10

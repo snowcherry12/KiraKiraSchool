@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884ca14373194cf390e4803ac386abca, type: 3}
+  m_Name: Minigun_Ammo
+  m_EditorClassIdentifier: 
+  m_Id:
+    m_SerializedID:
+      m_String: 945a696b-4fe4-46f5-8d4d-593dddc46dd0
+  m_Title:
+    m_Property:
+      rid: 1820692375224975529
+  m_Description:
+    m_Property:
+      rid: 8814677138683200067
+  m_Icon:
+    m_Property:
+      rid: 1820692375224975531
+  m_Color:
+    m_Property:
+      rid: 1820692375224975532
+  m_Infinite: 1
+  m_Value:
+    m_Property:
+      rid: 1820692375224975533
+  references:
+    version: 2
+    RefIds:
+    - rid: 1820692375224975529
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Minigun Ammo
+    - rid: 1820692375224975531
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1820692375224975532
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1820692375224975533
+      type: {class: SetNumberMunition, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Character:
+          m_Property:
+            rid: 1820692375224975534
+        m_Weapon:
+          m_Property:
+            rid: 1820692375224975537
+    - rid: 1820692375224975534
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 1820692375224975537
+      type: {class: GetWeaponShooterInstance, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Weapon: {fileID: 11400000, guid: f9f32d9dcec9244d5aabb5ebe59e3597, type: 2}
+    - rid: 8814677138683200067
+      type: {class: GetStringEmpty, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884ca14373194cf390e4803ac386abca, type: 3}
+  m_Name: Bow_Ammo
+  m_EditorClassIdentifier: 
+  m_Id:
+    m_SerializedID:
+      m_String: ad3a0105-0ce0-4f3a-a32e-a4282d2ec85b
+  m_Title:
+    m_Property:
+      rid: 8814677141419721306
+  m_Description:
+    m_Property:
+      rid: 8814677141419721314
+  m_Icon:
+    m_Property:
+      rid: 8814677141419721308
+  m_Color:
+    m_Property:
+      rid: 8814677141419721309
+  m_Infinite: 1
+  m_Value:
+    m_Property:
+      rid: 8814677141419721310
+  references:
+    version: 2
+    RefIds:
+    - rid: 8814677141419721306
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Arrows
+    - rid: 8814677141419721308
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677141419721309
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677141419721310
+      type: {class: SetNumberMunition, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Character:
+          m_Property:
+            rid: 8814677141419721311
+        m_Weapon:
+          m_Property:
+            rid: 8814677141419721315
+    - rid: 8814677141419721311
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677141419721314
+      type: {class: GetStringEmpty, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677141419721315
+      type: {class: GetWeaponShooterInstance, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Weapon: {fileID: 11400000, guid: dc7de63e262a74fe48a0f94e12ade017, type: 2}

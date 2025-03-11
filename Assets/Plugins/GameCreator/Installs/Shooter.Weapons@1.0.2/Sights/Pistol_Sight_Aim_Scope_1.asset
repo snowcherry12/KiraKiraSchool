@@ -1,0 +1,411 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f628fd43c514315848cc78cc46dfcfb, type: 3}
+  m_Name: Pistol_Sight_Aim_Scope_1
+  m_EditorClassIdentifier: 
+  m_CanShoot:
+    m_Property:
+      rid: 8814677073454694801
+  m_Priority:
+    m_Property:
+      rid: 8814677073454694802
+  m_SmoothTime:
+    m_IsEnabled: 0
+    m_Value: 0.1
+  m_State:
+    m_StateType: 2
+    m_AnimationClip:
+      m_Property:
+        rid: 8814677073454694803
+    m_RuntimeController: {fileID: 0}
+    m_State: {fileID: 11400000, guid: 9b89a4e26b5ee499ebcfeaf31b849363, type: 2}
+    m_AvatarMask: {fileID: 31900000, guid: a9a4646b99dc14b6ea4d6a98c1f91e08, type: 2}
+  m_Layer:
+    m_Property:
+      rid: 8814677073454694804
+  m_OnEnter:
+    m_Instructions:
+      m_Instructions: []
+  m_OnExit:
+    m_Instructions:
+      m_Instructions: []
+  m_Aim:
+    m_MinAccuracy:
+      m_Property:
+        rid: 8814677073454694805
+    m_Aim:
+      rid: 8814677073454694806
+  m_Biomechanics:
+    m_Value:
+      rid: 8814677087023530170
+  m_Trajectory:
+    m_UseTrajectory:
+      m_Property:
+        rid: 8814677162503962633
+    m_UseRaycast:
+      m_IsEnabled: 1
+      m_Value:
+        serializedVersion: 2
+        m_Bits: 51
+    m_MaxResolution:
+      m_Property:
+        rid: 8814677073454694809
+    m_MaxDistance:
+      m_Property:
+        rid: 8814677073454694810
+    m_Material:
+      m_Property:
+        rid: 8814677073454694811
+    m_Color:
+      m_Property:
+        rid: 8814677073454694812
+    m_CornerVertices:
+      m_Property:
+        rid: 8814677073454694813
+    m_CapVertices:
+      m_Property:
+        rid: 8814677073454694814
+    m_Width:
+      m_Property:
+        rid: 8814677073454694815
+    m_TextureMode: 0
+    m_TextureAlign: 0
+    m_PrefabDot:
+      m_Property:
+        rid: 7510531224956306174
+  m_Crosshair:
+    m_UseCrosshair:
+      m_Property:
+        rid: 8814677087023530383
+    m_Skin: {fileID: 0}
+  m_Laser:
+    m_UseLaser:
+      m_Property:
+        rid: 8814677073454694817
+    m_Offset: {x: 0, y: 0, z: 0}
+    m_UseRaycast:
+      m_IsEnabled: 1
+      m_Value:
+        serializedVersion: 2
+        m_Bits: 51
+    m_MaxDistance:
+      m_Property:
+        rid: 8814677073454694818
+    m_PrefabDot:
+      m_Property:
+        rid: 8814677073454694819
+    m_Material:
+      m_Property:
+        rid: 8814677073454694820
+    m_Color:
+      m_Property:
+        rid: 8814677073454694821
+    m_Width:
+      m_Property:
+        rid: 8814677073454694822
+    m_TextureMode: 0
+    m_TextureAlign: 0
+  m_ReloadingUsesFK: 0
+  m_ReloadingUsesIK: 0
+  m_ShootingUsesFK: 0
+  m_ShootingUsesIK: 0
+  m_FixingUsesFK: 0
+  m_FixingUsesIK: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 7510531224956306174
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 0}
+    - rid: 7510531224956306175
+      type: {class: GetPositionTransformPoint, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_From:
+          m_Property:
+            rid: 7510531224956306178
+        m_Point:
+          m_Property:
+            rid: 7510531224956306177
+    - rid: 7510531224956306177
+      type: {class: GetPositionVector3, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Position: {x: 0, y: 0.15, z: 0}
+    - rid: 7510531224956306178
+      type: {class: GetGameObjectCharactersBone, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_Character:
+          m_Property:
+            rid: 7510531224956306180
+        m_Bone:
+          m_Type: 1
+          m_Human: 10
+          m_Path: 
+    - rid: 7510531224956306180
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694801
+      type: {class: GetBoolTrue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694802
+      type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694803
+      type: {class: GetAnimationInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 7400000, guid: fdc6d41e0095d4d98bf778c71047831b, type: 2}
+    - rid: 8814677073454694804
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 8
+    - rid: 8814677073454694805
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694806
+      type: {class: AimCameraDistance, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Camera:
+          m_Property:
+            rid: 8814677073454694823
+        m_ZeroDistance:
+          m_Property:
+            rid: 8814677073454694824
+    - rid: 8814677073454694809
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 32
+    - rid: 8814677073454694810
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 10
+    - rid: 8814677073454694811
+      type: {class: GetMaterialInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Material: {fileID: 0}
+    - rid: 8814677073454694812
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694813
+      type: {class: GetDecimalConstantTwo, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694814
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694815
+      type: {class: GetDecimalConstantPointOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694817
+      type: {class: GetBoolFalse, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694818
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 10
+    - rid: 8814677073454694819
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 0}
+    - rid: 8814677073454694820
+      type: {class: GetMaterialInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Material: {fileID: 0}
+    - rid: 8814677073454694821
+      type: {class: GetColorColorsRed, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694822
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.004999999888241291
+    - rid: 8814677073454694823
+      type: {class: GetGameObjectCameraMain, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677073454694824
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 10
+    - rid: 8814677087023530170
+      type: {class: BiomechanicsHumanIK, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Optics:
+          m_Property:
+            rid: 7510531224956306175
+        m_Recoil:
+          m_ImpactSpeed:
+            m_Property:
+              rid: 8814677087023530172
+          m_RecoverSpeed:
+            m_Property:
+              rid: 8814677087023530173
+          m_PositionX:
+            m_Property:
+              rid: 8814677087023530174
+          m_PositionY:
+            m_Property:
+              rid: 8814677087023530175
+          m_RotationX:
+            m_Property:
+              rid: 8814677087023530176
+          m_RotationY:
+            m_Property:
+              rid: 8814677087023530177
+          m_RotationZ:
+            m_Property:
+              rid: 8814677087023530178
+          m_Kickback:
+            m_Property:
+              rid: 8814677087023530179
+          m_UpperArm:
+            m_Property:
+              rid: 8814677087023530180
+          m_LowerArm:
+            m_Property:
+              rid: 8814677087023530181
+          m_Hand:
+            m_Property:
+              rid: 8814677087023530182
+        m_FreeHand:
+          m_UseFreeHand: 1
+          m_Attach: 0
+          m_Transform:
+            m_Property:
+              rid: 8814677272412815539
+          m_Position:
+            m_Property:
+              rid: 8814677087023530183
+          m_Rotation:
+            m_Property:
+              rid: 8814677087023530184
+          m_Pole:
+            m_Property:
+              rid: 8814677272412815540
+        m_BonesLean:
+          m_Spine:
+            m_Property:
+              rid: 8814677295093252466
+          m_LowerChest:
+            m_Property:
+              rid: 8814677295093252467
+          m_UpperChest:
+            m_Property:
+              rid: 8814677295093252468
+        m_MaxPitch:
+          m_Property:
+            rid: 8814677087023530205
+        m_MaxYaw:
+          m_Property:
+            rid: 8814677087023530206
+        m_SwayWeight:
+          m_Property:
+            rid: 8814677292366954861
+        m_Sway:
+          m_Property:
+            rid: 8814677087023530207
+        m_PullOnObstruction:
+          m_IsEnabled: 1
+          m_Value:
+            serializedVersion: 2
+            m_Bits: 51
+        m_MinDistance:
+          m_Property:
+            rid: 8814677087023530208
+    - rid: 8814677087023530172
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.02
+    - rid: 8814677087023530173
+      type: {class: GetDecimalConstantPointOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677087023530174
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677087023530175
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677087023530176
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: -10
+    - rid: 8814677087023530177
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677087023530178
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677087023530179
+      type: {class: GetDecimalConstantPointOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677087023530180
+      type: {class: GetDecimalConstantZero, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677087023530181
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.05
+    - rid: 8814677087023530182
+      type: {class: GetDecimalConstantPointFive, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677087023530183
+      type: {class: GetPositionVector3, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Position: {x: -0.04, y: -0.05, z: -0.03}
+    - rid: 8814677087023530184
+      type: {class: GetRotationConstantEulerVector, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Angles: {x: 0, y: 90, z: 90}
+    - rid: 8814677087023530205
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 160
+    - rid: 8814677087023530206
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 120
+    - rid: 8814677087023530207
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0
+    - rid: 8814677087023530208
+      type: {class: GetDecimalConstantPointOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677087023530383
+      type: {class: GetBoolFalse, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677162503962633
+      type: {class: GetBoolFalse, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677272412815539
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 0}
+    - rid: 8814677272412815540
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 8814677292366954861
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.75
+    - rid: 8814677295093252466
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.5
+    - rid: 8814677295093252467
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.5
+    - rid: 8814677295093252468
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0
