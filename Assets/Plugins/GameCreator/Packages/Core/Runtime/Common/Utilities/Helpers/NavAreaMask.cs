@@ -24,7 +24,7 @@ namespace GameCreator.Runtime.Common
                 case -1: return "Everything";
             }
 
-            string[] areaNames = UnityEditor.GameObjectUtility.GetNavMeshAreaNames();
+            string[] areaNames = UnityEngine.AI.NavMesh.GetAreaNames();
 
             for (int i = 0; i < 32; ++i)
             {

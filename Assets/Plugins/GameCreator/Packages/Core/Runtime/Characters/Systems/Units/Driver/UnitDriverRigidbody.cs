@@ -15,7 +15,7 @@ namespace GameCreator.Runtime.Characters
     {
         // EXPOSED MEMBERS: -----------------------------------------------------------------------
         
-        [SerializeField] protected PhysicMaterial m_Material;
+        [SerializeField] protected PhysicsMaterial m_Material;
 
         [SerializeField]
         private RigidbodyInterpolation m_Interpolation = RigidbodyInterpolation.Interpolate;
@@ -46,7 +46,7 @@ namespace GameCreator.Runtime.Characters
         
         // INTERFACE PROPERTIES: ------------------------------------------------------------------
 
-        public override Vector3 WorldMoveDirection => this.m_Rigidbody.velocity;
+        public override Vector3 WorldMoveDirection => this.m_Rigidbody.linearVelocity;
         public override Vector3 LocalMoveDirection => this.Transform.InverseTransformDirection(
             this.WorldMoveDirection
         );
@@ -252,14 +252,14 @@ namespace GameCreator.Runtime.Characters
                 this.m_GroundFrame = this.Character.Time.Frame;
             }
 
-            Vector3 velocity = this.m_Rigidbody.velocity;
-            this.m_Rigidbody.velocity = new Vector3(
+            Vector3 velocity = this.m_Rigidbody.linearVelocity;
+            this.m_Rigidbody.linearVelocity = new Vector3(
                 velocity.x,
                 Mathf.Max(velocity.y, motion.TerminalVelocity),
                 velocity.z
             );
 
-            this.m_LastVerticalSpeed = this.m_Rigidbody.velocity.y;
+            this.m_LastVerticalSpeed = this.m_Rigidbody.linearVelocity.y;
         }
 
         protected virtual void UpdateTranslation(IUnitMotion motion)
@@ -276,7 +276,7 @@ namespace GameCreator.Runtime.Characters
             Vector3 movement = this.m_Axonometry?.ProcessTranslation(this, translation) ?? translation;
             
             Vector3 horizontalVelocity = Vector3.Scale(
-                this.m_Rigidbody.velocity,
+                this.m_Rigidbody.linearVelocity,
                 Vector3Plane.NormalUp
             );
 
@@ -306,7 +306,7 @@ namespace GameCreator.Runtime.Characters
                 }
             }
 
-            Vector3 direction = new Vector3(movement.x, this.m_Rigidbody.velocity.y, movement.z); 
+            Vector3 direction = new Vector3(movement.x, this.m_Rigidbody.linearVelocity.y, movement.z); 
             direction = this.m_Axonometry?.ProcessTranslation(this, direction) ?? direction;
             
             this.m_Rigidbody.AddForce(
@@ -398,17 +398,17 @@ namespace GameCreator.Runtime.Characters
         {
             this.m_Capsule.enabled = true;
             this.m_Rigidbody.isKinematic = false;
-            this.m_Rigidbody.velocity = Vector3.zero;
+            this.m_Rigidbody.linearVelocity = Vector3.zero;
         }
         
         // GRAVITY METHODS: -----------------------------------------------------------------------
 
         public override void ResetVerticalVelocity()
         {
-            this.m_Rigidbody.velocity = new Vector3(
-                this.m_Rigidbody.velocity.x,
+            this.m_Rigidbody.linearVelocity = new Vector3(
+                this.m_Rigidbody.linearVelocity.x,
                 0f,
-                this.m_Rigidbody.velocity.z
+                this.m_Rigidbody.linearVelocity.z
             );
         }
 

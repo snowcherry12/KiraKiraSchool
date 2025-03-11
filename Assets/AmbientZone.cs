@@ -1,5 +1,5 @@
+using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 // ============== INSTRUCTION ==============
 // Create empty game object and add "Cinemachine Path" component

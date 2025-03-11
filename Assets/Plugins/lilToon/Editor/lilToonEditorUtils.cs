@@ -609,9 +609,9 @@ namespace lilToon
             sb.AppendLine();
 
             sb.AppendLine("# SRP Information");
-            if(GraphicsSettings.renderPipelineAsset != null)
+            if(GraphicsSettings.defaultRenderPipeline != null)
             {
-                sb.AppendLine("Current RP: " + GraphicsSettings.renderPipelineAsset.ToString());
+                sb.AppendLine("Current RP: " + GraphicsSettings.defaultRenderPipeline.ToString());
             }
             else
             {

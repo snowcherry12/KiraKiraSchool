@@ -17,7 +17,7 @@ namespace GameCreator.Runtime.Characters
         // MEMBERS: -------------------------------------------------------------------------------
 
         [SerializeField] 
-        private PhysicMaterial m_Material;
+        private PhysicsMaterial m_Material;
 
         [SerializeField]
         private CollisionDetectionMode m_CollisionDetection = CollisionDetectionMode.Discrete;
@@ -27,7 +27,7 @@ namespace GameCreator.Runtime.Characters
 
         // PROPERTIES: ----------------------------------------------------------------------------
 
-        public PhysicMaterial Material => m_Material;
+        public PhysicsMaterial Material => m_Material;
         public CollisionDetectionMode CollisionDetection => m_CollisionDetection;
 
         public bool IsEmpty => this.m_Volumes.Length == 0;

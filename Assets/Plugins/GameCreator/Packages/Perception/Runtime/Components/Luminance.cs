@@ -63,7 +63,7 @@ namespace GameCreator.Runtime.Perception
                 LightType.Spot => this.GetSpotIntensityTo(target),
                 LightType.Directional => this.GetDirectionalIntensityTo(target),
                 LightType.Point => this.GetPointIntensityTo(target),
-                LightType.Area => this.GetAreaIntensityTo(target),
+                LightType.Rectangle => this.GetAreaIntensityTo(target),
                 LightType.Disc => this.GetDiscIntensityTo(target),
                 _ => throw new ArgumentOutOfRangeException()
             };

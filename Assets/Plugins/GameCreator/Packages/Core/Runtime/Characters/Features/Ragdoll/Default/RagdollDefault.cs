@@ -89,7 +89,7 @@ namespace GameCreator.Runtime.Characters
             {
                 bone.Get<Collider>().enabled = true;
                 bone.Get<Rigidbody>().isKinematic = false;
-                bone.Get<Rigidbody>().velocity = direction;
+                bone.Get<Rigidbody>().linearVelocity = direction;
             }
             
             animator.enabled = false;
@@ -104,7 +104,7 @@ namespace GameCreator.Runtime.Characters
             foreach (GameObject bone in this.m_Bones)
             {
                 bone.Get<Collider>().enabled = false;
-                bone.Get<Rigidbody>().velocity = Vector3.zero;
+                bone.Get<Rigidbody>().linearVelocity = Vector3.zero;
                 bone.Get<Rigidbody>().isKinematic = true;
             }
 

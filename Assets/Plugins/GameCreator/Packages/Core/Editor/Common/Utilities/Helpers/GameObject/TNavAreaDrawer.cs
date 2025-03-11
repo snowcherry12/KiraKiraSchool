@@ -9,7 +9,7 @@ namespace GameCreator.Editor.Common
         
         protected static string IndexToName(int index)
         {
-            string[] areaNames = GameObjectUtility.GetNavMeshAreaNames();
+            string[] areaNames = NavMesh.GetAreaNames();
             foreach (string areaName in areaNames)
             {
                 int areaIndex = NavMesh.GetAreaFromName(areaName);
@@ -29,7 +29,7 @@ namespace GameCreator.Editor.Common
                 "", "", "", "", "", "", "", ""
             };
             
-            string[] areaNames = GameObjectUtility.GetNavMeshAreaNames();
+            string[] areaNames = NavMesh.GetAreaNames();
             foreach (string areaName in areaNames)
             {
                 int index = NavMesh.GetAreaFromName(areaName);

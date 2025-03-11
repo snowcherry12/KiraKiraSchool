@@ -21,7 +21,7 @@ namespace GameCreator.Runtime.Common
             
             #if UNITY_EDITOR
 
-            string[] areaNames = UnityEditor.GameObjectUtility.GetNavMeshAreaNames();
+            string[] areaNames = UnityEngine.AI.NavMesh.GetAreaNames();
             value = areaNames[this.m_Index];
             
             #endif
