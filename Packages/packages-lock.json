@@ -1,13 +1,14 @@
 {
   "dependencies": {
     "com.playeveryware.eos": {
-      "version": "file:B:/Master/Unity/Assets/com.playeveryware.eos-4.0.0.tgz",
+      "version": "https://github.com/EOS-Contrib/eos_plugin_for_unity_upm.git",
       "depth": 0,
-      "source": "local-tarball",
+      "source": "git",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2",
         "com.unity.editorcoroutines": "1.0.0"
-      }
+      },
+      "hash": "31ddca9c980d630c962ce5be45fd61c2e121f38f"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -300,6 +301,13 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "jp.lilxyzw.liltoon": {
+      "version": "https://github.com/lilxyzw/lilToon.git?path=Assets/lilToon#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ae6a81da053e8cd001f089fd02cc6402afab5701"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
