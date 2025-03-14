@@ -186,7 +186,7 @@ MonoBehaviour:
     m_Rotation: {x: -0, y: 70.00001, z: 0}
     m_Prefab:
       m_Property:
-        rid: 8814677138683199556
+        rid: 5717171594469310641
       usePooling: 1
       size: 5
       hasDuration: 1
@@ -217,8 +217,6 @@ MonoBehaviour:
     m_Sights:
     - rid: 8814677138683199562
     - rid: 8814677138683200047
-    - rid: 8814677138683200048
-    - rid: 8814677138683200049
   m_Reloads:
     m_State:
       m_StateType: 2
@@ -515,6 +513,9 @@ MonoBehaviour:
     - rid: 3428531799317020711
       type: {class: GetAudioNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
+    - rid: 5717171594469310641
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
     - rid: 7510531224956305605
       type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
@@ -657,10 +658,6 @@ MonoBehaviour:
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: 0.15000000596046448
-    - rid: 8814677138683199556
-      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_GameObject: {fileID: 3599771330249854657, guid: 0207cb9bd8448480996129a3dea4b8a2, type: 3}
     - rid: 8814677138683199557
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
@@ -741,36 +738,12 @@ MonoBehaviour:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Id:
-          m_String: aim-ads
+          m_String: aim
         m_Sight: {fileID: 11400000, guid: 0c4ac4eaaf391714a97a3eb7ddbd3f2e, type: 2}
         m_ScopeThrough: 0
         m_ScopePosition: {x: 0, y: 0.25, z: 0}
         m_ScopeRotation: {x: 0, y: 0, z: 0}
         m_ScopeDistance: 0.25
-    - rid: 8814677138683200048
-      type: {class: SightItem, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Id:
-          m_String: aim-scope-1
-        m_Sight: {fileID: 11400000, guid: d99f8901ca649df46992191fc8342d66, type: 2}
-        m_ScopeThrough: 1
-        m_ScopePosition: {x: 0, y: 0.11, z: 0.66580623}
-        m_ScopeRotation: {x: 0, y: 0, z: 0}
-        m_ScopeDistance: 0.66
-    - rid: 8814677138683200049
-      type: {class: SightItem, ns: GameCreator.Runtime.Shooter, asm: GameCreator.Runtime.Shooter}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Id:
-          m_String: aim-scope-2
-        m_Sight: {fileID: 11400000, guid: b8f44083cb1e2aa4da39220547935983, type: 2}
-        m_ScopeThrough: 1
-        m_ScopePosition: {x: 0.04640779, y: 0.12712874, z: 0.106237285}
-        m_ScopeRotation: {x: 0, y: 0, z: -30}
-        m_ScopeDistance: 0.3
     - rid: 8814677336433098794
       type: {class: GetDecimalConstantPointFive, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 

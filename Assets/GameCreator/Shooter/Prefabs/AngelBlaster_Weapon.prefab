@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Instructions:
     m_Instructions:
     - rid: 5386062379778048014
+    - rid: 5717171594469311081
   m_TriggerEvent:
     rid: 5386062379778048007
   references:
@@ -205,6 +206,29 @@ MonoBehaviour:
             rid: 3428531703245439548
     - rid: 5386062379778048015
       type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5717171594469311081
+      type: {class: InstructionCharacterNavigationFacing, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Character:
+          m_Property:
+            rid: 5717171594469311082
+        m_Rotation:
+          m_Facing:
+            rid: 5717171594469311083
+    - rid: 5717171594469311082
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5717171594469311083
+      type: {class: UnitFacingObjectDirection, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_DirectionOf:
+          m_Property:
+            rid: 5717171594469311084
+    - rid: 5717171594469311084
+      type: {class: GetGameObjectCameraMain, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
       data: 
 --- !u!1 &8455749545352798929
 GameObject:
@@ -322,11 +346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb320b298c09f3f49a99dc72b0560610, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb320b298c09f3f49a99dc72b0560610, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb320b298c09f3f49a99dc72b0560610, type: 3}
       propertyPath: m_LocalRotation.w
@@ -334,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb320b298c09f3f49a99dc72b0560610, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000003774895
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb320b298c09f3f49a99dc72b0560610, type: 3}
       propertyPath: m_LocalRotation.y
@@ -342,7 +366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb320b298c09f3f49a99dc72b0560610, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb320b298c09f3f49a99dc72b0560610, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
