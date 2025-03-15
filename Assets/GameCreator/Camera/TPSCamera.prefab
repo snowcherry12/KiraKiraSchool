@@ -1,5 +1,170 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &712590883083544614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6837632737807934473}
+  - component: {fileID: 9035890128165247200}
+  m_Layer: 0
+  m_Name: Shooter Shot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6837632737807934473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712590883083544614}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5259279980981937772}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9035890128165247200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712590883083544614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55db089f35f4457a8ff1981374b2de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsMainShot: 0
+  m_TimeMode:
+    m_UpdateTime: 0
+  m_Clipping: 0
+  m_ShotType:
+    rid: 6020322142918279265
+  references:
+    version: 2
+    RefIds:
+    - rid: 1295431588036476934
+      type: {class: GetDecimalGlobalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: number
+          m_Variable: {fileID: 11400000, guid: 7902917525796f74390d09d13dc03c22, type: 2}
+          m_Name:
+            m_String: Controls_MouseX
+            m_ID: 289060262
+    - rid: 1295431588036476947
+      type: {class: GetDecimalGlobalName, ns: GameCreator.Runtime.Variables, asm: GameCreator.Runtime.Core}
+      data:
+        m_Variable:
+          m_TypeID:
+            m_String: number
+          m_Variable: {fileID: 11400000, guid: 7902917525796f74390d09d13dc03c22, type: 2}
+          m_Name:
+            m_String: Controls_MouseY
+            m_ID: 1715307824
+    - rid: 6020322142918279265
+      type: {class: ShotTypeThirdPerson, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
+      data:
+        m_ShotSystemViewport:
+          m_Projection:
+            m_IsEnabled: 0
+            m_Value: 0
+          m_FieldOfView:
+            m_IsEnabled: 1
+            m_Value: 60
+          m_OrthographicSize:
+            m_IsEnabled: 0
+            m_Value: 5
+          m_ClipPlaneNear:
+            m_IsEnabled: 0
+            m_Value: 0.3
+          m_ClipPlaneFar:
+            m_IsEnabled: 0
+            m_Value: 1000
+        m_Zoom:
+          m_TargetZoom: 0.1
+          m_MinDistance: 1
+          m_SmoothTime: 0.1
+          m_InputZoom:
+            m_Input:
+              rid: 6020322142918279266
+          m_Sensitivity:
+            m_Property:
+              rid: 6020322142918279267
+        m_ThirdPerson:
+          m_Pivot:
+            m_Property:
+              rid: 6020322142918279268
+          m_Shoulder:
+            m_Property:
+              rid: 6020322142918279269
+          m_Lift:
+            m_Property:
+              rid: 6020322142918279270
+          m_Radius:
+            m_Property:
+              rid: 6020322142918279271
+          m_InputRotate:
+            m_Input:
+              rid: 6020322142918279272
+          m_SensitivityX:
+            m_Property:
+              rid: 1295431588036476934
+          m_SensitivityY:
+            m_Property:
+              rid: 1295431588036476947
+          m_MaxPitch: 90
+          m_MaxYaw:
+            m_IsEnabled: 0
+            m_Value: 120
+          m_SmoothTime:
+            m_Property:
+              rid: 6020322142918279275
+          m_Align:
+            m_AutoAlign: 1
+            m_Delay: 3
+            m_SmoothTime: 3
+    - rid: 6020322142918279266
+      type: {class: InputValueVector2Scroll, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Direction: 0
+    - rid: 6020322142918279267
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.001
+    - rid: 6020322142918279268
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322142918279269
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.5
+    - rid: 6020322142918279270
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.5
+    - rid: 6020322142918279271
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 4
+    - rid: 6020322142918279272
+      type: {class: InputValueVector2MotionSecondary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 6020322142918279275
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.15000000596046448
 --- !u!1 &4634916620971196545
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,6 +196,7 @@ Transform:
   m_Children:
   - {fileID: 3103430797143665110}
   - {fileID: 5865308121759958565}
+  - {fileID: 6837632737807934473}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6344916285347347973
