@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6965c45d6044a989f046010528d201e, type: 3}
+  m_Name: TepokanNyamuk
+  m_EditorClassIdentifier: 
+  m_Combos:
+    rid: 5717171660414780334
+  references:
+    version: 2
+    RefIds:
+    - rid: 5717171660414780334
+      type: {class: ComboTree, ns: GameCreator.Runtime.Melee, asm: GameCreator.Runtime.Melee}
+      data:
+        m_Dirty: 85342
+        m_Data:
+          m_Keys: 628fb895
+          m_Values:
+          - m_Id: -1783066782
+            m_Value:
+              rid: 5717171660885328085
+        m_Nodes:
+          m_Keys: 628fb895
+          m_Values:
+          - m_Id: -1783066782
+            m_Parent: -1
+            m_Children: 
+        m_Roots: 628fb895
+    - rid: 5717171660885328085
+      type: {class: ComboItem, ns: GameCreator.Runtime.Melee, asm: GameCreator.Runtime.Melee}
+      data:
+        m_IsDisabled: 0
+        m_Key: 0
+        m_Mode: 0
+        m_When: 1
+        m_AutoRelease: 0
+        m_Timeout:
+          m_Property:
+            rid: 5717171660885328086
+        m_HasDelay:
+          m_IsEnabled: 0
+          m_Value: 0.5
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Skill: {fileID: 11400000, guid: c469cb1ed2e103c4eb74f780faa3bd70, type: 2}
+    - rid: 5717171660885328086
+      type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 

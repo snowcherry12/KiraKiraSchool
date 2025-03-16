@@ -30,9 +30,11 @@ MonoBehaviour:
       rid: 4340017089037992740
   m_State:
     m_StateType: 2
-    m_AnimationClip: {fileID: 0}
+    m_AnimationClip:
+      m_Property:
+        rid: 5717171662046626389
     m_RuntimeController: {fileID: 0}
-    m_State: {fileID: 11400000, guid: 21eedebe4181146a79078b6b94366773, type: 2}
+    m_State: {fileID: 11400000, guid: aa627e592c644a841a32c4e2535adb88, type: 2}
     m_AvatarMask: {fileID: 0}
   m_Layer: 7
   m_Speed:
@@ -41,7 +43,7 @@ MonoBehaviour:
   m_TransitionIn: 0.15
   m_TransitionOut: 0.25
   m_Block:
-    m_Reaction: {fileID: 11400000, guid: 9718547e306e84a6d944fca5f3ae8966, type: 2}
+    m_Reaction: {fileID: 11400000, guid: 2efaeebb02079214db84d341808f5729, type: 2}
     m_Effect:
       m_Property:
         rid: 4340017089037992768
@@ -101,3 +103,7 @@ MonoBehaviour:
       type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_GameObject: {fileID: 3135502183617210236, guid: 67d98f990a6344573beb5df5f8255d5a, type: 3}
+    - rid: 5717171662046626389
+      type: {class: GetAnimationInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 0}

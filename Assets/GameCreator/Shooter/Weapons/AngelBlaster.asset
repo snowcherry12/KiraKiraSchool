@@ -557,6 +557,27 @@ MonoBehaviour:
     - rid: 5717171656634925765
       type: {class: GetBoolTrue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
+    - rid: 5717171662046626663
+      type: {class: ConditionMathCompareDecimals, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Sign: 0
+        m_Value:
+          m_Property:
+            rid: 5717171662046626666
+        m_CompareTo:
+          m_Comparison: 0
+          m_CompareTo:
+            m_Property:
+              rid: 5717171662046626665
+    - rid: 5717171662046626665
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0
+    - rid: 5717171662046626666
+      type: {class: GetDecimalTimeScale, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
     - rid: 7510531224956305605
       type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
@@ -698,7 +719,8 @@ MonoBehaviour:
         m_SkipWhenFull: 1
         m_Conditions:
           m_Conditions:
-            m_Conditions: []
+            m_Conditions:
+            - rid: 5717171662046626663
         m_Asset: {fileID: 11400000, guid: db83986ee6e96ea4b84fb7b3f682e977, type: 2}
     - rid: 8814677138683199566
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
