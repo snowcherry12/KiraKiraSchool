@@ -71,7 +71,6 @@ namespace GameCreator.Editor.Behavior
             this.target.panel.contextualMenuManager.DisplayMenu(eventMouseUp, this.target);
             
             eventMouseUp.StopPropagation();
-            eventMouseUp.PreventDefault();
         }
 
         // CALLBACK METHODS: ----------------------------------------------------------------------
@@ -88,7 +87,6 @@ namespace GameCreator.Editor.Behavior
             this.target.panel.contextualMenuManager.DisplayMenu(eventContextClick, this.target);
             
             eventContextClick.StopPropagation();
-            eventContextClick.PreventDefault();
         }
         
         private void OnContextualMenu(ContextualMenuPopulateEvent eventContextMenu)

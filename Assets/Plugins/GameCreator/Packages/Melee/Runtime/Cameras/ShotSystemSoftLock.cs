@@ -129,14 +129,17 @@ namespace GameCreator.Runtime.Melee
                 }
             }
 
-            this.m_CurrentRatio = Mathf.SmoothDamp(
-                this.m_CurrentRatio,
-                this.ComputeRatio(shotType as TShotTypeLook),
-                ref this.m_RatioVelocity,
-                this.m_SmoothTime,
-                Mathf.Infinity,
-                shotType.ShotCamera.TimeMode.DeltaTime
-            );
+            float deltaTime = shotType.ShotCamera.TimeMode.DeltaTime;
+            
+            this.m_CurrentRatio = deltaTime > float.Epsilon 
+                ? Mathf.SmoothDamp(
+                    this.m_CurrentRatio,
+                    this.ComputeRatio(shotType as TShotTypeLook),
+                    ref this.m_RatioVelocity,
+                    this.m_SmoothTime,
+                    Mathf.Infinity,
+                    deltaTime
+                ) : this.m_CurrentRatio;
             
             float radius = Mathf.Lerp(
                 this.m_Radius,
@@ -214,14 +217,15 @@ namespace GameCreator.Runtime.Melee
         private float GetRotationDamp(float current, float target, ref float velocity, 
             float smoothTime, float deltaTime)
         {
-            return Mathf.SmoothDampAngle(
-                current,
-                target,
-                ref velocity,
-                smoothTime,
-                Mathf.Infinity,
-                deltaTime
-            );
+            return deltaTime > float.Epsilon 
+                ? Mathf.SmoothDampAngle(
+                    current,
+                    target,
+                    ref velocity,
+                    smoothTime,
+                    Mathf.Infinity,
+                    deltaTime
+                ) : current;
         }
         
         private void ConstrainTargetAngles()

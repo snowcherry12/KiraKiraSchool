@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef183b872bc4fd6b31ce8b5d8c35f11, type: 3}
+  m_Name: FPS_Reaction_Hit
+  m_EditorClassIdentifier: 
+  m_TransitionIn: 0.1
+  m_TransitionOut: 0.25
+  m_UseRootMotion: 1
+  m_Speed:
+    m_Property:
+      rid: 4340017174412001289
+  m_ReactionList:
+    m_List:
+    - rid: 4340017174412001290
+  m_OnEnter:
+    m_Instructions:
+      m_Instructions:
+      - rid: 4340017174412001291
+  m_OnExit:
+    m_Instructions:
+      m_Instructions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4340017174412001289
+      type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 4340017174412001290
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 0
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 0
+          m_Value: 0.5
+        m_Rotation: 0
+        m_Gravity: 1
+        m_Animations:
+          m_Animations: []
+    - rid: 4340017174412001291
+      type: {class: InstructionCameraShakeBurst, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Camera:
+          m_Property:
+            rid: 4340017174412001292
+        m_Delay: 0
+        m_Duration: 1
+        m_ShakeEffect:
+          m_ShakePosition: 0
+          m_ShakeRotation: 1
+          m_Magnitude: 5
+          m_Roughness: 2
+          m_Transform: {fileID: 0}
+          m_Radius: 10
+    - rid: 4340017174412001292
+      type: {class: GetGameObjectCameraMain, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
+      data: 

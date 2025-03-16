@@ -35,6 +35,7 @@ namespace GameCreator.Runtime.Melee
 
         [field: NonSerialized] public IReaction ReactionAsset { get; private set; }
         [field: NonSerialized] public ReactionInput ReactionInput { get; private set; }
+        [field: NonSerialized] public bool ReactionFallback { get; private set; }
 
         // CONSTRUCTOR: ---------------------------------------------------------------------------
         
@@ -134,7 +135,7 @@ namespace GameCreator.Runtime.Melee
             this.Change(this.m_Skill);
         }
 
-        public void ToReact(GameObject target, IReaction reaction, ReactionInput input)
+        public void ToReact(GameObject target, IReaction reaction, ReactionInput input, bool canFallback)
         {
             this.Weapon = null;
             this.Combos = null;
@@ -149,6 +150,7 @@ namespace GameCreator.Runtime.Melee
             
             this.ReactionAsset = reaction;
             this.ReactionInput = input;
+            this.ReactionFallback = canFallback;
 
             this.Change(this.m_Reaction);
         }

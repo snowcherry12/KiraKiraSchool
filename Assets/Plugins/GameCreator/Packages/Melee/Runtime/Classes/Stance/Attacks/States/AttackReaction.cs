@@ -54,11 +54,33 @@ namespace GameCreator.Runtime.Melee
             
             self.Busy.SetBusy();
 
-            ReactionOutput output = this.Attacks.MeleeStance.Character.Combat.GetHitReaction(
-                this.Attacks.ReactionInput,
-                this.m_Args,
-                this.Attacks.ReactionAsset
-            );
+            ReactionOutput output = ReactionOutput.None; 
+            
+            if (this.Attacks.ReactionFallback)
+            {
+                output = this.Attacks.MeleeStance.Character.Combat.GetHitReaction(
+                    this.Attacks.ReactionInput,
+                    this.m_Args,
+                    this.Attacks.ReactionAsset
+                );
+            }
+            else
+            {
+                ReactionItem reactionItem = this.Attacks.ReactionAsset?.CanRun(
+                    this.Attacks.MeleeStance.Character,
+                    this.m_Args,
+                    this.Attacks.ReactionInput
+                );
+                
+                if (reactionItem != null)
+                {
+                    output = this.Attacks.ReactionAsset.Run(
+                        this.Attacks.MeleeStance.Character,
+                        this.m_Args,
+                        this.Attacks.ReactionInput
+                    );   
+                }
+            }
 
             if (output.Reaction == null)
             {

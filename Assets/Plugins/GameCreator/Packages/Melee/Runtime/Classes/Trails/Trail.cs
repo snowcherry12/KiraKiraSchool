@@ -109,7 +109,7 @@ namespace GameCreator.Runtime.Melee
             this.m_Striker = striker;
             this.m_Params = new RenderParams
             {
-                renderingLayerMask = GraphicsSettings.defaultRenderingLayerMask
+                renderingLayerMask = RenderingLayerMask.defaultRenderingLayerMask
             };
             
             this.m_TrailArc = new TrailArc(this);

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1805659447825900147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8582315484202181464}
+  - component: {fileID: 6104949015719115798}
+  m_Layer: 0
+  m_Name: Striker_Left_Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8582315484202181464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805659447825900147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6104949015719115798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805659447825900147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84eb03fec763407d9d0eb8bf3f0b2701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ID:
+    m_SerializedID:
+      m_String: left-foot
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Section:
+    m_Property:
+      rid: 6655073706986963101
+  m_Shape:
+    rid: 6655073706986963102
+  m_Trail:
+    m_PointA: {x: 0, y: 0, z: 0}
+    m_PointB: {x: 0, y: 0.2, z: 0}
+    m_Quads: 32
+    m_Length: 2
+    m_Material: {fileID: 2100000, guid: 15378d4f7ef514e1794b320a0f8dfd17, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 6655073706986963101
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 1805659447825900147}
+    - rid: 6655073706986963102
+      type: {class: StrikerSphere, ns: GameCreator.Runtime.Melee, asm: GameCreator.Runtime.Melee}
+      data:
+        m_Position: {x: 0, y: 0, z: 0}
+        m_Radius: 0.35

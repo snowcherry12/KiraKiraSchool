@@ -495,6 +495,14 @@ namespace GameCreator.Runtime.Inventory.UnityUI
             }
         }
 
+        public void Destroy()
+        {
+            if (this.Cell == null || this.Cell.Available) return;
+            
+            RuntimeItem runtimeItem = this.Cell.Peek();
+            this.BagUI.Bag.Content.Remove(runtimeItem);
+        }
+
         public void Split()
         {
             if (this.Cell == null || this.Cell.Available) return;

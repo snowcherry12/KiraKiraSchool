@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465797, g: 0.4964137, b: 0.5748177, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -1530,35 +1526,35 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6881242074869884246, guid: 829033eeca1d24f47a4ff47348ae9c20, type: 3}
-      propertyPath: m_Stock.m_Stock.Array.data[0]
+      propertyPath: 'm_Stock.m_Stock.Array.data[0]'
       value: 4340016908955812429
       objectReference: {fileID: 0}
     - target: {fileID: 6881242074869884246, guid: 829033eeca1d24f47a4ff47348ae9c20, type: 3}
-      propertyPath: m_Stock.m_Stock.Array.data[1]
+      propertyPath: 'm_Stock.m_Stock.Array.data[1]'
       value: 4340016908955812430
       objectReference: {fileID: 0}
     - target: {fileID: 6881242074869884246, guid: 829033eeca1d24f47a4ff47348ae9c20, type: 3}
-      propertyPath: m_Stock.m_Stock.Array.data[2]
+      propertyPath: 'm_Stock.m_Stock.Array.data[2]'
       value: 4340016908955812431
       objectReference: {fileID: 0}
     - target: {fileID: 6881242074869884246, guid: 829033eeca1d24f47a4ff47348ae9c20, type: 3}
-      propertyPath: m_Stock.m_Stock.Array.data[3]
+      propertyPath: 'm_Stock.m_Stock.Array.data[3]'
       value: 4340016908955812432
       objectReference: {fileID: 0}
     - target: {fileID: 6881242074869884246, guid: 829033eeca1d24f47a4ff47348ae9c20, type: 3}
-      propertyPath: managedReferences[4340016908955812429]
+      propertyPath: 'managedReferences[4340016908955812429]'
       value: GameCreator.Runtime.Inventory GameCreator.Runtime.Inventory.StockData
       objectReference: {fileID: 0}
     - target: {fileID: 6881242074869884246, guid: 829033eeca1d24f47a4ff47348ae9c20, type: 3}
-      propertyPath: managedReferences[4340016908955812430]
+      propertyPath: 'managedReferences[4340016908955812430]'
       value: GameCreator.Runtime.Inventory GameCreator.Runtime.Inventory.StockData
       objectReference: {fileID: 0}
     - target: {fileID: 6881242074869884246, guid: 829033eeca1d24f47a4ff47348ae9c20, type: 3}
-      propertyPath: managedReferences[4340016908955812431]
+      propertyPath: 'managedReferences[4340016908955812431]'
       value: GameCreator.Runtime.Inventory GameCreator.Runtime.Inventory.StockData
       objectReference: {fileID: 0}
     - target: {fileID: 6881242074869884246, guid: 829033eeca1d24f47a4ff47348ae9c20, type: 3}
-      propertyPath: managedReferences[4340016908955812432]
+      propertyPath: 'managedReferences[4340016908955812432]'
       value: GameCreator.Runtime.Inventory GameCreator.Runtime.Inventory.StockData
       objectReference: {fileID: 0}
     - target: {fileID: 6881242074869884246, guid: 829033eeca1d24f47a4ff47348ae9c20, type: 3}
@@ -1857,9 +1853,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863528062}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -1909,8 +1904,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1001 &910890681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2945,6 +2944,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!114 &1826984436
 MonoBehaviour:
   m_ObjectHideFlags: 0

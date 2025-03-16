@@ -11,16 +11,16 @@ namespace GameCreator.Runtime.Melee
     [Description("Executed when the Character removes a new Melee Weapon")]
 
     [Image(typeof(IconMeleeSword), ColorTheme.Type.Red)]
-    
+
     [Keywords("Unequip", "sheathe", "Take", "Sword", "Melee")]
 
     [Serializable]
     public class EventMeleeUnequipWeapon : TEventCharacter
     {
         [NonSerialized] private Character m_CachedCharacter;
-        
+
         // METHODS: -------------------------------------------------------------------------------
-        
+
         protected override void WhenEnabled(Trigger trigger, Character character)
         {
             this.m_CachedCharacter = character;
@@ -37,6 +37,8 @@ namespace GameCreator.Runtime.Melee
 
         private void OnUnequip(IWeapon weapon, GameObject gameObject)
         {
+            if (weapon is not MeleeWeapon) return;
+            
             GameObject target = this.m_CachedCharacter.gameObject;
             _ = this.m_Trigger.Execute(target);
         }

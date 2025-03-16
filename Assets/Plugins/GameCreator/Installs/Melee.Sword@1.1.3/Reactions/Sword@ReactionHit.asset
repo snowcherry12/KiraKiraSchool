@@ -1,0 +1,346 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef183b872bc4fd6b31ce8b5d8c35f11, type: 3}
+  m_Name: Sword@ReactionHit
+  m_EditorClassIdentifier: 
+  m_TransitionIn: 0.01
+  m_TransitionOut: 0.35
+  m_UseRootMotion: 1
+  m_Speed:
+    m_Property:
+      rid: 7624061443021209600
+  m_ReactionList:
+    m_List:
+    - rid: 6520063822367293484
+    - rid: 7624061013279113439
+    - rid: 6655073804197822464
+    - rid: 6655073818933985280
+    - rid: 6655073818933985281
+    - rid: 7624061442461270834
+    - rid: 7624061442461270835
+    - rid: 7624061442461270836
+    - rid: 7624061442461270837
+    - rid: 7624061436791882452
+    - rid: 7624061458449694720
+  m_OnEnter:
+    m_Instructions:
+      m_Instructions: []
+  m_OnExit:
+    m_Instructions:
+      m_Instructions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 6520063822367293484
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 1
+          m_Value: 1.5
+        m_Direction: 0
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 0
+          m_Value: 0.5
+        m_Rotation: 2
+        m_Gravity: 1
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: 978028db0396e4f93b8e47cff85e7cb0, type: 2}
+    - rid: 6655073804197822464
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 4
+        m_Conditions:
+          m_Conditions:
+            m_Conditions:
+            - rid: 7624061442461270841
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.3
+        m_Rotation: 0
+        m_Gravity: 0.05
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: ff7bb07a503c64914ad48c3e77014e66, type: 2}
+    - rid: 6655073818933985280
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 1
+        m_Conditions:
+          m_Conditions:
+            m_Conditions:
+            - rid: 7624061442461270843
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.3
+        m_Rotation: 0
+        m_Gravity: 0.05
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: 0a4f7bfbf992d43b4a0de9f1e91f7495, type: 2}
+    - rid: 6655073818933985281
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 2
+        m_Conditions:
+          m_Conditions:
+            m_Conditions:
+            - rid: 7624061442461270845
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.3
+        m_Rotation: 0
+        m_Gravity: 0.05
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: 0ec8198488e92445f8bd0e22a845fc89, type: 2}
+    - rid: 7624061013279113439
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 3
+        m_Conditions:
+          m_Conditions:
+            m_Conditions:
+            - rid: 7624061442461270838
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.3
+        m_Rotation: 0
+        m_Gravity: 0.05
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: abf0948ea48894631b5adb83c7302e21, type: 2}
+          - {fileID: 7400000, guid: 329138988fc9c4174ad7d35f641e529d, type: 2}
+          - {fileID: 7400000, guid: 524f258433a9e44f598803941236543c, type: 2}
+          - {fileID: 7400000, guid: aa15b35539df043c692a3d996791ecce, type: 2}
+          - {fileID: 7400000, guid: 6b10b921f455c4bc5abefcb8c5964d9a, type: 2}
+    - rid: 7624061436791882452
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 6
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 0
+          m_Value: 0.5
+        m_Rotation: 0
+        m_Gravity: 0
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: afc688e875d8c429eb03b4896e04a4a6, type: 2}
+    - rid: 7624061442461270834
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 3
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.3
+        m_Rotation: 0
+        m_Gravity: 1
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: d7be856c4aa9e4cfd8088aa6c3c11b66, type: 2}
+          - {fileID: 7400000, guid: c8240feb3d9d94b53b056e64c972416d, type: 2}
+          - {fileID: 7400000, guid: a182bff9fd53a4d9a9c5bfbca4123ac4, type: 2}
+    - rid: 7624061442461270835
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 4
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.3
+        m_Rotation: 0
+        m_Gravity: 1
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: c115469f24ada4877a5244a47294367b, type: 2}
+    - rid: 7624061442461270836
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 1
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.3
+        m_Rotation: 0
+        m_Gravity: 1
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: 8c30f5e6040094a34b60388bdfa7c0be, type: 2}
+    - rid: 7624061442461270837
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 2
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.3
+        m_Rotation: 0
+        m_Gravity: 1
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: a345ddc7621384a41aeb98fc405d18a5, type: 2}
+    - rid: 7624061442461270838
+      type: {class: ConditionCharacterIsAirborne, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Sign: 1
+        m_Character:
+          m_Property:
+            rid: 7624061442461270840
+    - rid: 7624061442461270840
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+    - rid: 7624061442461270841
+      type: {class: ConditionCharacterIsAirborne, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Sign: 1
+        m_Character:
+          m_Property:
+            rid: 7624061442461270842
+    - rid: 7624061442461270842
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+    - rid: 7624061442461270843
+      type: {class: ConditionCharacterIsAirborne, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Sign: 1
+        m_Character:
+          m_Property:
+            rid: 7624061442461270844
+    - rid: 7624061442461270844
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+    - rid: 7624061442461270845
+      type: {class: ConditionCharacterIsAirborne, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Sign: 1
+        m_Character:
+          m_Property:
+            rid: 7624061442461270846
+    - rid: 7624061442461270846
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+    - rid: 7624061443021209600
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
+    - rid: 7624061458449694720
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 5
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 0
+          m_Value: 0.5
+        m_Rotation: 0
+        m_Gravity: 1
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: 29cf7ced163834636a4feaef0d99c901, type: 2}

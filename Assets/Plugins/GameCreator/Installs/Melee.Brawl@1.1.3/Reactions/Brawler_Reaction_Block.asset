@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef183b872bc4fd6b31ce8b5d8c35f11, type: 3}
+  m_Name: Brawler_Reaction_Block
+  m_EditorClassIdentifier: 
+  m_TransitionIn: 0.05
+  m_TransitionOut: 0.15
+  m_UseRootMotion: 1
+  m_Speed:
+    m_Property:
+      rid: 7624061010851921933
+  m_ReactionList:
+    m_List:
+    - rid: 7624061010851921934
+    - rid: 7624061011678986252
+    - rid: 7624061011678986253
+    - rid: 7624061028499456014
+  m_OnEnter:
+    m_Instructions:
+      m_Instructions: []
+  m_OnExit:
+    m_Instructions:
+      m_Instructions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7624061010851921933
+      type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+    - rid: 7624061010851921934
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 1
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 3
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: bbc8aa1292f3d44c7b1e2845300ed696, type: 2}
+          - {fileID: 7400000, guid: a03b9d271b5ef4fff979e887556f6746, type: 2}
+          - {fileID: 7400000, guid: e2261e7189f674976b1f5a64624ee09e, type: 2}
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.5
+    - rid: 7624061011678986252
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 1
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: 2fd656e5cf0b04b61aa827b1d05e3800, type: 2}
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.5
+    - rid: 7624061011678986253
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 2
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: ab13918b133c9425f86612e79e2ac663, type: 2}
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.5
+    - rid: 7624061028499456014
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 0
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 4
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: 005fffd0445df4c109199629691587ff, type: 2}
+        m_AvatarMask: {fileID: 0}
+        m_CancelTime:
+          m_IsEnabled: 1
+          m_Value: 0.5

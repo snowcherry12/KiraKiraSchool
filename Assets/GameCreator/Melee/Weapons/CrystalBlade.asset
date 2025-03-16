@@ -1,0 +1,188 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07b738becbd473c92520c1cdf024b76, type: 3}
+  m_Name: CrystalBlade
+  m_EditorClassIdentifier: 
+  m_Id:
+    m_SerializedID:
+      m_String: 8ae371a9-11bb-45c7-af5c-656159063bab
+  m_Title:
+    m_Property:
+      rid: 4340017089037992721
+  m_Description:
+    m_Property:
+      rid: 4340017089037992722
+  m_Icon:
+    m_Property:
+      rid: 4340017089037992723
+  m_Color:
+    m_Property:
+      rid: 4340017089037992724
+  m_HitReaction: {fileID: 11400000, guid: e5c37316f252642529770d1096bdb769, type: 2}
+  m_ParriedReaction: {fileID: 11400000, guid: b411b454d5f794aada591796f594fa54, type: 2}
+  m_OnEquip:
+    m_Instructions:
+      m_Instructions:
+      - rid: 4340017089037992751
+  m_OnUnequip:
+    m_Instructions:
+      m_Instructions:
+      - rid: 4340017089037992755
+  m_OnDodge:
+    m_Instructions:
+      m_Instructions:
+      - rid: 4340017089037992745
+      - rid: 4340017089037992749
+      - rid: 4340017089037992747
+  m_Shield: {fileID: 11400000, guid: 98fe3bbf4cdae634daae42e78773a2af, type: 2}
+  m_State:
+    m_StateType: 2
+    m_AnimationClip:
+      m_Property:
+        rid: 5717171659316134267
+    m_RuntimeController: {fileID: 0}
+    m_State: {fileID: 11400000, guid: b8813cc7f4117e043837fd08b49712e4, type: 2}
+    m_AvatarMask: {fileID: 0}
+  m_Layer:
+    m_Property:
+      rid: 4340017089037992725
+  m_Combos:
+    m_CombosFrom: 0
+    m_CombosAsset: {fileID: 11400000, guid: 13f2dcede7b5d6a46bc90906ddbcfdc5, type: 2}
+    m_CombosEmbed:
+      rid: 4340017089037992726
+  references:
+    version: 2
+    RefIds:
+    - rid: 4340017089037992721
+      type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: Crystal Blade
+    - rid: 4340017089037992722
+      type: {class: GetStringTextArea, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Text:
+          m_Text: 
+    - rid: 4340017089037992723
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 4340017089037992724
+      type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 4340017089037992725
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 5
+    - rid: 4340017089037992726
+      type: {class: ComboTree, ns: GameCreator.Runtime.Melee, asm: GameCreator.Runtime.Melee}
+      data:
+        m_Dirty: 0
+        m_Data:
+          m_Keys: 
+          m_Values: []
+        m_Nodes:
+          m_Keys: 
+          m_Values: []
+        m_Roots: 
+    - rid: 4340017089037992745
+      type: {class: InstructionCommonTimeScale, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_TimeScale:
+          m_Property:
+            rid: 4340017089037992746
+        m_TransitionDuration: 0.1
+        m_Layer: 0
+    - rid: 4340017089037992746
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.1
+    - rid: 4340017089037992747
+      type: {class: InstructionCommonTimeScale, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_TimeScale:
+          m_Property:
+            rid: 4340017089037992748
+        m_TransitionDuration: 0.1
+        m_Layer: 0
+    - rid: 4340017089037992748
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
+    - rid: 4340017089037992749
+      type: {class: InstructionCommonTimeWait, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Seconds:
+          m_Property:
+            rid: 4340017089037992750
+        m_Mode:
+          m_UpdateTime: 1
+    - rid: 4340017089037992750
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.5
+    - rid: 4340017089037992751
+      type: {class: InstructionCharacterAttachProp, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Character:
+          m_Property:
+            rid: 4340017089037992754
+        m_Type: 0
+        m_Prop:
+          m_Property:
+            rid: 4340017089037992753
+        m_Handle:
+          m_Type: 1
+          m_Bone:
+            m_Type: 1
+            m_Human: 18
+            m_Path: 
+          m_LocalPosition: {x: 0, y: 0, z: 0}
+          m_LocalRotation: {x: 0, y: 0, z: 0}
+          m_Handle: {fileID: 11400000, guid: 001499741548b974bb3f64611a3b3e63, type: 2}
+    - rid: 4340017089037992753
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 5099940126912940064, guid: 8f43fcc1f52cd7144b80eae5e2b385b0, type: 3}
+    - rid: 4340017089037992754
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 4340017089037992755
+      type: {class: InstructionCharacterRemoveProp, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Character:
+          m_Property:
+            rid: 4340017089037992758
+        m_Type: 0
+        m_Prop:
+          m_Property:
+            rid: 4340017089037992757
+    - rid: 4340017089037992757
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 5099940126912940064, guid: 8f43fcc1f52cd7144b80eae5e2b385b0, type: 3}
+    - rid: 4340017089037992758
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5717171659316134267
+      type: {class: GetAnimationInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 0}

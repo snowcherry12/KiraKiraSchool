@@ -60,7 +60,7 @@ namespace GameCreator.Runtime.Melee
 
             character.Combat
                 .RequestStance<MeleeStance>()
-                .PlayReaction(attacker, input, this.m_Reaction);
+                .PlayReaction(attacker, input, this.m_Reaction, true);
             
             return DefaultResult;
         }

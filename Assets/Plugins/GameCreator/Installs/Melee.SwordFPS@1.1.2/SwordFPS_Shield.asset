@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ecad15cd6744c581a06eb2a550af12, type: 3}
+  m_Name: SwordFPS_Shield
+  m_EditorClassIdentifier: 
+  m_Priority: 1
+  m_Angle:
+    m_Property:
+      rid: 3592961673775022223
+  m_ParryTime:
+    m_Property:
+      rid: 3592961673775022224
+  m_Defense:
+    m_Property:
+      rid: 3592961673775022225
+  m_Cooldown:
+    m_Property:
+      rid: 3592961673775022226
+  m_Recovery:
+    m_Property:
+      rid: 3592961673775022227
+  m_State:
+    m_StateType: 2
+    m_AnimationClip: {fileID: 0}
+    m_RuntimeController: {fileID: 0}
+    m_State: {fileID: 11400000, guid: 03c53b59956f641d7951a2af7dc8b03f, type: 2}
+    m_AvatarMask: {fileID: 0}
+  m_Layer: 7
+  m_Speed:
+    m_Property:
+      rid: 3592961673775022228
+  m_TransitionIn: 0.1
+  m_TransitionOut: 0.25
+  m_Block:
+    m_Reaction: {fileID: 11400000, guid: 0520936fb38e14236a4cde3091e52d84, type: 2}
+    m_Effect:
+      m_Property:
+        rid: 3592961673775022303
+    m_InstructionsList:
+      m_Instructions:
+        m_Instructions: []
+  m_Parry:
+    m_Reaction: {fileID: 11400000, guid: 0520936fb38e14236a4cde3091e52d84, type: 2}
+    m_Effect:
+      m_Property:
+        rid: 3592961673775022304
+    m_InstructionsList:
+      m_Instructions:
+        m_Instructions: []
+  m_Break:
+    m_Reaction: {fileID: 11400000, guid: c36dc7b32f8f8425d8f51b99b2b14190, type: 2}
+    m_Effect:
+      m_Property:
+        rid: 3592961677568770454
+    m_InstructionsList:
+      m_Instructions:
+        m_Instructions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 3592961673775022223
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 180
+    - rid: 3592961673775022224
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.25
+    - rid: 3592961673775022225
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 10
+    - rid: 3592961673775022226
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
+    - rid: 3592961673775022227
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
+    - rid: 3592961673775022228
+      type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 3592961673775022303
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 3135502183617210236, guid: b9c4b76d6663840dbb5c83f14e0f8efe, type: 3}
+    - rid: 3592961673775022304
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 3135502183617210236, guid: 62191531d07a04e388c363f8ae594b4f, type: 3}
+    - rid: 3592961677568770454
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 3135502183617210236, guid: 8268317ca2e0a4afcab1d8fd6eca855b, type: 3}

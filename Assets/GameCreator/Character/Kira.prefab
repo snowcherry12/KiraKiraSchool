@@ -789,8 +789,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157763941131189189}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 1.5}
+  m_LocalRotation: {x: -0.0021434203, y: -0.99098617, z: 0.13299167, w: -0.015971677}
+  m_LocalPosition: {x: -0.026526809, y: 0.4631828, z: 0.8095646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -837,7 +837,7 @@ MonoBehaviour:
             m_IsEnabled: 0
             m_Value: 1000
         m_ShotSystemLook:
-          m_IsActive: 1
+          m_IsActive: 0
           m_LookTarget:
             m_Property:
               rid: 6020322699881480394
@@ -2874,7 +2874,7 @@ Animator:
   m_GameObject: {fileID: 3117243685533178097}
   m_Enabled: 1
   m_Avatar: {fileID: -7015762578403652589, guid: c3b17c84a51d4f241bad3d53a08ee50c, type: 3}
-  m_Controller: {fileID: 9100000, guid: ecba992c2f1394f9eb808f518164f8ea, type: 2}
+  m_Controller: {fileID: 22100000, guid: 3204d0b84b3dc42199d10c73a446a658, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4499,9 +4499,11 @@ GameObject:
   - component: {fileID: 6861978336597648834}
   - component: {fileID: 661567649127017935}
   - component: {fileID: 4345671125267093946}
+  - component: {fileID: 2785889250136913485}
+  - component: {fileID: 6672618144384698258}
   m_Layer: 0
   m_Name: Kira
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4517,7 +4519,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1781735497975254387}
   - {fileID: 7166010637520406228}
@@ -4546,6 +4548,7 @@ MonoBehaviour:
       m_Rigs:
       - rid: 6020322696431403857
       - rid: 6020322696431403886
+      - rid: 5717171653965513219
   m_Footsteps:
     m_Feet:
     - rid: 4906518460771074087
@@ -4633,7 +4636,7 @@ MonoBehaviour:
         m_SkinWidth: 0.08
         m_PushForce: 1
         m_MaxSlope: 45
-        m_StepHeight: 0.1
+        m_StepHeight: 0.2
         m_Axonometry:
           m_Axonometry:
             rid: 4906518460771074097
@@ -4668,6 +4671,20 @@ MonoBehaviour:
     - rid: 4906518460771074098
       type: {class: AxonometryNone, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data: 
+    - rid: 5717171653965513219
+      type: {class: RigLean, ns: GameCreator.Runtime.Characters.IK, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_InclineSpine: 5
+        m_InclineLowerChest: 10
+        m_InclineUpperChest: 5
+        m_DeclineSpine: -10
+        m_DeclineLowerChest: -5
+        m_DeclineUpperChest: 5
+        m_RollSpine: 5
+        m_RollLowerChest: 5
+        m_RollUpperChest: 10
     - rid: 6020322696431403857
       type: {class: RigLookTo, ns: GameCreator.Runtime.Characters.IK, asm: GameCreator.Runtime.Core}
       data:
@@ -4724,6 +4741,146 @@ MonoBehaviour:
     m_Tasks:
       m_Keys: []
       m_Values: []
+--- !u!114 &2785889250136913485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264170959034015202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2bff3f8461c487282857e4071921cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Bag:
+    rid: 5717171653965512746
+  m_Stock:
+    m_Stock: []
+    m_Wealth: []
+  m_SkinUI: {fileID: 11400000, guid: e39d4cd2855e2489584957effd7f5544, type: 2}
+  m_Wearer:
+    m_Property:
+      rid: 5717171653965512715
+  references:
+    version: 2
+    RefIds:
+    - rid: 5717171653965512715
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 5717171653965512746
+      type: {class: BagGrid, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_Equipment:
+          m_Equipment: {fileID: 11400000, guid: 403d6ef477d5b0f46aef952764926828, type: 2}
+          m_EquipmentRuntime:
+            m_Keys: 0000000001000000
+            m_Values:
+            - m_Override: 0
+              m_OverrideHandle:
+                m_Type: 0
+                m_Bone:
+                  m_Type: 1
+                  m_Human: 18
+                  m_Path: 
+                m_LocalPosition: {x: 0, y: 0, z: 0}
+                m_LocalRotation: {x: 0, y: 0, z: 0}
+                m_Handle: {fileID: 0}
+              rootRuntimeItemIDEquipped:
+                m_String: 
+            - m_Override: 0
+              m_OverrideHandle:
+                m_Type: 0
+                m_Bone:
+                  m_Type: 1
+                  m_Human: 18
+                  m_Path: 
+                m_LocalPosition: {x: 0, y: 0, z: 0}
+                m_LocalRotation: {x: 0, y: 0, z: 0}
+                m_Handle: {fileID: 0}
+              rootRuntimeItemIDEquipped:
+                m_String: 
+        m_Cooldown:
+          m_Cooldowns:
+            m_Keys: []
+            m_Values: []
+        m_Wealth:
+          m_Currencies:
+            m_Keys: []
+            m_Values: 
+        m_Shape:
+          m_HasMaxWeight: 0
+          m_MaxWeight:
+            m_Property:
+              rid: 5717171653965512747
+          m_Width: 6
+          m_Height: 8
+        m_Content:
+          m_Cells:
+            m_Keys: []
+            m_Values: []
+          m_Stack:
+            m_Keys: []
+            m_Values: []
+          m_Matrix:
+            m_MatrixWidth: 0
+            m_MatrixUnwrapped: []
+    - rid: 5717171653965512747
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 150
+--- !u!114 &6672618144384698258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264170959034015202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222b5d39f1cd34261ad5c21d422080af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SaveUniqueID:
+    m_Save:
+      m_Save: 1
+    m_UniqueID:
+      m_SerializedID:
+        m_String: e084daea-b680-4f79-944f-ddb1140062e0
+  m_Memories:
+    m_Memories:
+    - rid: 5717171653965513254
+    - rid: 5717171653965513255
+    - rid: 5717171653965513256
+    - rid: 5717171653965513328
+  references:
+    version: 2
+    RefIds:
+    - rid: 5717171653965513254
+      type: {class: MemoryPosition, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+    - rid: 5717171653965513255
+      type: {class: MemoryRotation, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+    - rid: 5717171653965513256
+      type: {class: MemoryScale, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+    - rid: 5717171653965513328
+      type: {class: MemoryBag, ns: GameCreator.Runtime.Inventory, asm: GameCreator.Runtime.Inventory}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Shape: 1
+        m_Items: 1
+        m_Wealth: 1
+        m_Equipment: 1
+        m_Cooldowns: 1
 --- !u!1 &4298337136643530275
 GameObject:
   m_ObjectHideFlags: 0

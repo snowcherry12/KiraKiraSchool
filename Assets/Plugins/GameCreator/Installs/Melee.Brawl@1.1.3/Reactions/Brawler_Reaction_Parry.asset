@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef183b872bc4fd6b31ce8b5d8c35f11, type: 3}
+  m_Name: Brawler_Reaction_Parry
+  m_EditorClassIdentifier: 
+  m_TransitionIn: 0.05
+  m_TransitionOut: 0.15
+  m_CancelTime:
+    m_IsEnabled: 0
+    m_Value: 0.5
+  m_UseRootMotion: 1
+  m_Speed:
+    m_Property:
+      rid: 7624061010851921933
+  m_ReactionList:
+    m_List:
+    - rid: 7624061010851921934
+  references:
+    version: 2
+    RefIds:
+    - rid: 7624061010851921933
+      type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+    - rid: 7624061010851921934
+      type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_IsExpanded: 1
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_MinPower:
+          m_IsEnabled: 0
+          m_Value: 1
+        m_Direction: 0
+        m_Conditions:
+          m_Conditions:
+            m_Conditions: []
+        m_Animations:
+          m_Animations:
+          - {fileID: 7400000, guid: df3825662bbcb4c85ab7d79ae36f340a, type: 2}
+          - {fileID: 7400000, guid: 1233bb5014a6446e88e79f6205d685f9, type: 2}
+        m_AvatarMask: {fileID: 0}

@@ -138,7 +138,7 @@ namespace GameCreator.Editor.Melee
         
         private void ReorderItems(int indexSource, int indexTarget)
         {
-            this.m_TreeView.viewController.RebuildTree();
+            this.m_TreeView.Rebuild();
             this.m_TreeView.RefreshItems();
             
             // int idSource = this.m_TreeView.GetIdForIndex(indexSource);

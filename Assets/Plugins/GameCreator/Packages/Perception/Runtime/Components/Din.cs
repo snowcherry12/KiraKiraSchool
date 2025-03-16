@@ -132,7 +132,7 @@ namespace GameCreator.Runtime.Perception
         {
             if (this.m_AudioListener == null)
             {
-                this.m_AudioListener = FindObjectOfType<AudioListener>();
+                this.m_AudioListener = FindFirstObjectByType<AudioListener>();
             }
 
             return this.m_AudioListener != null ? this.m_AudioListener.transform : null;

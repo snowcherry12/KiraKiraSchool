@@ -160,7 +160,8 @@ namespace GameCreator.Runtime.Melee
                         enemyMelee.PlayReaction(
                             self.gameObject,
                             new ReactionInput(Vector3.zero, this.ComboSkill.GetPower(this.m_Args)),
-                            this.ComboSkill.SyncReaction
+                            this.ComboSkill.SyncReaction,
+                            true
                         );
                     }
                 }

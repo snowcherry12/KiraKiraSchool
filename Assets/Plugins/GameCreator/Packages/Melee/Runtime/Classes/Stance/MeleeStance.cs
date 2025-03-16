@@ -98,9 +98,9 @@ namespace GameCreator.Runtime.Melee
 
         // PUBLIC METHODS: ------------------------------------------------------------------------
 
-        public void PlayReaction(GameObject from, ReactionInput input, IReaction withReaction)
+        public void PlayReaction(GameObject from, ReactionInput input, IReaction withReaction, bool canFallback)
         {
-            this.m_Attacks.ToReact(from, withReaction, input);
+            this.m_Attacks.ToReact(from, withReaction, input, canFallback);
         }
 
         public void PlaySkill(MeleeWeapon weapon, Skill skill, GameObject target)
@@ -146,7 +146,7 @@ namespace GameCreator.Runtime.Melee
                 if (!poiseBroken) return;
             }
             
-            this.PlayReaction(attacker.gameObject, input, null);
+            this.PlayReaction(attacker.gameObject, input, null, true);
         }
         
         // PRIVATE METHODS: -----------------------------------------------------------------------

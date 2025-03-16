@@ -78,12 +78,15 @@ namespace GameCreator.Runtime.Perception
             {
                 this.m_Args.ChangeTarget(target);
             }
-            
+    
             if (!this.m_Target.Match(target, this.m_Args)) return;
             if (!this.m_Stage.HasFlag((AwareMask) stage)) return;
 
-            if (!this.m_When.HasFlag(When.OnIncrease) && this.m_PreviousStage < stage) return;
-            if (!this.m_When.HasFlag(When.OnDecrease) && this.m_PreviousStage > stage) return;
+            AwareStage previousStage = this.m_PreviousStage;
+            this.m_PreviousStage = stage;
+            
+            if (!this.m_When.HasFlag(When.OnIncrease) && previousStage < stage) return;
+            if (!this.m_When.HasFlag(When.OnDecrease) && previousStage > stage) return;
             
             _ = this.m_Trigger.Execute(this.m_Args);
         }

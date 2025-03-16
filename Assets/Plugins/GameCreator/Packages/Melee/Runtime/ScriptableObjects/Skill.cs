@@ -382,7 +382,8 @@ namespace GameCreator.Runtime.Melee
                 attacker.Combat.RequestStance<MeleeStance>().PlayReaction(
                     args.Target, 
                     input,
-                    weapon.Asset.ParriedReaction
+                    weapon.Asset.ParriedReaction,
+                    false
                 );
                 
                 break;
