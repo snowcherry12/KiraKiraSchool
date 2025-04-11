@@ -15,20 +15,22 @@ MonoBehaviour:
   m_ID:
     m_String: xp
   m_Data:
-    m_Base: 1
+    m_Base: 0
     m_Formula: {fileID: 0}
   m_Info:
-    name:
+    m_Name:
       m_Property:
         rid: 5178594379753324602
-    acronym:
+    m_Acronym:
       m_Property:
         rid: 5178594379753324603
-    description:
+    m_Description:
       m_Property:
         rid: 5178594725893242961
-    icon: {fileID: 0}
-    color: {r: 1, g: 1, b: 1, a: 1}
+    m_Icon:
+      m_Property:
+        rid: 7705553644564513015
+    m_Color: {r: 1, g: 1, b: 1, a: 1}
   references:
     version: 2
     RefIds:
@@ -45,3 +47,6 @@ MonoBehaviour:
       data:
         m_Text:
           m_Text: Total amount of progression points
+    - rid: 7705553644564513015
+      type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 

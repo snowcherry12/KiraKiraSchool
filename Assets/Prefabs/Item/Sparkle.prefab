@@ -141,7 +141,8 @@ MonoBehaviour:
   m_Instructions:
     m_Instructions:
     - rid: 7705553626933231665
-    - rid: 7705553620531413354
+    - rid: 7705553644564513534
+    - rid: 7705553644564513512
   m_TriggerEvent:
     rid: 7705553620531413350
   references:
@@ -157,17 +158,6 @@ MonoBehaviour:
               rid: 7705553620531413351
     - rid: 7705553620531413351
       type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 7705553620531413354
-      type: {class: InstructionGameObjectDestroy, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_GameObject:
-          m_Property:
-            rid: 7705553620531413356
-    - rid: 7705553620531413356
-      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
     - rid: 7705553626933231665
       type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
@@ -200,6 +190,44 @@ MonoBehaviour:
       type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: {fileID: 8300000, guid: ce607a13ebb2d41ebae24117455177dd, type: 3}
+    - rid: 7705553644564513512
+      type: {class: InstructionGameObjectDestroy, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_GameObject:
+          m_Property:
+            rid: 7705553644564513514
+    - rid: 7705553644564513514
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 7705553644564513534
+      type: {class: InstructionStatsChangeStat, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Target:
+          m_Property:
+            rid: 7705553644564513535
+        m_Stat:
+          m_Property:
+            rid: 7705553644564513536
+        m_Change:
+          m_Operation: 1
+          m_Value:
+            m_Property:
+              rid: 7705553644564513538
+    - rid: 7705553644564513535
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 7705553644564513536
+      type: {class: GetStatInstance, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
+      data:
+        m_Stat: {fileID: 11400000, guid: d5e996d29fd8b4949be83fecaab6065b, type: 2}
+    - rid: 7705553644564513538
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 100
 --- !u!1001 &4313726675705516077
 PrefabInstance:
   m_ObjectHideFlags: 0
