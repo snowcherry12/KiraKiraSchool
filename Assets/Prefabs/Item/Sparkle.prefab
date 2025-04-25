@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6246072620145011361}
   - component: {fileID: 7547648372469079249}
+  - component: {fileID: -9211808115220593264}
   - component: {fileID: 40682300650993287}
   - component: {fileID: 2540061453324384578}
   m_Layer: 0
@@ -56,6 +57,112 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.075}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-9211808115220593264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8956583067200681014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecd922218e245e2b85d51f9f08338c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 7705553965994738641
+  m_TriggerEvent:
+    rid: 7705553965994738634
+  references:
+    version: 2
+    RefIds:
+    - rid: 7705553965994738634
+      type: {class: EventOnStart, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 7705553965994738641
+      type: {class: InstructionTransformChangePosition, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Transform:
+          m_Property:
+            rid: 7705553965994738642
+        m_Space: 0
+        m_Position:
+          m_Operation: 0
+          m_Value:
+            m_Property:
+              rid: 7705553965994738666
+        m_Transition:
+          m_Duration: 0.5
+          m_Easing: 3
+          m_Time: 0
+          m_WaitToComplete: 1
+    - rid: 7705553965994738642
+      type: {class: GetGameObjectTransform, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Transform: {fileID: 6246072620145011361}
+    - rid: 7705553965994738666
+      type: {class: GetPositionValueDecimals, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_X:
+          m_Property:
+            rid: 7705553965994738670
+        m_Y:
+          m_Property:
+            rid: 7705553967279767620
+        m_Z:
+          m_Property:
+            rid: 7705553965994738683
+    - rid: 7705553965994738670
+      type: {class: GetDecimalTransformsPositionX, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Position:
+          m_Property:
+            rid: 7705553967279767566
+    - rid: 7705553965994738683
+      type: {class: GetDecimalTransformsPositionZ, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Position:
+          m_Property:
+            rid: 7705553967279767559
+    - rid: 7705553967279767559
+      type: {class: GetPositionTransformPoint, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_From:
+          m_Property:
+            rid: 7705553967279767562
+        m_Point:
+          m_Property:
+            rid: 7705553967279767561
+    - rid: 7705553967279767561
+      type: {class: GetPositionVector3, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Position: {x: 0, y: 0, z: 0}
+    - rid: 7705553967279767562
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 7705553967279767566
+      type: {class: GetPositionTransformPoint, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_From:
+          m_Property:
+            rid: 7705553967279767569
+        m_Point:
+          m_Property:
+            rid: 7705553967279767568
+    - rid: 7705553967279767568
+      type: {class: GetPositionVector3, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Position: {x: 0, y: 0, z: 0}
+    - rid: 7705553967279767569
+      type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 7705553967279767620
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.5
 --- !u!114 &40682300650993287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +228,7 @@ MonoBehaviour:
     - rid: 7705553620531413303
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 2.5
+        m_Value: 7.5
     - rid: 7705553620531413304
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
@@ -144,21 +251,10 @@ MonoBehaviour:
     - rid: 7705553644564513534
     - rid: 7705553644564513512
   m_TriggerEvent:
-    rid: 7705553620531413350
+    rid: 7705553965994738417
   references:
     version: 2
     RefIds:
-    - rid: 7705553620531413350
-      type: {class: EventTriggerEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data:
-        m_Collider:
-          m_Option: 1
-          m_GameObject:
-            m_Property:
-              rid: 7705553620531413351
-    - rid: 7705553620531413351
-      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data: 
     - rid: 7705553626933231665
       type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -228,6 +324,17 @@ MonoBehaviour:
       type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: 100
+    - rid: 7705553965994738417
+      type: {class: EventTriggerEnter, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Collider:
+          m_Option: 1
+          m_GameObject:
+            m_Property:
+              rid: 7705553965994738418
+    - rid: 7705553965994738418
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1001 &4313726675705516077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,7 +402,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 123b22c48b86cb44ebca9cfa67fdf293, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7b31cb2117b9e684daef43e458020fb6, type: 2}
+      objectReference: {fileID: 2100000, guid: 64dc26e03019484499d78cd694a270bb, type: 2}
     - target: {fileID: 919132149155446097, guid: 123b22c48b86cb44ebca9cfa67fdf293, type: 3}
       propertyPath: m_Name
       value: Visual
