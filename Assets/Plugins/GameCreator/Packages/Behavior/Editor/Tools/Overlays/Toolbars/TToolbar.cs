@@ -4,7 +4,6 @@ using GameCreator.Runtime.Common;
 using UnityEditor;
 using UnityEditor.Overlays;
 using UnityEditor.Toolbars;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace GameCreator.Editor.Behavior
@@ -29,6 +28,9 @@ namespace GameCreator.Editor.Behavior
         // MEMBERS: -------------------------------------------------------------------------------
 
         [NonSerialized] protected OverlayToolbar m_Toolbar;
+
+        [NonSerialized] private EditorToolbarButton m_ButtonFrame;
+        [NonSerialized] private EditorToolbarToggle m_ToggleSnap;
         
         // PROPERTIES: ----------------------------------------------------------------------------
         
@@ -47,6 +49,8 @@ namespace GameCreator.Editor.Behavior
         {
             base.OnCreated();
             this.GraphWindow.Overlays.Toolbar = this;
+            
+            EditorApplication.playModeStateChanged += this.OnChangePlayMode;
         }
 
         // CONTENT: -------------------------------------------------------------------------------
@@ -68,7 +72,7 @@ namespace GameCreator.Editor.Behavior
 
         protected virtual void CreateButtons()
         {
-            EditorToolbarButton frameDefault = new EditorToolbarButton(
+            this.m_ButtonFrame = new EditorToolbarButton(
                 string.Empty,
                 ICON_FRAME.Texture,
                 this.Frame
@@ -77,7 +81,7 @@ namespace GameCreator.Editor.Behavior
                 tooltip = "Focus on selection [F]"
             };
             
-            EditorToolbarToggle toggleSnap = new EditorToolbarToggle(
+            this.m_ToggleSnap = new EditorToolbarToggle(
                 string.Empty,
                 ICON_SNAP_ON.Texture,
                 ICON_SNAP_OFF.Texture
@@ -87,10 +91,10 @@ namespace GameCreator.Editor.Behavior
                 tooltip = "Toggle snapping to grid"
             };
 
-            toggleSnap.RegisterValueChangedCallback(ToggleSnap);
+            this.m_ToggleSnap.RegisterValueChangedCallback(ToggleSnap);
 
-            this.m_Toolbar.Add(frameDefault);
-            this.m_Toolbar.Add(toggleSnap);
+            this.m_Toolbar.Add(this.m_ButtonFrame);
+            this.m_Toolbar.Add(this.m_ToggleSnap);
         }
 
         // PRIVATE METHODS: -----------------------------------------------------------------------
@@ -104,6 +108,19 @@ namespace GameCreator.Editor.Behavior
         private static void ToggleSnap(ChangeEvent<bool> eventChange)
         {
             Snap = !Snap;
+        }
+        
+        private void OnChangePlayMode(PlayModeStateChange modeChange)
+        {
+            if (modeChange != PlayModeStateChange.EnteredEditMode) return;
+            
+            if (this.m_ButtonFrame != null) this.m_ButtonFrame.icon = ICON_FRAME.Texture;
+
+            if (this.m_ToggleSnap != null)
+            {
+                this.m_ToggleSnap.onIcon = ICON_SNAP_ON.Texture;
+                this.m_ToggleSnap.offIcon = ICON_SNAP_OFF.Texture;
+            }
         }
     }
 }

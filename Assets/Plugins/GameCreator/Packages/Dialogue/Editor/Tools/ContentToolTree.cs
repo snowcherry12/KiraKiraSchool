@@ -61,7 +61,7 @@ namespace GameCreator.Editor.Dialogue
             this.m_TreeView = new TreeView
             {
                 fixedItemHeight = DEFAULT_HEIGHT,
-                horizontalScrollingEnabled = true,
+                horizontalScrollingEnabled = false,
                 makeItem = this.MakeItem,
                 bindItem = this.OnBindItem,
                 unbindItem = this.OnUnbindItem,
@@ -74,14 +74,7 @@ namespace GameCreator.Editor.Dialogue
             this.m_TreeView.showAlternatingRowBackgrounds = AlternatingRowBackground.All;
 
             this.m_TreeView.itemIndexChanged += this.ReorderItems;
-            
-            // TODO: [21/03/2023] Remove once Unity 2022.3 LTS is released
-            
-            #if UNITY_2022_2_OR_NEWER
             this.m_TreeView.selectionChanged += this.SelectionChange;
-            #else
-            this.m_TreeView.onSelectionChange += this.SelectionChange;
-            #endif
             
             this.m_TreeView.RegisterCallback<KeyDownEvent>(keyEvent =>
             {
@@ -141,7 +134,6 @@ namespace GameCreator.Editor.Dialogue
         
         private void ReorderItems(int indexSource, int indexTarget)
         {
-            this.m_TreeView.viewController.RebuildTree();
             this.m_TreeView.RefreshItems();
             
             // int idSource = this.m_TreeView.GetIdForIndex(indexSource);
@@ -253,6 +245,16 @@ namespace GameCreator.Editor.Dialogue
             
             this.m_TreeView.SetSelection(index);
             return true;
+        }
+        
+        public void Expand()
+        {
+            this.m_TreeView.ExpandAll();
+        }
+        
+        public void Collapse()
+        {
+            this.m_TreeView.CollapseAll();
         }
 
         // SYNCHRONIZE METHODS: -------------------------------------------------------------------

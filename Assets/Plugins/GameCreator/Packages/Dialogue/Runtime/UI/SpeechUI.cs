@@ -1,6 +1,7 @@
 using System;
 using GameCreator.Runtime.Common;
 using GameCreator.Runtime.Common.UnityUI;
+using GameCreator.Runtime.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -159,11 +160,27 @@ namespace GameCreator.Runtime.Dialogue.UnityUI
                     this.m_ActorDescription.Text = node.Actor.GetDescription(this.m_Args);   
                 }
             }
+
+            if (node.Actor != null)
+            {
+                GameObject target = this.m_Story.Content.GetTargetFromActor(node.Actor, this.m_Args);
+                if (target != null)
+                {
+                    CommandArgs commandArgs = new CommandArgs(Actor.COMMAND_ACTOR_START, target);
+                    Trigger[] triggers = target.GetComponents<Trigger>();
+                    
+                    foreach (Trigger trigger in triggers)
+                    {
+                        if (trigger == null) continue;
+                        trigger.OnReceiveCommand(commandArgs);
+                    }
+                }
+            }
             
             Expression expression = node.Actor != null 
                 ? node.Actor.GetExpressionFromIndex(node.Expression) 
                 : null;
-
+            
             Sprite expressionSprite = expression?.GetSprite(this.m_Args);
             
             if (this.m_ActivePortrait != null)
@@ -224,6 +241,24 @@ namespace GameCreator.Runtime.Dialogue.UnityUI
             if (this.m_DialogueUI.SpeechSkin != null)
             {
                 this.m_DialogueUI.SpeechSkin.PlayClipFinish();
+            }
+            
+            Node node = this.m_Story.Content.Get(nodeId);
+            
+            if (node.Actor != null)
+            {
+                GameObject target = this.m_Story.Content.GetTargetFromActor(node.Actor, this.m_Args);
+                if (target != null)
+                {
+                    CommandArgs commandArgs = new CommandArgs(Actor.COMMAND_ACTOR_FINISH, target);
+                    Trigger[] triggers = target.GetComponents<Trigger>();
+                    
+                    foreach (Trigger trigger in triggers)
+                    {
+                        if (trigger == null) continue;
+                        trigger.OnReceiveCommand(commandArgs);
+                    }
+                }
             }
             
             if (this.m_Active != null) this.m_Active.SetActive(false);

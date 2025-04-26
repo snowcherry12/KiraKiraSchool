@@ -23,7 +23,7 @@ namespace GameCreator.Runtime.VisualScripting
         [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
 
         // PROPERTIES: ----------------------------------------------------------------------------
-
+        
         protected override string Summary => string.Format(
             "is Music {0}{1}{2}{3} playing",
             this.m_AudioClip.ToString() != "None"

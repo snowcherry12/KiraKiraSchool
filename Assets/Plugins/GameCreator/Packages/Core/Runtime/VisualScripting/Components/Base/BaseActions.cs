@@ -50,7 +50,7 @@ namespace GameCreator.Runtime.VisualScripting
         {
             await this.m_Instructions.Run(args);
         }
-
+        
         protected void StopExecInstructions()
         {
             this.m_Instructions.Cancel();

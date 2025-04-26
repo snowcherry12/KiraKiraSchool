@@ -40,7 +40,7 @@ namespace GameCreator.Runtime.Dialogue.UnityUI
         
         [field: NonSerialized] public static DialogueUI Current { get; private set; }
         [field: NonSerialized] public static bool IsOpen { get; private set; }
-
+        
         [field: NonSerialized] public DialogueSkin DialogueSkin { get; private set; }
         [field: NonSerialized] public SpeechSkin SpeechSkin { get; private set; }
 
@@ -119,7 +119,7 @@ namespace GameCreator.Runtime.Dialogue.UnityUI
         }
 
         // CALLBACKS: -----------------------------------------------------------------------------
-
+        
         private void OnStop()
         {
             if (ApplicationManager.IsExiting) return;

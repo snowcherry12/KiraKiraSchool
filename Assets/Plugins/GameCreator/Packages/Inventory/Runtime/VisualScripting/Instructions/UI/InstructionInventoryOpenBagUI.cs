@@ -34,7 +34,7 @@ namespace GameCreator.Runtime.Inventory.UnityUI
         // PROPERTIES: ----------------------------------------------------------------------------
 
         public override string Title => string.Format(
-            "Open {0}{1}",
+            "Open {0} Bag{1}",
             this.m_Bag,
             this.m_WaitToClose ? " and wait" : string.Empty
         );

@@ -1,4 +1,3 @@
-using FMODUnity;
 using UnityEngine;
 
 namespace GameCreator.Runtime.Common

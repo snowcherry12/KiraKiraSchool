@@ -146,13 +146,15 @@ namespace GameCreator.Runtime.Cameras
         {
             if (this.m_CurrentShotCamera.UseSmoothPosition && this.Position != position)
             {
-                this.Position = Vector3.SmoothDamp(
-                    this.Position, position,
-                    ref this.m_PositionVelocity,
-                    this.m_SmoothTimePosition,
-                    Mathf.Infinity,
-                    deltaTime
-                );
+                this.Position = deltaTime > float.Epsilon
+                    ? Vector3.SmoothDamp(
+                        this.Position, position,
+                        ref this.m_PositionVelocity,
+                        this.m_SmoothTimePosition,
+                        Mathf.Infinity,
+                        deltaTime
+                    )
+                    : this.Position;
             }
             else
             {

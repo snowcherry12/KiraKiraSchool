@@ -39,6 +39,9 @@ namespace GameCreator.Runtime.Dialogue
 
         // EVENTS: --------------------------------------------------------------------------------
 
+        public static event Action<Dialogue> EventAnyStart;
+        public static event Action<Dialogue> EventAnyFinish;
+        
         public static event Action<Dialogue> EventStartLine;
         public static event Action<Dialogue> EventFinishLine;
         
@@ -58,10 +61,17 @@ namespace GameCreator.Runtime.Dialogue
                 return;
             }
 
+            if (Current != null)
+            {
+                Current.Stop();
+            }
+            
             Current = this;
             
             await DialogueUI.Open(this.m_Story.Content.DialogueSkin, this, true);
+            
             this.EventStart?.Invoke();
+            EventAnyStart?.Invoke(this);
 
             this.m_Story.EventStartNext -= this.OnStartNext;
             this.m_Story.EventFinishNext -= this.OnFinishNext;
@@ -78,11 +88,16 @@ namespace GameCreator.Runtime.Dialogue
         {
             this.m_Story.EventStartNext -= this.OnStartNext;
             this.m_Story.EventFinishNext -= this.OnFinishNext;
-
+            
             this.m_Story.IsCanceled = true;
+            
             this.EventFinish?.Invoke();
-
-            Current = null;
+            EventAnyFinish?.Invoke(this);
+            
+            if (Current == this)
+            {
+                Current = null;
+            }
         }
         
         // PRIVATE METHODS: -----------------------------------------------------------------------

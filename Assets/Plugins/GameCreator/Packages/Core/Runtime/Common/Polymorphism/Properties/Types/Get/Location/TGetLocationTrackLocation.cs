@@ -19,7 +19,9 @@ namespace GameCreator.Runtime.Common
         {
             None,
             TowardsTarget,
-            AwayFromTarget
+            AwayFromTarget,
+            SameAsTarget,
+            OppositeOfTarget
         }
         
         [SerializeField]
@@ -40,6 +42,8 @@ namespace GameCreator.Runtime.Common
                 Rotation.None => this.GetLocation(from, to, args, Vector3.zero),
                 Rotation.TowardsTarget => this.GetLocationTowards(from, to, args, Vector3.zero),
                 Rotation.AwayFromTarget => this.GetLocationAway(from, to, args, Vector3.zero),
+                Rotation.SameAsTarget => this.GetLocationSame(from, to, args, Vector3.zero),
+                Rotation.OppositeOfTarget => this.GetLocationOpposite(from, to, args, Vector3.zero),
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -72,6 +76,22 @@ namespace GameCreator.Runtime.Common
                 this.GetRotation(from, to , args, false)
             );
         }
+        
+        private Location GetLocationSame(GameObject from, GameObject to, Args args, Vector3 offset)
+        {
+            return new Location(
+                this.GetPosition(from, to, args, offset),
+                this.GetMimicRotation(from, to , args, true)
+            );
+        }
+        
+        private Location GetLocationOpposite(GameObject from, GameObject to, Args args, Vector3 offset)
+        {
+            return new Location(
+                this.GetPosition(from, to, args, offset),
+                this.GetMimicRotation(from, to , args, false)
+            );
+        }
 
         private IRotation GetRotation(GameObject from, GameObject to, Args args, bool towards)
         {
@@ -95,6 +115,25 @@ namespace GameCreator.Runtime.Common
                     return towards
                         ? new RotationConstant(Quaternion.LookRotation(direction))
                         : new RotationConstant(Quaternion.LookRotation(-direction));
+            }
+        }
+        
+        private IRotation GetMimicRotation(GameObject from, GameObject to, Args args, bool towards)
+        {
+            if (from == null) return new RotationNone();
+            if (to == null) return new RotationNone();
+
+            switch (this.m_TrackTarget)
+            {
+                case true:
+                    return towards
+                        ? new RotationSame(to.transform)
+                        : new RotationOpposite(to.transform);
+                    
+                case false:
+                    return towards
+                        ? new RotationConstant(to.transform.rotation)
+                        : new RotationConstant(to.transform.rotation * Quaternion.Euler(0f, 180f, 0f));
             }
         }
         

@@ -135,11 +135,12 @@ namespace GameCreator.Runtime.Characters
                     if (head != null) return head.position;
                 }
 
-                return this.transform.position + Vector3.up * this.Motion.Height / 2f;
+                return this.transform.position + Vector3.up * (this.Motion.Height * 0.5f);
             }
         }
 
-        public Vector3 Feet => this.transform.position - Vector3.up * this.Motion.Height / 2f;
+        public Vector3 Crown => this.transform.position + Vector3.up * this.Motion.Height * 0.5f;
+        public Vector3 Feet => this.transform.position - Vector3.up * this.Motion.Height * 0.5f;
         
         // EVENTS: --------------------------------------------------------------------------------
 

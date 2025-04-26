@@ -67,10 +67,13 @@ namespace GameCreator.Runtime.Characters
 
         void StartFollowingTarget(Transform target, float minRadius, float maxRadius, int priority = 1);
         void StopFollowingTarget(int priority = 1);
+        MotionFollowData GetFollowingTarget();
 
         // OTHER METHODS: -------------------------------------------------------------------------
         
         void Jump();
         void Jump(float force);
+        void ForceJump();
+        void ForceJump(float force);
     }
 }

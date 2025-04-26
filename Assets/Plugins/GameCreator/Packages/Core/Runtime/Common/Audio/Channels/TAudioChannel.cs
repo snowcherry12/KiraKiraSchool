@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Audio;
-using System;
 
 namespace GameCreator.Runtime.Common.Audio
 {
@@ -112,6 +111,7 @@ namespace GameCreator.Runtime.Common.Audio
 
             return false;
         }
+
         public void ChangePitch(AudioClip audioClip, GameObject target, float pitch)
         {
             if (target == null) return;
@@ -151,7 +151,6 @@ namespace GameCreator.Runtime.Common.Audio
 
             await audioBuffer.Play(audioClip, audioConfig, args);
         }
-
         public async Task Play(FMODAudio fmodAudio, IAudioConfig audioConfig, Args args)
         {
             if (fmodAudio.Audio.IsNull) return;
@@ -182,7 +181,6 @@ namespace GameCreator.Runtime.Common.Audio
 
             await Task.WhenAll(tasks);
         }
-
         public async Task Stop(FMODAudio fmodAudio, float transitionOut)
         {
             if (fmodAudio.Audio.IsNull) return;
@@ -196,7 +194,7 @@ namespace GameCreator.Runtime.Common.Audio
 
             await Task.WhenAll(tasks);
         }
-        
+
         public async Task Stop(GameObject target, float transitionOut)
         {
             if (target == null) return;
@@ -226,7 +224,6 @@ namespace GameCreator.Runtime.Common.Audio
 
             await Task.WhenAll(tasks);
         }
-
         public async Task Stop(FMODAudio fmodAudio, GameObject target, float transitionOut)
         {
             if (fmodAudio.Audio.IsNull) return;

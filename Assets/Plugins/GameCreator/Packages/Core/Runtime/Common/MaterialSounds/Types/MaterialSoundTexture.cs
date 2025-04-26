@@ -1,6 +1,6 @@
 using System;
+using GameCreator.Runtime.Common;
 using UnityEngine;
-using FMODUnity;
 
 namespace GameCreator.Runtime.Common
 {
@@ -55,7 +55,9 @@ namespace GameCreator.Runtime.Common
                 return this.m_FMODVariations[index];
             }
         }
+
         public Texture Texture => this.m_Texture;
+
         public PoolField Impact => this.m_Impact;
         
         // STATIC CONSTRUCTOR: --------------------------------------------------------------------

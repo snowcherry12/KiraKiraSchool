@@ -132,6 +132,7 @@ namespace GameCreator.Editor.VisualScripting
 
             clipTool.Property.serializedObject.Update();
             field.Bind(this.SequenceTool.SerializedObject);
+            field.RegisterValueChangeCallback(_ => clipTool.OnPropertyChange());
         }
 
         private ClipTool SelectedClipTool()

@@ -13,6 +13,11 @@ namespace GameCreator.Runtime.Dialogue
     
     public class Actor : ScriptableObject
     {
+        public const string COMMAND_ACTOR_START = "on-dialogue-actor-start";
+        public const string COMMAND_ACTOR_FINISH = "on-dialogue-actor-finish";
+        
+        // EXPOSED MEMBERS: -----------------------------------------------------------------------
+        
         [SerializeField] private Actant m_Actant = new Actant();
         [SerializeField] private Expressions m_Expressions = new Expressions();
         [SerializeField] private Typewriter m_Typewriter = new Typewriter();

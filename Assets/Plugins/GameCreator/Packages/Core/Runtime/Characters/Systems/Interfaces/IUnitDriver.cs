@@ -16,6 +16,7 @@ namespace GameCreator.Runtime.Characters
         bool IsGrounded { get; }
         Vector3 FloorNormal { get; }
         
+        bool UpdateKinematics { get; set; }
         float GravityInfluence { get; }
 
         bool Collision { get; set; }
@@ -36,5 +37,6 @@ namespace GameCreator.Runtime.Characters
         void ResetVerticalVelocity();
         void SetGravityInfluence(int key, float influence);
         void RemoveGravityInfluence(int key);
+        void ForceGrounded(bool value);
     }
 }

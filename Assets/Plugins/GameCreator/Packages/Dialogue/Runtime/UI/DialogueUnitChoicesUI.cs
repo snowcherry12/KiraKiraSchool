@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using GameCreator.Runtime.Common;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace GameCreator.Runtime.Dialogue.UnityUI
@@ -14,9 +15,16 @@ namespace GameCreator.Runtime.Dialogue.UnityUI
         private const string ERR_NULL_CONTENT = "Null 'Content Choice' in Choices UI component";
         private const string ERR_NULL_PREFAB = "Null 'Prefab Choice' in Choices UI component";
         
+        private enum SelectionMode
+        {
+            None,
+            First
+        }
+        
         // EXPOSED MEMBERS: -----------------------------------------------------------------------
 
         [SerializeField] private GameObject m_Active;
+        [SerializeField] private SelectionMode m_Selection = SelectionMode.First;
 
         [SerializeField] private RectTransform m_ContentChoice;
         [SerializeField] private GameObject m_PrefabChoice;
@@ -95,7 +103,7 @@ namespace GameCreator.Runtime.Dialogue.UnityUI
                 this.m_Args, false
             );
 
-            Button selection = null;
+            Button candidateSelection = null;
             for (int i = 0; i < choices.Count; i++)
             {
                 int choiceId = choices[i];
@@ -112,14 +120,29 @@ namespace GameCreator.Runtime.Dialogue.UnityUI
                     choiceUI.Setup(i, choiceId, choice, this.m_Story, this.m_Args, this);
                 }
 
-                if (selection == null && choiceUI.Button != null && choiceUI.Button.interactable)
+                if (candidateSelection == null && choiceUI.Button != null && choiceUI.Button.interactable)
                 {
-                    selection = choiceUI.Button;
+                    candidateSelection = choiceUI.Button;
                 }
             }
 
             if (this.m_ContentChoice.childCount <= 0) return;
-            if (selection != null) selection.Select();
+
+            switch (this.m_Selection)
+            {
+                case SelectionMode.None: 
+                    EventSystem.current.SetSelectedGameObject(null);
+                    break;
+                
+                case SelectionMode.First:
+                    if (candidateSelection != null)
+                    {
+                        candidateSelection.Select();
+                    }
+                    break;
+                
+                default: throw new ArgumentOutOfRangeException();
+            }
         }
 
         private void OnFinishChoice(int nodeId)

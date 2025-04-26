@@ -1,16 +1,15 @@
 using System;
 using GameCreator.Runtime.Common;
-using GameCreator.Runtime.Quests;
 using UnityEngine;
 
-namespace GameCreator.Runtime.Inventory
+namespace GameCreator.Runtime.Quests
 {
     [Title("Journal")]
     [Category("Quests/Journal")]
     
     [Image(typeof(IconJournalSolid), ColorTheme.Type.Yellow)]
     [Description("A Journal component attached to a scene Game Object or prefab")]
-
+    
     [Serializable] [HideLabelsInEditor]
     public class GetGameObjectQuestsJournal : PropertyTypeGetGameObject
     {

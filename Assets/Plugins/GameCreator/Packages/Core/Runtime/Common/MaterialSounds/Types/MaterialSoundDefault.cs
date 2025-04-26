@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using FMODUnity;
 
 namespace GameCreator.Runtime.Common
 {

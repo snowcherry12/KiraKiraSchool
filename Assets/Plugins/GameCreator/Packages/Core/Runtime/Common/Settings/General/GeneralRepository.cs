@@ -21,8 +21,8 @@ namespace GameCreator.Runtime.Common
 
         // PROPERTIES: ----------------------------------------------------------------------------
 
-        public GeneralSave Save => this.m_Save;
         public GeneralAudio Audio => this.m_Audio;
+        public GeneralSave Save => this.m_Save;
 
         // EDITOR ENTER PLAYMODE: -----------------------------------------------------------------
 

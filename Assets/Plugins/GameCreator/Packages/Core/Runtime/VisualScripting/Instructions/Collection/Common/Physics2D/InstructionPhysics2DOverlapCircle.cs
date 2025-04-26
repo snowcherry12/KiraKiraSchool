@@ -41,9 +41,10 @@ namespace GameCreator.Runtime.VisualScripting
             Vector3 center = this.m_Center.Get(args);
             float radius = (float) this.m_Radius.Get(args);
 
-            return Physics2D.OverlapCircleNonAlloc(
-                center, radius, 
-                colliders, this.m_LayerMask
+            return Physics2D.OverlapCircle(
+                center, radius,
+                new ContactFilter2D { useLayerMask = true, layerMask = this.m_LayerMask },
+                colliders
             );
         }
     }

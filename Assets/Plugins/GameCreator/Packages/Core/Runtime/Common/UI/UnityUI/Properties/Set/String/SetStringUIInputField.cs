@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,9 +22,18 @@ namespace GameCreator.Runtime.Common.UnityUI
             if (gameObject == null) return;
 
             InputField inputField = gameObject.Get<InputField>();
-            if (inputField == null) return;
-            
-            inputField.text = value;
+            if (inputField != null)
+            {
+                inputField.text = value;
+                return;
+            }
+
+            TMP_InputField tmpInputField = gameObject.Get<TMP_InputField>();
+            if (tmpInputField != null)
+            {
+                tmpInputField.text = value;
+                return;
+            }
         }
 
         public override string Get(Args args)
@@ -31,8 +41,15 @@ namespace GameCreator.Runtime.Common.UnityUI
             GameObject gameObject = this.m_InputField.Get(args);
             if (gameObject == null) return default;
 
+            string result = string.Empty;
+            
             InputField inputField = gameObject.Get<InputField>();
-            return inputField != null ? inputField.text : string.Empty;
+            if (inputField != null) result = inputField.text;
+            
+            TMP_InputField tmpInputField = gameObject.Get<TMP_InputField>();
+            if (tmpInputField != null) result = tmpInputField.text;
+
+            return result;
         }
 
         public static PropertySetString Create => new PropertySetString(

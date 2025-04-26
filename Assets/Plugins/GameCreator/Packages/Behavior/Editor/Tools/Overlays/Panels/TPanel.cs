@@ -1,6 +1,7 @@
 using System;
 using GameCreator.Runtime.Behavior;
 using GameCreator.Runtime.Common;
+using UnityEditor;
 using UnityEditor.Overlays;
 using UnityEditor.Toolbars;
 using UnityEngine.UIElements;
@@ -25,6 +26,8 @@ namespace GameCreator.Editor.Behavior
         
         private static readonly IIcon ICON_BREADCRUMBS_SOLID = new IconBehaviorBreadcrumbsSolid(ColorTheme.Type.TextNormal);
         private static readonly IIcon ICON_BREADCRUMBS_OUTLINE = new IconBehaviorBreadcrumbsOutline(ColorTheme.Type.TextLight);
+        
+        private static readonly IIcon ICON_MAXIMIZE = new IconFullscreen(ColorTheme.Type.TextNormal);
 
         // MEMBERS: -------------------------------------------------------------------------------
 
@@ -47,6 +50,8 @@ namespace GameCreator.Editor.Behavior
             base.OnCreated();
             this.GraphWindow.Overlays.Panel = this;
             this.GraphWindow.Overlays.EventDisplay += this.RefreshButtons;
+
+            EditorApplication.playModeStateChanged += this.OnChangePlayMode;
         }
 
         public override void OnWillBeDestroyed()
@@ -164,6 +169,34 @@ namespace GameCreator.Editor.Behavior
 
             bool newValue = !this.GraphWindow.maximized;
             this.GraphWindow.maximized = newValue;
+        }
+        
+        private void OnChangePlayMode(PlayModeStateChange modeChange)
+        {
+            if (modeChange != PlayModeStateChange.EnteredEditMode) return;
+
+            if (this.m_ButtonBlackboard != null)
+            {
+                this.m_ButtonBlackboard.onIcon = ICON_BLACKBOARD_SOLID.Texture;
+                this.m_ButtonBlackboard.offIcon = ICON_BLACKBOARD_OUTLINE.Texture;   
+            }
+
+            if (this.m_ButtonInspector != null)
+            {
+                this.m_ButtonInspector.onIcon = ICON_INSPECTOR_SOLID.Texture;
+                this.m_ButtonInspector.offIcon = ICON_INSPECTOR_OUTLINE.Texture;   
+            }
+
+            if (this.m_ButtonBreadcrumb != null)
+            {
+                this.m_ButtonBreadcrumb.onIcon = ICON_BREADCRUMBS_SOLID.Texture;
+                this.m_ButtonBreadcrumb.offIcon = ICON_BREADCRUMBS_OUTLINE.Texture;   
+            }
+            
+            if (this.m_ButtonMaximize != null)
+            {
+                this.m_ButtonMaximize.icon = ICON_MAXIMIZE.Texture;
+            }
         }
     }
 }

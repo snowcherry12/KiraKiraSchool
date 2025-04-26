@@ -34,7 +34,7 @@ namespace GameCreator.Editor.Behavior
             {
                 text = $"Create {window.AssetName}"
             };
-
+            
             this.m_ButtonOpenSelection = new Button(this.OpenSelection);
             
             content.Add(this.m_ButtonCreateAsset);

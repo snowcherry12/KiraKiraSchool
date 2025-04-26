@@ -13,6 +13,13 @@ namespace GameCreator.Runtime.Characters
 
         protected float m_MinRadius;
         protected float m_MaxRadius;
+        
+        // PROPERTIES: ----------------------------------------------------------------------------
+        
+        public Transform Target => this.m_Target;
+        
+        public float MinRadius => this.m_MinRadius;
+        public float MaxRadius => this.m_MaxRadius;
 
         // INITIALIZERS: --------------------------------------------------------------------------
 

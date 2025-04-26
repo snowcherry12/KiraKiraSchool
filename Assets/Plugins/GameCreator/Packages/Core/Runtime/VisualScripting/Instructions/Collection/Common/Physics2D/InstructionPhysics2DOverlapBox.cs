@@ -55,10 +55,10 @@ namespace GameCreator.Runtime.VisualScripting
             Vector3 size = this.m_Size.Get(args);
             float angle = (float) this.m_Angle.Get(args);
 
-            int hits = Physics2D.BoxCastNonAlloc(
+            int hits = Physics2D.BoxCast(
                 center, size, angle, Vector2.up,
-                HITS, angle,
-                this.m_LayerMask
+                new ContactFilter2D { useLayerMask = true, layerMask = this.m_LayerMask },
+                HITS, angle
             );
 
             for (int i = 0; i < hits; ++i)

@@ -40,8 +40,8 @@ namespace GameCreator.Runtime.Common
         {
             if (Instance.EventSystem != null && Instance.InputModule != null) return true;
             
-            Instance.EventSystem = FindObjectOfType<EventSystem>();
-            Instance.InputModule = FindObjectOfType<BaseInputModule>();
+            Instance.EventSystem = FindAnyObjectByType<EventSystem>();
+            Instance.InputModule = FindAnyObjectByType<BaseInputModule>();
 
             if (Instance.EventSystem == null)
             {

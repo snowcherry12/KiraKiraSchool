@@ -15,8 +15,10 @@ namespace GameCreator.Runtime.Stats.UnityUI
         [SerializeField] private UICommon m_Common = new UICommon();
 
         [SerializeField] private TextReference m_Count;
+        
         [SerializeField] private TextReference m_RemainingTime;
-
+        [SerializeField] private string m_FormatRemainingTime = "0.##";
+        
         [SerializeField] private Image m_ImageFill;
         [SerializeField] private RectTransform m_ScaleX;
         [SerializeField] private RectTransform m_ScaleY;
@@ -64,7 +66,7 @@ namespace GameCreator.Runtime.Stats.UnityUI
             }
 
             float remainingTime = statusEffect.HasDuration ? statusEffect.TimeRemaining : 0f;
-            this.m_RemainingTime.Text = FromFloat(remainingTime, remainingTime.ToString("0:F2"));
+            this.m_RemainingTime.Text = FromFloat(remainingTime, this.m_FormatRemainingTime);
         }
 
         // PUBLIC METHODS: ------------------------------------------------------------------------
@@ -118,6 +120,7 @@ namespace GameCreator.Runtime.Stats.UnityUI
 
         private static string FromFloat(float value, string format)
         {
+            if (string.IsNullOrEmpty(format)) format = "0.##";
             return value.ToString(format, CultureInfo.InvariantCulture);
         }
     }

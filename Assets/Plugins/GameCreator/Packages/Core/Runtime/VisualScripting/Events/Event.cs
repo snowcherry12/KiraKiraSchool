@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using GameCreator.Runtime.Characters;
 using GameCreator.Runtime.Common;
 using UnityEngine;
@@ -163,14 +164,12 @@ namespace GameCreator.Runtime.VisualScripting
         protected internal virtual void OnReceiveSignal(Trigger trigger, SignalArgs args)
         { }
         
-        [Obsolete("Soon to deprecate. Use OnReceiveCommand(trigger, CommandArgs)")]
-        protected internal virtual void OnReceiveCommand(Trigger trigger, PropertyName command)
-        { }
-        
         protected internal virtual void OnReceiveCommand(Trigger trigger, CommandArgs args)
         { }
-        
-        protected internal virtual void OnInteract(Trigger trigger, Character character)
-        { }
+
+        protected internal virtual bool OnInteract(Trigger trigger, Character character)
+        {
+            return false;
+        }
     }
 }

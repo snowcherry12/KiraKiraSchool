@@ -225,10 +225,12 @@ namespace GameCreator.Runtime.Common
 
                 foreach (Material material in renderer.sharedMaterials)
                 {
-                    // if (material.HasTexture(materialSounds.TextureID) == false) continue;
+                    // If error, comment this line
+                    if (material.HasTexture(materialSounds.TextureID) == false) continue;
                     
                     Texture texture = material.GetTexture(materialSounds.TextureID);
-                    // if (texture == null) continue;
+                    // If error, comment this line
+                    if (texture == null) continue;
                     
                     this.PlaySound(texture, 1f, speed, transform, args);
                     this.PlayImpact(texture, transform, hit, yaw);
@@ -254,18 +256,18 @@ namespace GameCreator.Runtime.Common
         
         private void PlaySound(Texture texture, float weight, float speed, Transform target, Args args)
         {
-            // if (texture == null) return;
+            // If error, comment this line
+            if (texture == null) return;
 
             IMaterialSound materialSound;
             AudioConfigSoundEffect config;
 
             float pitch = Mathf.Lerp(PITCH_LERP_WEIGHT.x, PITCH_LERP_WEIGHT.y, weight);
 
-            if (texture != null && this.m_LookupTable.TryGetValue(texture, out MaterialSoundTexture material))
+            if (/* texture != null &&  */this.m_LookupTable.TryGetValue(texture, out MaterialSoundTexture material))
             {
                 AudioClip audioClip = material.Audio;
                 FMODAudio fmodAudio = material.FMODAudio;
-
                 if (audioClip == null && fmodAudio == null) return;
 
                 materialSound = material;
@@ -290,14 +292,13 @@ namespace GameCreator.Runtime.Common
             }
 
             if (config.Volume < float.Epsilon) return;
-            
-            if (materialSound.FMODAudio != null)
-            {
-                _ = AudioManager.Instance.SoundEffect.Play(materialSound.FMODAudio, config, args);
-            }
-            else if (materialSound.Audio != null)
+            if (materialSound.Audio != null)
             {
                 _ = AudioManager.Instance.SoundEffect.Play(materialSound.Audio, config, args);
+            }
+            else if (materialSound.FMODAudio != null)
+            {
+                _ = AudioManager.Instance.SoundEffect.Play(materialSound.FMODAudio, config, args);
             }
         }
         
@@ -368,13 +369,13 @@ namespace GameCreator.Runtime.Common
                 );
                 
                 if (config.Volume < float.Epsilon) return;
-                if (material.FMODAudio != null)
-                {
-                    _ = AudioManager.Instance.SoundEffect.Play(material.FMODAudio, config, args);
-                }
-                else if (material.Audio != null)
+                if (material.Audio != null)
                 {
                     _ = AudioManager.Instance.SoundEffect.Play(material.Audio, config, args);
+                }
+                else if (material.FMODAudio != null)
+                {
+                    _ = AudioManager.Instance.SoundEffect.Play(material.FMODAudio, config, args);
                 }
                 return;
             }
@@ -387,18 +388,18 @@ namespace GameCreator.Runtime.Common
             );
             
             if (configDefault.Volume < float.Epsilon) return;
-            if (materialSounds.MaterialSounds.DefaultSounds.FMODAudio != null)
+            if (materialSounds.MaterialSounds.DefaultSounds.Audio != null)
             {
                 _ = AudioManager.Instance.SoundEffect.Play(
-                    materialSounds.MaterialSounds.DefaultSounds.FMODAudio, 
+                    materialSounds.MaterialSounds.DefaultSounds.Audio, 
                     configDefault, 
                     args
                 );
             }
-            else if (materialSounds.MaterialSounds.DefaultSounds.Audio != null)
+            else if (materialSounds.MaterialSounds.DefaultSounds.FMODAudio != null)
             {
                 _ = AudioManager.Instance.SoundEffect.Play(
-                    materialSounds.MaterialSounds.DefaultSounds.Audio, 
+                    materialSounds.MaterialSounds.DefaultSounds.FMODAudio, 
                     configDefault, 
                     args
                 );

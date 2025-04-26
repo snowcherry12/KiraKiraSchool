@@ -65,6 +65,9 @@ Varyings LitPassVertex(Attributes input)
     output.dynamicLightmapUV = input.dynamicLightmapUV.xy * unity_DynamicLightmapST.xy + unity_DynamicLightmapST.zw;
     #endif
 
+    #if UNITY_VERSION >= 600000
+    OUTPUT_SH4(vertexInput.positionWS, output.normalWS.xyz, GetWorldSpaceNormalizeViewDir(vertexInput.positionWS), output.vertexSH, true);
+    #else
     #if UNITY_VERSION >= 202318
     OUTPUT_SH4(vertexInput.positionWS, output.normalWS.xyz, GetWorldSpaceNormalizeViewDir(vertexInput.positionWS), output.vertexSH);
     #else
@@ -72,6 +75,7 @@ Varyings LitPassVertex(Attributes input)
     OUTPUT_SH(vertexInput.positionWS, output.normalWS.xyz, GetWorldSpaceNormalizeViewDir(vertexInput.positionWS), output.vertexSH);
     #else
     OUTPUT_SH(output.normalWS.xyz, output.vertexSH);
+    #endif
     #endif
     #endif
 

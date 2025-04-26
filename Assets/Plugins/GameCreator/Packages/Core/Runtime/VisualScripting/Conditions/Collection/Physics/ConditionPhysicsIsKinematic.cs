@@ -36,8 +36,8 @@ namespace GameCreator.Runtime.VisualScripting
             if (rigidbody3D != null) return rigidbody3D.isKinematic;
 
             Rigidbody2D rigidbody2D = gameObject.Get<Rigidbody2D>();
-            if (rigidbody2D != null) return rigidbody2D.isKinematic;
-
+            if (rigidbody2D != null) return rigidbody2D.bodyType == RigidbodyType2D.Kinematic;
+            
             return false;
         }
     }

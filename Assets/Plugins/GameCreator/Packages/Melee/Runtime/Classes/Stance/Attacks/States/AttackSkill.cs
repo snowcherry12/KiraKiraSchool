@@ -152,6 +152,13 @@ namespace GameCreator.Runtime.Melee
             {
                 if (this.ComboSkill.SyncReaction != null)
                 {
+                    Collider attackerCollider = self.Get<Collider>();
+                    Collider victimCollider = this.m_Args.ComponentFromTarget<Collider>();
+                    if (attackerCollider != null && victimCollider != null)
+                    {
+                        Physics.IgnoreCollision(attackerCollider, victimCollider, true);
+                    }
+                    
                     Character enemy = this.m_Args.ComponentFromTarget<Character>();
                     if (enemy != null)
                     {
@@ -188,6 +195,18 @@ namespace GameCreator.Runtime.Melee
             
             self.Driver.RemoveGravityInfluence(GRAVITY_INFLUENCE_KEY);
 
+            if (this.ComboSkill.Motion == MeleeMotion.MotionWarp &&
+                this.ComboSkill.SyncReaction != null)
+            {
+                Collider attackerCollider = self.Get<Collider>();
+                Collider victimCollider = this.m_Args.ComponentFromTarget<Collider>();
+                
+                if (attackerCollider != null && victimCollider != null)
+                {
+                    Physics.IgnoreCollision(attackerCollider, victimCollider, false);
+                }
+            }
+            
             this.ComboSkill.Stop(
                 self, this.m_Cancel,
                 this.m_Args

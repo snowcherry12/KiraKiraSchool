@@ -26,9 +26,10 @@ namespace GameCreator.Runtime.VisualScripting
     [Serializable]
     public class InstructionCommonAudioAmbientPlay : Instruction
     {
-        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioNone.Create;
+        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioClip.Create;
         [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
         [SerializeField] private AudioConfigAmbient m_Config = new AudioConfigAmbient();
+
 
         public override string Title => string.Format(
             "Play Ambient: {0}{1}{2}{3}",
@@ -45,6 +46,7 @@ namespace GameCreator.Runtime.VisualScripting
                 ? this.m_FMODAudio
                 : string.Empty
         );
+
         protected override Task Run(Args args)
         {
             AudioClip audioClip = this.m_AudioClip.Get(args);

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using GameCreator.Runtime.Quests;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GameCreator.Runtime.Common
 {
@@ -30,6 +31,17 @@ namespace GameCreator.Runtime.Common
         private static void OnSubsystemsInit()
         {
             Values = new Dictionary<int, TSpotPoi>();
+            
+            SceneManager.sceneLoaded -= OnSceneLoad;
+            SceneManager.sceneLoaded += OnSceneLoad;
+        }
+
+        private static void OnSceneLoad(Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+        {
+            if (mode == UnityEngine.SceneManagement.LoadSceneMode.Single)
+            {
+                Values.Clear();
+            }
         }
     }
 }

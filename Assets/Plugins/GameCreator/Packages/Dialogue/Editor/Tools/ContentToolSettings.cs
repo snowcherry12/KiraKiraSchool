@@ -12,6 +12,7 @@ namespace GameCreator.Editor.Dialogue
     {
         private const string KEY_STATE = "gc:dialogue:settings:state";
         private const string KEY_DISPLAY_MODE = "gc:dialogue:settings:display-mode";
+        private const string KEY_DISPLAY_JUMPS = "gc:dialogue:settings:display-jumps";
         private const string KEY_DISPLAY_TAGS = "gc:dialogue:settings:display-tags";
 
         private const string NAME_SCROLL = "GC-Dialogue-Settings-Scroll";
@@ -48,6 +49,16 @@ namespace GameCreator.Editor.Dialogue
             }
         }
 
+        public bool DisplayJumps
+        {
+            get => EditorPrefs.GetBool(KEY_DISPLAY_JUMPS, true);
+            set
+            {
+                EditorPrefs.SetBool(KEY_DISPLAY_JUMPS, value);
+                this.EventDisplayJumps?.Invoke();
+            }
+        }
+        
         public bool DisplayTags
         {
             get => EditorPrefs.GetBool(KEY_DISPLAY_TAGS, true);
@@ -67,6 +78,7 @@ namespace GameCreator.Editor.Dialogue
         public event Action EventChangeActor;
         
         public event Action EventDisplayActors;
+        public event Action EventDisplayJumps;
         public event Action EventDisplayTags;
         
         // CONSTRUCTOR: ---------------------------------------------------------------------------
@@ -218,6 +230,16 @@ namespace GameCreator.Editor.Dialogue
                 this.DisplayActors = changeEvent.newValue;
             });
             
+            Toggle editorDisplayJumps = new Toggle("Display Jumps")
+            {
+                value = this.DisplayJumps
+            };
+            
+            editorDisplayJumps.RegisterValueChangedCallback(changeEvent =>
+            {
+                this.DisplayJumps = changeEvent.newValue;
+            });
+            
             Toggle editorDisplayTags = new Toggle("Display Tags")
             {
                 value = this.DisplayTags
@@ -230,6 +252,7 @@ namespace GameCreator.Editor.Dialogue
             
             this.m_EditorContent.Add(editorHeight);
             this.m_EditorContent.Add(editorDisplayActors);
+            this.m_EditorContent.Add(editorDisplayJumps);
             this.m_EditorContent.Add(editorDisplayTags);
         }
         

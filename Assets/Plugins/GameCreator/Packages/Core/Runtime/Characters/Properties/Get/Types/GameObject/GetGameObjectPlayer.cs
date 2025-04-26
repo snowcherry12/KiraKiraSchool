@@ -39,7 +39,7 @@ namespace GameCreator.Runtime.Characters
         {
             get
             {
-                Character[] instances = UnityEngine.Object.FindObjectsOfType<Character>();
+                Character[] instances = UnityEngine.Object.FindObjectsByType<Character>(FindObjectsSortMode.None);
                 foreach (Character instance in instances)
                 {
                     if (instance.IsPlayer) return instance.gameObject;

@@ -23,5 +23,15 @@ namespace GameCreator.Runtime.Common
         {
             return new Vector2(vector3.x, vector3.z);
         }
+        
+        /// <summary>
+        /// Converts a Vector3 to a Vector2 using only its Y and Z components
+        /// </summary>
+        /// <param name="vector3"></param>
+        /// <returns></returns>
+        public static Vector2 YZ(this Vector3 vector3)
+        {
+            return new Vector2(vector3.y, vector3.z);
+        }
     }
 }

@@ -62,7 +62,7 @@ namespace GameCreator.Runtime.Characters.Animim
                 animationClip, avatarMask,
                 blendMode, this.m_AnimimGraph, config
             );
-
+            
             var gesturePlayable = ScriptPlayable<GesturePlayableBehaviour>.Create(
                 this.m_AnimimGraph.Graph, template, 1
             );

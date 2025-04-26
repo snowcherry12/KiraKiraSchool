@@ -306,18 +306,6 @@ namespace GameCreator.Editor.VisualScripting
             this.RefreshButtons();
         }
 
-        // private void CreateNewClip(SerializedProperty newClip, float time, float duration)
-        // {
-        //     SerializedProperty instructions = newClip.FindPropertyRelative(ClipDefault.NAME_INSTRUCTIONS);
-        //     
-        //     if (instructions != null) 
-        //     {
-        //         instructions
-        //             .FindPropertyRelative(InstructionListDrawer.NAME_INSTRUCTIONS)
-        //             .arraySize = 0;
-        //     }
-        // }
-
         private void RefreshButtons()
         {
             this.m_ButtonRemove?.SetEnabled(

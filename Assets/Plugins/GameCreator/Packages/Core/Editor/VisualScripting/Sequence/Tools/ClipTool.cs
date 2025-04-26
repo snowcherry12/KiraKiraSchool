@@ -1,8 +1,8 @@
 using System;
 using GameCreator.Editor.Common;
-using GameCreator.Runtime.Common;
 using GameCreator.Runtime.VisualScripting;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -115,8 +115,10 @@ namespace GameCreator.Editor.VisualScripting
             this.m_ClipConnectionM = new VisualElement
             {
                 name = NAME_CLIP_CONNECTION_M,
-                pickingMode = connectionM == default ? PickingMode.Ignore : PickingMode.Position
+                pickingMode = connectionM == default ? PickingMode.Ignore : PickingMode.Position,
             };
+
+            this.m_ClipConnectionM.generateVisualContent += OnGenerateFadeConnectionM;
             
             this.m_ClipConnectionR = new VisualElement
             {
@@ -173,6 +175,11 @@ namespace GameCreator.Editor.VisualScripting
 
         // CALLBACK METHODS: ----------------------------------------------------------------------
 
+        public void OnPropertyChange()
+        {
+            this.m_ClipConnectionM.MarkDirtyRepaint();
+        }
+        
         private void OnChangeStart()
         {
             this.BringToFront();
@@ -309,6 +316,32 @@ namespace GameCreator.Editor.VisualScripting
             }, this.PropertyDuration.floatValue);
             
             eventContext.StopPropagation();
+        }
+        
+        private void OnGenerateFadeConnectionM(MeshGenerationContext context)
+        {
+            float ratio = this.TrackTool.Track.TransitionRange;
+            if (ratio <= 0f) return;
+            
+            Rect rect = context.visualElement.contentRect;
+            Painter2D painter = context.painter2D;
+            
+            painter.BeginPath();
+            painter.MoveTo(rect.min);
+            painter.LineTo(rect.min + new Vector2(rect.width * ratio, 0));
+            painter.LineTo(rect.min + new Vector2(0, rect.height));
+            painter.ClosePath();
+            
+            painter.fillColor = new Color(0f, 0f, 0f, 0.35f);
+            painter.Fill();
+            
+            painter.BeginPath();
+            painter.LineTo(rect.min + new Vector2(rect.width * ratio, 0));
+            painter.LineTo(rect.min + new Vector2(rect.width * ratio, rect.height));
+
+            painter.strokeColor = Color.white;
+            painter.lineWidth = 2f;
+            painter.Stroke();
         }
 
         // PUBLIC METHODS: ------------------------------------------------------------------------

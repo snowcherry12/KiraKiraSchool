@@ -31,6 +31,7 @@ namespace GameCreator.Runtime.Characters
         // MEMBERS: -------------------------------------------------------------------------------
 
         [NonSerialized] protected NavMeshAgent m_Agent;
+        [NonSerialized] protected INavMeshTraverseLink m_Link;
         [NonSerialized] protected CapsuleCollider m_Capsule;
 
         [NonSerialized] protected Vector3 m_MoveDirection;
@@ -47,8 +48,8 @@ namespace GameCreator.Runtime.Characters
             this.WorldMoveDirection
         );
         
-        public override float SkinWidth => 0f;
-        public override bool IsGrounded => this.m_Agent.isOnNavMesh;
+        public override float SkinWidth => 0.08f;
+        public override bool IsGrounded => this.m_ForceGrounded || this.m_Agent.isOnNavMesh;
         public override Vector3 FloorNormal => Vector3.up;
         
         public override bool Collision
@@ -111,6 +112,25 @@ namespace GameCreator.Runtime.Characters
         {
             if (this.Character.IsDead) return;
             
+            if (this.m_Agent.isOnOffMeshLink && 
+                this.m_Agent.currentOffMeshLinkData.owner is INavMeshTraverseLink navMeshLink)
+            {
+                if (this.m_Link == null)
+                {
+                    this.m_Link = navMeshLink;
+                    this.m_Agent.isStopped = true;
+                    this.m_Agent.velocity = Vector3.zero;
+                    navMeshLink.Traverse(this.Character, this.OnTraverseComplete);
+                }
+                
+                Vector3 additionalTranslation = this.m_AddTranslation.HasValue
+                    ? this.m_AddTranslation.Consume()
+                    : this.Character.Animim.RootMotionDeltaPosition;
+                
+                if (additionalTranslation != Vector3.zero) this.m_Agent.Move(additionalTranslation);
+                return;
+            }
+            
             this.UpdateProperties(this.Character.Motion);
             this.UpdateTranslation(this.Character.Motion);
         }
@@ -163,41 +183,50 @@ namespace GameCreator.Runtime.Characters
                 return;
             }
 
-            if (this.Character.RootMotionPosition > 0.5f)
+            if (this.Character.RootMotionPosition > 0.9f)
             {
                 this.m_Agent.autoBraking = false;
                 this.m_Agent.autoRepath = false;
                 
                 this.m_Agent.velocity = Vector3.zero;
                 this.m_Agent.isStopped = true;
-
+                
                 this.m_MoveDirection = this.Character.Animim.RootMotionDeltaPosition;
                 this.m_Agent.Move(this.m_MoveDirection);
             }
             else
             {
-                switch (motion.MovementType)
+                if (this.UpdateKinematics)
                 {
-                    case Character.MovementType.MoveToDirection:
-                        this.m_Agent.autoBraking = false;
-                        this.m_Agent.velocity = Vector3.zero;
+                    switch (motion.MovementType)
+                    {
+                        case Character.MovementType.MoveToDirection:
+                            this.m_Agent.autoBraking = false;
+                            this.m_Agent.velocity = Vector3.zero;
 
-                        Vector3 movement = this.UpdateMoveToDirection(motion);
-                        this.m_Agent.Move(movement);
-                        break;
+                            Vector3 movement = this.UpdateMoveToDirection(motion);
+                            this.m_Agent.Move(movement);
+                            break;
 
-                    case Character.MovementType.MoveToPosition:
-                        this.m_Agent.autoBraking = true;
-                        this.UpdateMoveToPosition(motion);
-                        break;
-                    
-                    case Character.MovementType.None:
-                        this.m_Agent.autoBraking = true;
-                        this.m_Agent.autoRepath = false;
-                        this.m_Agent.isStopped = true;
-                        break;
-                    
-                    default: throw new ArgumentOutOfRangeException();
+                        case Character.MovementType.MoveToPosition:
+                            this.m_Agent.autoBraking = true;
+                            this.UpdateMoveToPosition(motion);
+                            break;
+
+                        case Character.MovementType.None:
+                            this.m_Agent.autoBraking = true;
+                            this.m_Agent.autoRepath = false;
+                            this.m_Agent.isStopped = true;
+                            break;
+
+                        default: throw new ArgumentOutOfRangeException();
+                    }
+                }
+                else
+                {
+                    this.m_Agent.autoBraking = true;
+                    this.m_Agent.autoRepath = false;
+                    this.m_Agent.isStopped = true;
                 }
             }
 
@@ -237,6 +266,7 @@ namespace GameCreator.Runtime.Characters
 
         public override void SetPosition(Vector3 position)
         {
+            position += Vector3.up * (this.Character.Motion.Height * 0.5f);
             this.m_Agent.Warp(position);
         }
 
@@ -272,6 +302,21 @@ namespace GameCreator.Runtime.Characters
             this.m_Agent.height = height;
         }
         
+        // PRIVATE METHODS: -----------------------------------------------------------------------
+        
+        private void OnTraverseComplete()
+        {
+            this.m_Agent.updatePosition = true;
+            this.m_Agent.updateRotation = false;
+            this.m_Agent.isStopped = false;
+            this.m_Agent.autoRepath = true;
+            
+            this.m_Agent.CompleteOffMeshLink();
+            this.m_Link = null;
+            
+            this.m_Agent.autoTraverseOffMeshLink = this.m_AutoMeshLink;
+        }
+        
         // GRAVITY METHODS: -----------------------------------------------------------------------
 
         public override void ResetVerticalVelocity()
@@ -304,7 +349,7 @@ namespace GameCreator.Runtime.Characters
 
             Vector3[] corners = this.m_Agent.path.corners;
             if (corners.Length <= 1) return;
-
+            
             for (int i = 1; i < corners.Length; i++)
             {
                 Gizmos.DrawLine(corners[i - 1], corners[i]);

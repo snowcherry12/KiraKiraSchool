@@ -41,11 +41,11 @@ namespace GameCreator.Runtime.VisualScripting
 
         protected override bool Run(Args args)
         {
-            int collisionCount = Physics2D.OverlapCircleNonAlloc(
+            int collisionCount = Physics2D.OverlapCircle(
                 this.m_Position.Get(args).XY(),
                 (float) this.m_Radius.Get(args),
-                Colliders,
-                this.m_LayerMask
+                new ContactFilter2D { useLayerMask = true, layerMask = this.m_LayerMask },
+                Colliders
             );
             
             return collisionCount >= 1;

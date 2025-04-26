@@ -203,6 +203,12 @@ namespace GameCreator.Runtime.Dialogue
             float startTime = time.Time;
 
             AudioClip gibberishClip = null;
+            // If error, this will be move in next Comment
+            AudioConfigSoundUI gibberishConfig = AudioConfigSoundUI.Create(
+                1f, 
+                typewriter?.Pitch ?? new Vector2(1f, 1f)
+            );
+
             this.EventStartText?.Invoke(id);
             while (!this.CanContinue(startTime, time, args) && !story.IsCanceled)
             {
@@ -213,10 +219,7 @@ namespace GameCreator.Runtime.Dialogue
                         gibberishClip = typewriter?.GetGibberish(args);
                     }
 
-                    AudioConfigSoundUI gibberishConfig = AudioConfigSoundUI.Create(
-                        UnityEngine.Random.Range(.3f, .8f), 
-                        typewriter?.Pitch ?? new Vector2(1f, 1f)
-                    );
+                    // Audio Config Sound UI
 
                     if (!AudioManager.Instance.UserInterface.IsPlaying(gibberishClip))
                     {

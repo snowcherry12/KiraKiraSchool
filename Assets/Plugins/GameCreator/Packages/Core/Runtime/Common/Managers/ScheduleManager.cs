@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace GameCreator.Runtime.Common
 {
+    [AddComponentMenu("")]
     public class ScheduleManager : Singleton<ScheduleManager>
     {
         private class Interval

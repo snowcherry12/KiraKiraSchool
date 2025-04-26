@@ -19,7 +19,7 @@ namespace GameCreator.Runtime.VisualScripting
     [Image(typeof(IconToggleOn), ColorTheme.Type.Red)]
     
     [Serializable]
-    public class InstructionFMODAudiSetParams : Instruction
+    public class InstructionFMODAudioSetParams : Instruction
     {
         // MEMBERS: -------------------------------------------------------------------------------
         

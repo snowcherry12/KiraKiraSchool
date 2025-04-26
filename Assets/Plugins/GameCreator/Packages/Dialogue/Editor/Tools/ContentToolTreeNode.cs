@@ -19,12 +19,14 @@ namespace GameCreator.Editor.Dialogue
         private const string NAME_ACTOR = "GC-Dialogue-Node-Actor";
         private const string NAME_TEXT = "GC-Dialogue-Node-Text";
         private const string NAME_TAG = "GC-Dialogue-Node-Tag";
+        private const string NAME_JUMP = "GC-Dialogue-Node-Jump";
 
         // MEMBERS: -------------------------------------------------------------------------------
 
         private readonly Image m_Icon;
         private readonly Label m_Actor;
         private readonly Label m_Text;
+        private readonly Label m_Jump;
         private readonly Label m_Tag;
         
         // PROPERTIES: ----------------------------------------------------------------------------
@@ -68,11 +70,18 @@ namespace GameCreator.Editor.Dialogue
                 text = string.Empty
             };
             
+            this.m_Jump = new Label
+            {
+                name = NAME_JUMP,
+                text = string.Empty
+            };
+            
             this.Add(this.m_Icon);
             this.Add(this.m_Actor);
             this.Add(this.m_Text);
             this.Add(new FlexibleSpace());
             this.Add(this.m_Tag);
+            this.Add(this.m_Jump);
             
             ContextualMenuManipulator man = new ContextualMenuManipulator(this.OnOpenMenu);
             this.AddManipulator(man);
@@ -135,6 +144,8 @@ namespace GameCreator.Editor.Dialogue
             this.ContentTool.Settings.EventDisplayActors -= this.Refresh;
             this.ContentTool.Settings.EventDisplayActors += this.Refresh;
             
+            this.ContentTool.Settings.EventDisplayJumps -= this.Refresh;
+            this.ContentTool.Settings.EventDisplayJumps += this.Refresh;
             this.ContentTool.Settings.EventDisplayTags -= this.Refresh;
             this.ContentTool.Settings.EventDisplayTags += this.Refresh;
         }
@@ -143,6 +154,7 @@ namespace GameCreator.Editor.Dialogue
         {
             this.ContentTool.Inspector.EventChange -= this.Refresh;
             this.ContentTool.Settings.EventDisplayActors -= this.Refresh;
+            this.ContentTool.Settings.EventDisplayJumps -= this.Refresh;
             this.ContentTool.Settings.EventDisplayTags -= this.Refresh;
         }
         
@@ -183,6 +195,23 @@ namespace GameCreator.Editor.Dialogue
             this.m_Text.style.display = !string.IsNullOrEmpty(text)
                 ? DisplayStyle.Flex
                 : DisplayStyle.None;
+
+            string jumpText = string.Empty;
+            if (this.ContentTool.Settings.DisplayJumps)
+            {
+                jumpText = node.Jump.Jump switch
+                {
+                    JumpType.Continue => string.Empty,
+                    JumpType.Exit => "Exit",
+                    JumpType.Jump => $"To {node.Jump.JumpTo.String}",
+                    _ => throw new ArgumentOutOfRangeException()
+                };
+            }
+            
+            this.m_Jump.text = jumpText;
+            this.m_Jump.style.display = string.IsNullOrEmpty(jumpText)
+                ? DisplayStyle.None
+                : DisplayStyle.Flex;
             
             string tag = node.Tag.String;
             bool showTags = this.ContentTool.Settings.DisplayTags && !string.IsNullOrEmpty(tag);

@@ -79,14 +79,18 @@ namespace GameCreator.Runtime.Cameras
                 this.m_TargetZoom = Mathf.Clamp01(this.m_TargetZoom + delta);
             }
 
-            this.Level = Mathf.SmoothDamp(
-                this.Level,
-                this.m_TargetZoom,
-                ref this.m_Velocity,
-                this.m_SmoothTime,
-                Mathf.Infinity,
-                shotType.ShotCamera.TimeMode.DeltaTime
-            );
+            float deltaTime = shotType.ShotCamera.TimeMode.DeltaTime;
+            
+            this.Level = deltaTime > float.Epsilon
+                ? Mathf.SmoothDamp(
+                    this.Level,
+                    this.m_TargetZoom,
+                    ref this.m_Velocity,
+                    this.m_SmoothTime,
+                    Mathf.Infinity,
+                    deltaTime
+                )
+                : this.Level;
         }
     }
 }

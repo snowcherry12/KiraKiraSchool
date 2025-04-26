@@ -37,7 +37,7 @@ namespace GameCreator.Runtime.Common
         {
             get
             {
-                Marker[] instances = UnityEngine.Object.FindObjectsOfType<Marker>();
+                Marker[] instances = UnityEngine.Object.FindObjectsByType<Marker>(FindObjectsSortMode.None);
                 
                 string id = this.m_ID.ToString();
                 if (string.IsNullOrEmpty(id)) return null;

@@ -29,6 +29,8 @@ namespace GameCreator.Runtime.VisualScripting
         public virtual bool IsConnectionMiddleThin => false;
         public virtual bool IsConnectionRightThin => false;
 
+        public virtual float TransitionRange => 0f;
+
         public virtual Color ColorClipNormal => ColorTheme.Get(ColorTheme.Type.TextLight);
         public virtual Color ColorClipSelect => ColorTheme.Get(ColorTheme.Type.TextNormal);
 

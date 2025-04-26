@@ -24,7 +24,7 @@ namespace GameCreator.Runtime.Common
 
             if (from == null)
             {
-                UnityEngine.Object instance = UnityEngine.Object.FindObjectOfType(type);
+                UnityEngine.Object instance = UnityEngine.Object.FindAnyObjectByType(type);
                 return instance is Component instanceComponent
                     ? instanceComponent.gameObject
                     : null;

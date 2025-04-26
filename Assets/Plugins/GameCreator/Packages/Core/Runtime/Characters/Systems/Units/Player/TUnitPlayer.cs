@@ -34,6 +34,10 @@ namespace GameCreator.Runtime.Characters
             set => this.m_IsControllable = value;
         }
 
+        public Vector3 LocalInputDirection => this.Camera != null
+            ? this.Camera.InverseTransformDirection(this.InputDirection)
+            : Vector3.zero;
+
         public Vector3 InputDirection { get; protected set; } = Vector3.zero;
 
         // VIRTUAL METHODS: -----------------------------------------------------------------------

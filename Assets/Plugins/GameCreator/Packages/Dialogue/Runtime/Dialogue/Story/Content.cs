@@ -33,7 +33,11 @@ namespace GameCreator.Runtime.Dialogue
             set => this.m_DialogueSkin = value;
         }
 
-        public TimeMode Time => this.m_Time;
+        public TimeMode Time
+        {
+            get => this.m_Time;
+            set => this.m_Time = value;
+        }
 
         // CONSTRUCTORS: --------------------------------------------------------------------------
 

@@ -45,12 +45,12 @@ namespace GameCreator.Runtime.VisualScripting
 
         protected override bool Run(Args args)
         {
-            int collisionCount = Physics2D.OverlapBoxNonAlloc(
+            int collisionCount = Physics2D.OverlapBox(
                 this.m_Position.Get(args).XY(),
                 this.m_Size,
                 this.m_Angle,
-                Colliders,
-                this.m_LayerMask
+                new ContactFilter2D { useLayerMask = true, layerMask = this.m_LayerMask },
+                Colliders
             );
             
             return collisionCount >= 1;

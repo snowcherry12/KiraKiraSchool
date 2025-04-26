@@ -108,12 +108,16 @@ namespace GameCreator.Runtime.VisualScripting
                 default: throw new ArgumentOutOfRangeException();
             }
 
-            this.Animation = Mathf.SmoothDamp(
-                this.Animation,
-                this.IsActive ? 1f : 0f,
-                ref this.m_Velocity,
-                TRANSITION_SMOOTH_TIME
-            );
+            float deltaTime = Time.unscaledDeltaTime;
+            this.Animation = deltaTime > float.Epsilon
+                ? Mathf.SmoothDamp(
+                    this.Animation,
+                    this.IsActive ? 1f : 0f,
+                    ref this.m_Velocity,
+                    TRANSITION_SMOOTH_TIME,
+                    Mathf.Infinity,
+                    deltaTime                    
+                ) : this.Animation;
 
             this.m_Spots.OnUpdate(this);
             

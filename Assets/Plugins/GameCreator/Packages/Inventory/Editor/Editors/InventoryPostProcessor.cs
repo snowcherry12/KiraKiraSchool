@@ -1,7 +1,7 @@
 using System;
+using System.Collections.Generic;
 using GameCreator.Editor.Common;
 using GameCreator.Runtime.Inventory;
-using GameCreator.Runtime.Variables;
 using UnityEditor;
 
 namespace GameCreator.Editor.Inventory
@@ -52,13 +52,16 @@ namespace GameCreator.Editor.Inventory
             if (itemSettings == null) return;
 
             string[] itemsGuids = AssetDatabase.FindAssets($"t:{nameof(Item)}");
-            Item[] items = new Item[itemsGuids.Length];
+            List<Item> items = new List<Item>(itemsGuids.Length);
 
-            for (int i = 0; i < itemsGuids.Length; i++)
+            foreach (string itemGuid in itemsGuids)
             {
-                string itemsGuid = itemsGuids[i];
-                string itemPath = AssetDatabase.GUIDToAssetPath(itemsGuid);
-                items[i] = AssetDatabase.LoadAssetAtPath<Item>(itemPath);
+                string itemPath = AssetDatabase.GUIDToAssetPath(itemGuid);
+                Item item = AssetDatabase.LoadAssetAtPath(itemPath, typeof(Item)) as Item;
+                if (item != null && item.GetType() == typeof(Item))
+                {
+                    items.Add(AssetDatabase.LoadAssetAtPath<Item>(itemPath));   
+                }
             }
             
             SerializedObject itemSettingsSerializedObject = new SerializedObject(itemSettings);
@@ -67,8 +70,8 @@ namespace GameCreator.Editor.Inventory
                 .FindPropertyRelative("m_Items")
                 .FindPropertyRelative("m_Items");
                 
-            globalVariablesProperty.arraySize = items.Length;
-            for (int i = 0; i < items.Length; ++i)
+            globalVariablesProperty.arraySize = items.Count;
+            for (int i = 0; i < items.Count; ++i)
             {
                 globalVariablesProperty.GetArrayElementAtIndex(i).objectReferenceValue = items[i];
             }

@@ -51,9 +51,18 @@ namespace GameCreator.Runtime.Inventory.UnityUI
                 this.m_CellUI.BagUI.EventRefreshUI -= this.RefreshUI;
             }
 
-            this.m_RuntimeItem = cellUI.Cell?.RootRuntimeItem;
-            this.m_CellUI = cellUI;
-            this.m_CellUI.BagUI.EventRefreshUI += this.RefreshUI;
+            if (cellUI != null)
+            {
+                this.m_RuntimeItem = cellUI.Cell?.RootRuntimeItem;
+                this.m_CellUI = cellUI;
+                this.m_CellUI.BagUI.EventRefreshUI += this.RefreshUI;
+            }
+            else
+            {
+                this.m_RuntimeItem = null;
+                this.m_CellUI = null;
+            }
+            
 
             this.RefreshUI();
         }

@@ -93,6 +93,7 @@ namespace GameCreator.Runtime.Cameras
         private float GetRotationDamp(float current, float target, ref float velocity, 
             float smoothTime, float deltaTime)
         {
+            if (deltaTime <= float.Epsilon) return current;
             return Mathf.SmoothDampAngle(
                 current,
                 target,

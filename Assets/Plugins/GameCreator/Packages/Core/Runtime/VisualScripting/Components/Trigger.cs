@@ -26,6 +26,7 @@ namespace GameCreator.Runtime.VisualScripting
         protected Event m_TriggerEvent = new EventOnStart();
         
         [NonSerialized] private Args m_Args;
+        protected Args TriggerArgs => m_Args;
 
         [NonSerialized] private Rigidbody m_Rigidbody3D;
         [NonSerialized] private Rigidbody2D m_Rigidbody2D;
@@ -66,7 +67,7 @@ namespace GameCreator.Runtime.VisualScripting
             this.IsExecuting = true;
             
             this.EventBeforeExecute?.Invoke();
-
+            
             try
             {
                 await this.ExecInstructions(args);
@@ -75,7 +76,7 @@ namespace GameCreator.Runtime.VisualScripting
             {
                 Debug.LogError(exception.ToString(), this);
             }
-
+            
             this.IsExecuting = false;
             this.EventAfterExecute?.Invoke();
         }
@@ -402,7 +403,7 @@ namespace GameCreator.Runtime.VisualScripting
             }
 
             this.m_Rigidbody2D = this.Add<Rigidbody2D>();
-            this.m_Rigidbody2D.isKinematic = true;
+            this.m_Rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
             this.m_Rigidbody2D.hideFlags = HideFlags.HideInInspector;
         }
         
@@ -415,16 +416,17 @@ namespace GameCreator.Runtime.VisualScripting
             
             this.m_Interactive = tracker;
             
-            tracker.EventInteract -= this.OnStartInteraction;
-            tracker.EventInteract += this.OnStartInteraction;
+            tracker.EventInteract -= this.OnInteract;
+            tracker.EventInteract += this.OnInteract;
         }
 
-        private void OnStartInteraction(Character character, IInteractive interactive)
+        private void OnInteract(Character character, IInteractive interactive)
         {
             this.EventAfterExecute -= this.OnStopInteraction;
             this.EventAfterExecute += this.OnStopInteraction;
             
-            this.m_TriggerEvent?.OnInteract(this, character);
+            if (this.m_TriggerEvent?.OnInteract(this, character) ?? false) return;
+            this.m_Interactive?.Stop();
         }
 
         private void OnStopInteraction()

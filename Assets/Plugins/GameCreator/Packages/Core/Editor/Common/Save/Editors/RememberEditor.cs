@@ -1,6 +1,7 @@
 using GameCreator.Runtime.Common;
 using UnityEditor;
 using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace GameCreator.Editor.Common
@@ -65,7 +66,11 @@ namespace GameCreator.Editor.Common
                 .FindPropertyRelative(IdStringDrawer.NAME_STRING)
                 .stringValue;
 
-            Remember[] remembers = FindObjectsOfType<Remember>(true);
+            Remember[] remembers = FindObjectsByType<Remember>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None
+            );
+            
             foreach (Remember remember in remembers)
             {
                 if (remember.SaveID != itemID || remember == this.target) continue;

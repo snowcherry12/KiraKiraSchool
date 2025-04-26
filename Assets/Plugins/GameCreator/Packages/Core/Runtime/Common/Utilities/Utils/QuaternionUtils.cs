@@ -58,12 +58,19 @@ namespace GameCreator.Runtime.Common
             target.z *= coefficient;
             target.w *= coefficient;
             
-            Vector4 result = new Vector4(
-                Mathf.SmoothDamp(current.x, target.x, ref velocity.x, smoothTime, Mathf.Infinity, deltaTime),
-                Mathf.SmoothDamp(current.y, target.y, ref velocity.y, smoothTime, Mathf.Infinity, deltaTime),
-                Mathf.SmoothDamp(current.z, target.z, ref velocity.z, smoothTime, Mathf.Infinity, deltaTime),
-                Mathf.SmoothDamp(current.w, target.w, ref velocity.w, smoothTime, Mathf.Infinity, deltaTime)
-            ).normalized;
+            Vector4 result = deltaTime > float.Epsilon
+                ? new Vector4(
+                    Mathf.SmoothDamp(current.x, target.x, ref velocity.x, smoothTime, Mathf.Infinity, deltaTime),
+                    Mathf.SmoothDamp(current.y, target.y, ref velocity.y, smoothTime, Mathf.Infinity, deltaTime),
+                    Mathf.SmoothDamp(current.z, target.z, ref velocity.z, smoothTime, Mathf.Infinity, deltaTime),
+                    Mathf.SmoothDamp(current.w, target.w, ref velocity.w, smoothTime, Mathf.Infinity, deltaTime)
+                ).normalized
+                : new Vector4(
+                    current.x,
+                    current.y,
+                    current.z,
+                    current.w
+                ).normalized;
             
             Vector4 velocityError = Vector4.Project(
                 new Vector4(velocity.x, velocity.y, velocity.z, velocity.w), 
@@ -99,6 +106,20 @@ namespace GameCreator.Runtime.Common
         {
             Vector3 projectionAxis = Vector3.ProjectOnPlane(direction, normal.normalized).normalized;
             return Quaternion.LookRotation(projectionAxis); 
+        }
+        
+        /// <summary>
+        /// Rotates a point around a pivot by a given quaternion rotation.
+        /// </summary>
+        /// <param name="pivot">The point to rotate around.</param>
+        /// <param name="point">The point to rotate.</param>
+        /// <param name="rotation">The quaternion rotation to apply.</param>
+        /// <returns>The rotated point.</returns>
+        public static Vector3 RotateAroundPivot(Vector3 pivot, Vector3 point, Quaternion rotation)
+        {
+            Vector3 translatedPoint = point - pivot;
+            Vector3 rotatedPoint = rotation * translatedPoint;
+            return rotatedPoint + pivot;
         }
     }
 }

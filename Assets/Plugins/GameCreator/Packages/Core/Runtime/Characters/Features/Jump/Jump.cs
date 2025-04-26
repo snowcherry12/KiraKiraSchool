@@ -14,6 +14,10 @@ namespace GameCreator.Runtime.Characters
 
         public int RemainingAirJumps => this.m_RemainingAirJumps;
         public int AirJumps => this.m_Character.Motion.AirJumps - this.m_RemainingAirJumps;
+        
+        // EVENTS: --------------------------------------------------------------------------------
+
+        public event Action EventAttemptJump; 
 
         // INITIALIZE METHODS: --------------------------------------------------------------------
         
@@ -44,12 +48,16 @@ namespace GameCreator.Runtime.Characters
 
         public void Do()
         {
+            this.EventAttemptJump?.Invoke();
+            
             if (!this.CanJump()) return;
             this.m_Character.Motion.Jump();
         }
         
         public void Do(float force)
         {
+            this.EventAttemptJump?.Invoke();
+            
             if (!this.CanJump()) return;
             this.m_Character.Motion.Jump(force);
         }

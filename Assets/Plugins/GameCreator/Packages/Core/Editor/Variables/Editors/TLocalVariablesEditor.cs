@@ -3,6 +3,7 @@ using GameCreator.Runtime.Variables;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace GameCreator.Editor.Variables
@@ -74,7 +75,11 @@ namespace GameCreator.Editor.Variables
                 .FindPropertyRelative(IdStringDrawer.NAME_STRING)
                 .stringValue;
 
-            TLocalVariables[] variables = FindObjectsOfType<TLocalVariables>(true);
+            TLocalVariables[] variables = FindObjectsByType<TLocalVariables>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None
+            );
+            
             foreach (TLocalVariables variable in variables)
             {
                 if (variable.SaveID != itemID || variable == this.target) continue;

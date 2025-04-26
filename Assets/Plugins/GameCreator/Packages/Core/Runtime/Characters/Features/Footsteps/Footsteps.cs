@@ -87,31 +87,27 @@ namespace GameCreator.Runtime.Characters
             for (int i = 0; i < this.m_Feet.Length && i < Phases.Count; i++)
             {
                 Footstep foot = this.m_Feet[i];
-                try
+                Transform bone = foot.Bone.GetTransform(animator);
+                if (bone == null) continue;
+
+                bool phaseGround = this.m_Character.Phases.IsGround(i);
+
+                if (isGrounded && this.m_Footprints.TryGetValue(bone, out Footprint footprint))
                 {
-                    Transform bone = foot.Bone.GetTransform(animator);
-                    if (bone == null) continue;
-
-                    bool phaseGround = this.m_Character.Phases.IsGround(i);
-
-                    if (isGrounded && this.m_Footprints.TryGetValue(bone, out Footprint footprint))
+                    if (phaseGround && !footprint.WasGrounded)
                     {
-                        if (phaseGround && !footprint.WasGrounded)
-                        {
-                            this.OnStep(i, bone);
-                        }
-
-                        footprint.WasGrounded = phaseGround;
-                    }
-                    else
-                    {
-                        this.m_Footprints[bone] = new Footprint
-                        {
-                            WasGrounded = true,
-                        };
+                        this.OnStep(i, bone);
                     }
 
-                } catch {}
+                    footprint.WasGrounded = phaseGround;
+                }
+                else
+                {
+                    this.m_Footprints[bone] = new Footprint
+                    {
+                        WasGrounded = true,
+                    };
+                }
             }
         }
         

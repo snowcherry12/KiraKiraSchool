@@ -27,6 +27,7 @@ namespace GameCreator.Editor.Stats.UnityUI
             SerializedProperty common = this.serializedObject.FindProperty("m_Common");
             SerializedProperty count = this.serializedObject.FindProperty("m_Count");
             SerializedProperty remainingTime = this.serializedObject.FindProperty("m_RemainingTime");
+            SerializedProperty formatRemainingTime = this.serializedObject.FindProperty("m_FormatRemainingTime");
             
             SerializedProperty imageFill = this.serializedObject.FindProperty("m_ImageFill");
             SerializedProperty scaleX = this.serializedObject.FindProperty("m_ScaleX");
@@ -38,7 +39,9 @@ namespace GameCreator.Editor.Stats.UnityUI
             this.m_Root.Add(new SpaceSmall());
             this.m_Root.Add(new LabelTitle("Values:"));
             this.m_Root.Add(new PropertyField(count));
+            this.m_Root.Add(new SpaceSmaller());
             this.m_Root.Add(new PropertyField(remainingTime));
+            this.m_Root.Add(new PropertyField(formatRemainingTime, "Format"));
             
             this.m_Root.Add(new SpaceSmall());
             this.m_Root.Add(new LabelTitle("Duration:"));

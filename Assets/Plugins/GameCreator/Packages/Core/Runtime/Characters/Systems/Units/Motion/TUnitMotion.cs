@@ -149,6 +149,7 @@ namespace GameCreator.Runtime.Characters
         /// Creates a new Transient movement towards a direction. Useful for dashes
         /// </summary>
         /// <param name="direction">The world direction to move towards</param>
+        /// <param name="speed">The magnitude at which it moves</param>
         /// <param name="duration">How long it takes to move at full speed</param>
         /// <param name="fade">How long it takes to blend out</param>
         public void SetMotionTransient(Vector3 direction, float speed, float duration, float fade)
@@ -290,6 +291,16 @@ namespace GameCreator.Runtime.Characters
                 motion.Stop(true);
             }
         }
+
+        public virtual MotionFollowData GetFollowingTarget()
+        {
+            return this.m_MotionData is MotionFollow motionFollow
+                ? new MotionFollowData(
+                    motionFollow.Target,
+                    motionFollow.MinRadius,
+                    motionFollow.MaxRadius
+                ) : MotionFollowData.None;
+        }
         
         // PROTECTED METHODS: ---------------------------------------------------------------------
 
@@ -321,6 +332,17 @@ namespace GameCreator.Runtime.Characters
             if (this.Character.IsDead) return;
             if (!this.CanJump) return;
             
+            this.m_IsJumping = true;
+            this.m_IsJumpingForce = force;
+        }
+
+        public void ForceJump()
+        {
+            this.ForceJump(this.JumpForce);
+        }
+
+        public void ForceJump(float force)
+        {
             this.m_IsJumping = true;
             this.m_IsJumpingForce = force;
         }

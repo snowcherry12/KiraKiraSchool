@@ -120,9 +120,6 @@ namespace GameCreator.Editor.Behavior
 
             this.EventChangePage += this.OnChangePage;
 
-            EditorApplication.playModeStateChanged -= this.OnChangePlayMode;
-            EditorApplication.playModeStateChanged += this.OnChangePlayMode;
-
             this.Overlays.Blackboard.EventChange -= OnChangeBlackboard;
             this.Overlays.Blackboard.EventChange += OnChangeBlackboard;
             
@@ -134,14 +131,15 @@ namespace GameCreator.Editor.Behavior
             this.rootVisualElement.RegisterCallback<ExecuteCommandEvent>(this.OnExecuteCommand);
 
             this.OnHoverWindow(null);
-            this.NewOnboarding();
+            if (!this.RestoreSession())
+            {
+                this.NewOnboarding();   
+            }
         }
 
         private void OnDisable()
         {
             this.EventChangePage -= this.OnChangePage;
-            
-            EditorApplication.playModeStateChanged -= this.OnChangePlayMode;
 
             if (this.Overlays?.Blackboard != null) this.Overlays.Blackboard.EventChange -= OnChangeBlackboard;
             if (this.Overlays?.Inspector != null) this.Overlays.Inspector.EventChange -= OnChangeInspector;
@@ -303,6 +301,6 @@ namespace GameCreator.Editor.Behavior
         protected abstract Graph CreateAsset();
 
         protected abstract void AfterChangePages();
-        protected abstract void OnChangePlayMode(PlayModeStateChange stateChange);
+        protected abstract bool RestoreSession();
     }
 }

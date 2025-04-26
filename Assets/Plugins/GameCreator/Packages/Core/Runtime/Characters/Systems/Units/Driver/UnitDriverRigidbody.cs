@@ -4,10 +4,10 @@ using GameCreator.Runtime.Common;
 
 namespace GameCreator.Runtime.Characters
 {
-    [Title("Rigidbody")]
+    [Title("Rigidbody (obsolete)")]
     [Image(typeof(IconPhysics), ColorTheme.Type.Yellow)]
     
-    [Category("Rigidbody")]
+    [Category("Rigidbody (obsolete)")]
     [Description("Moves the Character using a physics based Rigidbody component")]
     
     [Serializable]
@@ -52,7 +52,7 @@ namespace GameCreator.Runtime.Characters
         );
 
         public override float SkinWidth => 0f;
-        public override bool IsGrounded => this.m_IsGrounded;
+        public override bool IsGrounded => this.m_ForceGrounded || this.m_IsGrounded;
         public override Vector3 FloorNormal => this.m_FloorNormal.Current;
         
         public override bool Collision
@@ -240,7 +240,7 @@ namespace GameCreator.Runtime.Characters
                 ForceMode.Force
             );
 
-            if (this.m_IsGrounded)
+            if (this.m_ForceGrounded || this.m_IsGrounded)
             {
                 if (this.Character.Time.Time - this.m_GroundTime > COYOTE_TIME &&
                     this.Character.Time.Frame - this.m_GroundFrame > COYOTE_FRAMES)
@@ -264,12 +264,14 @@ namespace GameCreator.Runtime.Characters
 
         protected virtual void UpdateTranslation(IUnitMotion motion)
         {
-            Vector3 kinetic = motion.MovementType switch
-            {
-                Character.MovementType.MoveToDirection => this.UpdateMoveToDirection(motion),
-                Character.MovementType.MoveToPosition => this.UpdateMoveToPosition(motion),
-                _ => Vector3.zero
-            };
+            Vector3 kinetic = this.UpdateKinematics
+                ? motion.MovementType switch
+                {
+                    Character.MovementType.MoveToDirection => this.UpdateMoveToDirection(motion),
+                    Character.MovementType.MoveToPosition => this.UpdateMoveToPosition(motion),
+                    _ => Vector3.zero
+                }
+                : Vector3.zero;
 
             Vector3 rootMotion = this.Character.Animim.RootMotionDeltaPosition;
             Vector3 translation = Vector3.Lerp(kinetic, rootMotion, this.Character.RootMotionPosition);

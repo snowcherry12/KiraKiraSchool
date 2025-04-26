@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace GameCreator.Runtime.Common
@@ -18,7 +19,7 @@ namespace GameCreator.Runtime.Common
             source = UnityEditor.ObjectNames.NicifyVariableName(source);
             #endif
             
-            char[] characters = source.ToCharArray();
+            char[] characters = source?.ToCharArray() ?? Array.Empty<char>();
             for (int i = 0; i < characters.Length; ++i)
             {
                 if (characters[i] == '-') characters[i] = ' ';

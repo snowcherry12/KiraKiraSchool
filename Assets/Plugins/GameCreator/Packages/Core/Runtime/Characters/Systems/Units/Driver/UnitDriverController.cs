@@ -15,6 +15,7 @@ namespace GameCreator.Runtime.Characters
     {
         private const float MAX_SLOPE_SLIDE_FROM_CHARACTER = 90;
         private const float EPSILON_SLIDE_FROM_CHARACTER = 0.001f;
+        private const float VELOCITY_INTERVAL = 0.1f;
         
         // EXPOSED MEMBERS: -----------------------------------------------------------------------
 
@@ -30,8 +31,7 @@ namespace GameCreator.Runtime.Characters
 
         [NonSerialized] protected Vector3 m_MoveDirection;
         [NonSerialized] protected float m_VerticalSpeed;
- 
-        [NonSerialized] protected AnimFloat m_IsGrounded;
+        
         [NonSerialized] protected AnimVector3 m_FloorNormal;
  
         [NonSerialized] protected int m_GroundFrame = -100;
@@ -40,6 +40,11 @@ namespace GameCreator.Runtime.Characters
 
         [NonSerialized] private DriverControllerComponent m_Helper;
         [NonSerialized] private DriverAdditionalTranslation m_AddTranslation;
+
+        [NonSerialized] private Vector3 m_PreviousPosition;
+        [NonSerialized] private Vector3 m_Velocity;
+        [NonSerialized] private Vector3 m_AccumulatedDisplacement;
+        [NonSerialized] private float m_AccumulatedTime;
         
         [NonSerialized] private Vector3 m_SlideFromCharacter;
         [NonSerialized] private int m_FrameSlideFromCharacter;
@@ -47,9 +52,9 @@ namespace GameCreator.Runtime.Characters
         // INTERFACE PROPERTIES: ------------------------------------------------------------------
 
         public override Vector3 WorldMoveDirection => this.m_Controller != null
-            ? this.m_Controller.velocity
+            ? this.m_Velocity
             : Vector3.zero;
-        
+
         public override Vector3 LocalMoveDirection => this.Transform.InverseTransformDirection(
             this.WorldMoveDirection
         );
@@ -63,6 +68,7 @@ namespace GameCreator.Runtime.Characters
             get
             {
                 if (this.m_Controller == null) return false;
+                if (this.m_ForceGrounded) return true;
 
                 bool inSlideFrame = this.m_FrameSlideFromCharacter < Time.frameCount;
                 return this.m_Controller.isGrounded && inSlideFrame;
@@ -99,7 +105,9 @@ namespace GameCreator.Runtime.Characters
             if (this.Character != null)
             {
                 this.m_GroundTime = this.Character.Time.Time;
-                this.m_GroundFrame = this.Character.Time.Frame;   
+                this.m_GroundFrame = this.Character.Time.Frame;
+                this.m_Velocity = Vector3.zero;
+                this.m_PreviousPosition = this.Transform.localPosition;
             }
         }
 
@@ -107,9 +115,8 @@ namespace GameCreator.Runtime.Characters
         {
             base.OnStartup(character);
 
-            this.m_IsGrounded = new AnimFloat(1f, 0.01f);
             this.m_FloorNormal = new AnimVector3(Vector3.up, 0.05f);
-
+            
             this.m_Controller = this.Character.GetComponent<CharacterController>();
             if (this.m_Controller == null)
             {
@@ -127,6 +134,7 @@ namespace GameCreator.Runtime.Characters
                 this.m_Controller.skinWidth = this.m_SkinWidth;
                 this.m_Controller.slopeLimit = this.m_MaxSlope;
                 this.m_Controller.stepOffset = this.m_StepHeight;
+                this.m_Controller.minMoveDistance = 0f;
             }
             
             this.m_Helper = DriverControllerComponent.Register(
@@ -163,6 +171,19 @@ namespace GameCreator.Runtime.Characters
 
             this.UpdateTranslation(this.Character.Motion);
             this.m_Axonometry?.ProcessPosition(this, this.Transform.position);
+            
+            this.m_AccumulatedDisplacement += this.Transform.localPosition - this.m_PreviousPosition;
+            this.m_AccumulatedTime += this.Character.Time.DeltaTime;
+            
+            if (this.m_AccumulatedTime >= VELOCITY_INTERVAL)
+            {
+                this.m_Velocity = this.m_AccumulatedDisplacement / this.m_AccumulatedTime;
+                
+                this.m_AccumulatedDisplacement = Vector3.zero;
+                this.m_AccumulatedTime = 0f;
+            }
+
+            this.m_PreviousPosition = this.Transform.localPosition;
         }
 
         public override void OnFixedUpdate()
@@ -178,7 +199,6 @@ namespace GameCreator.Runtime.Characters
         {
             this.m_FloorNormal.UpdateWithDelta(this.Character.Time.DeltaTime);
             this.m_MoveDirection = Vector3.zero;
-            this.m_IsGrounded.Update(this.IsGrounded, COYOTE_TIME);
             
             if (Math.Abs(this.m_Controller.skinWidth - this.m_SkinWidth) > float.Epsilon)
             {
@@ -225,7 +245,6 @@ namespace GameCreator.Runtime.Characters
         protected virtual void UpdateJump(IUnitMotion motion)
         {
             if (!motion.IsJumping) return;
-            if (!motion.CanJump) return;
             
             bool jumpCooldown = this.m_JumpTime + motion.JumpCooldown < this.Character.Time.Time;
             if (!jumpCooldown) return;
@@ -244,8 +263,8 @@ namespace GameCreator.Runtime.Characters
             gravity *= this.GravityInfluence;
             
             this.m_VerticalSpeed += gravity * this.Character.Time.DeltaTime;
-
-            if (this.m_Controller.isGrounded)
+            
+            if (this.m_ForceGrounded || this.m_Controller.isGrounded)
             {
                 if (this.Character.Time.Time - this.m_GroundTime > COYOTE_TIME &&
                     this.Character.Time.Frame - this.m_GroundFrame > COYOTE_FRAMES)
@@ -271,13 +290,15 @@ namespace GameCreator.Runtime.Characters
         {
             Vector3 movement = Vector3.up * (this.m_VerticalSpeed * this.Character.Time.DeltaTime);
 
-            Vector3 kinetic = motion.MovementType switch
-            {
-                Character.MovementType.MoveToDirection => this.UpdateMoveToDirection(motion),
-                Character.MovementType.MoveToPosition => this.UpdateMoveToPosition(motion),
-                _ => Vector3.zero
-            };
-
+            Vector3 kinetic = this.UpdateKinematics
+                ? motion.MovementType switch
+                {
+                    Character.MovementType.MoveToDirection => this.UpdateMoveToDirection(motion),
+                    Character.MovementType.MoveToPosition => this.UpdateMoveToPosition(motion),
+                    _ => Vector3.zero
+                }
+                : Vector3.zero;
+            
             Vector3 rootMotion = this.Character.Animim.RootMotionDeltaPosition;
             Vector3 translation = Vector3.Lerp(kinetic, rootMotion, this.Character.RootMotionPosition);
             

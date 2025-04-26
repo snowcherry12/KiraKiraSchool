@@ -88,7 +88,7 @@ namespace GameCreator.Runtime.Common
             Color color = Data[type].Color;
             Color.RGBToHSV(color, out float h, out float s, out float v);
             
-            return Color.HSVToRGB(h, s, v - 0.25f);
+            return Color.HSVToRGB(h, s, v - 0.15f);
         }
 
         public static Color GetLighter(Type type)
@@ -96,7 +96,7 @@ namespace GameCreator.Runtime.Common
             Color color = Data[type].Color;
             Color.RGBToHSV(color, out float h, out float s, out float v);
             
-            return Color.HSVToRGB(h, s, v + 0.25f);
+            return Color.HSVToRGB(h, s, v + 0.15f);
         }
 
         public static Color ColorFromHash(int hash)

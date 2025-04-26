@@ -45,7 +45,7 @@ namespace GameCreator.Runtime.Common
                 Transform transform = this.m_Buffer[i].transform;
                 if (transform.IsChildOf(origin)) continue;
                 if (transform.IsChildOf(target)) continue;
-
+                
                 return true;
             }
 

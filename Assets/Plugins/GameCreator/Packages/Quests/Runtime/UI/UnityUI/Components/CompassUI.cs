@@ -47,9 +47,12 @@ namespace GameCreator.Runtime.Quests.UnityUI
             if (cam == null) return;
 
             List<TSpotPoi> points = PointsOfInterest.List;
+            
             for (int i = points.Count - 1; i >= 0; --i)
             {
-                if ((points[i].Layers & this.m_Layers) != 0) continue;
+                TSpotPoi point = points[i];
+                
+                if (point?.Hotspot != null && (point.Layers & this.m_Layers) != 0) continue;
                 points.RemoveAt(i);
             }
             
@@ -59,11 +62,11 @@ namespace GameCreator.Runtime.Quests.UnityUI
 
             for (int i = 0; i < points.Count; i++)
             {
-                TSpotPoi spot = PointsOfInterest.List[i];
-                if (spot == null) continue;
+                TSpotPoi spot = points[i];
+                if (spot?.Hotspot == null) continue;
                 
                 Vector3 point = spot.Position;
-                Vector3 direction = point - m_Origin.position;
+                Vector3 direction = point - this.m_Origin.position;
                 
                 float angle = Vector2.SignedAngle(
                     new Vector2(direction.x, direction.z),
@@ -100,8 +103,8 @@ namespace GameCreator.Runtime.Quests.UnityUI
 
         private int SortByDistance(TSpotPoi a, TSpotPoi b)
         {
-            float distanceA = Vector3.Distance(m_Origin.position, a.Position);
-            float distanceB = Vector3.Distance(m_Origin.position, b.Position);
+            float distanceA = Vector3.Distance(this.m_Origin.position, a.Position);
+            float distanceB = Vector3.Distance(this.m_Origin.position, b.Position);
             
             return distanceA.CompareTo(distanceB);
         }

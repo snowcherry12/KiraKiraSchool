@@ -28,8 +28,8 @@ namespace GameCreator.Runtime.Common
         
         public virtual TValue Get(Args args) => this.m_Property.Get(args);
         public virtual TValue Get(GameObject target) => this.m_Property.Get(target);
-
-        public virtual TValue Set(Component component)
+        
+        public virtual TValue Get(Component component)
         {
             return this.Get(component ? component.gameObject : null);
         }

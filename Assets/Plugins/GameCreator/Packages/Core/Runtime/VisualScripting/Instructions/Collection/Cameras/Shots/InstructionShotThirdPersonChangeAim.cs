@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using GameCreator.Runtime.Cameras;
 using GameCreator.Runtime.Common;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GameCreator.Runtime.VisualScripting
 {
@@ -28,9 +29,9 @@ namespace GameCreator.Runtime.VisualScripting
         
         // MEMBERS: -------------------------------------------------------------------------------
         
-        [SerializeField] private PropertyGetDecimal m_Shoulder = GetDecimalDecimal.Create(0.25f);
-        [SerializeField] private PropertyGetDecimal m_Lift = GetDecimalDecimal.Create(0.5f);
-        [SerializeField] private PropertyGetDecimal m_Radius = GetDecimalDecimal.Create(5f);
+        [SerializeField, FormerlySerializedAs("m_Shoulder")] private PropertyGetDecimal m_OffsetShoulder = GetDecimalDecimal.Create(0.25f);
+        [SerializeField, FormerlySerializedAs("m_Lift")] private PropertyGetDecimal m_OffsetLift = GetDecimalDecimal.Create(0.5f);
+        [SerializeField, FormerlySerializedAs("m_Radius")] private PropertyGetDecimal m_OffsetRadius = GetDecimalDecimal.Create(5f);
         
         [SerializeField] private EnablerLayerMask m_KeepCenter = new EnablerLayerMask(true);
         [SerializeField] private PropertyGetDecimal m_Duration = GetDecimalDecimal.Create(0.25f);
@@ -54,9 +55,9 @@ namespace GameCreator.Runtime.VisualScripting
             if (this.m_KeepCenter.IsEnabled == false)
             {
                 shotSystem.Aim(
-                    (float) this.m_Shoulder.Get(args),
-                    (float) this.m_Lift.Get(args),
-                    (float) this.m_Radius.Get(args),
+                    (float) this.m_OffsetShoulder.Get(args),
+                    (float) this.m_OffsetLift.Get(args),
+                    (float) this.m_OffsetRadius.Get(args),
                     Math.Max(duration, 0f)
                 );
                 
@@ -94,9 +95,9 @@ namespace GameCreator.Runtime.VisualScripting
             Vector3 focusPoint = hasHit ? hitPoint : direction * BIG_F_NUMBER;
             
             shotSystem.Aim(
-                (float) this.m_Shoulder.Get(args),
-                (float) this.m_Lift.Get(args),
-                (float) this.m_Radius.Get(args),
+                (float) this.m_OffsetShoulder.Get(args),
+                (float) this.m_OffsetLift.Get(args),
+                (float) this.m_OffsetRadius.Get(args),
                 focusPoint,
                 Math.Max(duration, 0f)
             );

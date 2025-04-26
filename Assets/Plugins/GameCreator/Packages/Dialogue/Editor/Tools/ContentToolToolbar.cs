@@ -15,6 +15,9 @@ namespace GameCreator.Editor.Dialogue
         private static readonly IIcon ICON_CHOICE = new IconNodeChoice(ColorTheme.Type.TextNormal);
         private static readonly IIcon ICON_RANDOM = new IconNodeRandom(ColorTheme.Type.TextNormal);
         
+        private static readonly IIcon ICON_EXPAND = new IconExpand(ColorTheme.Type.TextNormal);
+        private static readonly IIcon ICON_COLLAPSE = new IconCollapse(ColorTheme.Type.TextLight);
+        
         private static readonly IIcon ICON_SETTINGS_ON = new IconGear(ColorTheme.Type.TextNormal);
         private static readonly IIcon ICON_SETTINGS_OFF = new IconGear(ColorTheme.Type.TextLight);
         
@@ -24,6 +27,8 @@ namespace GameCreator.Editor.Dialogue
         private const string TIP_TEXT = "Add new Text entry";
         private const string TIP_CHOICE = "Add new Choice group entry";
         private const string TIP_RANDOM = "Add new Random selection group";
+        private const string TIP_EXPAND = "Expand all text in Dialogue";
+        private const string TIP_COLLAPSE = "Collapse all text in Dialogue";
         private const string TIP_SETTINGS = "Toggle Settings";
         private const string TIP_INSPECTOR = "Toggle Inspector";
 
@@ -46,6 +51,8 @@ namespace GameCreator.Editor.Dialogue
         [NonSerialized] private readonly Button m_BtnText;
         [NonSerialized] private readonly Button m_BtnChoice;
         [NonSerialized] private readonly Button m_BtnRandom;
+        [NonSerialized] private readonly Button m_BtnExpandAll;
+        [NonSerialized] private readonly Button m_BtnCollapseAll;
         [NonSerialized] private readonly Button m_BtnToggleSettings;
         [NonSerialized] private readonly Button m_BtnToggleInspector;
 
@@ -70,6 +77,9 @@ namespace GameCreator.Editor.Dialogue
             this.m_BtnText = this.CreateButton(this.AddText, ICON_TEXT, TIP_TEXT, CLASS_EDGE_L);
             this.m_BtnChoice = this.CreateButton(this.AddChoice, ICON_CHOICE, TIP_CHOICE);
             this.m_BtnRandom = this.CreateButton(this.AddRandom, ICON_RANDOM, TIP_RANDOM, CLASS_EDGE_R);
+            
+            this.m_BtnExpandAll = this.CreateButton(this.ExpandAll, ICON_EXPAND, TIP_EXPAND, CLASS_EDGE_L);
+            this.m_BtnCollapseAll = this.CreateButton(this.CollapseAll, ICON_COLLAPSE, TIP_COLLAPSE, CLASS_EDGE_R);
             
             this.m_BtnToggleSettings = this.CreateButton(this.ToggleSettings, ICON_SETTINGS_OFF, TIP_SETTINGS, CLASS_EDGE_L);
             this.m_BtnToggleInspector = this.CreateButton(this.ToggleInspector, ICON_INSPECTOR_OFF, TIP_INSPECTOR, CLASS_EDGE_R);
@@ -98,7 +108,10 @@ namespace GameCreator.Editor.Dialogue
             this.Add(this.CreateSpace());
             this.Add(this.m_DropdownInsertMode);
             this.Add(new FlexibleSpace());
+            this.Add(this.m_BtnExpandAll);
             this.Add(this.CreateSeparator());
+            this.Add(this.m_BtnCollapseAll);
+            this.Add(this.CreateSpace());
             this.Add(this.m_BtnToggleSettings);
             this.Add(this.CreateSeparator());
             this.Add(this.m_BtnToggleInspector);
@@ -146,6 +159,16 @@ namespace GameCreator.Editor.Dialogue
             
             if (insertInside) this.ContentTool.Tree.CreateAsSelectionChild(newNode);
             else this.ContentTool.Tree.CreateAsSelectionSibling(newNode);
+        }
+        
+        private void ExpandAll(ClickEvent clickEvent)
+        {
+            this.ContentTool.Tree.Expand();
+        }
+
+        private void CollapseAll(ClickEvent clickEvent)
+        {
+            this.ContentTool.Tree.Collapse();
         }
         
         private void ToggleSettings(ClickEvent clickEvent)

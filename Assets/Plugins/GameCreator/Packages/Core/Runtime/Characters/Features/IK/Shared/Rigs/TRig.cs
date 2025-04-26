@@ -48,6 +48,7 @@ namespace GameCreator.Runtime.Characters.IK
             this.Animator = this.Character.Animim.Animator;
             
             this.DoStartup(character);
+            this.Character.EventAfterChangeModel += this.DoChangeModel;
         }
 
         public void OnEnable(Character character)
@@ -61,10 +62,18 @@ namespace GameCreator.Runtime.Characters.IK
         }
         
         public abstract void OnUpdate(Character character);
-
+        
         public void OnDrawGizmos(Character character)
         {
             this.DoDrawGizmos(character);
+        }
+        
+        // PRIVATE METHODS: -----------------------------------------------------------------------
+        
+        private void OnChangeModel()
+        {
+            this.Animator = this.Character.Animim.Animator;
+            this.DoChangeModel();
         }
         
         // VIRTUAL METHODS: -----------------------------------------------------------------------
@@ -79,6 +88,9 @@ namespace GameCreator.Runtime.Characters.IK
         { }
 
         protected virtual void DoUpdate(Character character)
+        { }
+        
+        protected virtual void DoChangeModel()
         { }
         
         protected virtual void DoDrawGizmos(Character character)

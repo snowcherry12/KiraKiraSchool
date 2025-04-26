@@ -12,6 +12,7 @@ namespace GameCreator.Runtime.Characters
 
         bool IsControllable { get; set; }
 
+        Vector3 LocalInputDirection { get; }
         Vector3 InputDirection { get; }
     }
 }

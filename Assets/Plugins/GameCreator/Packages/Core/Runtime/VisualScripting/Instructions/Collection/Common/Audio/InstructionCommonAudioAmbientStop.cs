@@ -22,11 +22,12 @@ namespace GameCreator.Runtime.VisualScripting
     [Serializable]
     public class InstructionCommonAudioAmbientStop : Instruction
     {
-        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioNone.Create;
+        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioClip.Create;
         [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
         
         [SerializeField] private bool m_WaitToComplete = false;
         [SerializeField] private float transitionOut = 2f;
+
 
         public override string Title => string.Format(
             "Stop Ambient: {0}{1}{2}{3} {4}",

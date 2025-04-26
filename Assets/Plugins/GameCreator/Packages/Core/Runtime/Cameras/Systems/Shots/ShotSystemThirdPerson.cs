@@ -185,12 +185,7 @@ namespace GameCreator.Runtime.Cameras
             this.m_Zoom = shotType.GetSystem(ShotSystemZoom.ID) as ShotSystemZoom;
             this.m_InputRotate.OnStartup();
 
-            this.m_Aim = new ThirdPersonAim(
-                (float) this.m_Shoulder.Get(shotType.Args),
-                (float) this.m_Lift.Get(shotType.Args),
-                (float) this.m_Radius.Get(shotType.Args),
-                shotType as ShotTypeThirdPerson
-            );
+            this.m_Aim = new ThirdPersonAim(shotType as ShotTypeThirdPerson);
         }
         
         public override void OnEnable(TShotType shotType, TCamera camera)
@@ -209,7 +204,11 @@ namespace GameCreator.Runtime.Cameras
         {
             base.OnUpdate(shotType);
             
-            this.m_Aim.Update();
+            this.m_Aim.Update(
+                (float) this.m_Shoulder.Get(shotType.Args),
+                (float) this.m_Lift.Get(shotType.Args),
+                (float) this.m_Radius.Get(shotType.Args)
+            );
             
             this.Pivot = this.m_Pivot.Get(shotType.Args);
             this.UpdateInput(shotType);
@@ -317,6 +316,7 @@ namespace GameCreator.Runtime.Cameras
         private float GetRotationDamp(float current, float target, ref float velocity, 
             float smoothTime, float deltaTime)
         {
+            if (deltaTime <= float.Epsilon) return current;
             return Mathf.SmoothDampAngle(
                 current,
                 target,

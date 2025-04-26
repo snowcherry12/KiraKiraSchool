@@ -19,11 +19,11 @@ namespace GameCreator.Runtime.VisualScripting
     {
         // MEMBERS: -------------------------------------------------------------------------------
 
-        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioNone.Create;
+        [SerializeField] private PropertyGetAudio m_AudioClip = new PropertyGetAudio();
         [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
 
         // PROPERTIES: ----------------------------------------------------------------------------
-
+        
         protected override string Summary => string.Format(
             "is Ambient {0}{1}{2}{3} playing",
             this.m_AudioClip.ToString() != "None"
@@ -39,7 +39,7 @@ namespace GameCreator.Runtime.VisualScripting
                 ? this.m_FMODAudio
                 : string.Empty
         );
-
+        
         // RUN METHOD: ----------------------------------------------------------------------------
 
         protected override bool Run(Args args)

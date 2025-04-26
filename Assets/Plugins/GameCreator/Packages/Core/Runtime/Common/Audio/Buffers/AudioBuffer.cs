@@ -47,7 +47,12 @@ namespace GameCreator.Runtime.Common.Audio
 
         internal bool Update(float volume)
         {
-            this.m_Volume.Update();
+            this.m_Volume.UpdateWithDelta(this.m_AudioConfig.UpdateMode switch
+            {
+                TimeMode.UpdateMode.GameTime => Time.deltaTime,
+                TimeMode.UpdateMode.UnscaledTime => Time.unscaledDeltaTime,
+                _ => throw new ArgumentOutOfRangeException()
+            });
 
             volume *= this.m_Volume.Current;
             this.AudioSource.volume = Rescale(volume);
@@ -72,7 +77,7 @@ namespace GameCreator.Runtime.Common.Audio
                 ? Time.timeScale
                 : 1f;
             
-            this.AudioSource.pitch = this.Pitch * timeScale;
+            this.AudioSource.pitch = this.Pitch * timeScale; 
 
             if (!FMODRef.IsNull)
             {
@@ -172,7 +177,6 @@ namespace GameCreator.Runtime.Common.Audio
                 this.AudioSource.pitch = this.Pitch;
                 this.AudioSource.spatialBlend = this.m_AudioConfig.SpatialBlend;
             }
-
             if (!FMODRef.IsNull)
             {
                 EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(this.FMODRef);
@@ -186,6 +190,7 @@ namespace GameCreator.Runtime.Common.Audio
                 foreach (Parameter param in this.m_Params)
                     this.FMODAudio.setParameterByName(param.Name, param.Value);
             }
+
             this.Target = this.m_AudioConfig.GetTrackTarget(this.m_Args);
         }
         

@@ -47,7 +47,9 @@ namespace GameCreator.Runtime.Quests.UnityUI
             List<TSpotPoi> points = PointsOfInterest.List;
             for (int i = points.Count - 1; i >= 0; --i)
             {
-                if ((points[i].Layers & this.m_Layers) != 0) continue;
+                TSpotPoi point = points[i];
+                
+                if (point?.Hotspot != null && (point.Layers & this.m_Layers) != 0) continue;
                 points.RemoveAt(i);
             }
             
@@ -60,8 +62,8 @@ namespace GameCreator.Runtime.Quests.UnityUI
             
             for (int i = 0; i < points.Count; i++)
             {
-                TSpotPoi spot = PointsOfInterest.List[i];
-                if (spot == null) continue;
+                TSpotPoi spot = points[i];
+                if (spot?.Hotspot == null) continue;
                 
                 Vector3 point = spot.Position;
                 point = new Vector3(point.x, 0f, point.z);

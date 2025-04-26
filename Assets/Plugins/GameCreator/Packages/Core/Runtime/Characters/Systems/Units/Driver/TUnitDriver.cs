@@ -17,6 +17,8 @@ namespace GameCreator.Runtime.Characters
 
         [NonSerialized] private Dictionary<int, float> m_GravityInfluence;
 
+        [NonSerialized] protected bool m_ForceGrounded;
+
         // INTERFACE PROPERTIES: ------------------------------------------------------------------
 
         public abstract Vector3 WorldMoveDirection { get; }
@@ -42,6 +44,8 @@ namespace GameCreator.Runtime.Characters
                 return minimum;
             }
         }
+
+        [field: NonSerialized] public bool UpdateKinematics { get; set; } = true;
 
         public abstract bool Collision { get; set; }
         
@@ -102,6 +106,11 @@ namespace GameCreator.Runtime.Characters
         public void RemoveGravityInfluence(int key)
         {
             this.m_GravityInfluence.Remove(key);
+        }
+
+        public void ForceGrounded(bool value)
+        {
+            this.m_ForceGrounded = value;
         }
     }
 }

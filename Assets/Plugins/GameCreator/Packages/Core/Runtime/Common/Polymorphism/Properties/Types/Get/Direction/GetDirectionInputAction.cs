@@ -24,7 +24,7 @@ namespace GameCreator.Runtime.Common
         
         public override Vector3 Get(Args args)
         {
-            Vector3 input = this.m_Input.InputAction?.ReadValue<Vector3>() ?? Vector3.zero;
+            Vector3 input = this.m_Input.InputAction?.ReadValue<Vector2>() ?? Vector3.zero;
             return new Vector3(
                 this.m_X switch
                 {

@@ -26,6 +26,12 @@ namespace GameCreator.Runtime.VisualScripting
         
         protected override string Summary => $"{this.m_Key} just released";
         
+        public Key Key
+        {
+            get => this.m_Key;
+            set => this.m_Key = value;
+        }
+        
         // RUN METHOD: ----------------------------------------------------------------------------
 
         protected override bool Run(Args args)

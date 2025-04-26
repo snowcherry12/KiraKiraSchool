@@ -45,7 +45,10 @@ namespace GameCreator.Runtime.VisualScripting
             Rigidbody2D rigidbody = gameObject.Get<Rigidbody2D>();
             if (rigidbody == null) return DefaultResult;
 
-            rigidbody.isKinematic = this.m_IsKinematic.Get(args);
+            rigidbody.bodyType = this.m_IsKinematic.Get(args)
+                ? RigidbodyType2D.Kinematic
+                : RigidbodyType2D.Dynamic;
+            
             return DefaultResult;
         }
     }

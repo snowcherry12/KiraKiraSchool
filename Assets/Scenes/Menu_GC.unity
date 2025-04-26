@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -1397,15 +1393,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 1381757487}
     m_Modifications:
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258756]
+      propertyPath: 'managedReferences[5830855627583258756]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258757]
+      propertyPath: 'managedReferences[5830855627583258757]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258758]
+      propertyPath: 'managedReferences[5830855627583258758]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
@@ -1413,23 +1409,23 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[0]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[0]'
       value: 1295431448874713529
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[1]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[1]'
       value: 1295431433174909441
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[2]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[2]'
       value: 1295431433174909449
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[3]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[3]'
       value: 1295431448874713569
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[4]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[4]'
       value: 1295431448874713569
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
@@ -1529,19 +1525,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258759]
+      propertyPath: 'managedReferences[5830855627583258759]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicPlay
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258760]
+      propertyPath: 'managedReferences[5830855627583258760]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258761]
+      propertyPath: 'managedReferences[5830855627583258761]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258762]
+      propertyPath: 'managedReferences[5830855627583258762]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
@@ -1549,27 +1545,27 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[0]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[0]'
       value: 1295431448874713958
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[1]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[1]'
       value: 1295431448874714108
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[2]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[2]'
       value: 1295431433174909458
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[3]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[3]'
       value: 1295431433174909464
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[4]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[4]'
       value: 1295431448874713502
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[5]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[5]'
       value: 1295431448874713502
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
@@ -5478,6 +5474,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!114 &354422199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11600,7 +11597,7 @@ MonoBehaviour:
   m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 1
+  m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -11614,7 +11611,7 @@ MonoBehaviour:
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 0
-  m_AllowXRRendering: 1
+  m_AllowXRRendering: 0
   m_AllowHDROutput: 1
   m_UseScreenCoordOverride: 0
   m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -11623,12 +11620,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!20 &912760035
 Camera:
   m_ObjectHideFlags: 0
@@ -11707,6 +11704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
 --- !u!1 &918059499
 GameObject:
@@ -31774,39 +31772,39 @@ PrefabInstance:
     m_TransformParent: {fileID: 1753318351}
     m_Modifications:
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258766]
+      propertyPath: 'managedReferences[5830855627583258766]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258767]
+      propertyPath: 'managedReferences[5830855627583258767]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258768]
+      propertyPath: 'managedReferences[5830855627583258768]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258788]
+      propertyPath: 'managedReferences[5830855627583258788]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicPlay
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258789]
+      propertyPath: 'managedReferences[5830855627583258789]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258790]
+      propertyPath: 'managedReferences[5830855627583258790]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258791]
+      propertyPath: 'managedReferences[5830855627583258791]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258792]
+      propertyPath: 'managedReferences[5830855627583258792]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258793]
+      propertyPath: 'managedReferences[5830855627583258793]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
@@ -31814,27 +31812,27 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[0]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[0]'
       value: 1295431448874713529
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[1]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[1]'
       value: 1295431433174909441
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[2]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[2]'
       value: 1295431433174909449
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[3]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[3]'
       value: 1295431448874713569
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[4]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[4]'
       value: 1295431448874713569
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[5]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[5]'
       value: 5830855627583258788
       objectReference: {fileID: 0}
     - target: {fileID: 868902290387818645, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
@@ -32034,55 +32032,55 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258763]
+      propertyPath: 'managedReferences[5830855627583258763]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicPlay
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258764]
+      propertyPath: 'managedReferences[5830855627583258764]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258765]
+      propertyPath: 'managedReferences[5830855627583258765]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258785]
+      propertyPath: 'managedReferences[5830855627583258785]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258786]
+      propertyPath: 'managedReferences[5830855627583258786]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258787]
+      propertyPath: 'managedReferences[5830855627583258787]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258794]
+      propertyPath: 'managedReferences[5830855627583258794]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicPlay
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258795]
+      propertyPath: 'managedReferences[5830855627583258795]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258796]
+      propertyPath: 'managedReferences[5830855627583258796]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258818]
+      propertyPath: 'managedReferences[5830855627583258818]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.VisualScripting.InstructionCommonAudioMusicStop
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258819]
+      propertyPath: 'managedReferences[5830855627583258819]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258820]
+      propertyPath: 'managedReferences[5830855627583258820]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudioNone
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: managedReferences[5830855627583258821]
+      propertyPath: 'managedReferences[5830855627583258821]'
       value: GameCreator.Runtime.Core GameCreator.Runtime.Common.GetFMODAudio
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
@@ -32090,31 +32088,31 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[0]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[0]'
       value: 1295431448874713958
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[1]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[1]'
       value: 1295431448874714108
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[2]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[2]'
       value: 1295431433174909458
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[3]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[3]'
       value: 1295431433174909464
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[4]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[4]'
       value: 1295431448874713502
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[5]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[5]'
       value: 5830855627583258818
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}
-      propertyPath: m_Instructions.m_Instructions.Array.data[6]
+      propertyPath: 'm_Instructions.m_Instructions.Array.data[6]'
       value: 5830855627583258785
       objectReference: {fileID: 0}
     - target: {fileID: 5486946427400556680, guid: ce6e0cd9732952744b86fbb61311d44f, type: 3}

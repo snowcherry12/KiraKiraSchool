@@ -69,11 +69,11 @@ namespace GameCreator.Runtime.Characters
         protected virtual Vector3 GetMoveDirection(Vector3 input)
         {
             Vector3 direction = new Vector3(input.x, 0f, input.y);
-
+            
             Quaternion cameraRotation = this.Camera != null
                 ? Quaternion.Euler(0f, this.Camera.rotation.eulerAngles.y, 0f)
                 : Quaternion.identity;
-
+            
             Vector3 moveDirection = cameraRotation * direction;
             
             moveDirection.Scale(Vector3Plane.NormalUp);

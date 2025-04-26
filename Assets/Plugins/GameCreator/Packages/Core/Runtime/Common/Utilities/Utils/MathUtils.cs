@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace GameCreator.Runtime.Common
 {
@@ -24,6 +25,20 @@ namespace GameCreator.Runtime.Common
         public static double EerpUnclamped(double a, double b, double t)
         {
             return Math.Pow(a, 1 - t) * Math.Pow(b, t);
+        }
+        
+        public static float Lerp(float a, float b, float c, float t)
+        {
+            return t <= 0.5f
+                ? Mathf.Lerp(a, b, t * 2f)
+                : Mathf.Lerp(b, c, t * 2f - 1f);
+        }
+        
+        public static double Lerp(double a, double b, double c, double t)
+        {
+            return t <= 0.5f
+                ? Lerp(a, b, t * 2f)
+                : Lerp(b, c, t * 2f - 1f);
         }
         
         // MAX: -----------------------------------------------------------------------------------
@@ -80,6 +95,13 @@ namespace GameCreator.Runtime.Common
                 > 1 => 1,
                 _ => value
             };
+        }
+        
+        // EXPONENTIAL DECAY: ---------------------------------------------------------------------
+        
+        public static float ExponentialDecay(float current, float target, float decay, float deltaTime)
+        {
+            return target + (current - target) * Mathf.Exp(-decay * deltaTime);
         }
     }
 }

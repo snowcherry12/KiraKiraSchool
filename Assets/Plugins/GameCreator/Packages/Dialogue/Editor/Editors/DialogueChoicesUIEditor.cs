@@ -16,10 +16,13 @@ namespace GameCreator.Editor.Dialogue
             this.m_Root = new VisualElement();
 
             SerializedProperty active = this.serializedObject.FindProperty("m_Active");
+            SerializedProperty selection = this.serializedObject.FindProperty("m_Selection");
+            
             SerializedProperty content = this.serializedObject.FindProperty("m_ContentChoice");
             SerializedProperty prefab = this.serializedObject.FindProperty("m_PrefabChoice");
                 
             this.m_Root.Add(new PropertyField(active));
+            this.m_Root.Add(new PropertyField(selection));
             this.m_Root.Add(new SpaceSmall());
             this.m_Root.Add(new PropertyField(content));
             this.m_Root.Add(new PropertyField(prefab));

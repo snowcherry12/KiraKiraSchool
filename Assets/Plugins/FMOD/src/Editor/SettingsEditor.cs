@@ -760,7 +760,7 @@ namespace FMODUnity
 
         private void DisplayCodecChannels(string label, Platform platform)
         {
-            if (platform is PlatformGroup)
+            if (platform is PlatformGroup || platform is PlatformDefault)
             {
                 return;
             }
@@ -874,7 +874,7 @@ namespace FMODUnity
             private GUIContent subdirectoryHeader = new GUIContent("Output sub-directory:");
             private GUIContent speakerModeHeader = new GUIContent("Surround speaker mode:");
 
-            private const string HelpText = "Select the output sub-directory and speaker mode that match the project " +
+            private const string HelpText = "Select the output sub-directory and surround speaker mode that match the project " +
                 "platform settings in the FMOD Studio build preferences.";
             private const string UndoText = "Edit FMOD Platform Settings";
 
@@ -1151,8 +1151,12 @@ namespace FMODUnity
 
                 BuildTargetGroup buildTargetGroup =
                 BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget);
+#if UNITY_2021_2_OR_NEWER
                 NamedBuildTarget namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup);
                 ScriptingImplementation scriptingBackend = PlayerSettings.GetScriptingBackend(namedBuildTarget);
+#else
+                ScriptingImplementation scriptingBackend = PlayerSettings.GetScriptingBackend(buildTargetGroup);
+#endif
 
                 if (scriptingBackend != ScriptingImplementation.IL2CPP)
                 {

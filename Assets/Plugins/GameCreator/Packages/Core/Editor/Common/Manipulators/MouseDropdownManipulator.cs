@@ -40,7 +40,6 @@ namespace GameCreator.Editor.Common
                     target.panel.contextualMenuManager.DisplayMenu(eventBase, target);
 
                     eventBase?.StopPropagation();
-                    eventBase?.PreventDefault();
                 }
             }
         }

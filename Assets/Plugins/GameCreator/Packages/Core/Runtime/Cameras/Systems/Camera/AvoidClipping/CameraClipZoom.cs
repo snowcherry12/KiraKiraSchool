@@ -105,14 +105,18 @@ namespace GameCreator.Runtime.Cameras
             }
             else
             {
-                this.m_CurrentDistance = Mathf.SmoothDamp(
-                    this.m_CurrentDistance, 
-                    targetDistance, 
-                    ref this.m_Velocity,
-                    this.m_SmoothTime,
-                    Mathf.Infinity,
-                    camera.Time.DeltaTime
-                );
+                float deltaTime = camera.Time.DeltaTime;
+                
+                this.m_CurrentDistance = deltaTime > float.Epsilon
+                    ? Mathf.SmoothDamp(
+                        this.m_CurrentDistance, 
+                        targetDistance, 
+                        ref this.m_Velocity,
+                        this.m_SmoothTime,
+                        Mathf.Infinity,
+                        deltaTime
+                    )
+                    : this.m_CurrentDistance;
             }
 
             Vector3 position = Vector3.MoveTowards(

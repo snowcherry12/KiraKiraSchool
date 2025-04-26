@@ -2,7 +2,6 @@ using System;
 using UnityEditor;
 using UnityEditor.Overlays;
 using UnityEditor.UIElements;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace GameCreator.Editor.Behavior

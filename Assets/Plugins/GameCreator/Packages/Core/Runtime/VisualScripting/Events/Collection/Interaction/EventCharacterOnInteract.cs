@@ -24,17 +24,18 @@ namespace GameCreator.Runtime.VisualScripting
 
         // INTERACTION: ---------------------------------------------------------------------------
 
-        protected internal override void OnInteract(Trigger trigger, Character character)
+        protected internal override bool OnInteract(Trigger trigger, Character character)
         {
             base.OnInteract(trigger, character);
-            
-            if (!this.IsActive) return;
-            if (character == null) return;
-            
-            if (!this.m_FromCharacter.Match(character.gameObject, trigger.gameObject)) return;
-            if (this.m_UseRaycast.HasObstacle(character.transform, trigger.transform)) return;
+
+            if (!this.IsActive) return false;
+            if (character == null) return false;
+
+            if (!this.m_FromCharacter.Match(character.gameObject, trigger.gameObject)) return false;
+            if (this.m_UseRaycast.HasObstacle(character.transform, trigger.transform)) return false;
             
             _ = this.m_Trigger.Execute(character.gameObject);
+            return true;
         }
 
         // PRIVATE METHODS: -----------------------------------------------------------------------

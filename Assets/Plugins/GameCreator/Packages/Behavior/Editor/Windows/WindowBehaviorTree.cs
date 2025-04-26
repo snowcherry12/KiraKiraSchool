@@ -64,19 +64,21 @@ namespace GameCreator.Editor.Behavior
             RestoreUtils.UpdateBehaviorTree(paths);
         }
         
-        protected override void OnChangePlayMode(PlayModeStateChange stateChange)
+        protected override bool RestoreSession()
         {
-            if (stateChange != PlayModeStateChange.EnteredEditMode) return;
             string[] paths = RestoreUtils.BehaviorTree;
-
-            for (int i = 0; i < paths.Length; i++)
+            bool restoresGraph = false;
+            
+            foreach (string path in paths)
             {
-                string path = paths[i];
                 Graph asset = AssetDatabase.LoadAssetAtPath<Graph>(path);
                 if (asset == null) continue;
-
-                this.NewPage(asset, i != 0);
+                
+                this.NewPage(asset, true);
+                restoresGraph = true;
             }
+            
+            return restoresGraph;
         }
     }
 }

@@ -33,7 +33,6 @@ namespace GameCreator.Runtime.Variables
                     LocalListVariables localList = this.m_LocalList.Get<LocalListVariables>(args);
                     if (localList != null)
                     {
-                        
                         for (int i = 0; i < localList.Count; ++i)
                         {
                             list.Add(localList.Get(i));

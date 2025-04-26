@@ -138,6 +138,8 @@ ContentToolTree {
 ContentToolTreeNode {
     flex-direction: row;
     flex-wrap: nowrap;
+    width: 100%;
+    max-width: 100%;
 }
 
 ContentToolTreeNode #GC-Dialogue-Node-Icon {
@@ -166,6 +168,8 @@ ContentToolTreeNode #GC-Dialogue-Node-Text {
     height: 20px;
     margin: 5px 0;
     padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
     -unity-text-align: middle-left;
     background-color: rgba(0,0,0,0.1);
     border-radius: var(--gc-common-border-radius);
@@ -173,14 +177,27 @@ ContentToolTreeNode #GC-Dialogue-Node-Text {
 
 ContentToolTreeNode #GC-Dialogue-Node-Tag {
     flex-grow: 0;
-    flex-shrink: 1;
+    flex-shrink: 0;
     height: 20px;
-    margin: 5px;
-    padding: 5px 8px;
+    margin: 5px 5px 5px 0;
+    padding: 5px;
+    -unity-text-align: middle-left;
+    background-color: var(--gc-color-bg-darker);
+    -unity-font-style: normal;
+    border-radius: 3px;
+    border-width: 0;
+}
+
+ContentToolTreeNode #GC-Dialogue-Node-Jump {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 20px;
+    margin: 5px 5px 5px 0;
+    padding: 5px;
     -unity-text-align: middle-left;
     background-color: var(--gc-color-bg-active);
     -unity-font-style: normal;
-    border-radius: 10px;
+    border-radius: 3px;
     border-width: 0;
 }
 

@@ -29,7 +29,6 @@ namespace GameCreator.Runtime.VisualScripting
         {
             Character character = this.m_Character.Get<Character>(args);
             if (character == null) return DefaultResult;
-            if (character.Busy.AreLegsBusy) return DefaultResult;
 
             character.Jump.Do();
             return DefaultResult;

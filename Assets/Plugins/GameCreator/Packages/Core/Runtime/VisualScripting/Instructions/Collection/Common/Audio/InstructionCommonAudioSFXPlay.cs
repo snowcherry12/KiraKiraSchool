@@ -26,7 +26,7 @@ namespace GameCreator.Runtime.VisualScripting
     [Serializable]
     public class InstructionCommonAudioSFXPlay : Instruction
     {
-        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioNone.Create;
+        [SerializeField] private PropertyGetAudio m_AudioClip = GetAudioClip.Create;
         [SerializeField] private PropertyGetFMODAudio m_FMODAudio = GetFMODAudioNone.Create;
         [SerializeField] private bool m_WaitToComplete;
         

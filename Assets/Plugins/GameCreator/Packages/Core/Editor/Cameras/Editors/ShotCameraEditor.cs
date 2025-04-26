@@ -67,7 +67,7 @@ namespace GameCreator.Editor.Cameras
             Undo.RegisterCreatedObjectUndo(instance, $"Create {instance.name}");
             Selection.activeObject = instance;
             
-            TCamera camera = FindObjectOfType<TCamera>();
+            TCamera camera = FindAnyObjectByType<TCamera>();
             if (camera != null)
             {
                 if (camera.Transition.CurrentShotCamera != null) return;
@@ -75,7 +75,7 @@ namespace GameCreator.Editor.Cameras
             else
             {
                 Camera mainCamera = Camera.main;
-                if (mainCamera == null) mainCamera = FindObjectOfType<Camera>();
+                if (mainCamera == null) mainCamera = FindAnyObjectByType<Camera>();
 
                 if (mainCamera == null) return;
                 camera = mainCamera.gameObject.AddComponent<MainCamera>();

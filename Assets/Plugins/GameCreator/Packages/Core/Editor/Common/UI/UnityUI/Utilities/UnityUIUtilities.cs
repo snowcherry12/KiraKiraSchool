@@ -24,7 +24,7 @@ namespace GameCreator.Editor.Common.UnityUI
                 return canvas.gameObject;
             }
             
-            canvas = UnityEngine.Object.FindObjectOfType(typeof(Canvas)) as Canvas;
+            canvas = UnityEngine.Object.FindFirstObjectByType(typeof(Canvas)) as Canvas;
             if (canvas != null && canvas.gameObject.activeInHierarchy)
             {
                 return canvas.gameObject;

@@ -23,11 +23,29 @@ namespace GameCreator.Runtime.Characters
             Camera camera = ShortcutMainCamera.Get<Camera>();
             if (camera == null) return float.MaxValue;
 
-            Vector3 direction = Cursor.lockState == CursorLockMode.Locked
-                ? camera.transform.TransformDirection(Vector3.forward)
-                : camera.ScreenPointToRay(Mouse.current.position.ReadValue()).direction;
+            Vector3 direction;
+            Vector3 cursorPosition;
             
-            Vector3 interactiveDirection = interactive.Position - camera.transform.position;
+            if (camera.orthographic)
+            {
+                direction = camera.transform.forward;
+                cursorPosition = camera.ScreenToWorldPoint(
+                    new Vector3(
+                        Mouse.current.position.ReadValue().x,
+                        Mouse.current.position.ReadValue().y,
+                        camera.nearClipPlane
+                    )
+                );
+            }
+            else
+            {
+                direction = Cursor.lockState == CursorLockMode.Locked
+                    ? camera.transform.TransformDirection(Vector3.forward)
+                    : camera.ScreenPointToRay(Mouse.current.position.ReadValue()).direction;
+                cursorPosition = camera.transform.position;
+            }
+            
+            Vector3 interactiveDirection = interactive.Position - cursorPosition;
             if (Vector3.Dot(direction, interactiveDirection) < 0f) return float.MaxValue;
             
             float distance = Vector3.Cross(

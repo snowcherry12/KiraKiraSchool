@@ -81,7 +81,10 @@ namespace GameCreator.Runtime.Characters
                 : 1;
             
             this.IsDashing = true;
-            this.m_Character.Driver.SetGravityInfluence(GRAVITY_INFLUENCE_KEY, gravity);
+            if (!Mathf.Approximately(gravity, 1f))
+            {
+                this.m_Character.Driver.SetGravityInfluence(GRAVITY_INFLUENCE_KEY, gravity);
+            }
             
             this.EventDashStart?.Invoke();
 

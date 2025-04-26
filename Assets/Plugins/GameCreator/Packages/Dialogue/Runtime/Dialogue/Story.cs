@@ -28,7 +28,11 @@ namespace GameCreator.Runtime.Dialogue
 
         public Visits Visits => this.m_Visits;
 
-        public TimeMode Time => this.m_Content.Time;
+        public TimeMode Time
+        {
+            get => this.m_Content.Time;
+            set => this.m_Content.Time = value;
+        }
 
         public bool IsCanceled
         {

@@ -69,5 +69,17 @@ namespace GameCreator.Runtime.Common
         {
             return this.m_GameObject.Get<T>(target);
         }
+        
+        // STRING: --------------------------------------------------------------------------------
+
+        public override string ToString()
+        {
+            return this.m_Option switch
+            {
+                Option.Any => "Any",
+                Option.Specific => this.m_GameObject.ToString(),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+        }
     }
 }

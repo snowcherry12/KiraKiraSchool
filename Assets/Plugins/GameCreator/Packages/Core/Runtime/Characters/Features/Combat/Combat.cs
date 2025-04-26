@@ -202,7 +202,7 @@ namespace GameCreator.Runtime.Characters
         {
             ReactionItem output = reaction?.CanRun(this.m_Character, args, input);
             if (output != null) return reaction.Run(this.m_Character, args, input, output);
-
+            
             foreach (Weapon weapon in this.m_Character.Combat.Weapons)
             {
                 if (weapon.Asset.HitReaction == null) continue;
@@ -213,10 +213,10 @@ namespace GameCreator.Runtime.Characters
                     return weapon.Asset.HitReaction.Run(this.m_Character, args, input, output);
                 }
             }
-
+            
             Reaction defaultReaction = this.m_Character.Animim.Reaction;
             if (defaultReaction == null) return ReactionOutput.None;
-
+            
             output = defaultReaction.CanRun(this.m_Character, args, input);
             return output != null
                 ? defaultReaction.Run(this.m_Character, args, input, output)

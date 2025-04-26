@@ -155,15 +155,16 @@ namespace GameCreator.Editor.Common
                 this.SetupSearchPage(typePage);
             });
             
-            this.m_SearchField.RegisterCallback<KeyDownEvent>(eventKeyDown =>
+            this.m_SearchField.RegisterCallback<KeyUpEvent>(eventKey =>
             {
-                if (eventKeyDown.keyCode != KeyCode.DownArrow) return;
+                if (eventKey.keyCode != KeyCode.DownArrow) return;
                 
                 VisualElement page = string.IsNullOrEmpty(this.m_SearchField.value)
                     ? this.m_ContentStack.Peek()
                     : this.m_ContentSearch;
                     
                 PutFocusOnList(page);
+                eventKey.StopPropagation();   
             });
             
             headContainer.Add(this.m_SearchField);
@@ -276,7 +277,7 @@ namespace GameCreator.Editor.Common
             content.itemsChosen += ContentChooseItem;
 
             content.AddToClassList("gc-tsf-body--content");
-            content.RegisterCallback<KeyDownEvent>(eventKeydown =>
+            content.RegisterCallback<KeyUpEvent>(eventKey =>
             {
                 int index = content.selectedIndex;
                 List<TypeNode> nodes = this.m_PageStack.Peek()?.Content;
@@ -284,19 +285,19 @@ namespace GameCreator.Editor.Common
                     ? nodes[index] 
                     : null;
                 
-                switch (eventKeydown.keyCode)
+                switch (eventKey.keyCode)
                 {
                     case KeyCode.Escape:
                         if (isSearch)
                         {
                             this.m_SearchField.value = string.Empty;
                             this.m_SearchField.Focus();
-                            eventKeydown.StopPropagation();
+                            eventKey.StopPropagation();
                         }
                         else if (this.m_PageStack.Count > 1)
                         {
                             this.PreviousPage();
-                            eventKeydown.StopPropagation();   
+                            eventKey.StopPropagation();   
                         }
                         
                         break;
@@ -306,17 +307,14 @@ namespace GameCreator.Editor.Common
                         if (node is TypeNodeValue)
                         {
                             this.ContentChooseItem(new [] { node });
-                            eventKeydown.StopPropagation();
+                            eventKey.StopPropagation();
                         }
             
                         break;
                     }
-            
-                    default:
-                        this.m_SearchField.Focus();
-                        eventKeydown.StopPropagation();
-                        break;
                 }
+                
+                eventKey.StopPropagation();
             }, TrickleDown.TrickleDown);
 
             page.Add(header);

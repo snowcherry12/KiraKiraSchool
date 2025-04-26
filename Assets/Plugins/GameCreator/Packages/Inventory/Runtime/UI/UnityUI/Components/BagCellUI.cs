@@ -533,6 +533,14 @@ namespace GameCreator.Runtime.Inventory.UnityUI
             }
         }
         
+        // PUBLIC STATIC METHODS: -----------------------------------------------------------------
+
+        public static void Deselect()
+        {
+            RuntimeItem.UI_LastItemSelected = null;
+            EventSelect?.Invoke(null);
+        }
+        
         // PRIVATE METHODS: -----------------------------------------------------------------------
 
         private void RefreshActiveSelection()

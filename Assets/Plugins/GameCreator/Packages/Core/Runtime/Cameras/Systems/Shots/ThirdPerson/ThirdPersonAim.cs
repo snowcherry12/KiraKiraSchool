@@ -11,7 +11,7 @@ namespace GameCreator.Runtime.Cameras
         // MEMBERS: -------------------------------------------------------------------------------
 
         [NonSerialized] private readonly ShotTypeThirdPerson m_System;
-        
+
         [NonSerialized] private float m_TransitionTime;
         [NonSerialized] private float m_TransitionDuration;
         
@@ -24,7 +24,7 @@ namespace GameCreator.Runtime.Cameras
         [NonSerialized] private float m_TargetShoulder;
         [NonSerialized] private float m_TargetLift;
         [NonSerialized] private float m_TargetRadius;
-        
+
         // PROPERTIES: ----------------------------------------------------------------------------
         
         [field: NonSerialized] private float T { get; set; }
@@ -32,32 +32,13 @@ namespace GameCreator.Runtime.Cameras
         [field: NonSerialized] public float Shoulder { get; private set; }
         [field: NonSerialized] public float Lift { get; private set; }
         [field: NonSerialized] public float Radius { get; private set; }
-        
         [field: NonSerialized] public Quaternion Aim { get; private set; }
         
         // CONSTRUCTOR: ---------------------------------------------------------------------------
 
-        public ThirdPersonAim(float shoulder, float lift, float radius, ShotTypeThirdPerson system)
+        public ThirdPersonAim(ShotTypeThirdPerson system)
         {
             this.m_System = system;
-            
-            this.m_StartShoulder = shoulder;
-            this.m_StartLift = lift;
-            this.m_StartRadius = radius;
-
-            this.m_TargetShoulder = shoulder;
-            this.m_TargetLift = lift;
-            this.m_TargetRadius = radius;
-
-            this.Shoulder = shoulder;
-            this.Lift = lift;
-            this.Radius = radius;
-
-            this.m_Aim = Quaternion.identity;
-            this.Aim = Quaternion.identity;
-
-            this.m_TransitionTime = 0f;
-            this.m_TransitionDuration = 0f;
         }
         
         // PUBLIC METHODS: ------------------------------------------------------------------------
@@ -79,7 +60,7 @@ namespace GameCreator.Runtime.Cameras
             this.m_TransitionDuration = duration;
         }
         
-        public void Update()
+        public void Update(float shoulder, float lift, float radius)
         {
             float currentTime = this.m_System.ShotCamera.TimeMode.Time;
             float t = this.m_TransitionDuration > EPSILON
@@ -88,9 +69,9 @@ namespace GameCreator.Runtime.Cameras
 
             this.T = Easing.QuadOut(0f, 1f, t);
             
-            this.Shoulder = Mathf.Lerp(this.m_StartShoulder, this.m_TargetShoulder, this.T);
-            this.Lift = Mathf.Lerp(this.m_StartLift, this.m_TargetLift, this.T);
-            this.Radius = Mathf.Lerp(this.m_StartRadius, this.m_TargetRadius, this.T);
+            this.Shoulder = Mathf.Lerp(this.m_StartShoulder, this.m_TargetShoulder, this.T) + shoulder;
+            this.Lift = Mathf.Lerp(this.m_StartLift, this.m_TargetLift, this.T) + lift;
+            this.Radius = Mathf.Lerp(this.m_StartRadius, this.m_TargetRadius, this.T) + radius;
 
             this.Aim = Quaternion.Euler(
                 Mathf.Lerp(QuaternionUtils.Convert180(this.m_Aim.eulerAngles.x), 0f, this.T),
