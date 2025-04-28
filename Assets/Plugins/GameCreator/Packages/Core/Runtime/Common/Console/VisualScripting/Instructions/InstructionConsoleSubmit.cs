@@ -50,11 +50,12 @@ namespace GameCreator.Runtime.Console
             string text = this.m_Command.Get(args);
             if (string.IsNullOrEmpty(text)) return DefaultResult;
             
-            Console.Open();
+            // Console.Open();
 
             Input input = new Input(text);
-            Console.Submit(input);
-            
+            // Console.Submit(input);
+            Commands.Run(input);
+
             return DefaultResult;
         }
     }
